@@ -9,7 +9,9 @@ Run the setup interview for this project, exactly as `skills/setup/SKILL.md` and
 `agents/setup.md` describe it, following `AGENTS.md`.
 
 This is a dry run with a scripted founder. Whoever answers for the founder uses only
-`examples/setup-dry-run/founder.md`. As the setup agent:
+`examples/setup-dry-run/founder.md`, and answers in the first person, as the founder would
+speak. The setup agent never uses anything from that file the founder has not said yet: not
+in a question, not in a recommendation. As the setup agent:
 
 1. Ask in rounds, as `skills/grilling/SKILL.md` describes: number the questions, give a
    recommended answer with a one-line reason for each, and wait for the answers before the next

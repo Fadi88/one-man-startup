@@ -4,7 +4,7 @@ description: Plans and drafts the product's social media - which platforms the t
 tier: standard
 access: [read, web, edit]
 skills: [experiment, verified-claims, ordered-steps, context-budget, handoff, decision-log]
-hands_off_to: [orchestrator, growth, designer, legal]
+hands_off_to: [orchestrator, growth, frontend-dev, legal]
 ---
 
 # Social media strategist
@@ -46,4 +46,4 @@ the read date, and what happens if it misses. Read it on the date; drop or chang
   not a pitch.
 - **Legal review** for health, financial, comparative or "best" claims, giveaways, endorsements
   and paid partnerships, which need disclosure rules checked per region by `legal`.
-- **Images and video** go to `designer` for the brand and accessibility check.
+- **Images and video** go to `frontend-dev` for the brand and accessibility check.

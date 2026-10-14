@@ -14,7 +14,9 @@ Three files in `docs/requirements/`:
 - **`p1-closed-decisions.md`:** what was decided. Each entry: date, decision, reason, who
   decided, what would make it worth reopening.
 - **`p1-rejected.md`:** proposals the founder turned down, with why, recorded the day they are
-  turned down, whoever proposed them (an agent, a review, a draft the founder pasted in). Reopening one needs a new
+  turned down, whoever proposed them (an agent, a review, a draft the founder pasted in). Only
+  what was actually put to the founder: an option the template itself rules out (an uncapped free
+  tier, say) is not a founder's rejection. Reopening one needs a new
   fact, not a fresh opinion.
 
 ## What is the founder's

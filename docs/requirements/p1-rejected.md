@@ -32,6 +32,17 @@ Options proposed by the assistant building the template and declined by Fadi.
   as a candidate), **a first market, a platform, and keeping the strategy in a product
   repository.** Declined: the template starts no startup; these are each founder's to decide.
 
+- **A brand kit in the template**, either the founder's own design system (steerai-design) or a
+  generic brand-kit slot that setup fills. Declined by Fadi, 14 October 2026: left out for now;
+  the template ships Anthropic's frontend-design skill only.
+- **Plain-writing (humanizer) and Claude Code setup audit (cc-setup-audit) skills for the
+  agents.** Offered with spec-completeness-audit; declined by Fadi, 14 October 2026. Only the
+  spec audit was taken, rewritten in the template's own words.
+
+- **A separate designer agent**, and giving the designer the frontend-design skill. Declined by
+  Fadi, 14 October 2026: design belongs to the frontend developer, with a software architect
+  over the whole system.
+
 ### From the B2C strategy drafts
 
 Proposals from the B2C strategy drafts (v1, v2 and review cycle 3, all 14 October 2026) that

@@ -1,0 +1,28 @@
+---
+name: frontend-design
+description: Distinctive, intentional visual design for any UI being built or reshaped - aesthetic direction, typography, layout, motion and interface copy that does not read as a templated default. Use on every ticket that changes what users see.
+---
+
+# Frontend design
+
+Read and follow `skills/frontend-design/UPSTREAM.md`: Anthropic's frontend-design skill, copied
+unchanged from https://github.com/anthropics/claude-plugins-official
+(`plugins/frontend-design/skills/frontend-design/SKILL.md`) on 2026-10-14, under the Apache
+License 2.0 in `skills/frontend-design/LICENSE.txt`. `tools/checks/upstream_check.py` fails if
+the copy is edited.
+
+## How it fits this template
+
+- **The brief is the spec.** The design brief the upstream skill asks for is
+  `docs/work/<id>/spec.md` and `ux.md`, plus `project.toml [product]` (audience, regions). The
+  frontend developer writes `ux.md` itself, from the spec; where the founder has set a direction,
+  follow it ("the brief's own words always win").
+- **Plan before code, in the work folder.** The design plan the upstream skill asks for (palette,
+  type, layout, principles) goes in `docs/work/<id>/ux.md` or beside it, so `qa` and later
+  tickets can see it.
+- **The quality floor is a requirement**, not a nicety: responsive to phone width, visible
+  keyboard focus, reduced motion respected, contrast to the bar in `agents/frontend-dev.md`.
+- **Copy follows the project's style rules** (`project.toml [style]`), including the banned
+  characters, which the upstream text itself uses in places.
+- **Fonts and images** are checked for licence before use, and their cost if any is sourced
+  (`skills/verified-claims/`).

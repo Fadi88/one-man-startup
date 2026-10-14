@@ -27,7 +27,10 @@ For every applicable item in each pack's checklist:
   launch; **UNSETTLED** the law's status is unclear or sources disagree, with both sources.
 - Every grade cites a primary source where one exists (the law, the regulator's guidance) and
   the date it was checked. Law changes; an undated claim is worthless in six months.
-- Packs older than 90 days are re-checked before a launch.
+- Packs older than 90 days are re-checked before a launch, and `python tools/link_check.py
+  docs/legal/regions/*.md` shows no DEAD links.
+- Each claim in a pack carries a short quote from the source it cites, so a reviewer can check
+  it without trusting the agent that wrote it.
 
 ## Draft
 

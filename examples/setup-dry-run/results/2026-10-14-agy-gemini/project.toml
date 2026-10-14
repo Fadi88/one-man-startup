@@ -1,0 +1,62 @@
+# The one file that makes this template yours. The setup agent fills it in
+# during its interview; every other agent reads it and never edits it.
+# "unset" means setup has not asked yet. Agents stop and ask rather than guess.
+
+[owner]
+name = "Nadia Example"
+email = "nadia@example.com"
+# non-technical | technical. Sets how much the agents explain. The template is
+# written for non-technical founders first; setup asks.
+level = "non-technical"
+
+[product]
+name = "Receipt Buddy"
+one_liner = "Snap a photo of a receipt and it sorts your household spending for you, so you can see where the money goes each month."
+# Free text, e.g. "fintech", "health and fitness", "B2B devtools".
+domain = "fintech"
+# ISO country codes where the product is sold or its users live, e.g. ["AE", "SA"].
+regions = ["AE", "DE"]
+# Who uses it, in a sentence.
+audience = "Busy expat families who never get round to tracking spending."
+# consumers | small-business | mid-market | enterprise
+customer_size = "consumers"
+# idea | prototype | beta | live
+stage = "idea"
+# Personal data, payments, health data, children, AI decisions about people.
+# Each one switches on extra legal and QA gates.
+sensitive = ["financial data", "payments"]
+
+[stack]
+# Chosen by setup with the founder. Dev agents read these and never assume.
+platform = "web"
+frontend = "Next.js"
+backend = "Next.js API routes"
+database = "PostgreSQL (Supabase)"
+hosting = "Cloudflare Pages"
+# "none yet" until code exists; setup or the first developer agent fills them in.
+test_command = "none yet"
+build_command = "none yet"
+
+[team]
+# Agents switched on for this project. Setup trims the list to the size of the
+# company; the orchestrator never routes to an agent that is not here.
+enabled = ["orchestrator", "setup", "architect", "designer", "frontend-dev", "backend-dev",
+           "qa", "security", "legal", "devops", "growth", "optimizer"]
+
+[gates]
+# strict | standard | light. The template recommends strict and setup
+# argues for it; the founder decides and the reason is recorded in
+# docs/requirements/p1-closed-decisions.md.
+level = "standard"
+
+[style]
+# Characters refused in docs, code comments and commit messages.
+banned_chars = ["\u2014", "\u2013"]
+
+[budget]
+# Monthly AI spend ceiling in USD the optimizer reports against. 0 = no ceiling set.
+monthly_usd = 100
+
+[tools]
+# Which AI coding tools get generated adapters (tools/sync_adapters.py).
+targets = ["claude"]

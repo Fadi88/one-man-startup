@@ -146,6 +146,10 @@ This template borrows ideas, with thanks, from:
 
 - Matt Pocock's [grilling skill](https://github.com/mattpocock/skills)
 - GitHub's [spec-kit](https://github.com/github/spec-kit)
+- Anthropic's [frontend-design skill](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design), included unchanged under the Apache License 2.0
+- the five specification layers of Hamidreza Saghir, as adapted in Florian Bruniaux's
+  [Claude Code guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide), rewritten
+  here as the spec audit
 - the [BMAD Method](https://github.com/bmad-code-org/BMAD-METHOD)
 - Garry Tan's [gstack](https://github.com/garrytan/gstack)
 - Anthropic's writing on [multi-agent systems](https://www.anthropic.com/engineering/multi-agent-research-system)

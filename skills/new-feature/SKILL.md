@@ -38,5 +38,5 @@ Show the founder the spec and rows; wait for their confirmation.
 ## 4. Gate and route
 
 Run `skills/readiness-gate/`. When it passes, the orchestrator routes: `architect` (if data,
-integration or a new surface), `designer`, then `frontend-dev` and `backend-dev` against the
+integration or a new surface), then `frontend-dev` (design and build) and `backend-dev` against the
 contract, `qa`, and `legal` or `security` where step 2 pulled them in.

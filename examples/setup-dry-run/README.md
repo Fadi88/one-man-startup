@@ -13,6 +13,7 @@ this template, following `prompt.md`. The result is scored against `rubric.md`.
 | `rubric.md` | What a passing run must show, item by item. |
 | `results/<date>-<tool>.md` | Each run's score, findings and the fixes made because of it. |
 | `results/<date>-<tool>/` | The files that run produced, kept as the worked example. |
+| `REPORT-<date>.md` | The test report comparing that day's runs, with the fixes they led to. |
 
 ## Running it
 

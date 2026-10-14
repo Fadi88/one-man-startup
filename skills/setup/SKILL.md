@@ -28,20 +28,24 @@ before the first feature to `p1-open-questions.md`.
 5. **Stack** (unlocked by 2 and 4): platform, frontend, backend, database, hosting, the test and
    build commands ("none yet" when no code exists). Recommend what the founder already knows,
    hosted, boring. If a codebase
-   exists, read it and propose what it already is.
-6. **Gates:** recommend **strict** and say what it buys. If the founder picks lighter, ask for
+   exists, read it and propose what it already is. Run `skills/spec-audit/` on it, and put
+   its most dangerous silent fills into the next round.
+6. **Gates:** recommend **strict** and say what it buys, using the table in `skills/gates/`,
+   never your own description of a level. If the founder picks lighter, ask for
    the reason and record it.
 7. **Team** (unlocked by 2, 4 and 6): the smallest set of agents the stage needs. Recommend, say
    what each one does and when it is first needed, let the founder trim. Time per feature is not
    measured yet, so do not quote one.
 8. **Budget:** monthly AI spend ceiling for the optimizer to report against.
-9. **Tools:** which AI coding tools the founder uses (adapters are generated for each).
+9. **Tools:** which AI coding tools the founder uses (adapters are generated for each). Always
+   include the tool running this setup, or its generated files are removed by the sync.
 
 ## Write
 
 - `project.toml`, every field the answers settled.
 - `docs/legal/regions/<CODE>.md` for each region, copied from `docs/legal/regions/_TEMPLATE.md`,
-  filled from current sources, each claim cited and dated, unsettled points marked UNSETTLED.
+  filled from current sources, each claim cited and dated with a short quote, unsettled points
+  marked UNSETTLED, and `python tools/link_check.py` run on the packs with no DEAD links.
   Hand the packs to `legal` to review before any launch.
 - `docs/requirements/p1-closed-decisions.md`: one dated line per decision taken, with the reason.
 - `docs/requirements/p1-open-questions.md`: what the founder deferred, and what each blocks.
@@ -52,10 +56,12 @@ before the first feature to `p1-open-questions.md`.
   per device without sign-up, a global daily spend ceiling), with the numbers left for the
   founder to set once the prototype has measured the cost per action. A free tier with no caps
   is not offered as an option.
-- `git config user.name` and `user.email` set to the founder, and
+- `git config --local user.name` and `user.email` set to the founder (this repository only),
+  and
   `git config core.hooksPath tools/githooks`.
 
 ## Finish
 
-Run `python tools/sync_adapters.py` and `python tools/run_all.py`. Show the founder the summary,
+Run `python tools/sync_adapters.py`, `python tools/checks/req_check.py --fix` (the new
+`LAUNCH.md` changes the index) and `python tools/run_all.py`. Show the founder the summary,
 the diff and the green sweep. Commit on their go.

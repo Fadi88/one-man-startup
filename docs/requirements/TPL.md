@@ -21,4 +21,4 @@ area files beside them.
 | TPL-14 | (A-1) The setup interview writes `project.toml`, the region packs and the first decisions, and leaves the sweep green. | M |
 | TPL-15 | (A-2 to A-5) The template works from Claude Code, Codex, Gemini CLI and Cursor: each reads `AGENTS.md`, and the native agents and skills are generated where the tool supports them. | U |
 | TPL-16 | Every open assumption in `docs/ASSUMPTIONS.md` has a way to confirm it and a confirm-by date that has not passed, and every settled one says what settled it. | T |
-| TPL-17 | `skills/karpathy-guidelines/SKILL.md` carries the upstream guidelines unchanged below its attribution note, so it can be compared with upstream. | T |
+| TPL-17 | Text copied verbatim from upstream (the Karpathy guidelines, Anthropic's frontend-design skill) stays unchanged, pinned by hash in `tools/lib/verbatim.py`, so it can be compared with upstream. | T |

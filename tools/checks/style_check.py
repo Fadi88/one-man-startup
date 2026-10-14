@@ -19,7 +19,10 @@ banned = cfg.get("style", {}).get("banned_chars", [])
 
 listed = subprocess.run(["git", "ls-files", "-co", "--exclude-standard"], cwd=ROOT,
                         capture_output=True, text=True).stdout.splitlines()
-files = [ROOT / f for f in listed if Path(f).suffix in TEXT and (ROOT / f).is_file()]
+sys.path.insert(0, str(ROOT / "tools" / "lib"))
+from verbatim import PINNED  # noqa: E402
+
+files = [ROOT / f for f in listed if Path(f).suffix in TEXT and (ROOT / f).is_file() and f not in PINNED]
 if not files:
     print("FAIL  found no files to read, a style check over nothing is not a pass")
     sys.exit(1)

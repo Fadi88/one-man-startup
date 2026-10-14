@@ -16,7 +16,10 @@ For each statement of fact (a price, a duration, a limit, a count, a date, legal
 tool or service supports, what a test covers), ask: how do I know?
 
 - **A source:** link it and the date you read it. Prefer the primary source (the provider's
-  pricing page, the law, the official docs) over a blog about it.
+  pricing page, the law, the official docs) over a blog about it. **Cite only a page you opened
+  in this session**, and quote the sentence that supports the claim. A page you could not open
+  is not a source: say so, or mark the claim UNSETTLED. Never write "checked" for a page you
+  did not read. `python tools/link_check.py <files>` finds cited links that do not exist.
 - **A test or measurement:** name it, or the command and its output.
 - **Neither:** cut the claim, or say the true thing instead ("check the tool's pricing page"
   rather than a price you remember).

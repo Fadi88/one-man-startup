@@ -18,6 +18,8 @@ that shows it. One "not met" keeps the gate shut.
    edges, and each ticket cites its rows.
 8. The constitution in `AGENTS.md` is not broken by the plan. Where the plan bends a rule, the
    reason is written down and the founder accepted it.
-9. The reviews this feature needs (`legal`, `security`, `designer`) are scheduled in `status.md`.
+9. The reviews this feature needs (`legal`, `security`) are scheduled in `status.md`.
+10. If the feature touches existing code: `docs/work/<id>/spec-audit.md` (`skills/spec-audit/`)
+    says "delegate" or "delegate with review", and any listed silent fills are in the brief.
 
 A gate that passes says what it read. "Looks ready" is not a pass.

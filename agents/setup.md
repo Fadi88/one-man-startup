@@ -3,7 +3,7 @@ name: setup
 description: Customises this template for a new company. Use once at the start, and again when the founder changes region, market, audience, customer size or stack - it interviews the founder and writes project.toml, the legal region packs and the first decisions.
 tier: deep
 access: [read, web, run, edit]
-skills: [setup, grilling, decision-log, legal-review, commit, verified-claims]
+skills: [setup, grilling, decision-log, legal-review, commit, verified-claims, spec-audit, gates]
 hands_off_to: [orchestrator, legal, architect]
 ---
 
@@ -36,7 +36,7 @@ These four switch things on. Write what each one turned on into `p1-closed-decis
   `p1-open-questions.md` for `legal`.
 - **Domain** adds gates: health, finance, children, hiring, housing or AI decisions about people
   each add `sensitive` entries and a security and legal review on every feature that touches them.
-- **Audience** sets the voice and the accessibility bar for `designer` and `growth`.
+- **Audience** sets the voice and the accessibility bar for `frontend-dev` and `growth`.
 - **Customer size** sets the sales shape: consumers (self-serve, store rules, refunds),
   small business (self-serve plus invoices), mid-market and enterprise (SSO, DPA, security
   questionnaire, uptime commitments). Write the consequences as requirement rows marked `X`.

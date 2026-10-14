@@ -29,8 +29,8 @@ they say. A project made from the template keeps them as background and adds its
   description. Decided by Fadi, from review cycle 3 of the B2C strategy. Reopen: a region pack
   that cites the rule for that region.
 - **2026-10-14. Deadline discounts only when the deadline is real**, with the wording checked
-  by `legal`. Reason: fake urgency is a dark pattern and a consumer law risk; the designer
-  agent already rules it out. Decided by Fadi, from review cycle 3.
+  by `legal`. Reason: fake urgency is a dark pattern and a consumer law risk; the frontend
+  developer's design rules already rule it out. Decided by Fadi, from review cycle 3.
 - **2026-10-14. Choosing between selling through the founder's own company and through a
   merchant of record is a founder decision**, made with `legal` and an accountant, from fees and
   terms read off each provider's own pages and dated. Neither is mandated by the template.
@@ -47,6 +47,10 @@ they say. A project made from the template keeps them as background and adds its
   on value and one-click export; AI transparency and self-serve deletion, export and invoices.
   The region pack template gains withdrawal waivers, exit offers, pre-selection, AI content
   marking and device identifiers. Decided by Fadi. Reopen: a project's own evidence.
+- **2026-10-14. No separate designer.** The frontend developer designs and builds the user's
+  side, using the frontend-design skill; the architect is the software architect for the whole
+  system; the backend developer builds the server side. Decided by Fadi. Reopen: if design work
+  outgrows one agent, shown by QA findings.
 - **2026-10-14. Every rejected idea is recorded** (constitution rule 13), in
   `p1-rejected.md` the same day, whoever proposed it. Reason: without it, settled proposals come
   back as if new. Decided by Fadi, 14 October 2026.

@@ -64,9 +64,8 @@ founder, be brief and show the diff.
 |---|---|---|
 | `orchestrator` | Project manager. Reads the request, picks the track and the agents, sequences hand-offs, holds the gates. | read, edit, delegate |
 | `setup` | Interviews the founder and writes `project.toml`, the region legal packs and the first decisions. Re-runnable. | read, web, run, edit |
-| `architect` | Turns a spec into a design: components, data model, API contracts, ADRs. | read, edit |
-| `designer` | Flows, screens, copy, accessibility, against the spec. | read, edit |
-| `frontend-dev` | Builds the client side from tickets, test first. | read, run, edit |
+| `architect` | Software architect for the whole system: the system map, cross-cutting decisions, and per feature the design, API contract and tickets, with ADRs. | read, edit |
+| `frontend-dev` | Designs and builds everything the user sees: flows, screens, copy, accessibility, then the code, test first. | read, run, edit |
 | `backend-dev` | Builds the server, data and integrations from tickets, test first. | read, run, edit |
 | `qa` | Tests against the requirement rows, finds regressions, owns the QA report and the release gate. | read, run, edit |
 | `security` | Threat model, secrets, auth, dependencies, data exposure. | read, edit |
@@ -94,7 +93,8 @@ The orchestrator picks one and says which:
 
 ## Where things are
 
-- `project.toml`: the founder's answers. Written by setup only.
+- `project.toml`: the founder's answers. Written by setup only. `[gates] level` means what
+  `skills/gates/SKILL.md` says.
 - `docs/REQUIREMENTS.md`: the index of the requirement files, not the spec itself.
 - `docs/requirements/p1-*.md`: how to work here (standing instructions, traps, open questions,
   closed decisions, rejected proposals).

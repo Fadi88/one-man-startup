@@ -40,11 +40,11 @@ build_command = "unset"
 [team]
 # Agents switched on for this project. Setup trims the list to the size of the
 # company; the orchestrator never routes to an agent that is not here.
-enabled = ["orchestrator", "setup", "architect", "designer", "frontend-dev", "backend-dev",
+enabled = ["orchestrator", "setup", "architect", "frontend-dev", "backend-dev",
            "qa", "security", "legal", "devops", "growth", "social-media", "optimizer"]
 
 [gates]
-# strict | standard | light. The template recommends strict and setup
+# strict | standard | light, defined in skills/gates/SKILL.md. The template recommends strict and setup
 # argues for it; the founder decides and the reason is recorded in
 # docs/requirements/p1-closed-decisions.md.
 level = "strict"
