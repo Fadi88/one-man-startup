@@ -12,6 +12,10 @@ data protection law) you look up. Write nothing until the founder confirms the s
 
 ## The tree
 
+Ask as few rounds as the dependencies allow; a non-technical founder should not face 25
+questions. Combine branches whose prerequisites are settled, and defer anything not needed
+before the first feature to `p1-open-questions.md`.
+
 1. **Founder:** name and email for commits; technical or not (sets how much agents explain).
 2. **Product:** name, one sentence, stage (idea, prototype, beta, live).
 3. **Market** (unlocked by 2):
@@ -19,15 +23,17 @@ data protection law) you look up. Write nothing until the founder confirms the s
    - domain;
    - audience in a sentence;
    - customer size: consumers, small business, mid-market, enterprise.
-4. **Data** (unlocked by 3): what personal data, payments, health, children, biometrics, AI
+4. **Data** (unlocked by 2, and asked with 3 in one round): what personal data, payments, health, children, biometrics, AI
    decisions about people. Each one becomes a `sensitive` entry and switches on gates.
 5. **Stack** (unlocked by 2 and 4): platform, frontend, backend, database, hosting, the test and
-   build commands. Recommend what the founder already knows, hosted, boring. If a codebase
+   build commands ("none yet" when no code exists). Recommend what the founder already knows,
+   hosted, boring. If a codebase
    exists, read it and propose what it already is.
 6. **Gates:** recommend **strict** and say what it buys. If the founder picks lighter, ask for
    the reason and record it.
-7. **Team** (unlocked by 2, 4 and 6): the smallest set of agents the stage needs. Recommend, list
-   what each one would cost in time per feature, let the founder trim.
+7. **Team** (unlocked by 2, 4 and 6): the smallest set of agents the stage needs. Recommend, say
+   what each one does and when it is first needed, let the founder trim. Time per feature is not
+   measured yet, so do not quote one.
 8. **Budget:** monthly AI spend ceiling for the optimizer to report against.
 9. **Tools:** which AI coding tools the founder uses (adapters are generated for each).
 
@@ -39,7 +45,8 @@ data protection law) you look up. Write nothing until the founder confirms the s
   Hand the packs to `legal` to review before any launch.
 - `docs/requirements/p1-closed-decisions.md`: one dated line per decision taken, with the reason.
 - `docs/requirements/p1-open-questions.md`: what the founder deferred, and what each blocks.
-- Requirement rows marked `X` for what customer size and domain imply (an enterprise customer
+- Requirement rows in `docs/requirements/LAUNCH.md` (prefix `LAUNCH`), marked `X`, for what
+  customer size and domain imply (an enterprise customer
   implies SSO and a DPA; consumers in the EU imply cookie consent and data export).
 - If the product has a free tier or a trial: requirement rows marked `X` for its caps (per user,
   per device without sign-up, a global daily spend ceiling), with the numbers left for the

@@ -24,11 +24,16 @@ Grade each item GREEN, YELLOW, RED or UNSETTLED per feature or launch (`skills/l
   representative if required; children's data and age thresholds.
 - **Cross-border transfer:** may personal data leave the region, and on what basis.
 - **Consent and tracking:** cookies, analytics and marketing consent rules.
-- **Consumer law:** pricing display, subscriptions and auto-renewal, cancellation, refunds and
-  cooling-off periods, unfair terms.
+- **Consumer law:** pricing display, subscriptions and auto-renewal, cancellation (including
+  whether offers on the way out are allowed), refunds and cooling-off periods, whether and how a
+  right of withdrawal can be waived for digital content or services and what the checkout must
+  say, pre-selected options, unfair terms.
 - **E-commerce and payments:** required business information, invoices, tax on digital services.
-- **AI:** disclosure of AI interaction and generated content, automated decision rules,
-  high-risk uses.
+- **AI:** disclosure of AI interaction and generated content, machine-readable marking of
+  generated content and the date each duty applies from, automated decision rules, high-risk
+  uses, and products that give legal, tax, financial or employment answers.
+- **Device identifiers:** whether combining signals to recognise a device (cookies, network
+  details) needs consent.
 - **Sector rules** for the domain in `project.toml` (health, finance, education, children).
 - **Accessibility:** legal accessibility requirements for digital services.
 - **App stores and platforms:** the store rules for the platform in `project.toml [stack]`.

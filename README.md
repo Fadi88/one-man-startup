@@ -96,6 +96,10 @@ If any step is unfamiliar, ask your AI tool to walk you through it.
 5. **Ask for your first thing.** For example: *"I want a landing page where people can join a
    waiting list."* The project manager takes it from there.
 
+To see what setup produces before you run it, read the
+[worked example](examples/setup-dry-run/): a fictional founder's interview, word for word, and
+every file it wrote.
+
 ## Good to know
 
 **It isn't magic.** The agents are good at a lot of work and still make mistakes. The built-in

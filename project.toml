@@ -33,6 +33,7 @@ frontend = "unset"
 backend = "unset"
 database = "unset"
 hosting = "unset"
+# "none yet" until code exists; setup or the first developer agent fills them in.
 test_command = "unset"
 build_command = "unset"
 
@@ -45,7 +46,7 @@ enabled = ["orchestrator", "setup", "architect", "designer", "frontend-dev", "ba
 [gates]
 # strict | standard | light. The template recommends strict and setup
 # argues for it; the founder decides and the reason is recorded in
-# docs/DECISIONS.md.
+# docs/requirements/p1-closed-decisions.md.
 level = "strict"
 
 [style]

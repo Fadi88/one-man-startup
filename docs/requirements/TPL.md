@@ -18,7 +18,7 @@ area files beside them.
 | TPL-11 | Every running or planned entry in `docs/EXPERIMENTS.md` has a hypothesis, a prediction, a "wrong if" and a read date. | T |
 | TPL-12 | Every region pack in `docs/legal/regions/` opens with the not-legal-advice line and carries an "As of" date and a sources list. | T |
 | TPL-13 | `tools/run_all.py` exits 0 when green, 2 when every failing line is registered in `tools/known_red.json`, and 1 on a new red, an overdue recheck or a broken check. | T |
-| TPL-14 | (A-1) The setup interview writes `project.toml`, the region packs and the first decisions, and leaves the sweep green. | U |
+| TPL-14 | (A-1) The setup interview writes `project.toml`, the region packs and the first decisions, and leaves the sweep green. | M |
 | TPL-15 | (A-2 to A-5) The template works from Claude Code, Codex, Gemini CLI and Cursor: each reads `AGENTS.md`, and the native agents and skills are generated where the tool supports them. | U |
 | TPL-16 | Every open assumption in `docs/ASSUMPTIONS.md` has a way to confirm it and a confirm-by date that has not passed, and every settled one says what settled it. | T |
 | TPL-17 | `skills/karpathy-guidelines/SKILL.md` carries the upstream guidelines unchanged below its attribution note, so it can be compared with upstream. | T |

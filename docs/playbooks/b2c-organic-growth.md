@@ -48,6 +48,19 @@ Match what each kind of user can trigger to what they have proven:
 | Signed-in free user | A daily or monthly count of live actions on a low-cost model. |
 | Paying user | The full product, still with a fair-use ceiling so one account cannot cost more than it pays. |
 
+How the caps are counted:
+
+- **Never identify an anonymous user by network address alone.** Many people share one address
+  (mobile carriers, offices), so an address-only limit blocks real customers. Combine signals
+  (a signed cookie, the address range, the connection's characteristics); `legal` checks that
+  the combination is allowed under each region's privacy rules before it ships.
+- **Reserve before the call, give it back on failure.** The cost of an action is counted before
+  the paid service is called, and returned automatically if the call fails, so a provider error
+  never eats a user's allowance or turns into a support ticket.
+- **New paying users may ramp up.** Where a region gives a right of withdrawal or a refund
+  window, a founder may choose a lower allowance during that window so the window cannot be
+  used to run up costs and then refund. This is an option, with the wording checked by `legal`.
+
 Behind all three:
 
 - **A provider-side spending limit** as the last line of defence, where the AI provider offers
@@ -89,6 +102,9 @@ Sharing built on the product's own output (a result, a streak, a report) with a 
   platforms the audience uses, with a small, honest "made with" link.
 - **Shared pages expose nothing private:** the user sees exactly what will be public before it
   is.
+- **Shared pages can be abused** to host spam or phishing on the product's domain. Content is
+  checked before a page is public, outbound links are stripped or marked, and pages are kept out
+  of search indexes until they pass a quality bar the founder sets.
 
 - Referral tracking and analytics need consent per region (`docs/legal/regions/`).
 - Any reward for inviting others is checked by the legal agent against consumer law and the
@@ -104,12 +120,31 @@ is, to find the first users and early feedback.
   permission.
 - Prediction (for example, waitlist sign-ups by a date), wrong if, read date: **Founder decides**.
 
-### 3.4 App stores, if the product is in one
+### 3.4 A new domain starts from nothing
+
+A brand-new website gets little search traffic at first, however good its pages are. Early
+reach comes from elsewhere:
+
+- **Useful open-source pieces**, such as the calculation behind a free tool, published with a
+  link back, when the founder is happy to share that code.
+- **Listings** on product directories and launch sites that fit the product, submitted by the
+  founder (`social-media` drafts, the founder posts).
+- **Genuine answers in communities** where the customer asks for help: each community's rules
+  read first, the founder's connection to the product disclosed, and a link only where it
+  answers the question. Posting to manipulate search results or AI answers is not done.
+
+Each of these is an experiment with its own number and read date.
+
+### 3.5 App stores, if the product is in one
 
 Search inside an app store works differently from web search. Listing text, screenshots and
 ratings are set per store and per language. Ask for a rating only after a success (a saved or
 shared result), never during onboarding or after an error, and within each store's rules for
 review prompts.
+
+Two store rules shape the product itself, so read the current guidelines (cited and dated) before
+designing a store app: an app that only wraps a website risks rejection for too little native
+function, and linking to an outside payment page is restricted, with rules that differ by region.
 
 ## 4. Conversion
 
@@ -129,6 +164,23 @@ review prompts.
   device and on each region's rules, not on an analytics vendor's marketing. `legal` decides per
   region from the packs.
 
+## 4a. Keeping customers
+
+Getting a user is wasted if they leave in the second month. Keep them with value, never with
+traps:
+
+- **The product gets more useful with use:** saved history, templates, settings and progress
+  that a fresh chat with a general AI would not have.
+- **Their data is always theirs:** export is one click at any time. Value built up is a reason
+  to stay, not a lock.
+- **Annual plans** may be offered alongside monthly. Whether the annual plan may be shown
+  pre-selected, and how its saving is worded, is checked by `legal` per region.
+- **Cancelling stays as easy as subscribing.** Offering a pause or a discount on the way out is
+  allowed only if cancelling remains one clear, quick path; `legal` checks the flow against each
+  region's rules.
+- **Churn is measured from the first paying user** and read monthly, with retention ideas run as
+  experiments.
+
 ## 5. Payments, tax and data
 
 Decide these before building checkout, with `legal`, and with an accountant where tax is
@@ -143,6 +195,11 @@ involved:
   an AI provider only under terms that say whether it is retained or used for training (zero
   retention where the provider offers it); personal details stripped from prompts where the
   feature works without them. Cross-border transfers go to `legal`, which escalates them.
+- **AI transparency:** where a region requires telling users they are dealing with AI, or
+  marking AI-generated content (including machine-readable marking in exports), the region pack
+  says so with its source and the date it applies from; `legal` grades it per feature.
+- **Self-serve from day one:** deleting an account and its data, exporting data, and getting
+  invoices are buttons, not emails to the founder.
 
 ## 6. Risks to plan for from day one
 
@@ -152,6 +209,9 @@ involved:
 | AI provider outage | The main provider fails during a launch. | A fallback provider with the same data terms, tested before launch. |
 | Support overload | Many billing and invoice questions at once. | A self-serve billing portal; help pages written as features ship. |
 | Search penalty | Bulk pages judged thin. | The quality gate in 3.1; publish in small batches and read the results. |
+| Share page abuse | Spam or phishing hosted on the product's shared pages. | Section 3.2: check before public, strip links, keep out of search until it passes. |
+| Refund window abuse | Heavy use right after buying, then a refund. | The optional ramp for new paying users in section 2, with `legal` wording. |
+| Real users blocked | A limit keyed on network address blocks everyone behind one carrier. | Combine signals, never address alone (section 2). |
 
 ## 7. Unit economics
 

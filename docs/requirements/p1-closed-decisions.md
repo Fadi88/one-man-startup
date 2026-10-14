@@ -39,6 +39,14 @@ they say. A project made from the template keeps them as background and adds its
 - **2026-10-14. Growth ideas run as experiments** with a prediction, a "wrong if" and a read
   date, and the roadmap validates (smoke test, prototype) before it builds. Reason: a plan with
   no number that can fail teaches nothing. Decided by Fadi, from the review of strategy v2.
+- **2026-10-14. From strategy review cycle 7, kept as methods in the playbook:** caps counted on
+  combined signals, never network address alone; cost reserved before a paid call and returned on
+  failure; an optional lower allowance for new paying users during a refund window; abuse checks
+  on public share pages; a cold-start section (open-source pieces, listings, genuine community
+  answers); store rules on thin web wrappers and outside payment links; a retention section built
+  on value and one-click export; AI transparency and self-serve deletion, export and invoices.
+  The region pack template gains withdrawal waivers, exit offers, pre-selection, AI content
+  marking and device identifiers. Decided by Fadi. Reopen: a project's own evidence.
 - **2026-10-14. Every rejected idea is recorded** (constitution rule 13), in
   `p1-rejected.md` the same day, whoever proposed it. Reason: without it, settled proposals come
   back as if new. Decided by Fadi, 14 October 2026.
