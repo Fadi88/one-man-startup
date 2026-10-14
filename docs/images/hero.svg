@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="t d">
+  <title id="t">One-man startup</title>
+  <desc id="d">You sit in the middle and decide. Around you, AI agents plan, build, test, check the law, launch and grow your product.</desc>
+  <style>
+    .bg { fill: #f7f5f0; }
+    .ink { fill: #1d2433; }
+    .soft { fill: #5b6475; }
+    .line { stroke: #c9c3b6; stroke-width: 2; fill: none; stroke-dasharray: 4 6; }
+    .you { fill: #1d2433; }
+    .youtxt { fill: #f7f5f0; }
+    .chip { fill: #ffffff; stroke: #e2ddd2; stroke-width: 1.5; }
+    .c1 { fill: #e8673c; } .c2 { fill: #2f8f83; } .c3 { fill: #4a6cd4; }
+    .c4 { fill: #c98a1b; } .c5 { fill: #8a55c7; } .c6 { fill: #d04a6b; }
+    text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #141922; } .ink { fill: #eef0f4; } .soft { fill: #a3abba; }
+      .line { stroke: #3a4250; } .you { fill: #f2efe8; } .youtxt { fill: #141922; }
+      .chip { fill: #1d2430; stroke: #2e3746; }
+    }
+  </style>
+  <rect class="bg" width="1200" height="420" rx="24"/>
+
+  <text class="ink" x="64" y="150" font-size="52" font-weight="700">One-man startup</text>
+  <text class="soft" x="64" y="200" font-size="24">Build real software without a tech team.</text>
+  <text class="soft" x="64" y="234" font-size="24">You make the decisions. AI agents do the work.</text>
+  <text class="soft" x="64" y="300" font-size="18">Made for Claude Code, Codex, Gemini CLI and Cursor</text>
+
+  <g transform="translate(860 210)">
+    <path class="line" d="M0 0 L0 -150 M0 0 L130 -75 M0 0 L130 75 M0 0 L0 150 M0 0 L-130 75 M0 0 L-130 -75"/>
+    <circle class="you" r="54"/>
+    <text class="youtxt" y="9" font-size="26" font-weight="700" text-anchor="middle">You</text>
+
+    <g transform="translate(0 -150)"><rect class="chip" x="-78" y="-24" width="156" height="48" rx="24"/><circle class="c1" cx="-54" r="9"/><text class="ink" x="-38" y="6" font-size="17">Plan</text></g>
+    <g transform="translate(130 -75)"><rect class="chip" x="-78" y="-24" width="156" height="48" rx="24"/><circle class="c2" cx="-54" r="9"/><text class="ink" x="-38" y="6" font-size="17">Build</text></g>
+    <g transform="translate(130 75)"><rect class="chip" x="-78" y="-24" width="156" height="48" rx="24"/><circle class="c3" cx="-54" r="9"/><text class="ink" x="-38" y="6" font-size="17">Test</text></g>
+    <g transform="translate(0 150)"><rect class="chip" x="-78" y="-24" width="156" height="48" rx="24"/><circle class="c4" cx="-54" r="9"/><text class="ink" x="-38" y="6" font-size="17">Legal check</text></g>
+    <g transform="translate(-130 75)"><rect class="chip" x="-78" y="-24" width="156" height="48" rx="24"/><circle class="c5" cx="-54" r="9"/><text class="ink" x="-38" y="6" font-size="17">Launch</text></g>
+    <g transform="translate(-130 -75)"><rect class="chip" x="-78" y="-24" width="156" height="48" rx="24"/><circle class="c6" cx="-54" r="9"/><text class="ink" x="-38" y="6" font-size="17">Grow</text></g>
+  </g>
+</svg>

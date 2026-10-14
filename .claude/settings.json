@@ -1,0 +1,22 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(git merge:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(rm -rf:*)"
+    ],
+    "deny": [
+      "Edit(.claude/agents/**)",
+      "Edit(.claude/skills/**)",
+      "Edit(.cursor/rules/**)",
+      "Edit(CLAUDE.md)",
+      "Edit(GEMINI.md)"
+    ]
+  }
+}

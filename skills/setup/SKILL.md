@@ -1,0 +1,50 @@
+---
+name: setup
+description: The setup interview that customises this template for one founder's company by region, domain, audience, customer size, stack, gates, team and budget, and writes project.toml. Use at the start of a new company or when any of those change.
+user_only: true
+---
+
+# Setup
+
+Run `skills/grilling/` over the tree below, in rounds, each question with a recommended answer.
+Facts you can look up (the founder's git identity, an existing codebase's stack, a region's
+data protection law) you look up. Write nothing until the founder confirms the summary.
+
+## The tree
+
+1. **Founder:** name and email for commits; technical or not (sets how much agents explain).
+2. **Product:** name, one sentence, stage (idea, prototype, beta, live).
+3. **Market** (unlocked by 2):
+   - regions (ISO codes, where users live, not where the founder lives);
+   - domain;
+   - audience in a sentence;
+   - customer size: consumers, small business, mid-market, enterprise.
+4. **Data** (unlocked by 3): what personal data, payments, health, children, biometrics, AI
+   decisions about people. Each one becomes a `sensitive` entry and switches on gates.
+5. **Stack** (unlocked by 2 and 4): platform, frontend, backend, database, hosting, the test and
+   build commands. Recommend what the founder already knows, hosted, boring. If a codebase
+   exists, read it and propose what it already is.
+6. **Gates:** recommend **strict** and say what it buys. If the founder picks lighter, ask for
+   the reason and record it.
+7. **Team** (unlocked by 2, 4 and 6): the smallest set of agents the stage needs. Recommend, list
+   what each one would cost in time per feature, let the founder trim.
+8. **Budget:** monthly AI spend ceiling for the optimizer to report against.
+9. **Tools:** which AI coding tools the founder uses (adapters are generated for each).
+
+## Write
+
+- `project.toml`, every field the answers settled.
+- `docs/legal/regions/<CODE>.md` for each region, copied from `docs/legal/regions/_TEMPLATE.md`,
+  filled from current sources, each claim cited and dated, unsettled points marked UNSETTLED.
+  Hand the packs to `legal` to review before any launch.
+- `docs/requirements/p1-closed-decisions.md`: one dated line per decision taken, with the reason.
+- `docs/requirements/p1-open-questions.md`: what the founder deferred, and what each blocks.
+- Requirement rows marked `X` for what customer size and domain imply (an enterprise customer
+  implies SSO and a DPA; consumers in the EU imply cookie consent and data export).
+- `git config user.name` and `user.email` set to the founder, and
+  `git config core.hooksPath tools/githooks`.
+
+## Finish
+
+Run `python tools/sync_adapters.py` and `python tools/run_all.py`. Show the founder the summary,
+the diff and the green sweep. Commit on their go.

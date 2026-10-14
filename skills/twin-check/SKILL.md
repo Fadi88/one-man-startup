@@ -1,0 +1,25 @@
+---
+name: twin-check
+description: Guard important business arithmetic with an independent, dependency-free reference implementation checked against the production code's real output. Use for prices, billing, quotas, scores, forecasts - any figure where a wrong answer still looks like an answer.
+---
+
+# Twin check
+
+Some bugs produce a number that is wrong and looks right. Tests written by the same mind that
+wrote the code tend to share its mistakes. A twin is a second implementation, written plainly,
+in a different form, and compared against the real code on real inputs.
+
+## How
+
+- Put the twin under `tools/twins/`, in plain Python with no libraries that do the hard part for
+  it (a twin that calls the same library proves the library works, not your code).
+- Read constants from the production source rather than retyping them, so a changed constant
+  cannot hide.
+- Have the production test suite dump its outputs for a fixed set of inputs, and a check under
+  `tools/checks/` compare twin and dump field by field, with a stated tolerance.
+- A missing dump is a loud SKIP, never a pass.
+- The twin's header lists the cases where a wrong answer would still look plausible, and the
+  check covers each.
+
+Use it where it pays. Most code does not need a twin; money and anything the founder makes
+decisions from usually does.

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="t d">
+  <title id="t">Your AI team</title>
+  <desc id="d">You give requests to the project manager agent, which hands work to five groups: plan (architect, designer), build (frontend, backend, devops), check (QA, security, legal), grow (growth) and save money (optimizer). A setup agent tailors the team at the start.</desc>
+  <style>
+    .bg { fill: #f7f5f0; } .card { fill: #ffffff; stroke: #e2ddd2; stroke-width: 1.5; }
+    .ink { fill: #1d2433; } .soft { fill: #5b6475; } .wire { stroke: #c9c3b6; stroke-width: 2; fill: none; }
+    .you { fill: #1d2433; } .youtxt { fill: #f7f5f0; } .pm { fill: #2c3a57; } .pmtxt { fill: #ffffff; }
+    .setup { fill: none; stroke: #b9b2a3; stroke-width: 2; stroke-dasharray: 6 6; }
+    .g1 { fill: #e8673c; } .g2 { fill: #2f8f83; } .g3 { fill: #4a6cd4; } .g4 { fill: #d04a6b; } .g5 { fill: #c98a1b; }
+    text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #141922; } .card { fill: #1d2430; stroke: #2e3746; } .ink { fill: #eef0f4; } .soft { fill: #a3abba; }
+      .wire { stroke: #3a4250; } .you { fill: #f2efe8; } .youtxt { fill: #141922; } .pm { fill: #3b4d73; } .setup { stroke: #4a5363; }
+    }
+  </style>
+  <rect class="bg" width="1200" height="560" rx="24"/>
+  <text class="ink" x="48" y="58" font-size="26" font-weight="700">Your AI team</text>
+
+  <path class="wire" d="M600 132 L600 176"/>
+  <path class="wire" d="M600 236 L600 268 M132 268 L1068 268 M132 268 L132 300 M366 268 L366 300 M600 268 L600 300 M834 268 L834 300 M1068 268 L1068 300"/>
+
+  <g transform="translate(600 100)"><rect class="you" x="-130" y="-32" width="260" height="64" rx="32"/><text class="youtxt" y="8" font-size="22" font-weight="700" text-anchor="middle">You, the founder</text></g>
+  <g transform="translate(600 206)"><rect class="pm" x="-150" y="-30" width="300" height="60" rx="14"/><text class="pmtxt" y="-3" font-size="18" font-weight="700" text-anchor="middle">Project manager</text><text class="pmtxt" y="19" font-size="13" text-anchor="middle" opacity="0.85">picks who does what, holds the gates</text></g>
+  <g transform="translate(980 206)"><rect class="setup" x="-120" y="-30" width="240" height="60" rx="14"/><text class="ink" y="-3" font-size="16" font-weight="700" text-anchor="middle">Setup</text><text class="soft" y="18" font-size="13" text-anchor="middle">tailors the team to you</text></g>
+
+  <g font-size="15">
+    <g transform="translate(32 300)"><rect class="card" width="200" height="220" rx="16"/><rect class="g1" width="200" height="8" rx="4"/>
+      <text class="ink" x="20" y="44" font-size="19" font-weight="700">Plan</text>
+      <text class="ink" x="20" y="80">Architect</text><text class="soft" x="20" y="100" font-size="13">how it is put together</text>
+      <text class="ink" x="20" y="136">Designer</text><text class="soft" x="20" y="156" font-size="13">screens, words, access</text></g>
+    <g transform="translate(266 300)"><rect class="card" width="200" height="220" rx="16"/><rect class="g2" width="200" height="8" rx="4"/>
+      <text class="ink" x="20" y="44" font-size="19" font-weight="700">Build</text>
+      <text class="ink" x="20" y="80">Frontend developer</text><text class="soft" x="20" y="100" font-size="13">what users see</text>
+      <text class="ink" x="20" y="136">Backend developer</text><text class="soft" x="20" y="156" font-size="13">data, accounts, payments</text>
+      <text class="ink" x="20" y="192">DevOps</text><text class="soft" x="20" y="212" font-size="13">hosting and releases</text></g>
+    <g transform="translate(500 300)"><rect class="card" width="200" height="220" rx="16"/><rect class="g3" width="200" height="8" rx="4"/>
+      <text class="ink" x="20" y="44" font-size="19" font-weight="700">Check</text>
+      <text class="ink" x="20" y="80">QA</text><text class="soft" x="20" y="100" font-size="13">tries to break it first</text>
+      <text class="ink" x="20" y="136">Security</text><text class="soft" x="20" y="156" font-size="13">keeps data safe</text>
+      <text class="ink" x="20" y="192">Legal</text><text class="soft" x="20" y="212" font-size="13">checklists, not advice</text></g>
+    <g transform="translate(734 300)"><rect class="card" width="200" height="220" rx="16"/><rect class="g4" width="200" height="8" rx="4"/>
+      <text class="ink" x="20" y="44" font-size="19" font-weight="700">Grow</text>
+      <text class="ink" x="20" y="80">Growth</text><text class="soft" x="20" y="100" font-size="13">pitch, pricing, launch</text></g>
+    <g transform="translate(968 300)"><rect class="card" width="200" height="220" rx="16"/><rect class="g5" width="200" height="8" rx="4"/>
+      <text class="ink" x="20" y="44" font-size="19" font-weight="700">Save</text>
+      <text class="ink" x="20" y="80">Optimizer</text><text class="soft" x="20" y="100" font-size="13">finds wasted AI spend</text></g>
+  </g>
+</svg>

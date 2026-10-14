@@ -1,0 +1,23 @@
+---
+name: readiness-gate
+description: The checklist a feature must pass before any build starts - spec confirmed, rows written, no open question on the path, constitution respected. Use before handing any ticket to a developer agent.
+---
+
+# Readiness gate
+
+Build starts only when every line is true. Report each line as met or not met, with the file
+that shows it. One "not met" keeps the gate shut.
+
+1. `docs/work/<id>/spec.md` exists and the founder confirmed it (the date is in `status.md`).
+2. Every behaviour in the spec has a requirement row, and every row cites a testable outcome.
+3. No question in `p1-open-questions.md` blocks this feature.
+4. The success number and its read date are in the spec.
+5. If the feature stores data: `design.md` names the source of truth, retention and deletion.
+6. If it has a client and a server: `contract.md` exists and both sides build against it.
+7. `tickets.md` slices the work so each ticket is buildable and testable alone, with blocking
+   edges, and each ticket cites its rows.
+8. The constitution in `AGENTS.md` is not broken by the plan. Where the plan bends a rule, the
+   reason is written down and the founder accepted it.
+9. The reviews this feature needs (`legal`, `security`, `designer`) are scheduled in `status.md`.
+
+A gate that passes says what it read. "Looks ready" is not a pass.

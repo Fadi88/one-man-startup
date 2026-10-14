@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-labelledby="t d">
+  <title id="t">From idea to launch</title>
+  <desc id="d">Five steps: tell it about your business, get grilled on each idea, the agents build it, they check it, and you say go before anything goes live.</desc>
+  <style>
+    .bg { fill: #f7f5f0; } .card { fill: #ffffff; stroke: #e2ddd2; stroke-width: 1.5; }
+    .ink { fill: #1d2433; } .soft { fill: #5b6475; } .arrow { stroke: #b9b2a3; stroke-width: 2.5; fill: none; }
+    .head { fill: #b9b2a3; } .you { fill: #1d2433; } .youtxt { fill: #f7f5f0; }
+    .n1 { fill: #e8673c; } .n2 { fill: #d04a6b; } .n3 { fill: #2f8f83; } .n4 { fill: #4a6cd4; } .n5 { fill: #8a55c7; }
+    text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #141922; } .card { fill: #1d2430; stroke: #2e3746; } .ink { fill: #eef0f4; } .soft { fill: #a3abba; }
+      .arrow { stroke: #4a5363; } .head { fill: #4a5363; } .you { fill: #f2efe8; } .youtxt { fill: #141922; }
+    }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head" d="M0 0 L10 5 L0 10 z"/></marker></defs>
+  <rect class="bg" width="1200" height="330" rx="24"/>
+  <text class="ink" x="48" y="58" font-size="26" font-weight="700">From idea to launch</text>
+
+  <g font-size="15">
+    <g transform="translate(48 96)"><rect class="card" width="196" height="196" rx="18"/><circle class="n1" cx="34" cy="38" r="18"/><text class="youtxt" x="34" y="44" font-size="16" font-weight="700" text-anchor="middle" style="fill:#fff">1</text>
+      <text class="ink" x="20" y="92" font-size="18" font-weight="700">Set up</text>
+      <text class="soft" x="20" y="120">Answer questions about</text><text class="soft" x="20" y="140">your business, country</text><text class="soft" x="20" y="160">and customers.</text></g>
+    <g transform="translate(276 96)"><rect class="card" width="196" height="196" rx="18"/><circle class="n2" cx="34" cy="38" r="18"/><text x="34" y="44" font-size="16" font-weight="700" text-anchor="middle" style="fill:#fff">2</text>
+      <text class="ink" x="20" y="92" font-size="18" font-weight="700">Get grilled</text>
+      <text class="soft" x="20" y="120">Every idea is questioned</text><text class="soft" x="20" y="140">until it is clear, each</text><text class="soft" x="20" y="160">with a suggested answer.</text></g>
+    <g transform="translate(504 96)"><rect class="card" width="196" height="196" rx="18"/><circle class="n3" cx="34" cy="38" r="18"/><text x="34" y="44" font-size="16" font-weight="700" text-anchor="middle" style="fill:#fff">3</text>
+      <text class="ink" x="20" y="92" font-size="18" font-weight="700">Build</text>
+      <text class="soft" x="20" y="120">Agents design and write</text><text class="soft" x="20" y="140">the app, testing as they</text><text class="soft" x="20" y="160">go.</text></g>
+    <g transform="translate(732 96)"><rect class="card" width="196" height="196" rx="18"/><circle class="n4" cx="34" cy="38" r="18"/><text x="34" y="44" font-size="16" font-weight="700" text-anchor="middle" style="fill:#fff">4</text>
+      <text class="ink" x="20" y="92" font-size="18" font-weight="700">Check</text>
+      <text class="soft" x="20" y="120">Testing, security and a</text><text class="soft" x="20" y="140">legal checklist for your</text><text class="soft" x="20" y="160">countries.</text></g>
+    <g transform="translate(960 96)"><rect class="card" width="196" height="196" rx="18"/><circle class="you" cx="34" cy="38" r="18"/><text class="youtxt" x="34" y="44" font-size="16" font-weight="700" text-anchor="middle">5</text>
+      <text class="ink" x="20" y="92" font-size="18" font-weight="700">You say go</text>
+      <text class="soft" x="20" y="120">Nothing goes live, gets</text><text class="soft" x="20" y="140">paid for or deleted until</text><text class="soft" x="20" y="160">you approve it.</text></g>
+  </g>
+  <g class="arrow" marker-end="url(#a)">
+    <path d="M246 194 L272 194"/><path d="M474 194 L500 194"/><path d="M702 194 L728 194"/><path d="M930 194 L956 194"/>
+  </g>
+</svg>

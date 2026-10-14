@@ -1,0 +1,15 @@
+#!/bin/sh
+# Runs the full check sweep before every commit. A red that is registered in
+# tools/known_red.json (exit 2) is let through, so nobody learns to use --no-verify.
+# Pick an interpreter that actually runs: on Windows "python3" can be a Store stub
+# that command -v finds but that only prints an install hint.
+PY=""
+for c in python3 python py; do
+  if command -v "$c" >/dev/null 2>&1 && "$c" -c "import sys; sys.exit(sys.version_info < (3, 11))" >/dev/null 2>&1; then PY=$c; break; fi
+done
+[ -n "$PY" ] || { echo "githooks: no Python 3.11 or newer found on PATH" >&2; exit 1; }
+"$PY" "$(dirname "$0")/../run_all.py"
+code=$?
+[ $code -eq 0 ] || [ $code -eq 2 ] && exit 0
+echo "pre-commit: the sweep is red. Fix it, or register the red in tools/known_red.json with the founder's decision."
+exit 1

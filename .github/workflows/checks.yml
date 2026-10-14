@@ -1,0 +1,26 @@
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Full sweep
+        run: |
+          python tools/run_all.py
+          code=$?
+          # 2 means every red is registered as known by the founder.
+          if [ $code -eq 2 ]; then exit 0; fi
+          exit $code
+        shell: bash {0}

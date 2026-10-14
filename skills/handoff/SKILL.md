@@ -1,0 +1,26 @@
+---
+name: handoff
+description: The format for passing work between agents - a brief going out, a short report with file paths coming back. Use for every delegation and every hand-back.
+---
+
+# Hand-off
+
+## The brief (orchestrator to agent)
+
+- **Objective:** one sentence, with the requirement ids.
+- **Read:** the exact files, nothing else unless stated.
+- **Produce:** the artifact and its path.
+- **Boundaries:** what not to touch, what needs the founder.
+- **Done when:** the checks that must pass, the gate this feeds.
+
+## The hand-back (agent to orchestrator)
+
+- **Status:** done, blocked, or done with gaps.
+- **Artifacts:** paths only.
+- **Summary:** three lines at most.
+- **Verified:** what was run and what it said.
+- **Not verified:** what could not be checked, and why.
+- **Opened:** the files read, so nobody reads them again.
+- **Needs the founder:** decisions surfaced, each with a recommendation.
+
+Update `docs/work/<id>/status.md` with the step and its state.

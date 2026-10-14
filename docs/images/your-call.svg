@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
+  <title id="t">What the agents do alone and what waits for you</title>
+  <desc id="d">Agents can read, research, draft, write code and run tests on their own. Going live, spending money, deleting anything, sending messages, changing prices or accepting a legal risk always waits for your approval.</desc>
+  <style>
+    .bg { fill: #f7f5f0; } .ink { fill: #1d2433; } .soft { fill: #5b6475; }
+    .ok { fill: #e6f2ef; stroke: #2f8f83; stroke-width: 1.5; } .wait { fill: #fbeae4; stroke: #e8673c; stroke-width: 1.5; }
+    .okdot { fill: #2f8f83; } .waitdot { fill: #e8673c; }
+    text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #141922; } .ink { fill: #eef0f4; } .soft { fill: #a3abba; }
+      .ok { fill: #18302d; } .wait { fill: #3a2219; }
+    }
+  </style>
+  <rect class="bg" width="1200" height="300" rx="24"/>
+  <g transform="translate(48 40)">
+    <rect class="ok" width="532" height="220" rx="18"/>
+    <text class="ink" x="28" y="46" font-size="21" font-weight="700">Agents do this on their own</text>
+    <g font-size="17">
+      <circle class="okdot" cx="38" cy="90" r="6"/><text class="soft" x="56" y="96">Read, research and ask you questions</text>
+      <circle class="okdot" cx="38" cy="126" r="6"/><text class="soft" x="56" y="132">Write plans, designs and drafts</text>
+      <circle class="okdot" cx="38" cy="162" r="6"/><text class="soft" x="56" y="168">Write code and test it</text>
+      <circle class="okdot" cx="38" cy="198" r="6"/><text class="soft" x="56" y="204">Suggest how to save money</text>
+    </g>
+  </g>
+  <g transform="translate(620 40)">
+    <rect class="wait" width="532" height="220" rx="18"/>
+    <text class="ink" x="28" y="46" font-size="21" font-weight="700">Always waits for your yes</text>
+    <g font-size="17">
+      <circle class="waitdot" cx="38" cy="90" r="6"/><text class="soft" x="56" y="96">Going live, or changing anything that is live</text>
+      <circle class="waitdot" cx="38" cy="126" r="6"/><text class="soft" x="56" y="132">Spending money, sending messages</text>
+      <circle class="waitdot" cx="38" cy="162" r="6"/><text class="soft" x="56" y="168">Deleting anything, touching real customer data</text>
+      <circle class="waitdot" cx="38" cy="198" r="6"/><text class="soft" x="56" y="204">Prices, targets and accepting a legal risk</text>
+    </g>
+  </g>
+</svg>

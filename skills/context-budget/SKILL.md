@@ -1,0 +1,27 @@
+---
+name: context-budget
+description: How to spend context - open what the task names, grep before reading, read ranges, prefer a checker's output, say what was opened. Use on every task; it is what keeps a long change from losing its own thread halfway.
+---
+
+# Context is a budget
+
+Every file read costs tokens, money and, worst, the thread of the work when the context fills
+and gets compacted halfway through a change. Spend it on purpose.
+
+- **Open the file the task names,** not its neighbours.
+- **Grep before reading.** An id, a symbol or a function name lands on the line, and the line is
+  often the whole answer.
+- **Read a range** of a long file, not the whole file. `docs/HISTORY.md` and the requirement set
+  are never read whole.
+- **Prefer a checker's output** to the source it checks.
+- **Pass artifacts by path.** A hand-off names the file; it does not paste it.
+- **Say what you opened** in your hand-back, so the next agent does not open it again.
+
+This never buys tokens with accuracy. If the answer needs the file, read the file. A wrong
+answer costs more than any read.
+
+## Keep the shared files small
+
+`AGENTS.md`, each agent file and each `SKILL.md` stay short enough to be loaded every time
+without thought. Detail goes in a sibling file the skill points to. The sweep warns when one
+grows past its budget.

@@ -1,0 +1,11 @@
+#!/bin/sh
+# Refuses commit messages that break the project's commit rules. See tools/githooks/commit_msg.py.
+# Enable with: git config core.hooksPath tools/githooks
+# Pick an interpreter that actually runs: on Windows "python3" can be a Store stub
+# that command -v finds but that only prints an install hint.
+PY=""
+for c in python3 python py; do
+  if command -v "$c" >/dev/null 2>&1 && "$c" -c "import sys; sys.exit(sys.version_info < (3, 11))" >/dev/null 2>&1; then PY=$c; break; fi
+done
+[ -n "$PY" ] || { echo "githooks: no Python 3.11 or newer found on PATH" >&2; exit 1; }
+exec "$PY" "$(dirname "$0")/commit_msg.py" "$1"
