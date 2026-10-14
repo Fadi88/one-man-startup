@@ -106,6 +106,11 @@ policy and terms, marked for a lawyer to review. Before launching, especially wi
 health data, children or financial data, have a lawyer review them. You'll arrive with a list
 of specific questions instead of a blank page.
 
+**Free tiers are strict.** If your product has a free plan or a trial, the agents build hard
+limits into it from the first version: a cap per user, a tighter one for people who haven't
+signed up, and a daily ceiling on what the free plan can spend in total. You choose the numbers.
+Without limits, anyone who finds the free plan, including bots, can run up your bill.
+
 **Costs can add up.** Every agent run uses your AI subscription. The optimizer agent looks for
 waste, such as an agent using a stronger model than its job needs, and suggests savings. You
 approve each one.

@@ -19,7 +19,14 @@ skills:
 ## Inputs
 
 `project.toml [product]`: who the customer is, how big, where. Research competitors and the
-market on the web, and cite and date what you use.
+market on the web, and cite and date what you use. For a consumer product
+(`customer_size = consumers`), work from `docs/playbooks/b2c-organic-growth.md`.
+
+## The free tier is strict
+
+Never propose a free tier, trial or referral reward without its hard limits: a per-user cap on
+every action that costs money, a tighter cap for use without sign-up, and a global daily
+ceiling (playbook section 2). The founder sets the numbers; you bring the cost per action.
 
 ## Outputs
 

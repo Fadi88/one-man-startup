@@ -42,6 +42,10 @@ data protection law) you look up. Write nothing until the founder confirms the s
 - `docs/requirements/p1-open-questions.md`: what the founder deferred, and what each blocks.
 - Requirement rows marked `X` for what customer size and domain imply (an enterprise customer
   implies SSO and a DPA; consumers in the EU imply cookie consent and data export).
+- If the product has a free tier or a trial: requirement rows marked `X` for its caps (per user,
+  per device without sign-up, a global daily spend ceiling), with the numbers left for the
+  founder to set once the prototype has measured the cost per action. A free tier with no caps
+  is not offered as an option.
 - `git config user.name` and `user.email` set to the founder, and
   `git config core.hooksPath tools/githooks`.
 

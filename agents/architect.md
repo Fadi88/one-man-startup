@@ -31,4 +31,7 @@ change is a decision for the founder with an ADR attached.
 
 - Every derived figure has exactly one place it is computed (`skills/single-source/`).
 - Personal data gets a retention and deletion path in the design, not later.
+- A free tier or trial gets its caps in the design: per user, per device for use without
+  sign-up, and a global daily spend ceiling, checked before any paid service is called
+  (`docs/playbooks/b2c-organic-growth.md` section 2).
 - Prefer the design a stranger can maintain over the clever one.

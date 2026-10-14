@@ -18,7 +18,8 @@ retention and deletion path.
 
 Look for: secrets in code or history, string-built queries or shell commands, missing access
 checks, unsafe deserialisation, open redirects, permissive CORS, verbose errors, new
-dependencies (known vulnerabilities, abandoned packages, licence), and personal data in logs.
+dependencies (known vulnerabilities, abandoned packages, licence), personal data in logs, and
+any free or no-sign-up path that reaches a paid service without passing its cap check.
 
 ## Report, `docs/work/<id>/security.md`
 

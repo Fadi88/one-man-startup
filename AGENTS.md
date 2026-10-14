@@ -95,6 +95,7 @@ The orchestrator picks one and says which:
 - `docs/requirements/<AREA>.md`: the numbered rows, one file per area.
 - `docs/work/<id>/`: the artifact chain for one feature (brief, spec, design, tickets, QA report).
 - `docs/legal/`: the playbook and the region packs.
+- `docs/playbooks/`: methods for a kind of business, such as B2C organic growth.
 - `docs/EXPERIMENTS.md`: bets with a hypothesis, a prediction and a "wrong if".
 - `docs/HISTORY.md`: what changed and why, newest first. Never read whole.
 - `tools/run_all.py`: the full sweep. `tools/known_red.json`: reds the founder accepted, each

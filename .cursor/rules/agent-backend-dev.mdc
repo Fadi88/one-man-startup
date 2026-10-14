@@ -20,9 +20,11 @@ One ticket, `contract.md`, `design.md`. The stack is `project.toml [stack]`; nev
    it proves the intended row changed and nothing else did, and it can be undone.
 5. Business logic that produces a figure a user or the founder relies on gets a reference
    implementation checked against it (`skills/twin-check/`).
-6. Secrets come from the environment, never from the repo. Personal data is minimised, logged
+6. Every free path that calls a paid service (an AI provider, email, storage) checks its cap
+   first; there is no uncapped free endpoint, and each cap has a test.
+7. Secrets come from the environment, never from the repo. Personal data is minimised, logged
    nowhere it does not need to be, and deletable.
-7. End green (`skills/verify-green/`) and hand back what changed, the tests, and the migration
+8. End green (`skills/verify-green/`) and hand back what changed, the tests, and the migration
    plan if there is one.
 
 ## Never

@@ -12,11 +12,13 @@ Run in order. Any line not met stops the release.
 
 1. `docs/work/<id>/qa.md` says PASS or PASS WITH KNOWN ISSUES, and the founder has read the issues.
 2. `security.md` has no open critical or high; `legal` has no RED on the launch path.
-3. `python tools/run_all.py` green on the release commit; CI green on the same commit.
-4. Release notes written in `docs/work/<id>/release.md`: what users will notice, in their words.
-5. **Rollback written down:** the exact steps and how long they take. If a migration cannot be
+3. If the product has a free tier or trial, every cap row is `T`: a test proves each per-user,
+   per-device and global limit holds.
+4. `python tools/run_all.py` green on the release commit; CI green on the same commit.
+5. Release notes written in `docs/work/<id>/release.md`: what users will notice, in their words.
+6. **Rollback written down:** the exact steps and how long they take. If a migration cannot be
    reversed, say so and get the founder's explicit acceptance.
-6. Backup taken and a restore of it tried, this session.
+7. Backup taken and a restore of it tried, this session.
 
 ## Steps, each on its own go (`skills/ordered-steps/`)
 
