@@ -20,6 +20,8 @@ description: "The optimizer's method for finding cost and waste in the agent wor
 
 ## Look for
 
+- Savings counted before they were measured, such as prompt caching assumed in a cost table.
+  Caches are specific to one provider and expire, so failover and low traffic both erase them.
 - An agent on the deep tier doing checklist work, or a fast-tier agent whose work keeps coming
   back from review (too cheap is also waste).
 - Work that went down the feature track and should have been a fix, or the reverse.

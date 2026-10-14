@@ -54,6 +54,9 @@ How the caps are counted:
   (mobile carriers, offices), so an address-only limit blocks real customers. Combine signals
   (a signed cookie, the address range, the connection's characteristics); `legal` checks that
   the combination is allowed under each region's privacy rules before it ships.
+- **Mobile apps can prove they are the real app.** Where the product has a store app, the
+  platforms' app attestation services (Apple App Attest, Google Play Integrity) let free-tier
+  endpoints accept calls only from the genuine app, alongside or instead of a bot challenge.
 - **Reserve before the call, give it back on failure.** The cost of an action is counted before
   the paid service is called, and returned automatically if the call fails, so a provider error
   never eats a user's allowance or turns into a support ticket.
@@ -153,6 +156,12 @@ function, and linking to an outside payment page is restricted, with rules that 
   sign-in, and whatever the user made before signing in moves into their new account.
 - **Measure the funnel** (landing, first result, sign-up, payment) from the first version, and
   work on the step that loses the most people.
+- **Web to app without starting over.** When a free web tool leads into an app, what the user did
+  on the web is waiting in the app after install (through a sign-in link, or a deferred deep link
+  where the platform supports it), so nobody re-enters what they already gave.
+- **The paywall is an experiment too:** where it appears, what it says and which plan it shows
+  first are each tested with a prediction and a read date, never changed on a hunch, and never
+  with pressure tactics (`agents/frontend-dev.md`, no dark patterns).
 - **Sign-in:** the fewest options the audience needs; one-tap providers where they fit.
 - **Pricing:** anchored to what the problem costs the customer today. Free and paid tiers shown
   plainly; cancelling is as easy as subscribing; no renewal traps. Price: **Founder decides**.
@@ -224,7 +233,7 @@ founder decision checked against this table, never a claim.
 | minus app store commission, if the product is in a store | | the store's official page, dated |
 | minus payment processing fees | | the processor's pricing page, dated |
 | minus VAT or sales tax | | per market, sourced |
-| minus cost of the paying user's own usage | | measured in the prototype |
+| minus cost of the paying user's own usage | | measured in the prototype; count savings from prompt caching or batching only once measured, since caches belong to one provider and expire |
 | minus cost of free users, per paying user | | measured, divided by the conversion rate |
 | **= net per paying user** | | |
 

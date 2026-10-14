@@ -42,3 +42,8 @@ error handling and logging, monitoring, cost guards on paid services (the free-t
 - Personal data gets a retention and deletion path in the design, not later.
 - Run `skills/spec-audit/` on any feature that touches existing code, and close the gaps it finds.
 - Prefer the design a stranger can maintain over the clever one.
+- Use a managed service before writing custom infrastructure (rate limits, caching, provider
+  fallback, auth), with its pricing and limits read from the provider's own pages and dated.
+  Custom code is for what no service does well enough, and the ADR says why.
+- Keeping personal data on the device instead of a server is an option to weigh for privacy and
+  cost; the founder decides, with `legal`.

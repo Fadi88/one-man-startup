@@ -21,7 +21,8 @@ Grade each item GREEN, YELLOW, RED or UNSETTLED per feature or launch (`skills/l
 - **Data protection:** lawful basis for each use of personal data; privacy notice contents;
   user rights (access, correction, deletion, export, objection) and response times; breach
   notification (to whom, how fast); records of processing; data protection officer or
-  representative if required; children's data and age thresholds.
+  representative if required; children's data and age thresholds; special categories (health,
+  biometrics, and any others the region names) and the consent or legal basis they need.
 - **Cross-border transfer:** may personal data leave the region, and on what basis.
 - **Consent and tracking:** cookies, analytics and marketing consent rules.
 - **Consumer law:** pricing display, subscriptions and auto-renewal, cancellation (including

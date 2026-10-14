@@ -47,6 +47,11 @@ they say. A project made from the template keeps them as background and adds its
   on value and one-click export; AI transparency and self-serve deletion, export and invoices.
   The region pack template gains withdrawal waivers, exit offers, pre-selection, AI content
   marking and device identifiers. Decided by Fadi. Reopen: a project's own evidence.
+- **2026-10-14. From the repository audit of 14 October, kept as methods:** carrying web work
+  into the app after install; app attestation for free-tier endpoints; caching savings counted
+  only once measured; a managed service before custom infrastructure; the paywall as an
+  experiment; special categories of data in the region packs; data kept on the device as an
+  option. Decided by Fadi.
 - **2026-10-14. No separate designer.** The frontend developer designs and builds the user's
   side, using the frontend-design skill; the architect is the software architect for the whole
   system; the backend developer builds the server side. Decided by Fadi. Reopen: if design work

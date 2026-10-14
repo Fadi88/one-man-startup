@@ -43,6 +43,26 @@ Options proposed by the assistant building the template and declined by Fadi.
   Fadi, 14 October 2026: design belongs to the frontend developer, with a software architect
   over the whole system.
 
+### From the repository audit (14 October 2026)
+
+Proposed in an audit of the strategy drafts that read them as the repository; rejected by Fadi
+on review. The useful methods went into the playbook, the architect and the region template.
+
+- **Unsourced figures:** 60 to 80 percent drop-off from web to app, viral K-factors of 0.05 to
+  0.15, a 22 percent payment haircut, 3.2 months of average subscription life, 85 percent
+  bounce on calculator searches, 0 to 15 percent cache hits, refunds of 3 to 5 percent. Rule 11.
+- **Competitor claims without sources:** Cal AI's revenue and its 424 paywall variants,
+  MacroFactor's and Hevy's growth, Pieter Levels keeping 97 percent of revenue. Rule 11.
+- **Programmatic pages on a separate domain to protect the main one.** An SEO claim with no
+  source.
+- **"Web checkout before install bypasses store commission legally."** Store payment rules
+  differ by region; the playbook sends this to `legal`.
+- **A 12 to 15 screen questionnaire to build sunk cost before the paywall, with an annual trial
+  by default.** Onboarding used as pressure; ruled out by the no-dark-patterns rule.
+- **Storing all user data on the device as the default architecture.** Kept only as an option.
+- **The audit's citation of the UAE data protection law as Decree-Law No. 44 of 2021.** The
+  packs cite No. 45 of 2021.
+
 ### From the B2C strategy drafts
 
 Proposals from the B2C strategy drafts (v1, v2 and review cycle 3, all 14 October 2026) that
