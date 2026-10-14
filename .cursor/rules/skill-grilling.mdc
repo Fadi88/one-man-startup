@@ -46,3 +46,11 @@ ask which wins.
 The session ends when the frontier is empty: every branch visited, nothing assumed. Then write
 the outcome down (the spec, the decision rows, `project.toml`, whatever the caller asked for),
 show it, and **do not act on it until the founder confirms it is what they meant.**
+
+## Record what was turned down
+
+Every recommendation or option the founder declined in any round goes into
+`docs/requirements/p1-rejected.md` the same day: the date, what was proposed, who proposed it,
+and the founder's reason (or "no reason given"). Every option they chose goes into
+`p1-closed-decisions.md`. A grilling whose rejected options are not written down will be
+re-asked next month as if it never happened.

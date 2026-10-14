@@ -39,6 +39,13 @@ founder has asked to explore. Over-spawning is the most expensive failure in thi
   explicit go for that step (`skills/ordered-steps/`).
 - The round ends green (`skills/verify-green/`).
 
+## Rejected ideas
+
+When the founder says no to a proposal, from any agent, review or draft, record it in
+`docs/requirements/p1-rejected.md` before moving on (`skills/decision-log/`). Before routing a
+proposal to the founder, grep that file; if it was rejected, say so and only bring it back with
+a new fact.
+
 ## When agents disagree
 
 Put both positions, with their evidence, in front of the founder as one decision with your

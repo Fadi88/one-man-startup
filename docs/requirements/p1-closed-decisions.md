@@ -39,6 +39,9 @@ they say. A project made from the template keeps them as background and adds its
 - **2026-10-14. Growth ideas run as experiments** with a prediction, a "wrong if" and a read
   date, and the roadmap validates (smoke test, prototype) before it builds. Reason: a plan with
   no number that can fail teaches nothing. Decided by Fadi, from the review of strategy v2.
+- **2026-10-14. Every rejected idea is recorded** (constitution rule 13), in
+  `p1-rejected.md` the same day, whoever proposed it. Reason: without it, settled proposals come
+  back as if new. Decided by Fadi, 14 October 2026.
 - **2026-10-14. No unconfirmed assumptions** (constitution rule 11). Facts in anything the
   founder or a user reads are sourced, tested or measured, registered as assumptions, or cut.
   Decided by Fadi, 14 October 2026.

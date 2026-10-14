@@ -9,6 +9,31 @@ Newest first. Each entry: date, the proposal, who proposed it, the reason it was
 
 ## About the template itself
 
+### From the grilling that shaped the template, 14 October 2026
+
+Options proposed by the assistant building the template and declined by Fadi.
+
+- **Building the template inside the NutritionTracker repository.** Declined: the template is a
+  separate public project (`Fadi88/one-man-startup`).
+- **Claude Code only, or one plan tier only.** Declined: the template works with any AI coding
+  tool. One source in plain Markdown, with generated adapters per tool.
+- **Lighter gates for the template itself.** Declined: the template is strict. Projects made
+  from it are asked at setup and recommended strict; the founder decides.
+- **A default tech stack baked in.** Declined: the setup agent picks the stack with the founder.
+- **An optimizer that applies its own changes**, even safe ones. Declined: it proposes; the
+  founder decides each change.
+- **A legal agent that writes final, publish-ready documents, or only checklists.** Declined
+  both: checklists and drafts, always flagged as not legal advice.
+- **Private or commercial licence.** Declined: public on GitHub under MIT.
+- **Technical founders as the primary audience.** Chosen at first, then reversed by Fadi the
+  same day: the template is positioned for non-technical founders first; developers can use it
+  too.
+- **Filling the B2C strategy with a real product** (one of the founder's own apps was offered
+  as a candidate), **a first market, a platform, and keeping the strategy in a product
+  repository.** Declined: the template starts no startup; these are each founder's to decide.
+
+### From the B2C strategy drafts
+
 Proposals from the B2C strategy drafts (v1, v2 and review cycle 3, all 14 October 2026) that
 were reviewed and left out of `docs/playbooks/b2c-organic-growth.md`. Proposed in the drafts;
 rejected by Fadi on review. The useful parts of each draft went into the playbook.

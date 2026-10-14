@@ -45,6 +45,11 @@ says so; it never works around it.
 12. **Code like a careful senior engineer.** Think before coding, keep it simple, change only
     what the task needs, and define how success is checked before starting
     (`skills/karpathy-guidelines/`).
+13. **Record every rejected idea.** When the founder turns down a proposal, from an agent, a
+    grilling round, a review or a pasted draft, it goes into `docs/requirements/p1-rejected.md`
+    the same day with the date, who proposed it and the reason. What they chose goes into
+    `p1-closed-decisions.md`. Check both before proposing anything; a rejected idea comes back
+    only with a new fact (`skills/decision-log/`).
 
 ## Talking to the founder
 
