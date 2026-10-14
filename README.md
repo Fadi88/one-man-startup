@@ -1,24 +1,49 @@
 <p align="center">
-  <img src="docs/images/hero.svg" alt="One-man startup: build real software without a tech team. You make the decisions, AI agents do the work." width="100%">
+  <img src="docs/images/hero.svg" alt="One-man startup: build a software startup without writing code. Not vibe coding: a proven team workflow, run by AI agents. You make the decisions." width="100%">
 </p>
 
 # One-man startup
 
-You have an idea for an app or an online business, and no one to build it. This template gives
-you a small team of AI agents that plan, build, test and launch it with you. You don't need to
-know how to code. You need to know your customers and be willing to make decisions.
+**Build a software startup without writing code.**
 
-The agents act like the first hires of a startup: a project manager, developers, a tester, a
-security reviewer, someone who checks the legal side, someone for marketing, a social media
-strategist who drafts your posts (you decide what gets posted), and one whose only job is to keep
-your AI bill down. They ask you questions, explain their choices in plain words,
-and never go live, spend money or delete anything without your yes.
+You have an idea for an app or an online business, and no one to build it. This template gives
+you a small team of AI agents that plan, build, test and launch it with you. You never write
+code, and you don't need to read it. You need to know your customers and be willing to make
+decisions.
+
+## This is not vibe coding
+
+Vibe coding means describing what you want to an AI, accepting whatever it writes, and asking
+again when something breaks. It is fast for a demo. It tends to end in an app that half works,
+that nobody understands, and that gets more fragile with every fix.
+
+This template works the other way. It follows the structure that established software teams
+use: the work is written down before it is built, designed before it is coded, tested by
+someone other than whoever built it, and released only when the person in charge approves. The
+AI agents fill the roles; the workflow is the traditional one. Every step has a standard name
+you can look up:
+
+| What happens here | The established practice |
+|---|---|
+| Before anything is built, you are interviewed about who needs it, the smallest useful version and what happens when it goes wrong. | Requirements elicitation and product discovery |
+| Everything the product must do is written as a numbered requirement, and every change names the requirement it serves. | Requirements traceability |
+| Building can't start until the spec is confirmed and no question on it is still open. | Definition of Ready |
+| An architect designs the system and records each hard-to-reverse choice with its reason. | Architecture Decision Records |
+| Developers write the test before the code. | Test-driven development |
+| A separate tester checks the work against the requirements and can stop a release. | Independent QA and a release gate |
+| A security reviewer looks for ways data could leak or be misused. | Security review and threat modelling |
+| Every change re-runs every check, and a round of work ends only when they all pass. | Continuous integration |
+| Nothing goes live, costs money or deletes data without your approval, one step at a time. | Change approval and release management |
+| Decisions, and the ideas you turned down, are written down with the reason. | Decision log |
+
+What changes is who does the work, not how it is done. You play the founder and the final
+approver; the agents play the team.
 
 ## Who it's for
 
 - You have a business idea and no technical co-founder.
-- You've tried "just ask the AI to build it" and ended up with something that half works and
-  that nobody can maintain.
+- You've tried vibe coding, "just ask the AI to build it", and ended up with something that half
+  works and that nobody can maintain.
 - You want to understand what is being built and why, without learning to program first.
 
 Developers who work alone can use it too, for the discipline of a team without hiring one.
@@ -57,8 +82,8 @@ switches on only the ones your project needs now, and you can add more later.
 
 <p align="center"><img src="docs/images/your-call.svg" alt="Agents read, draft, write code and test on their own. Going live, spending money, deleting, sending messages, prices and legal risks wait for your yes." width="100%"></p>
 
-The agents can be wrong, and sometimes confidently wrong. So the template builds in a few habits
-that real teams use:
+The agents can be wrong, and sometimes confidently wrong. That is why the workflow above has a
+check at every step. The ones you'll notice most:
 
 - **Write it down first.** Every feature is described in plain words before any code is written,
   so you can check it's what you meant.

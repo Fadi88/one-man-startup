@@ -22,3 +22,4 @@ area files beside them.
 | TPL-15 | (A-2 to A-5) The template works from Claude Code, Codex, Gemini CLI and Cursor: each reads `AGENTS.md`, and the native agents and skills are generated where the tool supports them. | U |
 | TPL-16 | Every open assumption in `docs/ASSUMPTIONS.md` has a way to confirm it and a confirm-by date that has not passed, and every settled one says what settled it. | T |
 | TPL-17 | Text copied verbatim from upstream (the Karpathy guidelines, Anthropic's frontend-design skill) stays unchanged, pinned by hash in `tools/lib/verbatim.py`, so it can be compared with upstream. | T |
+| TPL-18 | The README opens with the premise, building a software startup without writing code, says plainly that this is not vibe coding, and shows each step of the workflow beside the established software practice it follows. | M |

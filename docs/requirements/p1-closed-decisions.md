@@ -12,6 +12,13 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. A project made from the template keeps them as background and adds its own above.
 
+- **2026-10-14. The premise is building a software startup without writing code, and it is not
+  vibe coding.** The README leads with that line and shows each step of the workflow beside the
+  established practice it follows (TPL-18). Reason: the old line, "build real software without
+  a tech team", did not say why the result can be trusted; the answer is that the agents follow
+  the traditional, well-structured software workflow rather than prompting until it seems to
+  work. Decided by Fadi. Reopen: if founders read "without writing code" as a promise that no
+  technical judgement is ever needed.
 - **2026-10-14. The B2C playbook names no product, market, platform or price.** It is a method
   for any consumer product; the founder fills those in at setup and in each grilling. Reason:
   the template is meant for any project. Decided by Fadi, answering the grilling on strategy
