@@ -1,39 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" role="img" aria-labelledby="t d">
   <title id="t">From idea to launch</title>
-  <desc id="d">Five steps: tell it about your business, get grilled on each idea, the agents build it, they check it, and you say go before anything goes live.</desc>
+  <desc id="d">Five steps, each a standard software practice: set up (product discovery), get grilled on each idea (requirements first), the agents build it (test-driven development), they check it (QA and security review), and you say go before anything goes live (release approval).</desc>
   <style>
-    .bg { fill: #f7f5f0; } .card { fill: #ffffff; stroke: #e2ddd2; stroke-width: 1.5; }
-    .ink { fill: #1d2433; } .soft { fill: #5b6475; } .arrow { stroke: #b9b2a3; stroke-width: 2.5; fill: none; }
-    .head { fill: #b9b2a3; } .you { fill: #1d2433; } .youtxt { fill: #f7f5f0; }
-    .n1 { fill: #e8673c; } .n2 { fill: #d04a6b; } .n3 { fill: #2f8f83; } .n4 { fill: #4a6cd4; } .n5 { fill: #8a55c7; }
+    .bg1 { stop-color: #fcfaf6; } .bg2 { stop-color: #f1ebe0; }
+    .card { fill: #ffffff; stroke: #e7e1d5; stroke-width: 1; }
+    .ink { fill: #1d2433; } .soft { fill: #5b6475; } .rule { stroke: #eee8dd; stroke-width: 1.5; }
+    .track { stroke: #d9d2c4; stroke-width: 3; fill: none; stroke-linecap: round; }
+    .head { fill: #c3bcad; } .num { fill: #ffffff; } .label { fill: #8a8f9a; }
+    .n1 { fill: #e8673c; } .n2 { fill: #d04a6b; } .n3 { fill: #2f8f83; } .n4 { fill: #4a6cd4; } .n5 { fill: #1d2433; }
+    .t1 { fill: #c4481f; } .t2 { fill: #b13456; } .t3 { fill: #23766c; } .t4 { fill: #3655b8; } .t5 { fill: #1d2433; }
     text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     @media (prefers-color-scheme: dark) {
-      .bg { fill: #141922; } .card { fill: #1d2430; stroke: #2e3746; } .ink { fill: #eef0f4; } .soft { fill: #a3abba; }
-      .arrow { stroke: #4a5363; } .head { fill: #4a5363; } .you { fill: #f2efe8; } .youtxt { fill: #141922; }
+      .bg1 { stop-color: #1a2131; } .bg2 { stop-color: #0e121a; }
+      .card { fill: #1f2734; stroke: #313a4a; } .ink { fill: #eef0f4; } .soft { fill: #a3abba; } .rule { stroke: #2c3544; }
+      .track { stroke: #3a4354; } .head { fill: #4a5363; } .label { fill: #7c8596; }
+      .n5 { fill: #f2efe8; } .num5 { fill: #141922; }
+      .t1 { fill: #f39a76; } .t2 { fill: #ee8aa6; } .t3 { fill: #6cc7bb; } .t4 { fill: #93abf0; } .t5 { fill: #eef0f4; }
     }
   </style>
-  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head" d="M0 0 L10 5 L0 10 z"/></marker></defs>
-  <rect class="bg" width="1200" height="330" rx="24"/>
-  <text class="ink" x="48" y="58" font-size="26" font-weight="700">From idea to launch</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="bg1"/><stop offset="1" class="bg2"/></linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#1d2433" flood-opacity="0.10"/></filter>
+    <marker id="a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path class="head" d="M0 0 L10 5 L0 10 z"/></marker>
+  </defs>
+  <rect width="1200" height="380" rx="24" fill="url(#bg)"/>
+  <text class="ink" x="40" y="58" font-size="26" font-weight="700">From idea to launch</text>
+  <text class="soft" x="40" y="84" font-size="15">Each step is a standard software practice, not a prompt and a hope.</text>
 
   <g font-size="15">
-    <g transform="translate(48 96)"><rect class="card" width="196" height="196" rx="18"/><circle class="n1" cx="34" cy="38" r="18"/><text class="youtxt" x="34" y="44" font-size="16" font-weight="700" text-anchor="middle" style="fill:#fff">1</text>
-      <text class="ink" x="20" y="92" font-size="18" font-weight="700">Set up</text>
-      <text class="soft" x="20" y="120">Answer questions about</text><text class="soft" x="20" y="140">your business, country</text><text class="soft" x="20" y="160">and customers.</text></g>
-    <g transform="translate(276 96)"><rect class="card" width="196" height="196" rx="18"/><circle class="n2" cx="34" cy="38" r="18"/><text x="34" y="44" font-size="16" font-weight="700" text-anchor="middle" style="fill:#fff">2</text>
-      <text class="ink" x="20" y="92" font-size="18" font-weight="700">Get grilled</text>
-      <text class="soft" x="20" y="120">Every idea is questioned</text><text class="soft" x="20" y="140">until it is clear, each</text><text class="soft" x="20" y="160">with a suggested answer.</text></g>
-    <g transform="translate(504 96)"><rect class="card" width="196" height="196" rx="18"/><circle class="n3" cx="34" cy="38" r="18"/><text x="34" y="44" font-size="16" font-weight="700" text-anchor="middle" style="fill:#fff">3</text>
-      <text class="ink" x="20" y="92" font-size="18" font-weight="700">Build</text>
-      <text class="soft" x="20" y="120">Agents design and write</text><text class="soft" x="20" y="140">the app, testing as they</text><text class="soft" x="20" y="160">go.</text></g>
-    <g transform="translate(732 96)"><rect class="card" width="196" height="196" rx="18"/><circle class="n4" cx="34" cy="38" r="18"/><text x="34" y="44" font-size="16" font-weight="700" text-anchor="middle" style="fill:#fff">4</text>
-      <text class="ink" x="20" y="92" font-size="18" font-weight="700">Check</text>
-      <text class="soft" x="20" y="120">Testing, security and a</text><text class="soft" x="20" y="140">legal checklist for your</text><text class="soft" x="20" y="160">countries.</text></g>
-    <g transform="translate(960 96)"><rect class="card" width="196" height="196" rx="18"/><circle class="you" cx="34" cy="38" r="18"/><text class="youtxt" x="34" y="44" font-size="16" font-weight="700" text-anchor="middle">5</text>
-      <text class="ink" x="20" y="92" font-size="18" font-weight="700">You say go</text>
-      <text class="soft" x="20" y="120">Nothing goes live, gets</text><text class="soft" x="20" y="140">paid for or deleted until</text><text class="soft" x="20" y="160">you approve it.</text></g>
+    <g transform="translate(40 112)">
+      <rect class="card" width="204" height="232" rx="18" filter="url(#sh)"/>
+      <circle class="n1" cx="38" cy="40" r="26" opacity="0.15"/><circle class="n1" cx="38" cy="40" r="18"/><text class="num" x="38" y="46" font-size="16" font-weight="700" text-anchor="middle">1</text>
+      <text class="ink" x="20" y="96" font-size="19" font-weight="700">Set up</text>
+      <text class="soft" x="20" y="122">Answer questions about</text><text class="soft" x="20" y="142">your business, country</text><text class="soft" x="20" y="162">and customers.</text>
+      <path class="rule" d="M20 182 H184"/>
+      <text class="label" x="20" y="202" font-size="11" font-weight="700" letter-spacing="1.2">PRACTICE</text>
+      <text class="t1" x="20" y="220" font-size="13" font-weight="700">Product discovery</text>
+    </g>
+    <g transform="translate(270 112)">
+      <rect class="card" width="204" height="232" rx="18" filter="url(#sh)"/>
+      <circle class="n2" cx="38" cy="40" r="26" opacity="0.15"/><circle class="n2" cx="38" cy="40" r="18"/><text class="num" x="38" y="46" font-size="16" font-weight="700" text-anchor="middle">2</text>
+      <text class="ink" x="20" y="96" font-size="19" font-weight="700">Get grilled</text>
+      <text class="soft" x="20" y="122">Every idea is questioned</text><text class="soft" x="20" y="142">until it is clear, each</text><text class="soft" x="20" y="162">with a suggested answer.</text>
+      <path class="rule" d="M20 182 H184"/>
+      <text class="label" x="20" y="202" font-size="11" font-weight="700" letter-spacing="1.2">PRACTICE</text>
+      <text class="t2" x="20" y="220" font-size="13" font-weight="700">Requirements first</text>
+    </g>
+    <g transform="translate(500 112)">
+      <rect class="card" width="204" height="232" rx="18" filter="url(#sh)"/>
+      <circle class="n3" cx="38" cy="40" r="26" opacity="0.15"/><circle class="n3" cx="38" cy="40" r="18"/><text class="num" x="38" y="46" font-size="16" font-weight="700" text-anchor="middle">3</text>
+      <text class="ink" x="20" y="96" font-size="19" font-weight="700">Build</text>
+      <text class="soft" x="20" y="122">Agents design and write</text><text class="soft" x="20" y="142">the app, each test</text><text class="soft" x="20" y="162">before its code.</text>
+      <path class="rule" d="M20 182 H184"/>
+      <text class="label" x="20" y="202" font-size="11" font-weight="700" letter-spacing="1.2">PRACTICE</text>
+      <text class="t3" x="20" y="220" font-size="13" font-weight="700">Test-driven development</text>
+    </g>
+    <g transform="translate(730 112)">
+      <rect class="card" width="204" height="232" rx="18" filter="url(#sh)"/>
+      <circle class="n4" cx="38" cy="40" r="26" opacity="0.15"/><circle class="n4" cx="38" cy="40" r="18"/><text class="num" x="38" y="46" font-size="16" font-weight="700" text-anchor="middle">4</text>
+      <text class="ink" x="20" y="96" font-size="19" font-weight="700">Check</text>
+      <text class="soft" x="20" y="122">Testing, security and a</text><text class="soft" x="20" y="142">legal checklist for your</text><text class="soft" x="20" y="162">countries.</text>
+      <path class="rule" d="M20 182 H184"/>
+      <text class="label" x="20" y="202" font-size="11" font-weight="700" letter-spacing="1.2">PRACTICE</text>
+      <text class="t4" x="20" y="220" font-size="13" font-weight="700">QA and security review</text>
+    </g>
+    <g transform="translate(960 112)">
+      <rect class="card" width="204" height="232" rx="18" filter="url(#sh)"/>
+      <circle class="n5" cx="38" cy="40" r="26" opacity="0.15"/><circle class="n5" cx="38" cy="40" r="18"/><text class="num num5" x="38" y="46" font-size="16" font-weight="700" text-anchor="middle">5</text>
+      <text class="ink" x="20" y="96" font-size="19" font-weight="700">You say go</text>
+      <text class="soft" x="20" y="122">Nothing goes live, gets</text><text class="soft" x="20" y="142">paid for or deleted until</text><text class="soft" x="20" y="162">you approve it.</text>
+      <path class="rule" d="M20 182 H184"/>
+      <text class="label" x="20" y="202" font-size="11" font-weight="700" letter-spacing="1.2">PRACTICE</text>
+      <text class="t5" x="20" y="220" font-size="13" font-weight="700">Release approval</text>
+    </g>
   </g>
-  <g class="arrow" marker-end="url(#a)">
-    <path d="M246 194 L272 194"/><path d="M474 194 L500 194"/><path d="M702 194 L728 194"/><path d="M930 194 L956 194"/>
+  <g class="track" marker-end="url(#a)">
+    <path d="M247 152 L266 152"/><path d="M477 152 L496 152"/><path d="M707 152 L726 152"/><path d="M937 152 L956 152"/>
   </g>
 </svg>

@@ -23,3 +23,4 @@ area files beside them.
 | TPL-16 | Every open assumption in `docs/ASSUMPTIONS.md` has a way to confirm it and a confirm-by date that has not passed, and every settled one says what settled it. | T |
 | TPL-17 | Text copied verbatim from upstream (the Karpathy guidelines, Anthropic's frontend-design skill) stays unchanged, pinned by hash in `tools/lib/verbatim.py`, so it can be compared with upstream. | T |
 | TPL-18 | The README opens with the premise, building a software startup without writing code, says plainly that this is not vibe coding, and shows each step of the workflow beside the established software practice it follows. | M |
+| TPL-19 | The README shows the template's architecture as a diagram (the founder, the AI tool, the instructions it reads, the files it writes and the checks it runs), and every diagram in `docs/images/` reads in both light and dark themes. | M |

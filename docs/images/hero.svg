@@ -1,40 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" role="img" aria-labelledby="t d">
   <title id="t">One-man startup</title>
-  <desc id="d">You sit in the middle and decide. Around you, AI agents plan, build, test, check the law, launch and grow your product.</desc>
+  <desc id="d">Build a software startup without writing code. Not vibe coding: a proven team workflow in which you sit in the middle and decide, and AI agents plan, build, test, check the law, launch and grow your product.</desc>
   <style>
-    .bg { fill: #f7f5f0; }
-    .ink { fill: #1d2433; }
-    .soft { fill: #5b6475; }
-    .line { stroke: #c9c3b6; stroke-width: 2; fill: none; stroke-dasharray: 4 6; }
-    .you { fill: #1d2433; }
-    .youtxt { fill: #f7f5f0; }
-    .chip { fill: #ffffff; stroke: #e2ddd2; stroke-width: 1.5; }
+    .bg1 { stop-color: #fcfaf6; } .bg2 { stop-color: #efe8dc; }
+    .glowA { stop-color: #e8673c; } .glowB { stop-color: #2f8f83; }
+    .ink { fill: #1d2433; } .soft { fill: #5b6475; } .dot { fill: #d8d1c3; }
+    .ring { stroke: #cfc7b8; stroke-width: 1.5; fill: none; stroke-dasharray: 3 7; }
+    .ring2 { stroke: #e2dbcd; stroke-width: 1.5; fill: none; }
+    .spoke { stroke: #d6cfc1; stroke-width: 1.5; }
+    .you1 { stop-color: #2c3a57; } .you2 { stop-color: #141b2a; } .youtxt { fill: #ffffff; }
+    .halo { fill: #e8673c; opacity: 0.14; }
+    .chip { fill: #ffffff; stroke: #e7e1d5; stroke-width: 1; }
+    .badge { fill: #fde9e1; stroke: #e8673c; stroke-width: 1.5; } .badgetxt { fill: #c4481f; }
+    .tag { fill: #ffffff; stroke: #ddd6c8; stroke-width: 1; } .tagtxt { fill: #3a4252; }
     .c1 { fill: #e8673c; } .c2 { fill: #2f8f83; } .c3 { fill: #4a6cd4; }
     .c4 { fill: #c98a1b; } .c5 { fill: #8a55c7; } .c6 { fill: #d04a6b; }
     text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     @media (prefers-color-scheme: dark) {
-      .bg { fill: #141922; } .ink { fill: #eef0f4; } .soft { fill: #a3abba; }
-      .line { stroke: #3a4250; } .you { fill: #f2efe8; } .youtxt { fill: #141922; }
-      .chip { fill: #1d2430; stroke: #2e3746; }
+      .bg1 { stop-color: #1a2131; } .bg2 { stop-color: #0e121a; }
+      .ink { fill: #eef0f4; } .soft { fill: #a3abba; } .dot { fill: #2a3242; }
+      .ring { stroke: #3a4354; } .ring2 { stroke: #262e3c; } .spoke { stroke: #333c4c; }
+      .you1 { stop-color: #f6f2ea; } .you2 { stop-color: #d9d2c4; } .youtxt { fill: #141922; }
+      .halo { opacity: 0.22; }
+      .chip { fill: #1f2734; stroke: #313a4a; }
+      .badge { fill: #3a2219; } .badgetxt { fill: #f39a76; }
+      .tag { fill: #1f2734; stroke: #313a4a; } .tagtxt { fill: #c9cfda; }
     }
   </style>
-  <rect class="bg" width="1200" height="420" rx="24"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="bg1"/><stop offset="1" class="bg2"/></linearGradient>
+    <radialGradient id="gA"><stop offset="0" class="glowA" stop-opacity="0.22"/><stop offset="1" class="glowA" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gB"><stop offset="0" class="glowB" stop-opacity="0.18"/><stop offset="1" class="glowB" stop-opacity="0"/></radialGradient>
+    <linearGradient id="you" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="you1"/><stop offset="1" class="you2"/></linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle class="dot" cx="2" cy="2" r="1.6"/></pattern>
+    <filter id="sh" x="-30%" y="-40%" width="160%" height="200%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#1d2433" flood-opacity="0.13"/></filter>
+    <clipPath id="frame"><rect width="1200" height="440" rx="24"/></clipPath>
+  </defs>
 
-  <text class="ink" x="64" y="150" font-size="52" font-weight="700">One-man startup</text>
-  <text class="soft" x="64" y="200" font-size="24">Build real software without a tech team.</text>
-  <text class="soft" x="64" y="234" font-size="24">You make the decisions. AI agents do the work.</text>
-  <text class="soft" x="64" y="300" font-size="18">Made for Claude Code, Codex, Gemini CLI and Cursor</text>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="440" fill="url(#bg)"/>
+    <circle cx="1080" cy="40" r="300" fill="url(#gA)"/>
+    <circle cx="720" cy="440" r="260" fill="url(#gB)"/>
+    <rect x="700" y="0" width="500" height="440" fill="url(#dots)" opacity="0.6"/>
+  </g>
 
-  <g transform="translate(860 210)">
-    <path class="line" d="M0 0 L0 -150 M0 0 L130 -75 M0 0 L130 75 M0 0 L0 150 M0 0 L-130 75 M0 0 L-130 -75"/>
-    <circle class="you" r="54"/>
+  <g transform="translate(64 74)">
+    <rect class="badge" width="190" height="34" rx="17"/>
+    <circle class="c1" cx="20" cy="17" r="5"/>
+    <text class="badgetxt" x="34" y="22" font-size="14" font-weight="700" letter-spacing="1.5">NOT VIBE CODING</text>
+  </g>
+  <text class="ink" x="62" y="168" font-size="58" font-weight="800" letter-spacing="-1">One-man startup</text>
+  <text class="ink" x="64" y="216" font-size="25" font-weight="600">Build a software startup without writing code.</text>
+  <text class="soft" x="64" y="252" font-size="20">A proven team workflow, run by AI agents.</text>
+  <text class="soft" x="64" y="280" font-size="20">You make the decisions.</text>
+
+  <g font-size="14" font-weight="600">
+    <g transform="translate(64 314)"><rect class="tag" width="168" height="32" rx="16"/><circle class="c3" cx="18" cy="16" r="4.5"/><text class="tagtxt" x="30" y="21">Requirements first</text></g>
+    <g transform="translate(242 314)"><rect class="tag" width="122" height="32" rx="16"/><circle class="c2" cx="18" cy="16" r="4.5"/><text class="tagtxt" x="30" y="21">Test-driven</text></g>
+    <g transform="translate(374 314)"><rect class="tag" width="194" height="32" rx="16"/><circle class="c1" cx="18" cy="16" r="4.5"/><text class="tagtxt" x="30" y="21">Reviewed and approved</text></g>
+  </g>
+  <text class="soft" x="64" y="392" font-size="15">Made for Claude Code, Codex, Gemini CLI and Cursor</text>
+
+  <g transform="translate(925 220)">
+    <circle class="ring2" r="95"/>
+    <circle class="ring" r="150"/>
+    <path class="spoke" d="M0 -60 L0 -126 M52 -30 L109 -63 M52 30 L109 63 M0 60 L0 126 M-52 30 L-109 63 M-52 -30 L-109 -63"/>
+    <circle class="halo" r="78"/>
+    <circle r="58" fill="url(#you)" filter="url(#sh)"/>
     <text class="youtxt" y="9" font-size="26" font-weight="700" text-anchor="middle">You</text>
 
-    <g transform="translate(0 -150)"><rect class="chip" x="-78" y="-24" width="156" height="48" rx="24"/><circle class="c1" cx="-54" r="9"/><text class="ink" x="-38" y="6" font-size="17">Plan</text></g>
-    <g transform="translate(130 -75)"><rect class="chip" x="-78" y="-24" width="156" height="48" rx="24"/><circle class="c2" cx="-54" r="9"/><text class="ink" x="-38" y="6" font-size="17">Build</text></g>
-    <g transform="translate(130 75)"><rect class="chip" x="-78" y="-24" width="156" height="48" rx="24"/><circle class="c3" cx="-54" r="9"/><text class="ink" x="-38" y="6" font-size="17">Test</text></g>
-    <g transform="translate(0 150)"><rect class="chip" x="-78" y="-24" width="156" height="48" rx="24"/><circle class="c4" cx="-54" r="9"/><text class="ink" x="-38" y="6" font-size="17">Legal check</text></g>
-    <g transform="translate(-130 75)"><rect class="chip" x="-78" y="-24" width="156" height="48" rx="24"/><circle class="c5" cx="-54" r="9"/><text class="ink" x="-38" y="6" font-size="17">Launch</text></g>
-    <g transform="translate(-130 -75)"><rect class="chip" x="-78" y="-24" width="156" height="48" rx="24"/><circle class="c6" cx="-54" r="9"/><text class="ink" x="-38" y="6" font-size="17">Grow</text></g>
+    <g font-size="17" font-weight="600">
+      <g transform="translate(0 -150)" filter="url(#sh)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c1" cx="-50" r="10"/><text class="ink" x="-32" y="6">Plan</text></g>
+      <g transform="translate(130 -75)" filter="url(#sh)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c2" cx="-50" r="10"/><text class="ink" x="-32" y="6">Build</text></g>
+      <g transform="translate(130 75)" filter="url(#sh)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c3" cx="-50" r="10"/><text class="ink" x="-32" y="6">Test</text></g>
+      <g transform="translate(0 150)" filter="url(#sh)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c4" cx="-50" r="10"/><text class="ink" x="-32" y="6">Legal check</text></g>
+      <g transform="translate(-130 75)" filter="url(#sh)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c5" cx="-50" r="10"/><text class="ink" x="-32" y="6">Launch</text></g>
+      <g transform="translate(-130 -75)" filter="url(#sh)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c6" cx="-50" r="10"/><text class="ink" x="-32" y="6">Grow</text></g>
+    </g>
   </g>
 </svg>

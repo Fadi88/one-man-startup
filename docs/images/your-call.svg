@@ -1,35 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-labelledby="t d">
   <title id="t">What the agents do alone and what waits for you</title>
   <desc id="d">Agents can read, research, draft, write code and run tests on their own. Going live, spending money, deleting anything, sending messages, changing prices or accepting a legal risk always waits for your approval.</desc>
   <style>
-    .bg { fill: #f7f5f0; } .ink { fill: #1d2433; } .soft { fill: #5b6475; }
-    .ok { fill: #e6f2ef; stroke: #2f8f83; stroke-width: 1.5; } .wait { fill: #fbeae4; stroke: #e8673c; stroke-width: 1.5; }
-    .okdot { fill: #2f8f83; } .waitdot { fill: #e8673c; }
+    .bg1 { stop-color: #fcfaf6; } .bg2 { stop-color: #f1ebe0; }
+    .ink { fill: #1d2433; } .soft { fill: #4b5466; }
+    .ok { fill: #eef7f4; stroke: #bfe0d9; stroke-width: 1; } .wait { fill: #fdf0ea; stroke: #f3cbb9; stroke-width: 1; }
+    .okc { fill: #2f8f83; } .waitc { fill: #e8673c; } .glyph { stroke: #ffffff; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .okbar { fill: #2f8f83; } .waitbar { fill: #e8673c; }
     text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     @media (prefers-color-scheme: dark) {
-      .bg { fill: #141922; } .ink { fill: #eef0f4; } .soft { fill: #a3abba; }
-      .ok { fill: #18302d; } .wait { fill: #3a2219; }
+      .bg1 { stop-color: #1a2131; } .bg2 { stop-color: #0e121a; }
+      .ink { fill: #eef0f4; } .soft { fill: #b3bac7; }
+      .ok { fill: #172b2a; stroke: #24504a; } .wait { fill: #33211b; stroke: #5c3626; }
     }
   </style>
-  <rect class="bg" width="1200" height="300" rx="24"/>
-  <g transform="translate(48 40)">
-    <rect class="ok" width="532" height="220" rx="18"/>
-    <text class="ink" x="28" y="46" font-size="21" font-weight="700">Agents do this on their own</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="bg1"/><stop offset="1" class="bg2"/></linearGradient>
+    <filter id="sh" x="-10%" y="-20%" width="120%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#1d2433" flood-opacity="0.08"/></filter>
+    <clipPath id="c"><rect width="532" height="240" rx="18"/></clipPath>
+    <g id="tick"><circle class="okc" r="12"/><path class="glyph" d="M-5 0 L-1.5 3.5 L5.5 -4"/></g>
+    <g id="hold"><circle class="waitc" r="12"/><rect x="-5" y="-1" width="10" height="7" rx="1.5" fill="#ffffff"/><path class="glyph" d="M-3 -1 V-3.5 a3 3 0 0 1 6 0 V-1"/></g>
+  </defs>
+  <rect width="1200" height="320" rx="24" fill="url(#bg)"/>
+
+  <g transform="translate(48 40)" filter="url(#sh)">
+    <rect class="ok" width="532" height="240" rx="18"/>
+    <g clip-path="url(#c)"><rect class="okbar" width="6" height="240"/></g>
+    <text class="ink" x="32" y="50" font-size="21" font-weight="700">Agents do this on their own</text>
     <g font-size="17">
-      <circle class="okdot" cx="38" cy="90" r="6"/><text class="soft" x="56" y="96">Read, research and ask you questions</text>
-      <circle class="okdot" cx="38" cy="126" r="6"/><text class="soft" x="56" y="132">Write plans, designs and drafts</text>
-      <circle class="okdot" cx="38" cy="162" r="6"/><text class="soft" x="56" y="168">Write code and test it</text>
-      <circle class="okdot" cx="38" cy="198" r="6"/><text class="soft" x="56" y="204">Suggest how to save money</text>
+      <use href="#tick" x="44" y="94"/><text class="soft" x="68" y="100">Read, research and ask you questions</text>
+      <use href="#tick" x="44" y="134"/><text class="soft" x="68" y="140">Write plans, designs and drafts</text>
+      <use href="#tick" x="44" y="174"/><text class="soft" x="68" y="180">Write code and test it</text>
+      <use href="#tick" x="44" y="214"/><text class="soft" x="68" y="220">Suggest how to save money</text>
     </g>
   </g>
-  <g transform="translate(620 40)">
-    <rect class="wait" width="532" height="220" rx="18"/>
-    <text class="ink" x="28" y="46" font-size="21" font-weight="700">Always waits for your yes</text>
+  <g transform="translate(620 40)" filter="url(#sh)">
+    <rect class="wait" width="532" height="240" rx="18"/>
+    <g clip-path="url(#c)"><rect class="waitbar" width="6" height="240"/></g>
+    <text class="ink" x="32" y="50" font-size="21" font-weight="700">Always waits for your yes</text>
     <g font-size="17">
-      <circle class="waitdot" cx="38" cy="90" r="6"/><text class="soft" x="56" y="96">Going live, or changing anything that is live</text>
-      <circle class="waitdot" cx="38" cy="126" r="6"/><text class="soft" x="56" y="132">Spending money, sending messages</text>
-      <circle class="waitdot" cx="38" cy="162" r="6"/><text class="soft" x="56" y="168">Deleting anything, touching real customer data</text>
-      <circle class="waitdot" cx="38" cy="198" r="6"/><text class="soft" x="56" y="204">Prices, targets and accepting a legal risk</text>
+      <use href="#hold" x="44" y="94"/><text class="soft" x="68" y="100">Going live, or changing anything that is live</text>
+      <use href="#hold" x="44" y="134"/><text class="soft" x="68" y="140">Spending money, sending messages</text>
+      <use href="#hold" x="44" y="174"/><text class="soft" x="68" y="180">Deleting anything, touching real customer data</text>
+      <use href="#hold" x="44" y="214"/><text class="soft" x="68" y="220">Prices, targets and accepting a legal risk</text>
     </g>
   </g>
 </svg>

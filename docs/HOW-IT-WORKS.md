@@ -2,6 +2,8 @@
 
 This page is for the curious and for developers. You don't need it to use the template.
 
+<p align="center"><img src="images/architecture.svg" alt="How the template is built: your AI coding tool reads the instructions, writes the paper trail in docs/ and runs the guards." width="100%"></p>
+
 ## The files
 
 - **`AGENTS.md`** is the operating manual every AI tool reads first: the rules, the team, the

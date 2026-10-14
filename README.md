@@ -50,7 +50,7 @@ Developers who work alone can use it too, for the discipline of a team without h
 
 ## How it goes
 
-<p align="center"><img src="docs/images/journey.svg" alt="Five steps: set up, get grilled, build, check, and you say go." width="100%"></p>
+<p align="center"><img src="docs/images/journey.svg" alt="Five steps, each a standard software practice: set up (product discovery), get grilled (requirements first), build (test-driven development), check (QA and security review), and you say go (release approval)." width="100%"></p>
 
 **1. Set up.** The setup agent interviews you: what you're building, for
 whom, in which countries, whether customers are people or companies, what data you'll hold, and
@@ -124,6 +124,14 @@ If any step is unfamiliar, ask your AI tool to walk you through it.
 To see what setup produces before you run it, read the
 [worked example](examples/setup-dry-run/): a fictional founder's interview, word for word, and
 every file it wrote.
+
+## How it's built
+
+<p align="center"><img src="docs/images/architecture.svg" alt="You ask and decide; your AI coding tool reads the instructions (AGENTS.md, project.toml, agents/, skills/), writes the paper trail in docs/ (requirements, feature folders, decisions, legal checklists) next to your code, and runs the guards (one check per rule, the full sweep, a pre-commit hook and GitHub Actions)." width="100%"></p>
+
+Everything is plain files in your own repository. Your AI tool reads the instructions, leaves a
+written record of every step in `docs/`, and runs the checks that keep the rules from being
+skipped.
 
 ## Good to know
 
