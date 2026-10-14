@@ -9,6 +9,13 @@ Newest first. Each entry: date, the proposal, who proposed it, the reason it was
 
 ## About the template itself
 
+### Launch of the template, 14 October 2026
+
+- **A launch article** (on a blog, dev.to or LinkedIn) built around the practice table, proposed
+  by the assistant among ideas for bringing traffic to the repository. Declined by Fadi, who
+  asked for everything else on the list; no reason given. The launch uses posts only
+  (`examples/template-launch/`).
+
 ### From the grilling that shaped the template, 14 October 2026
 
 Options proposed by the assistant building the template and declined by Fadi.
