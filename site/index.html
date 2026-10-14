@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One-man startup: build a software startup without writing code</title>
+<meta name="description" content="Not vibe coding: a proven team workflow (requirements, design, test-first build, QA, release approval) run by AI agents. You make the decisions. Free and MIT licensed.">
+<meta property="og:title" content="One-man startup">
+<meta property="og:description" content="Build a software startup without writing code. Not vibe coding: a proven team workflow, run by AI agents.">
+<meta property="og:image" content="https://fadi88.github.io/one-man-startup/images/social-preview.png">
+<meta property="og:url" content="https://fadi88.github.io/one-man-startup/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232c3a57'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23e8673c'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #faf7f1; --bg2: #f1ebe0; --card: #ffffff; --line: #e7e1d5;
+    --ink: #1d2433; --soft: #5b6475; --accent: #e8673c; --accent-ink: #c4481f;
+    --teal: #2f8f83; --navy: #2c3a57; --badge: #fde9e1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121722; --bg2: #0e121a; --card: #1f2734; --line: #313a4a;
+      --ink: #eef0f4; --soft: #a3abba; --accent: #e8673c; --accent-ink: #f39a76;
+      --teal: #6cc7bb; --navy: #3d5a8f; --badge: #3a2219;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: linear-gradient(160deg, var(--bg), var(--bg2)) fixed; color: var(--ink);
+    font: 17px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  header.top { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+  .logo { font-weight: 800; letter-spacing: -0.3px; text-decoration: none; }
+  .logo span { color: var(--accent); }
+  nav a { color: var(--soft); text-decoration: none; margin-left: 20px; font-size: 15px; }
+  nav a:hover { color: var(--ink); }
+  .hero { padding: 48px 0 24px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px;
+    background: var(--badge); border: 1.5px solid var(--accent); color: var(--accent-ink);
+    font-size: 13px; font-weight: 700; letter-spacing: 1.4px;
+  }
+  .badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  h1 { font-size: clamp(40px, 7vw, 72px); line-height: 1.05; letter-spacing: -1.5px; margin: 20px 0 16px; font-weight: 800; }
+  .lede { font-size: clamp(19px, 2.4vw, 24px); font-weight: 600; margin: 0 0 8px; }
+  .sub { color: var(--soft); font-size: 18px; max-width: 640px; margin: 0 0 28px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block; padding: 13px 22px; border-radius: 12px; font-weight: 700; text-decoration: none;
+    font-size: 16px; border: 1.5px solid var(--line); background: var(--card);
+  }
+  .btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .btn:hover { transform: translateY(-1px); }
+  .tools { color: var(--soft); font-size: 14px; margin-top: 18px; }
+  section { padding: 56px 0 8px; }
+  h2 { font-size: clamp(26px, 3.6vw, 36px); letter-spacing: -0.5px; margin: 0 0 12px; }
+  .intro { color: var(--soft); max-width: 720px; margin: 0 0 28px; }
+  figure { margin: 0; }
+  figure img { width: 100%; height: auto; display: block; border-radius: 20px; box-shadow: 0 10px 30px rgba(29, 36, 51, 0.08); }
+  .versus { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
+  .col { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px; }
+  .col h3 { margin: 0 0 8px; font-size: 18px; }
+  .col p { margin: 0; color: var(--soft); }
+  .col.them h3 { color: var(--soft); }
+  .col.us { border-color: var(--teal); }
+  .col.us h3 { color: var(--teal); }
+  table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+  th, td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  th { font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--soft); }
+  td:last-child { font-weight: 700; color: var(--accent-ink); white-space: nowrap; }
+  .punch { font-size: 20px; font-weight: 700; margin: 28px 0 0; }
+  ol.steps { padding-left: 22px; }
+  ol.steps li { margin-bottom: 10px; }
+  code { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; font-size: 15px; }
+  .note { color: var(--soft); font-size: 15px; }
+  footer { padding: 56px 0 40px; color: var(--soft); font-size: 14px; }
+  @media (max-width: 720px) {
+    nav { display: none; }
+    .versus { grid-template-columns: 1fr; }
+    td:last-child { white-space: normal; }
+    th, td { padding: 12px 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#">One-man <span>startup</span></a>
+    <nav>
+      <a href="#not-vibe-coding">Not vibe coding</a>
+      <a href="#how-it-goes">How it goes</a>
+      <a href="#built">How it's built</a>
+      <a href="https://github.com/Fadi88/one-man-startup">GitHub</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <span class="badge">NOT VIBE CODING</span>
+    <h1>Build a software startup without writing code.</h1>
+    <p class="lede">A proven team workflow, run by AI agents. You make the decisions.</p>
+    <p class="sub">A free template that gives you the first hires of a startup as AI agents: a project
+      manager, an architect, developers, a tester, security, legal, growth and social media. They plan,
+      build, test and launch with you, and nothing goes live without your yes.</p>
+    <div class="ctas">
+      <a class="btn primary" href="https://github.com/Fadi88/one-man-startup/generate">Use this template</a>
+      <a class="btn" href="https://github.com/Fadi88/one-man-startup">Read the README</a>
+    </div>
+    <p class="tools">Made for Claude Code, Codex, Gemini CLI and Cursor. MIT licence.</p>
+  </div>
+
+  <section>
+    <figure><img src="images/demo.svg" alt="Excerpts, word for word, from the recorded setup dry run with a fictional founder: she asks to go lighter on the gates and the setup agent recommends strict and explains why; it recommends deleting receipt photos once read; setup ends with nothing committed, published or sent, and the test sweep green."></figure>
+    <p class="note">Replayed word for word from a <a href="https://github.com/Fadi88/one-man-startup/tree/main/examples/setup-dry-run">recorded dry run</a> with a fictional founder.</p>
+  </section>
+
+  <section id="not-vibe-coding">
+    <h2>This is not vibe coding</h2>
+    <div class="versus">
+      <div class="col them"><h3>Vibe coding</h3><p>Describe what you want, accept whatever the AI writes, ask again when
+        something breaks. Fast for a demo. It tends to end in an app that half works, that nobody understands, and that
+        gets more fragile with every fix.</p></div>
+      <div class="col us"><h3>This template</h3><p>The structure established software teams use: written down before it
+        is built, designed before it is coded, tested by someone other than whoever built it, and released only when you
+        approve. The agents fill the roles; the workflow is the traditional one.</p></div>
+    </div>
+    <table>
+      <thead><tr><th>What happens here</th><th>The established practice</th></tr></thead>
+      <tbody>
+        <tr><td>Before anything is built, you are interviewed about who needs it, the smallest useful version and what happens when it goes wrong.</td><td>Requirements elicitation</td></tr>
+        <tr><td>Everything the product must do is a numbered requirement, and every change names the requirement it serves.</td><td>Requirements traceability</td></tr>
+        <tr><td>Building can't start until the spec is confirmed and no question on it is still open.</td><td>Definition of Ready</td></tr>
+        <tr><td>An architect designs the system and records each hard-to-reverse choice with its reason.</td><td>Architecture Decision Records</td></tr>
+        <tr><td>Developers write the test before the code.</td><td>Test-driven development</td></tr>
+        <tr><td>A separate tester checks the work against the requirements and can stop a release.</td><td>Independent QA</td></tr>
+        <tr><td>A security reviewer looks for ways data could leak or be misused.</td><td>Threat modelling</td></tr>
+        <tr><td>Every change re-runs every check, and a round ends only when they all pass.</td><td>Continuous integration</td></tr>
+        <tr><td>Nothing goes live, costs money or deletes data without your approval, one step at a time.</td><td>Release approval</td></tr>
+        <tr><td>Decisions, and the ideas you turned down, are written down with the reason.</td><td>Decision log</td></tr>
+      </tbody>
+    </table>
+    <p class="punch">What changes is who does the work, not how it is done.</p>
+  </section>
+
+  <section id="how-it-goes">
+    <h2>From idea to launch</h2>
+    <figure><img src="images/journey.svg" alt="Five steps, each a standard software practice: set up, get grilled, build, check, and you say go."></figure>
+  </section>
+
+  <section>
+    <h2>Your AI team</h2>
+    <p class="intro">You talk to one agent, the project manager. It brings in the others when they're needed.</p>
+    <figure><img src="images/team.svg" alt="You talk to the project manager agent, which hands work to the plan, build, check, grow and save groups."></figure>
+  </section>
+
+  <section>
+    <h2>What stays in your hands</h2>
+    <figure><img src="images/your-call.svg" alt="Agents read, draft, write code and test on their own. Going live, spending money, deleting, sending messages, prices and legal risks wait for your yes."></figure>
+  </section>
+
+  <section id="built">
+    <h2>How it's built</h2>
+    <p class="intro">Plain files in your own GitHub repository. Nothing is locked into this template or any one AI tool.</p>
+    <figure><img src="images/architecture.svg" alt="Your AI coding tool reads the instructions, writes the paper trail in docs/ next to your code, and runs the checks."></figure>
+  </section>
+
+  <section>
+    <h2>Getting started</h2>
+    <ol class="steps">
+      <li>Install your AI coding tool, then ask it to check that Git and Python 3.11 or newer are installed.</li>
+      <li>Click <a href="https://github.com/Fadi88/one-man-startup/generate">Use this template</a> and name the repository after your product.</li>
+      <li>Open your copy in your AI tool.</li>
+      <li>Type <code>/setup</code> in Claude Code, or ask any tool to run the setup interview from <code>skills/setup</code>.</li>
+      <li>Ask for your first thing, for example a landing page with a waiting list.</li>
+    </ol>
+    <p class="note">The agents still make mistakes, and the tests and approvals won't catch all of them. The legal agent
+      writes checklists and drafts for a lawyer, not legal advice. Support for Codex, Gemini CLI and Cursor is written
+      but not yet tested; see <a href="https://github.com/Fadi88/one-man-startup/blob/main/docs/ASSUMPTIONS.md">what has been tested</a>.</p>
+  </section>
+
+  <footer>
+    One-man startup, MIT licence. Made by Fadi.
+    <a href="https://github.com/Fadi88/one-man-startup#credits">Credits</a> to the projects it borrows from.
+  </footer>
+</div>
+</body>
+</html>

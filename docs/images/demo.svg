@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="t d">
+  <title id="t">Setup, replayed from a recorded dry run</title>
+  <desc id="d">Excerpts, word for word, from the recorded setup dry run of 14 October 2026 with a fictional founder. The founder asks to go lighter on the gates; the setup agent recommends strict and explains why. Asked whether to keep receipt photos, the founder asks for a recommendation; the agent recommends deleting the photo once the figures are read and checked. Setup ends with nothing committed, published or sent, the project files written and the test sweep green.</desc>
+  <style>
+    .bg1 { stop-color: #fcfaf6; } .bg2 { stop-color: #f1ebe0; }
+    .ink { fill: #1d2433; } .soft { fill: #5b6475; } .ok { fill: #23766c; }
+    .ba { fill: #ffffff; stroke: #e7e1d5; stroke-width: 1; } .ta { fill: #1d2433; }
+    .bu { fill: #2c3a57; } .tu { fill: #ffffff; }
+    .aa { fill: #2f8f83; } .au { fill: #e8673c; } .al { fill: #ffffff; }
+    .chip { fill: #ffffff; stroke: #ddd6c8; stroke-width: 1; }
+    .bar { fill: #ebe5d9; } .d1 { fill: #e8673c; } .d2 { fill: #c98a1b; } .d3 { fill: #2f8f83; }
+    .s { transform-box: fill-box; }
+    text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+    @keyframes k0 { 0%, 6% { opacity: 1; transform: translateY(0); } 8%, 12% { opacity: 0; transform: translateY(10px); } 15%, 100% { opacity: 1; transform: translateY(0); } }
+    .s0 { animation: k0 22s ease-out infinite; }
+    @keyframes k1 { 0%, 6% { opacity: 1; transform: translateY(0); } 8%, 23% { opacity: 0; transform: translateY(10px); } 26%, 100% { opacity: 1; transform: translateY(0); } }
+    .s1 { animation: k1 22s ease-out infinite; }
+    @keyframes k2 { 0%, 6% { opacity: 1; transform: translateY(0); } 8%, 34% { opacity: 0; transform: translateY(10px); } 37%, 100% { opacity: 1; transform: translateY(0); } }
+    .s2 { animation: k2 22s ease-out infinite; }
+    @keyframes k3 { 0%, 6% { opacity: 1; transform: translateY(0); } 8%, 45% { opacity: 0; transform: translateY(10px); } 48%, 100% { opacity: 1; transform: translateY(0); } }
+    .s3 { animation: k3 22s ease-out infinite; }
+    @keyframes k4 { 0%, 6% { opacity: 1; transform: translateY(0); } 8%, 56% { opacity: 0; transform: translateY(10px); } 59%, 100% { opacity: 1; transform: translateY(0); } }
+    .s4 { animation: k4 22s ease-out infinite; }
+    @keyframes k5 { 0%, 6% { opacity: 1; transform: translateY(0); } 8%, 67% { opacity: 0; transform: translateY(10px); } 70%, 100% { opacity: 1; transform: translateY(0); } }
+    .s5 { animation: k5 22s ease-out infinite; }
+    @keyframes k6 { 0%, 6% { opacity: 1; transform: translateY(0); } 8%, 78% { opacity: 0; transform: translateY(10px); } 81%, 100% { opacity: 1; transform: translateY(0); } }
+    .s6 { animation: k6 22s ease-out infinite; }
+    @media (prefers-reduced-motion: reduce) { .s { animation: none; } }
+    @media (prefers-color-scheme: dark) {
+      .bg1 { stop-color: #1a2131; } .bg2 { stop-color: #0e121a; }
+      .ink { fill: #eef0f4; } .soft { fill: #a3abba; } .ok { fill: #6cc7bb; }
+      .ba { fill: #1f2734; stroke: #313a4a; } .ta { fill: #eef0f4; }
+      .bu { fill: #3d5a8f; } .chip { fill: #1f2734; stroke: #313a4a; } .bar { fill: #252e3d; }
+    }
+  </style>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="bg1"/><stop offset="1" class="bg2"/></linearGradient></defs>
+  <rect width="1200" height="620" rx="24" fill="url(#bg)"/>
+  <rect class="bar" width="1200" height="44" rx="24"/><rect class="bar" y="24" width="1200" height="20"/>
+  <circle class="d1" cx="34" cy="22" r="6"/><circle class="d2" cx="54" cy="22" r="6"/><circle class="d3" cx="74" cy="22" r="6"/>
+  <text class="soft" x="600" y="27" font-size="13" text-anchor="middle">/setup</text>
+  <text class="ink" x="48" y="80" font-size="20" font-weight="700">Setup, replayed from a recorded dry run</text>
+  <text class="soft" x="1152" y="80" font-size="13" text-anchor="end">Fictional founder, real agent output, 14 Oct 2026. Excerpts, word for word.</text>
+  <g class="s s0"><circle class="au" cx="1134" cy="134" r="18"/><text class="al" x="1134" y="140" text-anchor="middle" font-size="15" font-weight="700">N</text><rect class="bu" x="599" y="112" width="509" height="44" rx="16"/><text class="tu" font-size="16"><tspan x="619" y="140">Can we go lighter? I want to move fast, it's just an idea.</tspan></text></g>
+  <g class="s s1"><circle class="aa" cx="66" cy="192" r="18"/><text class="al" x="66" y="198" text-anchor="middle" font-size="15" font-weight="700">S</text><rect class="ba" x="92" y="170" width="590" height="66" rx="16"/><text class="ta" font-size="16"><tspan x="112" y="198">Recommended: strict. Reason: at the idea stage there is little code,</tspan><tspan x="112" y="220">so strict costs least now and is hardest to add later.</tspan></text></g>
+  <g class="s s2"><circle class="aa" cx="66" cy="274" r="18"/><text class="al" x="66" y="280" text-anchor="middle" font-size="15" font-weight="700">S</text><rect class="ba" x="92" y="252" width="485" height="44" rx="16"/><text class="ta" font-size="16"><tspan x="112" y="280">Should the app keep the photo after the AI has read it?</tspan></text></g>
+  <g class="s s3"><circle class="au" cx="1134" cy="332" r="18"/><text class="al" x="1134" y="338" text-anchor="middle" font-size="15" font-weight="700">N</text><rect class="bu" x="777" y="310" width="331" height="44" rx="16"/><text class="tu" font-size="16"><tspan x="797" y="338">I don't know, what do you recommend?</tspan></text></g>
+  <g class="s s4"><circle class="aa" cx="66" cy="390" r="18"/><text class="al" x="66" y="396" text-anchor="middle" font-size="15" font-weight="700">S</text><rect class="ba" x="92" y="368" width="623" height="66" rx="16"/><text class="ta" font-size="16"><tspan x="112" y="396">Recommended: delete the photo once the figures are read and the user has</tspan><tspan x="112" y="418">checked them, keep the figures until the user deletes their account.</tspan></text></g>
+  <g class="s s5"><circle class="aa" cx="66" cy="472" r="18"/><text class="al" x="66" y="478" text-anchor="middle" font-size="15" font-weight="700">S</text><rect class="ba" x="92" y="450" width="590" height="44" rx="16"/><text class="ta" font-size="16"><tspan x="112" y="478">Nadia, setup is done. Nothing has been committed, published or sent.</tspan></text></g>
+  <g class="s s6"><text class="soft" x="92" y="534" font-size="14" font-weight="600">Written:</text><rect class="chip" x="160" y="514" width="115" height="30" rx="15"/><text class="mono ink" x="172" y="534" font-size="13">project.toml</text><rect class="chip" x="283" y="514" width="191" height="30" rx="15"/><text class="mono ink" x="295" y="534" font-size="13">p1-closed-decisions.md</text><rect class="chip" x="482" y="514" width="130" height="30" rx="15"/><text class="mono ink" x="494" y="534" font-size="13">p1-rejected.md</text><rect class="chip" x="620" y="514" width="92" height="30" rx="15"/><text class="mono ink" x="632" y="534" font-size="13">LAUNCH.md</text><rect class="chip" x="720" y="514" width="62" height="30" rx="15"/><text class="mono ink" x="732" y="534" font-size="13">AE.md</text><rect class="chip" x="790" y="514" width="62" height="30" rx="15"/><text class="mono ink" x="802" y="534" font-size="13">DE.md</text><text class="ok" x="866" y="534" font-size="14" font-weight="700">sweep green</text></g>
+  <text class="soft" x="48" y="592" font-size="13">S: the setup agent. N: Nadia, the scripted founder. Full transcript in examples/setup-dry-run/.</text>
+</svg>

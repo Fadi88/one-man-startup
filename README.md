@@ -11,6 +11,12 @@ you a small team of AI agents that plan, build, test and launch it with you. You
 code, and you don't need to read it. You need to know your customers and be willing to make
 decisions.
 
+<p align="center"><img src="docs/images/demo.svg" alt="Excerpts, word for word, from the recorded setup dry run with a fictional founder: she asks to go lighter on the gates and the setup agent recommends strict and explains why; it recommends deleting receipt photos once read; setup ends with nothing committed, published or sent, and the test sweep green." width="100%"></p>
+
+This is setup at work, replayed word for word from a [recorded dry run](examples/setup-dry-run/)
+with a fictional founder. The full transcript and every file it wrote are there.
+Website: [fadi88.github.io/one-man-startup](https://fadi88.github.io/one-man-startup/).
+
 ## This is not vibe coding
 
 Vibe coding means describing what you want to an AI, accepting whatever it writes, and asking
@@ -178,6 +184,9 @@ How the agents, skills, checks and tool adapters fit together is in
 This template borrows ideas, with thanks, from:
 
 - Matt Pocock's [grilling skill](https://github.com/mattpocock/skills)
+- Andrej Karpathy's observations on LLM coding pitfalls, as turned into guidelines in
+  [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills),
+  included unchanged under its MIT licence
 - GitHub's [spec-kit](https://github.com/github/spec-kit)
 - Anthropic's [frontend-design skill](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design), included unchanged under the Apache License 2.0
 - the five specification layers of Hamidreza Saghir, as adapted in Florian Bruniaux's

@@ -16,3 +16,4 @@ what settled it in the last column.
 | A-5 | Cursor picks up `.cursor/rules/*.mdc` with `alwaysApply: false` as rules the agent can request by description. | TPL-15, README | Open the repo in Cursor and check the rules list. | 2026-10-31 | open | |
 | A-6 | GitHub shows the diagrams in `docs/images/` in the viewer's light or dark theme. | README | Push and view the README on github.com in both themes. | 2026-10-31 | open | |
 | A-7 | A real non-technical founder can finish setup without outside help, in a length they find acceptable. | README | Run setup with a real person who does not code; note where they got stuck and how long it took. | 2026-11-15 | open | |
+| A-8 | GitHub plays the CSS animation in `docs/images/demo.svg` when the README shows it. | README, TPL-21 | View the README on github.com and watch the demo replay. | 2026-10-31 | open | |
