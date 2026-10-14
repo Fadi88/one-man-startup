@@ -38,7 +38,24 @@ a later optimisation.
 - **Abuse is assumed.** Rate limits, bot protection on sign-up and the no-login trial, and
   alerts on unusual spend are part of the first version, not the second.
 
-Limits: **Founder decides**, with the cost per action from the prototype in front of them.
+### Tiers of access
+
+Match what each kind of user can trigger to what they have proven:
+
+| Who | What they get |
+|---|---|
+| Anonymous visitor | Pre-computed or cached results for showcase inputs, plus a very small number of live actions behind a bot challenge, on the cheapest model that does the job, with a hard output limit. |
+| Signed-in free user | A daily or monthly count of live actions on a low-cost model. |
+| Paying user | The full product, still with a fair-use ceiling so one account cannot cost more than it pays. |
+
+Behind all three:
+
+- **A provider-side spending limit** as the last line of defence, where the AI provider offers
+  one, set below what the founder can afford to lose in a day.
+- **A fallback provider** for outages, chosen with the same data terms as the main one.
+
+Limits, models and the fair-use ceiling: **Founder decides**, with the cost per action from the
+prototype in front of them.
 
 ## 3. Organic channels
 
@@ -46,19 +63,32 @@ Each channel is an experiment with a prediction, a "wrong if" and a read date, w
 any work starts (`skills/experiment/`). A channel that misses its number is dropped or changed,
 not kept out of hope.
 
-### 3.1 Useful pages that people search for
+### 3.1 Useful tools that people search for
 
-Free calculators, templates or small tools answering a specific question the target customer
-searches for, each leading into the product.
+Small working tools (a calculator, a checker, a generator) that answer one specific question the
+target customer searches for, free and without sign-up, each leading into the product.
 
-- Every page must be useful on its own. Mass-produced thin pages can be treated as spam by
-  search engines; the growth agent reads the current search engine guidance, cites it and
-  dates it, before the first batch.
+- **Prefer working tools to text pages.** A page made from a template with only the keyword
+  swapped is what search engines' spam policies target; the growth agent reads the current
+  guidance, cites it and dates it, before the first batch.
+- **A quality gate for any page made in bulk:** it publishes only if it does something useful
+  on its own and carries content that is not on any other page. The founder sets the bar.
+- **Structured data** describing the product and its answers, following the search engines'
+  own documentation.
+- **AI answer engines** (chat assistants that search the web) are a second audience for the
+  same pages. Conventions aimed at them, such as an `llms.txt` file, are proposals rather than
+  standards, so any work on them is an experiment with its own read date.
+- Each tool page has a clear next step into the product: save this, repeat it weekly, go deeper.
 - Prediction, wrong if, read date: **Founder decides**.
 
 ### 3.2 Sharing that comes from the product
 
 Sharing built on the product's own output (a result, a streak, a report) with a link back.
+
+- **One tap to share:** a read-only public page for the output and a preview image sized for the
+  platforms the audience uses, with a small, honest "made with" link.
+- **Shared pages expose nothing private:** the user sees exactly what will be public before it
+  is.
 
 - Referral tracking and analytics need consent per region (`docs/legal/regions/`).
 - Any reward for inviting others is checked by the legal agent against consumer law and the
@@ -74,17 +104,56 @@ is, to find the first users and early feedback.
   permission.
 - Prediction (for example, waitlist sign-ups by a date), wrong if, read date: **Founder decides**.
 
+### 3.4 App stores, if the product is in one
+
+Search inside an app store works differently from web search. Listing text, screenshots and
+ratings are set per store and per language. Ask for a rating only after a success (a saved or
+shared result), never during onboarding or after an error, and within each store's rules for
+review prompts.
+
 ## 4. Conversion
 
 - **Onboarding:** the user reaches the product's core result before being asked to sign up,
-  within the strict limits of section 2.
+  within the strict limits of section 2. Saving, exporting or doing more is what asks for
+  sign-in, and whatever the user made before signing in moves into their new account.
+- **Measure the funnel** (landing, first result, sign-up, payment) from the first version, and
+  work on the step that loses the most people.
 - **Sign-in:** the fewest options the audience needs; one-tap providers where they fit.
 - **Pricing:** anchored to what the problem costs the customer today. Free and paid tiers shown
   plainly; cancelling is as easy as subscribing; no renewal traps. Price: **Founder decides**.
+- **Prices** shown in the customer's currency, including tax where the market requires it.
+  Discounts with deadlines only when the deadline is real; `legal` checks the wording.
 - **Data:** say plainly which data goes to an AI provider or another service, and which never
   leaves the device. Promise no encryption a feature cannot keep.
+- **Analytics and cookies:** whether a consent banner is needed depends on what is stored on the
+  device and on each region's rules, not on an analytics vendor's marketing. `legal` decides per
+  region from the packs.
 
-## 5. Unit economics
+## 5. Payments, tax and data
+
+Decide these before building checkout, with `legal`, and with an accountant where tax is
+involved:
+
+- **Who sells to the customer.** Either the founder's own company, using a payment processor and
+  handling sales tax in each market, or a merchant of record that sells on the founder's behalf
+  and takes on the tax filings, for a higher fee. Compare both with fees and terms read from each
+  provider's own pages, dated, and with what the founder's accountant says.
+- **App store billing**, if the product sells inside a store, follows that store's rules and fees.
+- **Where data lives:** the database region chosen for the users' regions; personal data sent to
+  an AI provider only under terms that say whether it is retained or used for training (zero
+  retention where the provider offers it); personal details stripped from prompts where the
+  feature works without them. Cross-border transfers go to `legal`, which escalates them.
+
+## 6. Risks to plan for from day one
+
+| Risk | What it looks like | Mitigation |
+|---|---|---|
+| Spend attack on the free tier | Scripts hammer the no-login trial overnight. | Section 2: caps, bot challenge, global ceiling, provider-side limit, alerts. |
+| AI provider outage | The main provider fails during a launch. | A fallback provider with the same data terms, tested before launch. |
+| Support overload | Many billing and invoice questions at once. | A self-serve billing portal; help pages written as features ship. |
+| Search penalty | Bulk pages judged thin. | The quality gate in 3.1; publish in small batches and read the results. |
+
+## 7. Unit economics
 
 Every value has a source and a date, or is measured, or stays blank. The gross margin target is a
 founder decision checked against this table, never a claim.
@@ -108,8 +177,18 @@ founder decision checked against this table, never a claim.
 
 **Break-even paying users = fixed costs / net per paying user.**
 
-## 6. Questions this playbook leaves to the founder
+### Stress test
+
+Run the table at several traffic levels. Every rate in it is an assumption until the project
+measures it, and sits in `docs/ASSUMPTIONS.md` until then.
+
+| Monthly visitors | Visitor to free user rate | Free to paid rate | Paying users | Revenue after fees and tax | Variable cost (paid and free usage) | Fixed cost | Profit |
+|---|---|---|---|---|---|---|---|
+| | assumed, then measured | assumed, then measured | | | | | |
+
+## 8. Questions this playbook leaves to the founder
 
 The product, the customer, the first market, the platform, the price, the free-tier limits and
+models, who sells to the customer (own company or merchant of record), the data region, and
 every experiment's numbers. The setup interview and the new-feature grilling ask them; the
 answers go in `project.toml`, the requirement rows and `docs/requirements/p1-closed-decisions.md`.

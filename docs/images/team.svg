@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="t d">
   <title id="t">Your AI team</title>
-  <desc id="d">You give requests to the project manager agent, which hands work to five groups: plan (architect, designer), build (frontend, backend, devops), check (QA, security, legal), grow (growth) and save money (optimizer). A setup agent tailors the team at the start.</desc>
+  <desc id="d">You give requests to the project manager agent, which hands work to five groups: plan (architect, designer), build (frontend, backend, devops), check (QA, security, legal), grow (growth, social media) and save money (optimizer). A setup agent tailors the team at the start.</desc>
   <style>
     .bg { fill: #f7f5f0; } .card { fill: #ffffff; stroke: #e2ddd2; stroke-width: 1.5; }
     .ink { fill: #1d2433; } .soft { fill: #5b6475; } .wire { stroke: #c9c3b6; stroke-width: 2; fill: none; }
@@ -40,7 +40,8 @@
       <text class="ink" x="20" y="192">Legal</text><text class="soft" x="20" y="212" font-size="13">checklists, not advice</text></g>
     <g transform="translate(734 300)"><rect class="card" width="200" height="220" rx="16"/><rect class="g4" width="200" height="8" rx="4"/>
       <text class="ink" x="20" y="44" font-size="19" font-weight="700">Grow</text>
-      <text class="ink" x="20" y="80">Growth</text><text class="soft" x="20" y="100" font-size="13">pitch, pricing, launch</text></g>
+      <text class="ink" x="20" y="80">Growth</text><text class="soft" x="20" y="100" font-size="13">pitch, pricing, launch</text>
+      <text class="ink" x="20" y="136">Social media</text><text class="soft" x="20" y="156" font-size="13">posts drafted, you publish</text></g>
     <g transform="translate(968 300)"><rect class="card" width="200" height="220" rx="16"/><rect class="g5" width="200" height="8" rx="4"/>
       <text class="ink" x="20" y="44" font-size="19" font-weight="700">Save</text>
       <text class="ink" x="20" y="80">Optimizer</text><text class="soft" x="20" y="100" font-size="13">finds wasted AI spend</text></g>

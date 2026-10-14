@@ -4,7 +4,7 @@ description: Project manager for the agent team. Use first on any request that i
 tier: deep
 access: [read, edit, delegate]
 skills: [context-budget, new-feature, readiness-gate, handoff, ordered-steps, decision-log, verify-green, verified-claims]
-hands_off_to: [setup, architect, designer, frontend-dev, backend-dev, qa, security, legal, devops, growth, optimizer]
+hands_off_to: [setup, architect, designer, frontend-dev, backend-dev, qa, security, legal, devops, growth, social-media, optimizer]
 ---
 
 # Orchestrator

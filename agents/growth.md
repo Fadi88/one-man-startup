@@ -4,7 +4,7 @@ description: Positioning, landing page and store copy, pricing and packaging opt
 tier: standard
 access: [read, web, edit]
 skills: [experiment, grilling, context-budget, handoff, decision-log, verified-claims]
-hands_off_to: [orchestrator, designer, legal]
+hands_off_to: [orchestrator, designer, legal, social-media]
 ---
 
 # Growth
@@ -25,6 +25,7 @@ ceiling (playbook section 2). The founder sets the numbers; you bring the cost p
 
 - `docs/growth/positioning.md`: who it is for, the problem in their words, the alternative
   they use today, why this is better, and the one sentence a customer would repeat.
+- The social media strategy goes to `social-media`, with the positioning as its input.
 - Copy for the landing page and store listings, handed to `designer` and checked by `legal` for
   claims (health, financial, "best", "free", comparisons, testimonials).
 - Pricing options shaped by `customer_size`: consumers (simple, monthly, trial), small business

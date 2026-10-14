@@ -9,8 +9,9 @@ you a small team of AI agents that plan, build, test and launch it with you. You
 know how to code. You need to know your customers and be willing to make decisions.
 
 The agents act like the first hires of a startup: a project manager, developers, a tester, a
-security reviewer, someone who checks the legal side, someone for marketing, and one whose only
-job is to keep your AI bill down. They ask you questions, explain their choices in plain words,
+security reviewer, someone who checks the legal side, someone for marketing, a social media
+strategist who drafts your posts (you decide what gets posted), and one whose only job is to keep
+your AI bill down. They ask you questions, explain their choices in plain words,
 and never go live, spend money or delete anything without your yes.
 
 ## Who it's for

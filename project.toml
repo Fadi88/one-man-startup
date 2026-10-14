@@ -40,7 +40,7 @@ build_command = "unset"
 # Agents switched on for this project. Setup trims the list to the size of the
 # company; the orchestrator never routes to an agent that is not here.
 enabled = ["orchestrator", "setup", "architect", "designer", "frontend-dev", "backend-dev",
-           "qa", "security", "legal", "devops", "growth", "optimizer"]
+           "qa", "security", "legal", "devops", "growth", "social-media", "optimizer"]
 
 [gates]
 # strict | standard | light. The template recommends strict and setup

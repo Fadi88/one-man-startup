@@ -68,6 +68,7 @@ founder, be brief and show the diff.
 | `legal` | Privacy, terms, consent, regional law, AI transparency, store rules. Checklists and drafts, always flagged as not legal advice. | read, web, edit |
 | `devops` | Environments, CI, release, rollback, monitoring. | read, web, run, edit |
 | `growth` | Positioning, landing copy, pricing experiments, analytics plan. | read, web, edit |
+| `social-media` | Picks the platforms, sets the voice, plans the calendar and drafts posts and replies. Drafts only; posting waits for the founder. | read, web, edit |
 | `optimizer` | Audits the workflow itself for cost and waste: model per agent, context size, redundant steps. Proposes, never applies. | read, run, edit |
 
 Each agent's full brief is `agents/<name>.md`. Which agents are switched on is decided at setup
