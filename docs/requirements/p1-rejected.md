@@ -9,6 +9,13 @@ Newest first. Each entry: date, the proposal, who proposed it, the reason it was
 
 ## About the template itself
 
+### Dashboard agent, 15 October 2026
+
+- **Tracking the agents' own token spend** (the optimizer recording usage from the AI tool and
+  the dashboard showing it), proposed by the assistant as an answer to the r/nocode comment.
+  Declined by Fadi: the dashboard is for the project built from the template, not for the
+  template itself.
+
 ### Researcher, feasibility and reviewer agents, 15 October 2026
 
 - **A reviewer for code diffs only**, leaving documents to the readiness gate and spec-audit,

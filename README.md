@@ -161,6 +161,13 @@ limits into it from the first version: a cap per user, a tighter one for people 
 signed up, and a daily ceiling on what the free plan can spend in total. You choose the numbers.
 Without limits, anyone who finds the free plan, including bots, can run up your bill.
 
+**You can see and control what your product spends.** The dashboard agent builds a private page
+for your product, only for you, that shows how it is doing: users, sign-ups, errors and revenue.
+If your product uses AI, it also shows the AI usage and cost per user, per feature and in total,
+next to your limits and your monthly budget. From the same page you can raise or lower a limit,
+pause the free plan or one feature, block a user or switch to a cheaper model, without waiting
+for a new release. Every change asks you to confirm, is logged, and can be undone.
+
 **Costs can add up.** Every agent run uses your AI subscription. The optimizer agent looks for
 waste, such as an agent using a stronger model than its job needs, and suggests savings. You
 approve each one.
