@@ -58,27 +58,27 @@ founder, be brief and show the diff.
 
 ## The team
 
-| Agent | Job | Access |
-|---|---|---|
-| `orchestrator` | Project manager. Reads the request, picks the track and the agents, sequences hand-offs, holds the gates. | read, edit, delegate |
-| `setup` | Interviews the founder and writes `project.toml`, the region legal packs and the first decisions. Re-runnable. | read, web, run, edit |
-| `researcher` | Finds what similar products already do about an idea, with sources, and turns it into options for the grilling. | read, web, edit |
-| `feasibility` | Checks a grilled idea can be built and run on this stack and budget: limits, cost at 10x, blockers. Go, go with changes or no-go. | read, web, run, edit |
-| `architect` | Software architect for the whole system: the system map, cross-cutting decisions, and per feature the design, API contract and tickets, with ADRs. | read, edit |
-| `frontend-dev` | Designs and builds everything the user sees: flows, screens, copy, accessibility, then the code, test first. | read, run, edit |
-| `backend-dev` | Builds the server, data and integrations from tickets, test first. | read, run, edit |
-| `reviewer` | Independent second reader of specs, designs and every diff: gaps, contradictions, correctness, simplicity. Writes findings, never edits the work. | read, run, edit |
-| `qa` | Tests against the requirement rows, finds regressions, owns the QA report and the release gate. | read, run, edit |
-| `security` | Threat model, secrets, auth, dependencies, data exposure. | read, edit |
-| `legal` | Privacy, terms, consent, regional law, AI transparency, store rules. Checklists and drafts, always flagged as not legal advice. | read, web, edit |
-| `dashboard` | Builds the founder's private dashboard: health and money, and for AI products usage and spend per user and feature, with controls (caps, pause, model) and an audit log. | read, run, edit |
-| `devops` | Environments, CI, release, rollback, monitoring. | read, web, run, edit |
-| `growth` | Positioning, landing copy, pricing experiments, analytics plan. | read, web, edit |
-| `social-media` | Picks the platforms, sets the voice, plans the calendar and drafts posts and replies. Drafts only; posting waits for the founder. | read, web, edit |
-| `optimizer` | Audits the workflow itself for cost and waste: model per agent, context size, redundant steps. Proposes, never applies. | read, run, edit |
+| Agent | Job |
+|---|---|
+| [`orchestrator`](agents/orchestrator.md) | Project manager: picks the track and the agents, holds the gates. |
+| [`setup`](agents/setup.md) | Interviews the founder and writes `project.toml` and the first decisions. |
+| [`researcher`](agents/researcher.md) | Finds what similar products do, as options for the grilling. |
+| [`feasibility`](agents/feasibility.md) | Checks an idea can be built and run on this stack and budget. |
+| [`architect`](agents/architect.md) | The system map, and per feature the design, contract and tickets. |
+| [`frontend-dev`](agents/frontend-dev.md) | Designs and builds everything the user sees, test first. |
+| [`backend-dev`](agents/backend-dev.md) | Builds the server, data and integrations, test first. |
+| [`reviewer`](agents/reviewer.md) | Second reader of every spec, design and diff. Never edits the work. |
+| [`qa`](agents/qa.md) | Tests against the rows and holds the release gate. |
+| [`security`](agents/security.md) | Threat model, secrets, auth, dependencies, data exposure. |
+| [`legal`](agents/legal.md) | Privacy, terms and regional law. Checklists, not legal advice. |
+| [`dashboard`](agents/dashboard.md) | The founder's dashboard: health, AI usage and spend, controls. |
+| [`devops`](agents/devops.md) | Environments, CI, release, rollback, monitoring. |
+| [`growth`](agents/growth.md) | Positioning, landing copy, pricing experiments, analytics. |
+| [`social-media`](agents/social-media.md) | Platforms, voice and post drafts. Posting waits for the founder. |
+| [`optimizer`](agents/optimizer.md) | Audits the workflow for cost and waste. Proposes, never applies. |
 
-Each agent's full brief is `agents/<name>.md`. Which agents are switched on is decided at setup
-(`project.toml [team]`); a tiny project may run with five.
+Each link opens the agent's full brief, with its tools and skills. Which agents are switched
+on is decided at setup (`project.toml [team]`); a tiny project may run with five.
 
 ## Tracks
 
