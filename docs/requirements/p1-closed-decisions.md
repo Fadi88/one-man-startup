@@ -12,6 +12,11 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. A project made from the template keeps them as background and adds its own above.
 
+- **2026-10-15. The "one author" rule is removed** from the constitution (it was rule 10;
+  rules 11 to 13 are now 10 to 12). Commits may credit a tool or model and may come from any
+  author; the commit-msg hook now refuses only banned characters (TPL-7). Decided by Fadi, no
+  reason given. Reopen: if the founder wants the history to carry one name again.
+
 - **2026-10-15. Three more agents: researcher, feasibility and reviewer** (TPL-22 to TPL-24).
   The researcher runs before the first grilling round and its findings become options in it. The
   feasibility agent judges whether the idea can be built and run (stack, limits, cost, effort,
@@ -72,9 +77,9 @@ they say. A project made from the template keeps them as background and adds its
   side, using the frontend-design skill; the architect is the software architect for the whole
   system; the backend developer builds the server side. Decided by Fadi. Reopen: if design work
   outgrows one agent, shown by QA findings.
-- **2026-10-14. Every rejected idea is recorded** (constitution rule 13), in
+- **2026-10-14. Every rejected idea is recorded** (constitution rule 12), in
   `p1-rejected.md` the same day, whoever proposed it. Reason: without it, settled proposals come
   back as if new. Decided by Fadi, 14 October 2026.
-- **2026-10-14. No unconfirmed assumptions** (constitution rule 11). Facts in anything the
+- **2026-10-14. No unconfirmed assumptions** (constitution rule 10). Facts in anything the
   founder or a user reads are sourced, tested or measured, registered as assumptions, or cut.
   Decided by Fadi, 14 October 2026.

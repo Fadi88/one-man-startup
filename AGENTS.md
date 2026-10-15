@@ -35,17 +35,15 @@ says so; it never works around it.
    (`skills/context-budget/`). Never trade accuracy for tokens.
 9. **Scale the process to the change.** A typo does not get a design review; a new product line
    does not skip one. The orchestrator picks the track (below).
-10. **One author.** Commits are the founder's, with no tool or model credited in them
-    (`skills/commit/`).
-11. **No unconfirmed assumptions.** A statement of fact in anything the founder or a user will
+10. **No unconfirmed assumptions.** A statement of fact in anything the founder or a user will
     read (prices, durations, limits, legal status, what a tool supports, how many of anything)
     is confirmed by a source, a test or a measurement, or it is cut. Something we must rely on
     before it can be confirmed goes in `docs/ASSUMPTIONS.md` with how and by when it will be
     confirmed, and is labelled as an assumption where it is used (`skills/verified-claims/`).
-12. **Code like a careful senior engineer.** Think before coding, keep it simple, change only
+11. **Code like a careful senior engineer.** Think before coding, keep it simple, change only
     what the task needs, and define how success is checked before starting
     (`skills/karpathy-guidelines/`).
-13. **Record every rejected idea.** When the founder turns down a proposal, from an agent, a
+12. **Record every rejected idea.** When the founder turns down a proposal, from an agent, a
     grilling round, a review or a pasted draft, it goes into `docs/requirements/p1-rejected.md`
     the same day with the date, who proposed it and the reason. What they chose goes into
     `p1-closed-decisions.md`. Check both before proposing anything; a rejected idea comes back

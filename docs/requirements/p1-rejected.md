@@ -67,9 +67,9 @@ on review. The useful methods went into the playbook, the architect and the regi
 
 - **Unsourced figures:** 60 to 80 percent drop-off from web to app, viral K-factors of 0.05 to
   0.15, a 22 percent payment haircut, 3.2 months of average subscription life, 85 percent
-  bounce on calculator searches, 0 to 15 percent cache hits, refunds of 3 to 5 percent. Rule 11.
+  bounce on calculator searches, 0 to 15 percent cache hits, refunds of 3 to 5 percent. Rule 10.
 - **Competitor claims without sources:** Cal AI's revenue and its 424 paywall variants,
-  MacroFactor's and Hevy's growth, Pieter Levels keeping 97 percent of revenue. Rule 11.
+  MacroFactor's and Hevy's growth, Pieter Levels keeping 97 percent of revenue. Rule 10.
 - **Programmatic pages on a separate domain to protect the main one.** An SEO claim with no
   source.
 - **"Web checkout before install bypasses store commission legally."** Store payment rules
@@ -97,7 +97,7 @@ rejected by Fadi on review. The useful parts of each draft went into the playboo
 - **Market statistics stated without sources** (review cycle 3): UAE smartphone ownership and
   iOS share, WhatsApp as the main channel, German and French as the highest-paying European
   segments, "over 35 percent of software discovery happens in AI search", "high disposable
-  income" and similar. Rejected under constitution rule 11. A project may use any of them once
+  income" and similar. Rejected under constitution rule 10. A project may use any of them once
   it has a dated source.
 - **Fixed prices and rates in a template** (review cycle 3): AED 49 a month, 12 euros a month,
   0.00015 and 0.008 dollars per request, merchant of record and app store fee percentages, 15
@@ -129,7 +129,7 @@ Proposed in the v7 draft; rejected by Fadi on review. The useful methods went in
   subscribers, prices in euros and dirhams, 60 percent annual mix, churn of 4.5 to 15 percent,
   "90 percent input cost reduction", "3 times higher click-through", "DR 0 to DR 28", "Google's
   sandbox for 3 to 6 months", "LLMs index GitHub within hours", 400 characters before indexing,
-  and the four-stage financial table. Rejected under rule 11: unsourced, or founder decisions.
+  and the four-stage financial table. Rejected under rule 10: unsourced, or founder decisions.
 - **"Parasite SEO" and seeding 30 to 50 high-ranking threads** with links to the product.
   Rejected: it breaks most communities' rules and the social media agent's rules. Kept instead:
   genuine answers, rules read first, the connection disclosed.
