@@ -85,7 +85,7 @@ The legal agent goes through a checklist for each country you sell in.
 
 ## Your team
 
-<p align="center"><img src="docs/images/team.svg" alt="You talk to the project manager agent, which hands work to the plan (research, feasibility, architecture), build, check (review, QA, security, legal), grow and save groups." width="100%"></p>
+<p align="center"><img src="docs/images/team.svg" alt="You talk to the project manager agent, which hands work to the plan (research, feasibility, architecture), build, check (review, QA, security, legal), grow and watch (dashboard, optimizer) groups." width="100%"></p>
 
 You talk to one agent, the project manager. It brings in the others when they're needed. Setup
 switches on only the ones your project needs now, and you can add more later.

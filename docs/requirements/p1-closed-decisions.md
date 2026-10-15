@@ -12,6 +12,17 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. A project made from the template keeps them as background and adds its own above.
 
+- **2026-10-15. A dashboard agent** (TPL-25). The template gets a `dashboard` agent that builds
+  the founder's private dashboard; for a product that uses AI, it shows usage and spend and
+  gives the founder controls (caps, pause, model choice) with an audit log. On by default, and
+  setup recommends it from the start for any product that pays per action. Reason: an AI
+  product needs its usage watched and controllable. Prompted by a comment on r/nocode:
+  https://www.reddit.com/r/nocode/comments/1x5u68s/comment/pgu1yl2/ which reads, as pasted by
+  Fadi: "Pregunto, hiciste métrica de tokens? Cuánto gastaste en lo que hiciste? Tenés tu propio
+  sistema de control? Está buenísima la idea" (in English: did you measure tokens? How much did
+  you spend on what you built? Do you have your own control system? Great idea). Decided by Fadi. Reopen: if the optimizer finds the dashboard
+  costs more to keep than it saves.
+
 - **2026-10-15. The "one author" rule is removed** from the constitution (it was rule 10;
   rules 11 to 13 are now 10 to 12). Commits may credit a tool or model and may come from any
   author; the commit-msg hook now refuses only banned characters (TPL-7). Decided by Fadi, no
