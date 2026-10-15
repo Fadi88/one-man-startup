@@ -72,7 +72,7 @@ would ask. Who needs this? What's the smallest useful version? What happens when
 wrong? A researcher first looks at what similar products do, so the questions come with real
 examples, and afterwards a feasibility check confirms it can be built and run within your
 budget. It can feel like a lot. It's also how you avoid paying the AI to build the wrong thing.
-You can ask for a grilling on any idea by typing `/grill-me`.
+You can ask for a grilling on any idea: just say *"grill me on this"*.
 
 **3. Build.** The agents design the screens, write the code and test it as they go. The project
 manager decides who works on what, so you don't have to.
@@ -87,7 +87,7 @@ The legal agent goes through a checklist for each country you sell in.
 
 <p align="center"><img src="docs/images/team.svg" alt="You talk to the project manager agent, which hands work to the plan (research, feasibility, architecture), build, check (review, QA, security, legal), grow and watch (dashboard, optimizer) groups." width="100%"></p>
 
-You talk to one agent, the project manager. It brings in the others when they're needed. Setup
+You talk to one agent, the project manager, in your own words. It brings in the others when they're needed. Setup
 switches on only the ones your project needs now, and you can add more later.
 
 ## What stays in your hands
@@ -112,26 +112,16 @@ check at every step. The ones you'll notice most:
 |---|---|---|
 | An AI coding tool | Claude Code, Codex, Gemini CLI or Cursor. The template is written for all four; see [what has been tested](docs/ASSUMPTIONS.md). | A paid subscription. Check the tool's own pricing page. |
 | A GitHub account | Where your project's files are kept, with every change recorded. | Free |
-| Git and Python | Two free programs your AI tool uses behind the scenes. | Free |
+| Git and Python | Two free programs the checks use. The project manager checks for them and walks you through installing them. | Free |
 
 Hosting your app once it's live has its own costs. The agents are instructed to tell you what
 each option costs before you choose.
 
 ## Getting started
 
-If any step is unfamiliar, ask your AI tool to walk you through it.
-
-1. **Install the tools.** Install your AI coding tool by following its website's instructions,
-   then ask it: *"Check that Git and Python 3.11 or newer are installed on this computer, and
-   help me install them if not."*
-2. **Make your copy.** On this page on GitHub, click **Use this template**, then **Create a new
-   repository**, and give it your product's name.
-3. **Open it.** Ask your AI tool: *"Download my repository `<your-name>/<your-product>` from
-   GitHub and open it."*
-4. **Run setup.** Type `/setup` (in Claude Code) or ask: *"Run the setup interview from
-   `skills/setup`."* Answer the questions.
-5. **Ask for your first thing.** For example: *"I want a landing page where people can join a
-   waiting list."* The project manager takes it from there.
+**[Start here](docs/START-HERE.md)**: a step-by-step guide with screenshots, and no code. In
+short: copy the template on GitHub, install Claude Code, open your copy and say hello. From then on you talk to one agent, the project manager, in your own words; it runs the
+setup interview and brings in the rest of the team.
 
 To see what setup produces before you run it, read the
 [worked example](examples/setup-dry-run/): a fictional founder's interview, word for word, and

@@ -5,8 +5,14 @@ agents do the volume. This file is read by every AI coding tool (Claude Code, Co
 Cursor and others). Tool-specific files are generated from `agents/` and `skills/` by
 `python tools/sync_adapters.py` and are never edited by hand.
 
+**The main session is the project manager.** Answer the founder as `orchestrator`
+(`agents/orchestrator.md`): it is their only point of contact. They say what they want in plain
+words and never need to name an agent, a skill or a command; you bring in the others. An agent
+started for another role follows its own brief.
+
 **First thing, every session:** read `project.toml`. If `[owner]` or `[product]` still says
-`unset`, nothing else happens until the founder has run the setup interview (`skills/setup/`).
+`unset`, start the setup interview yourself (`skills/setup/`); nothing else happens until it is
+done.
 
 ## The constitution
 
