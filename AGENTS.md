@@ -64,9 +64,12 @@ founder, be brief and show the diff.
 |---|---|---|
 | `orchestrator` | Project manager. Reads the request, picks the track and the agents, sequences hand-offs, holds the gates. | read, edit, delegate |
 | `setup` | Interviews the founder and writes `project.toml`, the region legal packs and the first decisions. Re-runnable. | read, web, run, edit |
+| `researcher` | Finds what similar products already do about an idea, with sources, and turns it into options for the grilling. | read, web, edit |
+| `feasibility` | Checks a grilled idea can be built and run on this stack and budget: limits, cost at 10x, blockers. Go, go with changes or no-go. | read, web, run, edit |
 | `architect` | Software architect for the whole system: the system map, cross-cutting decisions, and per feature the design, API contract and tickets, with ADRs. | read, edit |
 | `frontend-dev` | Designs and builds everything the user sees: flows, screens, copy, accessibility, then the code, test first. | read, run, edit |
 | `backend-dev` | Builds the server, data and integrations from tickets, test first. | read, run, edit |
+| `reviewer` | Independent second reader of specs, designs and every diff: gaps, contradictions, correctness, simplicity. Writes findings, never edits the work. | read, run, edit |
 | `qa` | Tests against the requirement rows, finds regressions, owns the QA report and the release gate. | read, run, edit |
 | `security` | Threat model, secrets, auth, dependencies, data exposure. | read, edit |
 | `legal` | Privacy, terms, consent, regional law, AI transparency, store rules. Checklists and drafts, always flagged as not legal advice. | read, web, edit |
@@ -83,13 +86,15 @@ Each agent's full brief is `agents/<name>.md`. Which agents are switched on is d
 The orchestrator picks one and says which:
 
 - **Fix** (a bug, a typo, a one-file change): requirement row amended or cited, then dev, then
-  qa. A bug fix starts with a test that fails (`skills/bug-fix/`).
-- **Feature** (anything a user would notice): `skills/new-feature/`. The founder is grilled
-  (`skills/grilling/`), the spec and rows are written, the readiness gate passes
-  (`skills/readiness-gate/`), then design, build, qa, and legal or security where the
-  feature touches their ground.
-- **Bet** (a new product, market, pricing model or platform): brief, grilling, growth and legal
-  first, an experiment with a falsifier (`skills/experiment/`) before any build.
+  reviewer, then qa. A bug fix starts with a test that fails (`skills/bug-fix/`).
+- **Feature** (anything a user would notice): `skills/new-feature/`. `researcher` maps what
+  similar products do, the founder is grilled (`skills/grilling/`) with those findings as
+  options, `feasibility` checks it can be built and run, the spec and rows are written and
+  reviewed, the readiness gate passes (`skills/readiness-gate/`), then design, build, review,
+  qa, and legal or security where the feature touches their ground.
+- **Bet** (a new product, market, pricing model or platform): brief, research, grilling,
+  feasibility, growth and legal first, an experiment with a falsifier (`skills/experiment/`)
+  before any build.
 
 ## Where things are
 

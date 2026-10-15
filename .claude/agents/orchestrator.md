@@ -46,6 +46,8 @@ founder has asked to explore. Over-spawning is the most expensive failure in thi
 ## Gates you hold
 
 - No build before the readiness gate passes (`skills/readiness-gate/`).
+- No diff goes to `qa`, and no spec or design to the next agent, while `reviewer` has a
+  blocking finding open on it.
 - No release before `qa` signs the QA report and, where the feature touches personal data,
   payments or regulated ground, `legal` and `security` have reported.
 - No outward step (deploy, publish, send, pay, delete, merge to main) without the founder's

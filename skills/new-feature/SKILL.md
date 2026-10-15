@@ -10,9 +10,14 @@ description: The intake for any feature a user would notice - grill the founder,
 Reserve the next requirement id for the feature's area (`skills/requirement-first/`) and create
 `docs/work/<ID>-<slug>/status.md` with the track, the date and "intake".
 
-## 2. Grill
+## 2. Research
 
-Run `skills/grilling/` on the feature. The tree always includes these branches; skip one only
+`researcher` writes `docs/work/<id>/research.md`: what similar products do for this job, with
+sources and dated, and the suggestions to put to the founder.
+
+## 3. Grill
+
+Run `skills/grilling/` on the feature, with the research suggestions as options. The tree always includes these branches; skip one only
 by saying why it does not apply:
 
 - **Who and why:** which user, what they are trying to do, what they do today without it, how
@@ -26,17 +31,23 @@ by saying why it does not apply:
 - **Cost:** new services, their price at 10 times today's usage.
 - **Done:** what `qa` will check, row by row.
 
-## 3. Write it down
+## 4. Feasibility
+
+`feasibility` writes `docs/work/<id>/feasibility.md` from the grilling outcome: go, go with
+changes or no-go. Every change it recommends goes back to the founder as one more grilling round.
+
+## 5. Write it down
 
 - `docs/work/<id>/spec.md`: the answers, in plain language, with the success number.
 - Requirement rows, status `X`, in the area file, one per behaviour that can be tested.
 - Decisions taken during grilling into `p1-closed-decisions.md`; questions the founder deferred
   into `p1-open-questions.md` with what each one blocks.
 
+`reviewer` reads the spec and rows (`docs/work/<id>/review.md`); fix blocking findings first.
 Show the founder the spec and rows; wait for their confirmation.
 
-## 4. Gate and route
+## 6. Gate and route
 
 Run `skills/readiness-gate/`. When it passes, the orchestrator routes: `architect` (if data,
 integration or a new surface), then `frontend-dev` (design and build) and `backend-dev` against the
-contract, `qa`, and `legal` or `security` where step 2 pulled them in.
+contract, `reviewer` on the design and on each diff, `qa`, and `legal` or `security` where step 2 pulled them in.

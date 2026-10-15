@@ -31,11 +31,14 @@ you can look up:
 
 | What happens here | The established practice |
 |---|---|
+| Before you are interviewed, a researcher looks at what similar products already do, with sources. | Competitive analysis |
 | Before anything is built, you are interviewed about who needs it, the smallest useful version and what happens when it goes wrong. | Requirements elicitation and product discovery |
 | Everything the product must do is written as a numbered requirement, and every change names the requirement it serves. | Requirements traceability |
+| After the interview, a feasibility check confirms it can be built and run on your stack and budget. | Feasibility study |
 | Building can't start until the spec is confirmed and no question on it is still open. | Definition of Ready |
 | An architect designs the system and records each hard-to-reverse choice with its reason. | Architecture Decision Records |
 | Developers write the test before the code. | Test-driven development |
+| A reviewer reads every spec, design and code change before it moves on. | Code review |
 | A separate tester checks the work against the requirements and can stop a release. | Independent QA and a release gate |
 | A security reviewer looks for ways data could leak or be misused. | Security review and threat modelling |
 | Every change re-runs every check, and a round of work ends only when they all pass. | Continuous integration |
@@ -56,7 +59,7 @@ Developers who work alone can use it too, for the discipline of a team without h
 
 ## How it goes
 
-<p align="center"><img src="docs/images/journey.svg" alt="Five steps, each a standard software practice: set up (product discovery), get grilled (requirements first), build (test-driven development), check (QA and security review), and you say go (release approval)." width="100%"></p>
+<p align="center"><img src="docs/images/journey.svg" alt="Five steps, each a standard software practice: set up (product discovery), get grilled (requirements first), build (test-driven development), check (code review, QA and security review), and you say go (release approval)." width="100%"></p>
 
 **1. Set up.** The setup agent interviews you: what you're building, for
 whom, in which countries, whether customers are people or companies, what data you'll hold, and
@@ -66,20 +69,23 @@ answers.
 
 **2. Get grilled.** Every new feature starts with questions, the kind a sharp product manager
 would ask. Who needs this? What's the smallest useful version? What happens when something goes
-wrong? It can feel like a lot. It's also how you avoid paying the AI to build the wrong thing.
+wrong? A researcher first looks at what similar products do, so the questions come with real
+examples, and afterwards a feasibility check confirms it can be built and run within your
+budget. It can feel like a lot. It's also how you avoid paying the AI to build the wrong thing.
 You can ask for a grilling on any idea by typing `/grill-me`.
 
 **3. Build.** The agents design the screens, write the code and test it as they go. The project
 manager decides who works on what, so you don't have to.
 
-**4. Check.** A tester tries to break it. A security reviewer looks for ways data could leak.
+**4. Check.** A reviewer reads every plan and every code change as a second pair of eyes. A
+tester tries to break it. A security reviewer looks for ways data could leak.
 The legal agent goes through a checklist for each country you sell in.
 
 **5. You say go.** Nothing goes live until you've seen what changed and approved it.
 
 ## Your team
 
-<p align="center"><img src="docs/images/team.svg" alt="You talk to the project manager agent, which hands work to the plan, build, check, grow and save groups." width="100%"></p>
+<p align="center"><img src="docs/images/team.svg" alt="You talk to the project manager agent, which hands work to the plan (research, feasibility, architecture), build, check (review, QA, security, legal), grow and save groups." width="100%"></p>
 
 You talk to one agent, the project manager. It brings in the others when they're needed. Setup
 switches on only the ones your project needs now, and you can add more later.

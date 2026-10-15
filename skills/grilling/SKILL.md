@@ -14,6 +14,13 @@ Every decision has decisions that hang off it. Map them as a tree before asking 
 **frontier** is every decision whose prerequisites are already settled: the questions that can
 be asked now without guessing at answers not yet given.
 
+## What others do
+
+For a feature or a bet, read `docs/work/<id>/research.md` before round one (the orchestrator has
+`researcher` write it first). Each suggestion in it becomes a question in the round where its
+branch is on the frontier, with the evidence beside the recommendation: "Rivals A and B do X;
+do we? Recommended yes, because ...". What the founder copies, beats or ignores is theirs.
+
 ## Rounds
 
 Ask the whole frontier in one round, numbered. For each question:

@@ -12,6 +12,15 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. A project made from the template keeps them as background and adds its own above.
 
+- **2026-10-15. Three more agents: researcher, feasibility and reviewer** (TPL-22 to TPL-24).
+  The researcher runs before the first grilling round and its findings become options in it. The
+  feasibility agent judges whether the idea can be built and run (stack, limits, cost, effort,
+  blockers), not whether it will sell, which stays with `growth`. The reviewer reads both
+  documents (spec, design, contract, tickets) and code diffs. All three are on by default.
+  Reason: the founder wanted grilling to start from what similar products do, a build check
+  before spending, and a second reader on every artifact. Decided by Fadi. Reopen: if the
+  optimizer shows the extra runs cost more than the rework they prevent.
+
 - **2026-10-14. The premise is building a software startup without writing code, and it is not
   vibe coding.** The README leads with that line and shows each step of the workflow beside the
   established practice it follows (TPL-18). Reason: the old line, "build real software without
