@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 702" role="img" aria-labelledby="t d">
   <title id="t">Your AI team</title>
-  <desc id="d">You give requests to the project manager agent, which hands work to five groups: plan (researcher, feasibility check, software architect), build (frontend design and code, backend, devops), check (reviewer, QA, security, legal), grow (growth, social media) and watch spend (dashboard, optimizer). A setup agent tailors the team at the start.</desc>
+  <desc id="d">You give requests to the project manager agent, which hands work to five groups: plan (researcher, feasibility check, software architect, product designer, AI workflow designer), build (web, Android, iOS, desktop, backend), check (reviewer, QA, security, legal), grow (growth, social media) and run (devops, rollback, debugger, dashboard, optimizer). A setup agent tailors the team at the start.</desc>
   <style>
     .bg1 { stop-color: #fcfaf6; } .bg2 { stop-color: #f1ebe0; }
     .card { fill: #ffffff; stroke: #e7e1d5; stroke-width: 1; }
@@ -27,7 +27,7 @@
     <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#1d2433" flood-opacity="0.10"/></filter>
     <clipPath id="c"><rect width="200" height="240" rx="16"/></clipPath>
   </defs>
-  <rect width="1200" height="650" rx="24" fill="url(#bg)"/>
+  <rect width="1200" height="702" rx="24" fill="url(#bg)"/>
   <text class="ink" x="48" y="58" font-size="26" font-weight="700">Your AI team</text>
   <text class="soft" x="48" y="84" font-size="15">The roles of a real startup. You talk to one of them.</text>
 
@@ -40,34 +40,41 @@
   <g transform="translate(980 224)"><rect class="setup" x="-120" y="-30" width="240" height="60" rx="14"/><text class="ink" y="-3" font-size="16" font-weight="700" text-anchor="middle">Setup</text><text class="soft" y="18" font-size="13" text-anchor="middle">tailors the team to you</text></g>
 
   <g font-size="15">
-    <g transform="translate(32 322)"><rect class="card" width="200" height="292" rx="16" filter="url(#sh)"/>
+    <g transform="translate(32 322)"><rect class="card" width="200" height="344" rx="16" filter="url(#sh)"/>
       <g clip-path="url(#c)"><rect class="g1 tint" width="200" height="64"/><rect class="g1" width="200" height="6"/></g>
       <circle class="g1" cx="30" cy="38" r="9"/><text class="ink" x="48" y="45" font-size="19" font-weight="700">Plan</text>
       <text class="ink" x="20" y="96">Researcher</text><text class="soft" x="20" y="116" font-size="13">what similar products do</text>
       <text class="ink" x="20" y="148">Feasibility</text><text class="soft" x="20" y="168" font-size="13">can we build and run it</text>
-      <text class="ink" x="20" y="200">Software architect</text><text class="soft" x="20" y="220" font-size="13">the whole system</text></g>
-    <g transform="translate(266 322)"><rect class="card" width="200" height="292" rx="16" filter="url(#sh)"/>
+      <text class="ink" x="20" y="200">Software architect</text><text class="soft" x="20" y="220" font-size="13">the whole system</text>
+      <text class="ink" x="20" y="252">Product designer</text><text class="soft" x="20" y="272" font-size="13">designs every screen</text>
+      <text class="ink" x="20" y="304">AI workflows</text><text class="soft" x="20" y="324" font-size="13">how the product's AI works</text></g>
+    <g transform="translate(266 322)"><rect class="card" width="200" height="344" rx="16" filter="url(#sh)"/>
       <g clip-path="url(#c)"><rect class="g2 tint" width="200" height="64"/><rect class="g2" width="200" height="6"/></g>
       <circle class="g2" cx="30" cy="38" r="9"/><text class="ink" x="48" y="45" font-size="19" font-weight="700">Build</text>
-      <text class="ink" x="20" y="96">Frontend developer</text><text class="soft" x="20" y="116" font-size="13">designs and codes the UI</text>
-      <text class="ink" x="20" y="148">Backend developer</text><text class="soft" x="20" y="168" font-size="13">data, accounts, payments</text>
-      <text class="ink" x="20" y="200">DevOps</text><text class="soft" x="20" y="220" font-size="13">hosting and releases</text></g>
-    <g transform="translate(500 322)"><rect class="card" width="200" height="292" rx="16" filter="url(#sh)"/>
+      <text class="ink" x="20" y="96">Web developer</text><text class="soft" x="20" y="116" font-size="13">the website and web app</text>
+      <text class="ink" x="20" y="148">Android developer</text><text class="soft" x="20" y="168" font-size="13">the Android app</text>
+      <text class="ink" x="20" y="200">iOS developer</text><text class="soft" x="20" y="220" font-size="13">the iPhone and iPad app</text>
+      <text class="ink" x="20" y="252">Desktop developer</text><text class="soft" x="20" y="272" font-size="13">Windows, Mac, Linux</text>
+      <text class="ink" x="20" y="304">Backend developer</text><text class="soft" x="20" y="324" font-size="13">data, accounts, payments</text></g>
+    <g transform="translate(500 322)"><rect class="card" width="200" height="344" rx="16" filter="url(#sh)"/>
       <g clip-path="url(#c)"><rect class="g3 tint" width="200" height="64"/><rect class="g3" width="200" height="6"/></g>
       <circle class="g3" cx="30" cy="38" r="9"/><text class="ink" x="48" y="45" font-size="19" font-weight="700">Check</text>
       <text class="ink" x="20" y="96">Reviewer</text><text class="soft" x="20" y="116" font-size="13">reads plans and code</text>
       <text class="ink" x="20" y="148">QA</text><text class="soft" x="20" y="168" font-size="13">tries to break it first</text>
       <text class="ink" x="20" y="200">Security</text><text class="soft" x="20" y="220" font-size="13">keeps data safe</text>
       <text class="ink" x="20" y="252">Legal</text><text class="soft" x="20" y="272" font-size="13">checklists, not advice</text></g>
-    <g transform="translate(734 322)"><rect class="card" width="200" height="292" rx="16" filter="url(#sh)"/>
+    <g transform="translate(734 322)"><rect class="card" width="200" height="344" rx="16" filter="url(#sh)"/>
       <g clip-path="url(#c)"><rect class="g4 tint" width="200" height="64"/><rect class="g4" width="200" height="6"/></g>
       <circle class="g4" cx="30" cy="38" r="9"/><text class="ink" x="48" y="45" font-size="19" font-weight="700">Grow</text>
       <text class="ink" x="20" y="96">Growth</text><text class="soft" x="20" y="116" font-size="13">pitch, pricing, launch</text>
       <text class="ink" x="20" y="148">Social media</text><text class="soft" x="20" y="168" font-size="13">posts drafted, you publish</text></g>
-    <g transform="translate(968 322)"><rect class="card" width="200" height="292" rx="16" filter="url(#sh)"/>
+    <g transform="translate(968 322)"><rect class="card" width="200" height="344" rx="16" filter="url(#sh)"/>
       <g clip-path="url(#c)"><rect class="g5 tint" width="200" height="64"/><rect class="g5" width="200" height="6"/></g>
-      <circle class="g5" cx="30" cy="38" r="9"/><text class="ink" x="48" y="45" font-size="19" font-weight="700">Watch</text>
-      <text class="ink" x="20" y="96">Dashboard</text><text class="soft" x="20" y="116" font-size="13">usage, spend and controls</text>
-      <text class="ink" x="20" y="148">Optimizer</text><text class="soft" x="20" y="168" font-size="13">finds wasted AI spend</text></g>
+      <circle class="g5" cx="30" cy="38" r="9"/><text class="ink" x="48" y="45" font-size="19" font-weight="700">Run</text>
+      <text class="ink" x="20" y="96">DevOps</text><text class="soft" x="20" y="116" font-size="13">hosting and releases</text>
+      <text class="ink" x="20" y="148">Rollback</text><text class="soft" x="20" y="168" font-size="13">undoes a bad release</text>
+      <text class="ink" x="20" y="200">Debugger</text><text class="soft" x="20" y="220" font-size="13">finds why it broke</text>
+      <text class="ink" x="20" y="252">Dashboard</text><text class="soft" x="20" y="272" font-size="13">usage, spend and controls</text>
+      <text class="ink" x="20" y="304">Optimizer</text><text class="soft" x="20" y="324" font-size="13">finds wasted AI spend</text></g>
   </g>
 </svg>

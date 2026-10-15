@@ -40,6 +40,7 @@ you can look up:
 | Developers write the test before the code. | Test-driven development |
 | A reviewer reads every spec, design and code change before it moves on. | Code review |
 | A separate tester checks the work against the requirements and can stop a release. | Independent QA and a release gate |
+| If a release breaks something important, the last good version goes back first and the cause is found after. | Incident response and rollback |
 | A security reviewer looks for ways data could leak or be misused. | Security review and threat modelling |
 | Every change re-runs every check, and a round of work ends only when they all pass. | Continuous integration |
 | Nothing goes live, costs money or deletes data without your approval, one step at a time. | Change approval and release management |
@@ -76,7 +77,8 @@ examples, and afterwards a feasibility check confirms it can be built and run wi
 budget. It can feel like a lot. It's also how you avoid paying the AI to build the wrong thing.
 You can ask for a grilling on any idea: just say *"grill me on this"*.
 
-**3. Build.** The agents design the screens, write the code and test it as they go. The project
+**3. Build.** The agents design the screens, write the code for the web, phone and desktop
+apps you need, and test it as they go. The project
 manager decides who works on what, so you don't have to.
 
 **4. Check.** A reviewer reads every plan and every code change as a second pair of eyes. A
@@ -87,7 +89,7 @@ The legal agent goes through a checklist for each country you sell in.
 
 ## Your team
 
-<p align="center"><img src="docs/images/team.svg" alt="You talk to the project manager agent, which hands work to the plan (research, feasibility, architecture), build, check (review, QA, security, legal), grow and watch (dashboard, optimizer) groups." width="100%"></p>
+<p align="center"><img src="docs/images/team.svg" alt="You talk to the project manager agent, which hands work to the plan (research, feasibility, architecture, design, AI workflows), build (web, Android, iOS, desktop, backend), check (review, QA, security, legal), grow and run (devops, rollback, debugger, dashboard, optimizer) groups." width="100%"></p>
 
 You talk to one agent, the project manager, in your own words. It brings in the others when they're needed. Setup
 switches on only the ones your project needs now, and you can add more later.

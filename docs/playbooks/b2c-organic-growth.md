@@ -161,7 +161,7 @@ function, and linking to an outside payment page is restricted, with rules that 
   where the platform supports it), so nobody re-enters what they already gave.
 - **The paywall is an experiment too:** where it appears, what it says and which plan it shows
   first are each tested with a prediction and a read date, never changed on a hunch, and never
-  with pressure tactics (`agents/frontend-dev.md`, no dark patterns).
+  with pressure tactics (`agents/product-designer.md`, no dark patterns).
 - **Sign-in:** the fewest options the audience needs; one-tap providers where they fit.
 - **Pricing:** anchored to what the problem costs the customer today. Free and paid tiers shown
   plainly; cancelling is as easy as subscribing; no renewal traps. Price: **Founder decides**.

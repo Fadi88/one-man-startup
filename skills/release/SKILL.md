@@ -30,5 +30,6 @@ Run in order. Any line not met stops the release.
 
 ## After
 
-Watch errors and the feature's success number for the window set in the spec. If either goes
-wrong, roll back first and investigate second. Write a short entry in `docs/HISTORY.md`.
+Watch errors and the feature's success number for the window set in the spec. On a major
+error, `qa` writes ROLLBACK and the orchestrator starts `rollback`: roll back first (on the
+founder's go) and investigate second, with `debugger`. Write a short entry in `docs/HISTORY.md`.

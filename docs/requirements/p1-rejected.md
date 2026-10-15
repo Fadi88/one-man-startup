@@ -83,7 +83,8 @@ Options proposed by the assistant building the template and declined by Fadi.
 
 - **A separate designer agent**, and giving the designer the frontend-design skill. Declined by
   Fadi, 14 October 2026: design belongs to the frontend developer, with a software architect
-  over the whole system.
+  over the whole system. Brought back by Fadi on 15 October 2026 with a new fact (four
+  platforms to design for) and taken; see closed decisions.
 
 ### From the repository audit (14 October 2026)
 

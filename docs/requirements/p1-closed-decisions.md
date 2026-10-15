@@ -12,6 +12,25 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-15. Six more agents: rollback, debugger, agentic workflow, Android, iOS and desktop**
+  (TPL-32 to TPL-35). `rollback` is called by `qa` on a major error live; since only the
+  orchestrator starts agents, QA writes the verdict ROLLBACK and the orchestrator starts
+  `rollback` before anything else. The rollback itself still waits for the founder's go
+  (constitution rule 2). `debugger` finds the cause of hard bugs and incidents. `agentic-workflow`
+  designs the AI workflows inside the product, not the template's own agent team (that stays
+  with `optimizer`). All six are on by default, and setup recommends each only when the project
+  needs it. Decided by Fadi. Reopen: if the optimizer shows an agent is never used or costs more
+  than it saves.
+
+- **2026-10-15. A product designer, and one developer per platform** (TPL-35, TPL-36).
+  `product-designer` designs what users see for every platform the product has, in one
+  `ux.md` with one design system and a section per platform; `web-dev`, `android-dev`,
+  `ios-dev` and `desktop-dev` build it and never redesign it. `frontend-dev` is split into
+  `product-designer` and `web-dev`. This reverses "No separate designer" (14 October). The new
+  fact: with four platforms, one agent designing and building all of them would make the
+  design differ from platform to platform. Decided by Fadi. Reopen: if the hand-off between
+  designer and developers costs more rework than it saves, shown by review and QA findings.
+
 - **2026-10-15. Setup removes the template's own content from a new project** (TPL-30): its
   decisions and rejected ideas, experiments, assumptions, landing page, examples, marketing
   diagrams and README, on the founder's go, by a script whose result the sweep rehearses on a
@@ -125,7 +144,8 @@ they say. Setup removes this section from a new project (`tools/clean_template.p
 - **2026-10-14. No separate designer.** The frontend developer designs and builds the user's
   side, using the frontend-design skill; the architect is the software architect for the whole
   system; the backend developer builds the server side. Decided by Fadi. Reopen: if design work
-  outgrows one agent, shown by QA findings.
+  outgrows one agent, shown by QA findings. **Reversed by Fadi on 2026-10-15** (a product
+  designer and one developer per platform, above).
 - **2026-10-14. Every rejected idea is recorded** (constitution rule 12), in
   `p1-rejected.md` the same day, whoever proposed it. Reason: without it, settled proposals come
   back as if new. Decided by Fadi, 14 October 2026.

@@ -4,7 +4,7 @@ description: Owns environments, CI, releases, rollback, backups and monitoring. 
 tier: standard
 access: [read, web, run, edit]
 skills: [release, ordered-steps, verify-green, safe-data-write, human-steps, commit, handoff, karpathy-guidelines, verified-claims]
-hands_off_to: [orchestrator, qa]
+hands_off_to: [orchestrator, qa, rollback, debugger]
 ---
 
 # DevOps
@@ -21,7 +21,9 @@ hands_off_to: [orchestrator, qa]
 
 Follow `skills/release/`. The checklist runs in order and each outward step waits for the
 founder's go: merge, migrate, deploy, announce. A release without a rollback plan written down
-before it starts does not start.
+before it starts does not start; write it so `rollback` can run it under pressure: the last
+good version, each step, how long it takes and what happens to data written since. A major
+error in monitoring goes to the orchestrator for `rollback` at once.
 
 ## Things only the founder can do
 

@@ -30,7 +30,8 @@ error handling and logging, monitoring, cost guards on paid services (the free-t
 - `contract.md`: every API or event between client and server, exact shapes and errors. Frontend
   and backend build against it in parallel; changing it after they start is a new hand-off.
 - `tickets.md`: vertical slices, each buildable and testable alone, citing requirement ids, with
-  blocking edges, split between `frontend-dev` and `backend-dev`.
+  blocking edges, split between `web-dev`, `backend-dev` and, where the product has them,
+  `android-dev`, `ios-dev` and `desktop-dev`.
 - `docs/adr/NNNN-<title>.md` for each decision that is costly to undo: context, options, choice,
   what would make us revisit it.
 

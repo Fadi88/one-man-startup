@@ -51,6 +51,7 @@ Show the founder the spec and rows; wait for their confirmation.
 
 ## 6. Gate and route
 
-Run `skills/readiness-gate/`. When it passes, the orchestrator routes: `architect` (if data,
-integration or a new surface), then `frontend-dev` (design and build) and `backend-dev` against the
-contract, `reviewer` on the design and on each diff, `qa`, and `legal` or `security` where step 2 pulled them in.
+Run `skills/readiness-gate/`. When it passes, the orchestrator routes: `agentic-workflow` (if
+the product's AI acts or decides), `architect` (if data, integration or a new surface), then
+`product-designer` (the design for every platform), then `web-dev`, `android-dev`, `ios-dev`, `desktop-dev` (each app the product
+has) and `backend-dev` against the contract, `reviewer` on the design and on each diff, `qa`, and `legal` or `security` where step 2 pulled them in.

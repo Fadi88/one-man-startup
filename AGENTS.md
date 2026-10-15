@@ -71,10 +71,17 @@ business, what it costs and what could go wrong, with your recommendation.
 | [`researcher`](agents/researcher.md) | Finds what similar products do, as options for the grilling. |
 | [`feasibility`](agents/feasibility.md) | Checks an idea can be built and run on this stack and budget. |
 | [`architect`](agents/architect.md) | The system map, and per feature the design, contract and tickets. |
-| [`frontend-dev`](agents/frontend-dev.md) | Designs and builds everything the user sees, test first. |
+| [`agentic-workflow`](agents/agentic-workflow.md) | Designs the product's AI workflows: guardrails, evals, cost. |
+| [`product-designer`](agents/product-designer.md) | Designs what users see, for every platform. |
+| [`web-dev`](agents/web-dev.md) | Builds the web app, test first. |
+| [`android-dev`](agents/android-dev.md) | Builds the Android app, test first. |
+| [`ios-dev`](agents/ios-dev.md) | Builds the iOS app, test first. |
+| [`desktop-dev`](agents/desktop-dev.md) | Builds the desktop app, test first. |
 | [`backend-dev`](agents/backend-dev.md) | Builds the server, data and integrations, test first. |
+| [`debugger`](agents/debugger.md) | Finds the cause of hard bugs, proved by a failing test. |
 | [`reviewer`](agents/reviewer.md) | Second reader of every spec, design and diff. Never edits the work. |
 | [`qa`](agents/qa.md) | Tests against the rows and holds the release gate. |
+| [`rollback`](agents/rollback.md) | On QA's call, puts the last good version back live. |
 | [`security`](agents/security.md) | Threat model, secrets, auth, dependencies, data exposure. |
 | [`legal`](agents/legal.md) | Privacy, terms and regional law. Checklists, not legal advice. |
 | [`dashboard`](agents/dashboard.md) | The founder's dashboard: health, AI usage and spend, controls. |
@@ -83,15 +90,16 @@ business, what it costs and what could go wrong, with your recommendation.
 | [`social-media`](agents/social-media.md) | Platforms, voice and post drafts. Posting waits for the founder. |
 | [`optimizer`](agents/optimizer.md) | Audits the workflow for cost and waste. Proposes, never applies. |
 
-Each link opens the agent's full brief, with its tools and skills. Which agents are switched
-on is decided at setup (`project.toml [team]`); a tiny project may run with five.
+Which agents are switched on is decided at setup (`project.toml [team]`); a tiny project may
+run with five.
 
 ## Tracks
 
 The orchestrator picks one and says which:
 
 - **Fix** (a bug, a typo, a one-file change): requirement row amended or cited, then dev, then
-  reviewer, then qa. A bug fix starts with a test that fails (`skills/bug-fix/`).
+  reviewer, then qa. A bug fix starts with a test that fails (`skills/bug-fix/`); after three
+  failed fixes, `debugger` finds the cause.
 - **Feature** (anything a user would notice): `skills/new-feature/`. `researcher` maps what
   similar products do, the founder is grilled (`skills/grilling/`) with those findings as
   options, `feasibility` checks it can be built and run, the spec and rows are written and
@@ -126,5 +134,4 @@ mean opposite things; a row in `p1-closed-decisions.md` is what tells them apart
 ## Using this from any tool
 
 Every tool reads this file. To act as a role, read `agents/<name>.md` and follow it. To use a
-skill, read `skills/<name>/SKILL.md`. Tools with native agents or skills get generated copies
-(`.claude/`, `.cursor/rules/`); the files here are the source.
+skill, read `skills/<name>/SKILL.md`.

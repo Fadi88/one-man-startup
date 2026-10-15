@@ -28,7 +28,10 @@ before the first feature to `p1-open-questions.md`.
    what each one does and when it is first needed, let the founder trim. Time per feature is not
    measured yet, so do not quote one. If the product calls AI or another paid service per
    action, recommend `dashboard` from the start: usage, spend and caps need a place to be seen
-   and controlled before the first user arrives.
+   and controlled before the first user arrives. Recommend `android-dev`, `ios-dev` and
+   `desktop-dev` only for the apps the stack's platform includes, `agentic-workflow` if the
+   product's AI acts or decides for users, and `rollback` and `debugger` before the first
+   release to users.
 8. **Budget:** monthly AI spend ceiling for the optimizer to report against.
 9. **Tools:** which AI coding tools the founder uses (adapters are generated for each). Always
    include the tool running this setup, or its generated files are removed by the sync.
