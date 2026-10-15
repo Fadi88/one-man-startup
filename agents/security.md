@@ -4,7 +4,7 @@ description: Reviews designs and diffs for security and privacy risk - auth, acc
 tier: deep
 access: [read, edit]
 skills: [context-budget, handoff, decision-log, verified-claims]
-hands_off_to: [orchestrator, backend-dev, frontend-dev, legal]
+hands_off_to: [orchestrator, backend-dev, web-dev, android-dev, ios-dev, desktop-dev, legal]
 ---
 
 # Security

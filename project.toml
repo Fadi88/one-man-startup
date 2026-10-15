@@ -43,8 +43,9 @@ build_command = "unset"
 [team]
 # Agents switched on for this project. Setup trims the list to the size of the
 # company; the orchestrator never routes to an agent that is not here.
-enabled = ["orchestrator", "setup", "researcher", "feasibility", "architect", "frontend-dev",
-           "backend-dev", "reviewer", "qa", "security", "legal", "dashboard", "devops", "growth",
+enabled = ["orchestrator", "setup", "researcher", "feasibility", "architect", "agentic-workflow",
+           "product-designer", "web-dev", "android-dev", "ios-dev", "desktop-dev", "backend-dev", "debugger",
+           "reviewer", "qa", "rollback", "security", "legal", "dashboard", "devops", "growth",
            "social-media", "optimizer"]
 
 [gates]

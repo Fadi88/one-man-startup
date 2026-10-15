@@ -4,7 +4,7 @@ description: An independent second reader for both documents and code - reviews 
 tier: deep
 access: [read, run, edit]
 skills: [context-budget, karpathy-guidelines, requirement-first, single-source, verified-claims, spec-audit, handoff]
-hands_off_to: [orchestrator, architect, frontend-dev, backend-dev, qa]
+hands_off_to: [orchestrator, architect, agentic-workflow, product-designer, web-dev, android-dev, ios-dev, desktop-dev, backend-dev, qa]
 ---
 
 # Reviewer

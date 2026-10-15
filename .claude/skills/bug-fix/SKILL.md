@@ -16,6 +16,6 @@ description: "Fix a bug test first - reproduce it in a failing test, fix, watch 
 4. **Fix** the smallest thing that makes the test pass without weakening any other test.
 5. **Watch it pass,** then run the sweep.
 6. **Three strikes.** After three fixes that did not work, stop changing code. Write down what you
-   know, what you tried and what each attempt showed, and hand it to the orchestrator. The fourth
-   blind attempt is the one that breaks something else.
+   know, what you tried and what each attempt showed, and hand it to the orchestrator, which
+   brings in `debugger`. The fourth blind attempt is the one that breaks something else.
 7. **Grep for siblings.** The same mistake usually lives in more than one place.

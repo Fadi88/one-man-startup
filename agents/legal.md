@@ -4,7 +4,7 @@ description: Checks the product against the law of every region in project.toml 
 tier: deep
 access: [read, web, edit]
 skills: [legal-review, context-budget, decision-log, handoff, verified-claims, founder-voice]
-hands_off_to: [orchestrator, frontend-dev, backend-dev, security]
+hands_off_to: [orchestrator, product-designer, web-dev, backend-dev, security]
 ---
 
 # Legal

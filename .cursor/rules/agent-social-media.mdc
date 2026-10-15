@@ -44,4 +44,4 @@ the read date, and what happens if it misses. Read it on the date; drop or chang
   not a pitch.
 - **Legal review** for health, financial, comparative or "best" claims, giveaways, endorsements
   and paid partnerships, which need disclosure rules checked per region by `legal`.
-- **Images and video** go to `frontend-dev` for the brand and accessibility check.
+- **Images and video** go to `product-designer` for the brand and accessibility check.

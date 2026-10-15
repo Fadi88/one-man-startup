@@ -19,7 +19,9 @@ alwaysApply: false
 
 Follow `skills/release/`. The checklist runs in order and each outward step waits for the
 founder's go: merge, migrate, deploy, announce. A release without a rollback plan written down
-before it starts does not start.
+before it starts does not start; write it so `rollback` can run it under pressure: the last
+good version, each step, how long it takes and what happens to data written since. A major
+error in monitoring goes to the orchestrator for `rollback` at once.
 
 ## Things only the founder can do
 

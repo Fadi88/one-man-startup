@@ -34,7 +34,8 @@ decisions. Each round gives your recommended answer.
   a green sweep before every hand-off, a commit hook, outward steps that wait. If the founder
   picks lighter, record the reason in `docs/requirements/p1-closed-decisions.md` with the date.
 - **Team size: as small as the product allows.** A landing page with a waitlist needs
-  orchestrator, frontend-dev, qa, legal, growth. Add agents when the work appears, not before.
+  orchestrator, product-designer, web-dev, qa, legal, growth. Add agents when the work appears,
+  not before.
 - **Stack: boring and hosted.** The one the founder already knows beats the best one on paper.
 
 ## Region, domain, audience, customer size
@@ -46,7 +47,7 @@ These four switch things on. Write what each one turned on into `p1-closed-decis
   `p1-open-questions.md` for `legal`.
 - **Domain** adds gates: health, finance, children, hiring, housing or AI decisions about people
   each add `sensitive` entries and a security and legal review on every feature that touches them.
-- **Audience** sets the voice and the accessibility bar for `frontend-dev` and `growth`.
+- **Audience** sets the voice and the accessibility bar for `product-designer` and `growth`.
 - **Customer size** sets the sales shape: consumers (self-serve, store rules, refunds),
   small business (self-serve plus invoices), mid-market and enterprise (SSO, DPA, security
   questionnaire, uptime commitments). Write the consequences as requirement rows marked `X`.
