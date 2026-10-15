@@ -13,9 +13,8 @@ words, not in your own; a level is what this file says it is.
 - Outward steps (deploy, merge, push, publish, send, pay, delete, real data writes) wait for the
   founder's go, one step at a time (`skills/ordered-steps/`).
 - Data writes prove themselves and can be undone (`skills/safe-data-write/`).
-- The commit-msg hook: the founder is the only author, no tool credited, banned characters
-  refused (`skills/commit/`).
-- No unconfirmed assumptions (rule 11), and every rejected idea is recorded (rule 13).
+- The commit-msg hook refuses banned characters (`skills/commit/`).
+- No unconfirmed assumptions (rule 10), and every rejected idea is recorded (rule 12).
 - Free tiers are strict, with tested caps before release.
 
 ## What changes

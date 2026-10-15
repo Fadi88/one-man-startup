@@ -4,7 +4,7 @@
 
 Not part of the sweep, because it needs the network and sites change. The
 legal agent runs it before a launch review, and setup runs it on the packs it
-writes. A cited page that does not exist is a claim with no source (rule 11).
+writes. A cited page that does not exist is a claim with no source (rule 10).
 
 Prints one line per URL: OK, BLOCKED (the site refuses scripts; open it by
 hand) or DEAD (404, 410 or the domain does not resolve). Exits 1 if any URL is

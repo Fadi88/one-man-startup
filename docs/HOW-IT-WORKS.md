@@ -46,7 +46,7 @@ A rule that matters is turned into a check, not left as a sentence the agents mi
 |---|---|
 | Write the requirement before the code | `tools/checks/req_check.py`: every row is well formed, every tested row is named by a test |
 | End every round with all checks passing | `tools/run_all.py`, run before every commit by `tools/githooks/pre-commit` and in GitHub Actions |
-| Commits are yours, with no AI credited | `tools/githooks/commit-msg`, tested by `tools/checks/commitmsg_check.py` |
+| Commit messages carry no banned characters | `tools/githooks/commit-msg`, tested by `tools/checks/commitmsg_check.py` |
 | Agents and skills stay valid and small | `tools/checks/template_check.py` |
 | Generated tool files match their sources | `tools/checks/adapters_check.py` |
 | Legal checklists carry a disclaimer, a date and sources | `tools/checks/legal_check.py` |
