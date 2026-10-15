@@ -12,6 +12,14 @@ Run `skills/grilling/` over the tree below, in rounds, each question with a reco
 Facts you can look up (the founder's git identity, an existing codebase's stack, a region's
 data protection law) you look up. Write nothing until the founder confirms the summary.
 
+## Before round one
+
+Check, without asking, that Git and Python 3.11 or newer run on this computer (`git --version`,
+then `python --version`, `python3 --version` or `py --version`); the checks need both. Say the
+result in one line inside your first message. If one is missing, explain in plain words what it
+is for, give the official download page, and offer to install it; install only on the founder's
+go.
+
 ## The tree
 
 Ask as few rounds as the dependencies allow; a non-technical founder should not face 25

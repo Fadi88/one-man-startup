@@ -9,6 +9,17 @@ Newest first. Each entry: date, the proposal, who proposed it, the reason it was
 
 ## About the template itself
 
+### Start guide and single entry point, 15 October 2026
+
+Offered by the assistant as the alternatives to the recommended options; declined by Fadi, no
+reason given beyond choosing the recommendation.
+
+- **Writing the guide for all four tools equally** (Claude, Codex, Gemini CLI, Cursor).
+- **Keeping `/setup` as one command the founder types** before handing over to the project
+  manager.
+- **Drawn illustrations instead of real screenshots.**
+- **Putting the whole guide inside the README.**
+
 ### Dashboard agent, 15 October 2026
 
 - **Tracking the agents' own token spend** (the optimizer recording usage from the AI tool and

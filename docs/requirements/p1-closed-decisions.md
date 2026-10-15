@@ -12,6 +12,17 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. A project made from the template keeps them as background and adds its own above.
 
+- **2026-10-15. One entry point and a start guide for non-coders** (TPL-26, TPL-27). The
+  founder talks only to the project manager, which starts setup by itself; the guide never asks
+  for a command. The guide follows one path: GitHub, GitHub Desktop, then Claude Code in a
+  terminal, where the founder types only the install line and `claude` (changed the same day
+  from the Claude desktop app, at Fadi's request, so the screenshots could be taken of a real
+  session). It lives in `docs/START-HERE.md` linked first from the README and the landing page,
+  and uses real screenshots. The single entry is set in `AGENTS.md`, not with Claude Code's
+  `agent` setting: that setting is documented for the terminal only, and it would give the main
+  session the project manager's tools, which cannot run the checks. Decided by Fadi. Reopen: if a
+  tool does not follow the instruction (A-9, A-10).
+
 - **2026-10-15. A dashboard agent** (TPL-25). The template gets a `dashboard` agent that builds
   the founder's private dashboard; for a product that uses AI, it shows usage and spend and
   gives the founder controls (caps, pause, model choice) with an audit log. On by default, and
