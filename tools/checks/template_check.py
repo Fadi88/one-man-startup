@@ -86,7 +86,11 @@ for name, fm in agents.items():
 agents_md = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
 if len(agents_md) > BUDGET["AGENTS.md"]:
     fail(f"TPL-5 AGENTS.md is {len(agents_md)} characters, over its budget of {BUDGET['AGENTS.md']}")
-roster = set(re.findall(r"^\| `([a-z0-9-]+)` \|", agents_md, flags=re.M))
+roster = set()
+for shown, target in re.findall(r"^\| \[`([a-z0-9-]+)`\]\(agents/([a-z0-9-]+)\.md\) \|", agents_md, flags=re.M):
+    if shown != target:
+        fail(f"TPL-4 AGENTS.md shows {shown!r} but links to agents/{target}.md")
+    roster.add(shown)
 for a in sorted(set(agents) - roster):
     fail(f"TPL-4 agent {a!r} is missing from the team table in AGENTS.md")
 for a in sorted(roster - set(agents)):
