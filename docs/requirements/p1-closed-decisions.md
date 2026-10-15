@@ -37,7 +37,10 @@ they say. A project made from the template keeps them as background and adds its
 - **2026-10-15. The "one author" rule is removed** from the constitution (it was rule 10;
   rules 11 to 13 are now 10 to 12). Commits may credit a tool or model and may come from any
   author; the commit-msg hook now refuses only banned characters (TPL-7). Decided by Fadi, no
-  reason given. Reopen: if the founder wants the history to carry one name again.
+  reason given. The settings that switch off Claude Code's credit lines moved from the shared
+  `.claude/settings.json` to this repository's untracked `.claude/settings.local.json`, so they
+  apply only to the template's own repository and not to projects made from it. Reopen: if
+  the founder wants the history to carry one name again.
 
 - **2026-10-15. Three more agents: researcher, feasibility and reviewer** (TPL-22 to TPL-24).
   The researcher runs before the first grilling round and its findings become options in it. The
