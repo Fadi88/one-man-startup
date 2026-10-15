@@ -83,6 +83,12 @@ for name, fm in agents.items():
         if a not in agents:
             fail(f"TPL-2 agents/{name}.md hands off to {a!r}, which does not exist")
 
+# A path to a skill's own file, named in any agent or skill, must exist (setup links its steps).
+for f in [*(ROOT / "agents").glob("*.md"), *(ROOT / "skills").glob("*/*.md")]:
+    for ref in re.findall(r"`(skills/[a-z0-9-]+/[A-Za-z0-9._-]+\.md)`", f.read_text(encoding="utf-8")):
+        if not (ROOT / ref).exists():
+            fail(f"TPL-3 {f.relative_to(ROOT).as_posix()} names {ref}, which does not exist")
+
 agents_md = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
 if len(agents_md) > BUDGET["AGENTS.md"]:
     fail(f"TPL-5 AGENTS.md is {len(agents_md)} characters, over its budget of {BUDGET['AGENTS.md']}")

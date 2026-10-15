@@ -22,6 +22,9 @@ audience = "unset"
 customer_size = "unset"
 # idea | prototype | beta | live
 stage = "idea"
+# proprietary, or an SPDX id such as "MIT" or "AGPL-3.0-only". Setup explains the options
+# (skills/setup/licences.md); the founder decides.
+licence = "unset"
 # Personal data, payments, health data, children, AI decisions about people.
 # Each one switches on extra legal and QA gates.
 sensitive = []

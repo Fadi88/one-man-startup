@@ -9,6 +9,8 @@ Newest first. Each entry: date, the proposal, who proposed it, the reason it was
 
 ## About the template itself
 
+Setup removes this section from a new project (`tools/clean_template.py`).
+
 ### Founder's technical level, 15 October 2026
 
 - **Two levels only (non-technical or technical)**, offered by the assistant as the simpler
