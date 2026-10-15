@@ -12,6 +12,16 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. A project made from the template keeps them as background and adds its own above.
 
+- **2026-10-15. Three technical levels for the founder, and every agent words to it** (TPL-28,
+  TPL-29). `project.toml [owner] level` is non-technical, basics or technical; setup asks, the
+  grilling asks first when it is unset, and `skills/founder-voice/` sets the wording of every
+  question, approval and report, with no technical terms for a non-technical founder. Reason:
+  the template is mainly for founders who do not code. Seen working on 2026-10-15 in Claude
+  Code on a set-up copy at the non-technical level: a subscription request gave a plain status
+  update and a multiple-choice round with a recommendation and no technical terms; the tool's
+  own display of file changes still showed. Decided by Fadi. Reopen: if founders at
+  one level keep asking for more or less detail.
+
 - **2026-10-15. One entry point and a start guide for non-coders** (TPL-26, TPL-27). The
   founder talks only to the project manager, which starts setup by itself; the guide never asks
   for a command. The guide follows one path: GitHub, GitHub Desktop, then Claude Code in a

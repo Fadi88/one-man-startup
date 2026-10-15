@@ -25,7 +25,8 @@ Ask as few rounds as the dependencies allow; a non-technical founder should not 
 questions. Combine branches whose prerequisites are settled, and defer anything not needed
 before the first feature to `p1-open-questions.md`.
 
-1. **Founder:** name and email for commits; technical or not (sets how much agents explain).
+1. **Founder:** name and email for commits; their technical level, asked as `skills/founder-voice/`
+   words it (non-technical, basics or technical). It sets how every agent talks to them.
 2. **Product:** name, one sentence, stage (idea, prototype, beta, live).
 3. **Market** (unlocked by 2):
    - regions (ISO codes, where users live, not where the founder lives);

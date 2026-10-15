@@ -5,8 +5,8 @@
 [owner]
 name = "unset"
 email = "unset"
-# non-technical | technical. Sets how much the agents explain. The template is
-# written for non-technical founders first; setup asks.
+# non-technical | basics | technical. Sets how every agent words its questions,
+# approvals and reports (skills/founder-voice/). Setup asks; the founder can change it.
 level = "non-technical"
 
 [product]

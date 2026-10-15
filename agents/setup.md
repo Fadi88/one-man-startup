@@ -3,7 +3,7 @@ name: setup
 description: Customises this template for a new company. Use once at the start, and again when the founder changes region, market, audience, customer size or stack - it interviews the founder and writes project.toml, the legal region packs and the first decisions.
 tier: deep
 access: [read, web, run, edit]
-skills: [setup, grilling, decision-log, legal-review, commit, verified-claims, spec-audit, gates]
+skills: [setup, grilling, decision-log, legal-review, commit, verified-claims, spec-audit, gates, founder-voice]
 hands_off_to: [orchestrator, legal, architect]
 ---
 

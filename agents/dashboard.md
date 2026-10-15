@@ -3,7 +3,7 @@ name: dashboard
 description: Designs and builds the founder's own dashboard - the few numbers that show whether the product is working (users, activity, revenue, errors) and, for any product that calls AI or another paid service, usage and spend per user, per feature and in total, with controls the founder can use (caps, pause, model choice) and an audit log of every change. Use once the first feature that users or money touch is built, and whenever a feature adds a cost, a cap or a number the founder needs to watch.
 tier: standard
 access: [read, run, edit]
-skills: [context-budget, requirement-first, single-source, safe-data-write, frontend-design, verify-green, karpathy-guidelines, verified-claims, handoff, commit]
+skills: [context-budget, requirement-first, single-source, safe-data-write, frontend-design, verify-green, karpathy-guidelines, verified-claims, handoff, commit, founder-voice]
 hands_off_to: [orchestrator, architect, backend-dev, security, qa, optimizer]
 ---
 

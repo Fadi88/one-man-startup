@@ -63,8 +63,9 @@ Developers who work alone can use it too, for the discipline of a team without h
 
 **1. Set up.** The setup agent interviews you: what you're building, for
 whom, in which countries, whether customers are people or companies, what data you'll hold, and
-your monthly budget for AI. Every question comes with a suggested answer, so you can just say yes
-where you have no opinion. It then tailors the team, the rules and a legal checklist to your
+your monthly budget for AI, and how technical you are, so every agent talks to you at your
+level: if you've never written code, you won't see any jargon. Every question comes with a
+suggested answer, so you can just say yes where you have no opinion. It then tailors the team, the rules and a legal checklist to your
 answers.
 
 **2. Get grilled.** Every new feature starts with questions, the kind a sharp product manager
