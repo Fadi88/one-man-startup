@@ -9,6 +9,16 @@ Newest first. Each entry: date, the proposal, who proposed it, the reason it was
 
 ## About the template itself
 
+### Researcher, feasibility and reviewer agents, 15 October 2026
+
+- **A reviewer for code diffs only**, leaving documents to the readiness gate and spec-audit,
+  proposed by the assistant as the recommended option. Declined by Fadi, who chose a reviewer
+  for both documents and code; no reason given.
+- **Business viability in the feasibility check** (market size, willingness to pay), offered by
+  the assistant as an option. Declined by Fadi: feasibility judges building and running only.
+- **Research only when the founder asks**, offered by the assistant as the cheaper option.
+  Declined by Fadi: research runs before every first grilling round.
+
 ### Launch of the template, 14 October 2026
 
 - **A launch article** (on a blog, dev.to or LinkedIn) built around the practice table, proposed
