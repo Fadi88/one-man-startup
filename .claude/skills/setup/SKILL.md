@@ -1,6 +1,6 @@
 ---
 name: setup
-description: "The setup interview that customises this template for one founder's company by region, domain, audience, customer size, stack, gates, team and budget, and writes project.toml. Use at the start of a new company or when any of those change."
+description: "The setup interview that customises this template for one founder's company by region, domain, audience, customer size, stack, gates, team, budget and licence, and writes project.toml. Use at the start of a new company or when any of those change."
 disable-model-invocation: true
 ---
 
@@ -8,73 +8,19 @@ disable-model-invocation: true
 
 # Setup
 
-Run `skills/grilling/` over the tree below, in rounds, each question with a recommended answer.
-Facts you can look up (the founder's git identity, an existing codebase's stack, a region's
-data protection law) you look up. Write nothing until the founder confirms the summary.
+Run `skills/grilling/` over the interview tree, in rounds, each question with a recommended
+answer and worded for the founder's level (`skills/founder-voice/`). Facts you can look up (the
+founder's git identity, an existing codebase's stack, a region's data protection law) you look
+up. Write nothing until the founder confirms the summary.
 
-## Before round one
+Each step is its own file. Open the one you are on, in order:
 
-Check, without asking, that Git and Python 3.11 or newer run on this computer (`git --version`,
-then `python --version`, `python3 --version` or `py --version`); the checks need both. Say the
-result in one line inside your first message. If one is missing, explain in plain words what it
-is for, give the official download page, and offer to install it; install only on the founder's
-go.
+1. **Check the computer**: `skills/setup/1-check-tools.md`. Git and Python, before round one.
+2. **The interview**: `skills/setup/2-interview.md`. The tree of questions and what unlocks what.
+   Its licence question uses `skills/setup/licences.md`, which explains the options.
+3. **Write it down**: `skills/setup/3-write.md`. Every file the answers settle.
+4. **Finish**: `skills/setup/4-finish.md`. Clean out the template's own content, write the
+   licence, run the checks, show the founder, commit on their go.
 
-## The tree
-
-Ask as few rounds as the dependencies allow; a non-technical founder should not face 25
-questions. Combine branches whose prerequisites are settled, and defer anything not needed
-before the first feature to `p1-open-questions.md`.
-
-1. **Founder:** name and email for commits; their technical level, asked as `skills/founder-voice/`
-   words it (non-technical, basics or technical). It sets how every agent talks to them.
-2. **Product:** name, one sentence, stage (idea, prototype, beta, live).
-3. **Market** (unlocked by 2):
-   - regions (ISO codes, where users live, not where the founder lives);
-   - domain;
-   - audience in a sentence;
-   - customer size: consumers, small business, mid-market, enterprise.
-4. **Data** (unlocked by 2, and asked with 3 in one round): what personal data, payments, health, children, biometrics, AI
-   decisions about people. Each one becomes a `sensitive` entry and switches on gates.
-5. **Stack** (unlocked by 2 and 4): platform, frontend, backend, database, hosting, the test and
-   build commands ("none yet" when no code exists). Recommend what the founder already knows,
-   hosted, boring. If a codebase
-   exists, read it and propose what it already is. Run `skills/spec-audit/` on it, and put
-   its most dangerous silent fills into the next round.
-6. **Gates:** recommend **strict** and say what it buys, using the table in `skills/gates/`,
-   never your own description of a level. If the founder picks lighter, ask for
-   the reason and record it.
-7. **Team** (unlocked by 2, 4 and 6): the smallest set of agents the stage needs. Recommend, say
-   what each one does and when it is first needed, let the founder trim. Time per feature is not
-   measured yet, so do not quote one. If the product calls AI or another paid service per
-   action, recommend `dashboard` from the start: usage, spend and caps need a place to be seen
-   and controlled before the first user arrives.
-8. **Budget:** monthly AI spend ceiling for the optimizer to report against.
-9. **Tools:** which AI coding tools the founder uses (adapters are generated for each). Always
-   include the tool running this setup, or its generated files are removed by the sync.
-
-## Write
-
-- `project.toml`, every field the answers settled.
-- `docs/legal/regions/<CODE>.md` for each region, copied from `docs/legal/regions/_TEMPLATE.md`,
-  filled from current sources, each claim cited and dated with a short quote, unsettled points
-  marked UNSETTLED, and `python tools/link_check.py` run on the packs with no DEAD links.
-  Hand the packs to `legal` to review before any launch.
-- `docs/requirements/p1-closed-decisions.md`: one dated line per decision taken, with the reason.
-- `docs/requirements/p1-open-questions.md`: what the founder deferred, and what each blocks.
-- Requirement rows in `docs/requirements/LAUNCH.md` (prefix `LAUNCH`), marked `X`, for what
-  customer size and domain imply (an enterprise customer
-  implies SSO and a DPA; consumers in the EU imply cookie consent and data export).
-- If the product has a free tier or a trial: requirement rows marked `X` for its caps (per user,
-  per device without sign-up, a global daily spend ceiling), with the numbers left for the
-  founder to set once the prototype has measured the cost per action. A free tier with no caps
-  is not offered as an option.
-- `git config --local user.name` and `user.email` set to the founder (this repository only),
-  and
-  `git config core.hooksPath tools/githooks`.
-
-## Finish
-
-Run `python tools/sync_adapters.py`, `python tools/checks/req_check.py --fix` (the new
-`LAUNCH.md` changes the index) and `python tools/run_all.py`. Show the founder the summary,
-the diff and the green sweep. Commit on their go.
+When setup runs again later (a new region, market, stack or team), skip step 1 and ask only the
+branches that changed.

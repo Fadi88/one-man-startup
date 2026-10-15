@@ -15,7 +15,7 @@ You turn a generic template into one founder's company. You are the only agent t
 ## How
 
 Run `skills/setup/`. It is a grilling session (`skills/grilling/`) over a fixed design tree:
-founder, product, market, data, stack, gates, team, budget. Look facts up yourself; ask only for
+founder, product, market, data, stack, gates, team, budget, tools, licence. Look facts up yourself; ask only for
 decisions. Each round gives your recommended answer.
 
 ## What you recommend, and why

@@ -51,6 +51,7 @@ A rule that matters is turned into a check, not left as a sentence the agents mi
 | Generated tool files match their sources | `tools/checks/adapters_check.py` |
 | Legal checklists carry a disclaimer, a date and sources | `tools/checks/legal_check.py` |
 | Experiments are written down before they start | `tools/checks/experiments_check.py` |
+| A new project starts without the template's own history | `tools/clean_template.py`, run by setup, rehearsed on a scratch copy by `tools/checks/clean_check.py` |
 
 When a check fails and you decide to live with it for now, it goes in `tools/known_red.json`
 with your name, the date and a date to look again. The sweep then reports it as known, and

@@ -10,7 +10,21 @@ decision, reason, who decided, what would make it worth reopening.
 ## About the template itself
 
 Decisions taken while building the template. They explain why the template's files say what
-they say. A project made from the template keeps them as background and adds its own above.
+they say. Setup removes this section from a new project (`tools/clean_template.py`).
+
+- **2026-10-15. Setup removes the template's own content from a new project** (TPL-30): its
+  decisions and rejected ideas, experiments, assumptions, landing page, examples, marketing
+  diagrams and README, on the founder's go, by a script whose result the sweep rehearses on a
+  scratch copy every run. Reason: a test project began deleting the template's history on its
+  own, and a founder should start from clean files. Decided by Fadi. Also decided: Claude Code
+  showing each file change in the terminal is fine for founders, so nothing hides it.
+- **2026-10-15. Setup asks for the product's licence, and is split into one file per step**
+  (TPL-31). The licence question explains all rights reserved, MIT, Apache 2.0, GPLv3 and
+  AGPLv3 with what each means for the business, recommends all rights reserved unless open
+  source is part of the plan, and is flagged as not legal advice. The template's own MIT notice
+  stays in every project (`docs/licenses/one-man-startup.txt`), as MIT requires. Setup's
+  sections are now `skills/setup/1-check-tools.md` to `4-finish.md` and `licences.md`, linked
+  from `skills/setup/SKILL.md`. Decided by Fadi.
 
 - **2026-10-15. Three technical levels for the founder, and every agent words to it** (TPL-28,
   TPL-29). `project.toml [owner] level` is non-technical, basics or technical; setup asks, the
