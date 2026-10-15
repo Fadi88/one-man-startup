@@ -22,5 +22,5 @@ edit it by hand; add a new area file and run the fix.
 <!-- req-index:start -->
 | File | Prefix | Rows | T | M | U | X | n/a |
 |---|---|---|---|---|---|---|---|
-| `requirements/TPL.md` | TPL | 24 | 15 | 5 | 4 | 0 | 0 |
+| `requirements/TPL.md` | TPL | 25 | 15 | 5 | 5 | 0 | 0 |
 <!-- req-index:end -->

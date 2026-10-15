@@ -37,7 +37,9 @@ before the first feature to `p1-open-questions.md`.
    the reason and record it.
 7. **Team** (unlocked by 2, 4 and 6): the smallest set of agents the stage needs. Recommend, say
    what each one does and when it is first needed, let the founder trim. Time per feature is not
-   measured yet, so do not quote one.
+   measured yet, so do not quote one. If the product calls AI or another paid service per
+   action, recommend `dashboard` from the start: usage, spend and caps need a place to be seen
+   and controlled before the first user arrives.
 8. **Budget:** monthly AI spend ceiling for the optimizer to report against.
 9. **Tools:** which AI coding tools the founder uses (adapters are generated for each). Always
    include the tool running this setup, or its generated files are removed by the sync.

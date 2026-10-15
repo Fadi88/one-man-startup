@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="t d">
   <title id="t">Your AI team</title>
-  <desc id="d">You give requests to the project manager agent, which hands work to five groups: plan (researcher, feasibility check, software architect), build (frontend design and code, backend, devops), check (reviewer, QA, security, legal), grow (growth, social media) and save money (optimizer). A setup agent tailors the team at the start.</desc>
+  <desc id="d">You give requests to the project manager agent, which hands work to five groups: plan (researcher, feasibility check, software architect), build (frontend design and code, backend, devops), check (reviewer, QA, security, legal), grow (growth, social media) and watch spend (dashboard, optimizer). A setup agent tailors the team at the start.</desc>
   <style>
     .bg1 { stop-color: #fcfaf6; } .bg2 { stop-color: #f1ebe0; }
     .card { fill: #ffffff; stroke: #e7e1d5; stroke-width: 1; }
@@ -66,7 +66,8 @@
       <text class="ink" x="20" y="148">Social media</text><text class="soft" x="20" y="168" font-size="13">posts drafted, you publish</text></g>
     <g transform="translate(968 322)"><rect class="card" width="200" height="292" rx="16" filter="url(#sh)"/>
       <g clip-path="url(#c)"><rect class="g5 tint" width="200" height="64"/><rect class="g5" width="200" height="6"/></g>
-      <circle class="g5" cx="30" cy="38" r="9"/><text class="ink" x="48" y="45" font-size="19" font-weight="700">Save</text>
-      <text class="ink" x="20" y="96">Optimizer</text><text class="soft" x="20" y="116" font-size="13">finds wasted AI spend</text></g>
+      <circle class="g5" cx="30" cy="38" r="9"/><text class="ink" x="48" y="45" font-size="19" font-weight="700">Watch</text>
+      <text class="ink" x="20" y="96">Dashboard</text><text class="soft" x="20" y="116" font-size="13">usage, spend and controls</text>
+      <text class="ink" x="20" y="148">Optimizer</text><text class="soft" x="20" y="168" font-size="13">finds wasted AI spend</text></g>
   </g>
 </svg>

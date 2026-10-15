@@ -71,6 +71,7 @@ founder, be brief and show the diff.
 | `qa` | Tests against the requirement rows, finds regressions, owns the QA report and the release gate. | read, run, edit |
 | `security` | Threat model, secrets, auth, dependencies, data exposure. | read, edit |
 | `legal` | Privacy, terms, consent, regional law, AI transparency, store rules. Checklists and drafts, always flagged as not legal advice. | read, web, edit |
+| `dashboard` | Builds the founder's private dashboard: health and money, and for AI products usage and spend per user and feature, with controls (caps, pause, model) and an audit log. | read, run, edit |
 | `devops` | Environments, CI, release, rollback, monitoring. | read, web, run, edit |
 | `growth` | Positioning, landing copy, pricing experiments, analytics plan. | read, web, edit |
 | `social-media` | Picks the platforms, sets the voice, plans the calendar and drafts posts and replies. Drafts only; posting waits for the founder. | read, web, edit |
