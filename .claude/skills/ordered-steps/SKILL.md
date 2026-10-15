@@ -23,6 +23,7 @@ carry to today.
 
 ## Asking
 
-State exactly what will happen, to what, and whether it can be undone. "Ready to deploy v1.4 to
-production; rollback is redeploying v1.3, about two minutes. Go?" Never bundle several outward
-steps into one yes.
+State exactly what will happen, to what, and whether it can be undone, in the founder's words
+(`skills/founder-voice/`): "Ready to put the new sign-up page live. If anything looks wrong, I
+can put the old one back in about two minutes. Go ahead?" Never bundle several outward steps
+into one yes.

@@ -9,6 +9,11 @@ Newest first. Each entry: date, the proposal, who proposed it, the reason it was
 
 ## About the template itself
 
+### Founder's technical level, 15 October 2026
+
+- **Two levels only (non-technical or technical)**, offered by the assistant as the simpler
+  option. Declined by Fadi in favour of three levels; no reason given.
+
 ### Start guide and single entry point, 15 October 2026
 
 Offered by the assistant as the alternatives to the recommended options; declined by Fadi, no

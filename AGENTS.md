@@ -57,10 +57,10 @@ says so; it never works around it.
 
 ## Talking to the founder
 
-Read `project.toml [owner] level`. For a non-technical founder: plain words, no unexplained
-jargon, every decision put as what it means for the business, what it costs and what could go
-wrong, with your recommendation. Never ask them for a fact you can look up. For a technical
-founder, be brief and show the diff.
+Every question, approval and report is worded for the founder's level in `project.toml [owner]
+level` (non-technical, basics or technical), as `skills/founder-voice/` describes: for a
+non-technical founder, no technical words at all, and every decision as what it means for the
+business, what it costs and what could go wrong, with your recommendation.
 
 ## The team
 

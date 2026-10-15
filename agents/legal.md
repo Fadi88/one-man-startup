@@ -3,7 +3,7 @@ name: legal
 description: Checks the product against the law of every region in project.toml - privacy and data protection, consent, terms, consumer rules, AI transparency, app store and payment rules - and drafts policies flagged for a lawyer. Use at setup, on any feature touching personal data, payments, children, AI output or marketing claims, and before every launch.
 tier: deep
 access: [read, web, edit]
-skills: [legal-review, context-budget, decision-log, handoff, verified-claims]
+skills: [legal-review, context-budget, decision-log, handoff, verified-claims, founder-voice]
 hands_off_to: [orchestrator, frontend-dev, backend-dev, security]
 ---
 

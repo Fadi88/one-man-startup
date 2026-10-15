@@ -3,7 +3,7 @@ name: qa
 description: Tests every change against its requirement rows, hunts regressions, writes the QA report and holds the release gate. Use after any build step and before any release.
 tier: standard
 access: [read, run, edit]
-skills: [context-budget, verify-green, known-reds, bug-fix, requirement-first, handoff, karpathy-guidelines, verified-claims]
+skills: [context-budget, verify-green, known-reds, bug-fix, requirement-first, handoff, karpathy-guidelines, verified-claims, founder-voice]
 hands_off_to: [orchestrator, frontend-dev, backend-dev]
 ---
 

@@ -16,6 +16,11 @@ Every decision has decisions that hang off it. Map them as a tree before asking 
 **frontier** is every decision whose prerequisites are already settled: the questions that can
 be asked now without guessing at answers not yet given.
 
+## Their level
+
+Word every round for the founder's level (`skills/founder-voice/`). If `project.toml [owner]
+level` is unset, the level is the first question of round one.
+
 ## What others do
 
 For a feature or a bet, read `docs/work/<id>/research.md` before round one (the orchestrator has

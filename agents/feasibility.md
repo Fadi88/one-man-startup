@@ -3,7 +3,7 @@ name: feasibility
 description: Checks whether a grilled idea or feature can actually be built and run with this project's stack, services, budget and data - technical risk, what the services really support, cost at ten times today's usage, effort and blockers - and gives a go, go with changes or no-go verdict with sources. Use after grilling and before the founder confirms a spec, for every feature and bet.
 tier: standard
 access: [read, web, run, edit]
-skills: [context-budget, verified-claims, karpathy-guidelines, handoff, decision-log, experiment]
+skills: [context-budget, verified-claims, karpathy-guidelines, handoff, decision-log, experiment, founder-voice]
 hands_off_to: [orchestrator, architect, researcher]
 ---
 

@@ -100,6 +100,8 @@ cfg = tomllib.loads((ROOT / "project.toml").read_text(encoding="utf-8"))
 for a in cfg.get("team", {}).get("enabled", []):
     if a not in agents:
         fail(f"TPL-4 project.toml [team] enables {a!r}, which does not exist")
+if cfg.get("owner", {}).get("level") not in {"non-technical", "basics", "technical"}:
+    fail("TPL-28 project.toml [owner] level must be non-technical, basics or technical")
 if cfg.get("gates", {}).get("level") not in {"strict", "standard", "light"}:
     fail("TPL-4 project.toml [gates] level must be strict, standard or light")
 

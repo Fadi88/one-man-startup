@@ -19,7 +19,8 @@ sources and dated, and the suggestions to put to the founder.
 
 ## 3. Grill
 
-Run `skills/grilling/` on the feature, with the research suggestions as options. The tree always includes these branches; skip one only
+Run `skills/grilling/` on the feature, with the research suggestions as options, worded for the
+founder's level (`skills/founder-voice/`). The tree always includes these branches; skip one only
 by saying why it does not apply:
 
 - **Who and why:** which user, what they are trying to do, what they do today without it, how
@@ -40,7 +41,7 @@ changes or no-go. Every change it recommends goes back to the founder as one mor
 
 ## 5. Write it down
 
-- `docs/work/<id>/spec.md`: the answers, in plain language, with the success number.
+- `docs/work/<id>/spec.md`: the answers at the founder's level, with the success number.
 - Requirement rows, status `X`, in the area file, one per behaviour that can be tested.
 - Decisions taken during grilling into `p1-closed-decisions.md`; questions the founder deferred
   into `p1-open-questions.md` with what each one blocks.

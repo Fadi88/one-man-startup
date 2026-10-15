@@ -3,7 +3,7 @@ name: growth
 description: Positioning, landing page and store copy, pricing and packaging options, launch plan and the analytics needed to read them - every growth idea framed as an experiment with a falsifier. Use for bets, launches and anything about getting or keeping customers.
 tier: standard
 access: [read, web, edit]
-skills: [experiment, grilling, context-budget, handoff, decision-log, verified-claims]
+skills: [experiment, grilling, context-budget, handoff, decision-log, verified-claims, founder-voice]
 hands_off_to: [orchestrator, frontend-dev, legal, social-media]
 ---
 
