@@ -24,6 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # Whole files and folders that only describe or publish the template.
 PATHS = [
     "examples",
+    "docs/growth/readme-survey.md",
     "site",
     ".github/workflows/pages.yml",
     "docs/images/hero.svg",
@@ -38,7 +39,7 @@ PATHS = [
 ]
 
 # Requirement rows about the template's README, diagrams, landing page, guide and this script.
-TPL_ROWS = ["TPL-18", "TPL-19", "TPL-20", "TPL-21", "TPL-27", "TPL-30"]
+TPL_ROWS = ["TPL-18", "TPL-19", "TPL-20", "TPL-21", "TPL-27", "TPL-30", "TPL-38"]
 
 TEMPLATE_SECTION = "## About the template itself"
 

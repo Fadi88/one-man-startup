@@ -12,6 +12,15 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-16. The README is a calm document in ink and one accent** (TPL-38). The promise, a
+  start link and the recorded demo come first, then the journey, team and approval diagrams,
+  then getting started; the practice table, limits and glossary follow. Every README image is
+  flat: white or dark grey, near-black or near-white text, one deep blue accent, no gradients,
+  glows or shadows. Reason: the survey of 14 similar projects (`docs/growth/readme-survey.md`)
+  found restraint, plain language and honest limits are where this template stands apart, and
+  the reader is a non-coder who has to trust it. Decided by Fadi. Reopen: if the landing page's
+  numbers show readers leave before the start link.
+
 - **2026-10-16. The reviewer suggests new agents as the project changes** (TPL-37). Setup
   picks the team once; after that, each review checks whether the work needs an agent that is
   switched off or does not exist yet, and suggests it, never as a blocking finding. The founder
