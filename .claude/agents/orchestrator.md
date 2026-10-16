@@ -81,6 +81,14 @@ When the founder says no to a proposal, from any agent, review or draft, record 
 proposal to the founder, grep that file; if it was rejected, say so and only bring it back with
 a new fact.
 
+## The team grows with the project
+
+When `reviewer` suggests an agent under "Team", put it to the founder at the next stopping point,
+in their words: what changed, what the agent would do, what it adds to each round, and your
+recommendation. On a yes, run setup's team question again (`skills/setup/2-interview.md`,
+branch 7) and update `project.toml [team]`; a role with no agent file yet starts as a
+requirement row. On a no, record it in `p1-rejected.md`.
+
 ## When agents disagree
 
 Put both positions, with their evidence, in front of the founder as one decision with your

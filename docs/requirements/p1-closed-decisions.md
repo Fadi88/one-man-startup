@@ -12,6 +12,13 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-16. The reviewer suggests new agents as the project changes** (TPL-37). Setup
+  picks the team once; after that, each review checks whether the work needs an agent that is
+  switched off or does not exist yet, and suggests it, never as a blocking finding. The founder
+  decides, through the orchestrator; a yes reruns setup's team question, a no goes to
+  `p1-rejected.md`. Reason: the founder wanted the team to grow with the project instead of
+  staying as setup left it. Decided by Fadi. Reopen: if the suggestions are mostly declined.
+
 - **2026-10-15. Six more agents: rollback, debugger, agentic workflow, Android, iOS and desktop**
   (TPL-32 to TPL-35). `rollback` is called by `qa` on a major error live; since only the
   orchestrator starts agents, QA writes the verdict ROLLBACK and the orchestrator starts
