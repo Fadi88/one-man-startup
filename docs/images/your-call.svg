@@ -2,16 +2,19 @@
   <title id="t">What the agents do alone and what waits for you</title>
   <desc id="d">Agents can read, research, draft, write code and run tests on their own. Going live, spending money, deleting anything, sending messages, changing prices or accepting a legal risk always waits for your approval.</desc>
   <style>
-    .bg1 { stop-color: #fcfaf6; } .bg2 { stop-color: #f1ebe0; }
-    .ink { fill: #1d2433; } .soft { fill: #4b5466; }
-    .ok { fill: #eef7f4; stroke: #bfe0d9; stroke-width: 1; } .wait { fill: #fdf0ea; stroke: #f3cbb9; stroke-width: 1; }
-    .okc { fill: #2f8f83; } .waitc { fill: #e8673c; } .glyph { stroke: #ffffff; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    .okbar { fill: #2f8f83; } .waitbar { fill: #e8673c; }
+    .bg1, .bg2 { stop-color: #ffffff; }
+    .ink { fill: #111827; } .soft { fill: #4b5563; }
+    .ok { fill: #f6f7f9; stroke: #d1d5db; stroke-width: 1; } .wait { fill: #eef2ff; stroke: #c7d2fe; stroke-width: 1; }
+    .okc, .okbar { fill: #6b7280; } .waitc, .waitbar { fill: #1d4ed8; }
+    .glyph { stroke: #ffffff; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
     text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
     @media (prefers-color-scheme: dark) {
-      .bg1 { stop-color: #1a2131; } .bg2 { stop-color: #0e121a; }
-      .ink { fill: #eef0f4; } .soft { fill: #b3bac7; }
-      .ok { fill: #172b2a; stroke: #24504a; } .wait { fill: #33211b; stroke: #5c3626; }
+      .bg1, .bg2 { stop-color: #0d1117; }
+      .ink { fill: #e6edf3; } .soft { fill: #9da7b3; }
+      .ok { fill: #161b22; stroke: #30363d; stroke-width: 1; } .wait { fill: #121d33; stroke: #1f3a6e; stroke-width: 1; }
+      .okc, .okbar { fill: #7d8590; } .waitc, .waitbar { fill: #2f6feb; }
+      .glyph { stroke: #ffffff; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
     }
   </style>
   <defs>
@@ -23,7 +26,7 @@
   </defs>
   <rect width="1200" height="320" rx="24" fill="url(#bg)"/>
 
-  <g transform="translate(48 40)" filter="url(#sh)">
+  <g transform="translate(48 40)">
     <rect class="ok" width="532" height="240" rx="18"/>
     <g clip-path="url(#c)"><rect class="okbar" width="6" height="240"/></g>
     <text class="ink" x="32" y="50" font-size="21" font-weight="700">Agents do this on their own</text>
@@ -34,7 +37,7 @@
       <use href="#tick" x="44" y="214"/><text class="soft" x="68" y="220">Suggest how to save money</text>
     </g>
   </g>
-  <g transform="translate(620 40)" filter="url(#sh)">
+  <g transform="translate(620 40)">
     <rect class="wait" width="532" height="240" rx="18"/>
     <g clip-path="url(#c)"><rect class="waitbar" width="6" height="240"/></g>
     <text class="ink" x="32" y="50" font-size="21" font-weight="700">Always waits for your yes</text>

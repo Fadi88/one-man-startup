@@ -43,7 +43,7 @@ with tempfile.TemporaryDirectory() as tmp:
         ("docs/requirements/p1-rejected.md", r"About the template itself"),
         ("docs/ASSUMPTIONS.md", r"^\| A-\d+ \|"),
         ("docs/EXPERIMENTS.md", r"^### \d+\."),
-        ("docs/requirements/TPL.md", r"^\| TPL-(18|19|20|21|27|30) \|"),
+        ("docs/requirements/TPL.md", r"^\| TPL-(18|19|20|21|27|30|38) \|"),
         ("README.md", r"^# One-man startup"),
     ]:
         if re.search(pattern, (copy / rel).read_text(encoding="utf-8"), flags=re.M):

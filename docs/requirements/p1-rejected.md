@@ -11,6 +11,21 @@ Newest first. Each entry: date, the proposal, who proposed it, the reason it was
 
 Setup removes this section from a new project (`tools/clean_template.py`).
 
+### README style, 16 October 2026
+
+Proposed by the orchestrator from the researcher's survey (`docs/growth/readme-survey.md`);
+Fadi chose the calm document in ink and one accent.
+
+- **README as a product landing page** (feature grid, "vibe coding vs this" row, practice table
+  cut to five rows). Declined by Fadi, 16 October 2026: the calm document was chosen; the survey
+  found it reads as marketing and gives the honest limits less room.
+- **README opening with a terminal recording.** Declined by Fadi, 16 October 2026: a terminal
+  tells a non-coder the project is for developers, and a video dates as the tool changes.
+- **Images in the old warm paper style, only flattened.** Declined by Fadi, 16 October 2026, for
+  ink and one accent.
+- **Hand-drawn, whiteboard-style images.** Declined by Fadi, 16 October 2026, for ink and one
+  accent; handwriting is harder to read and can look less serious.
+
 ### Founder's technical level, 15 October 2026
 
 - **Two levels only (non-technical or technical)**, offered by the assistant as the simpler
