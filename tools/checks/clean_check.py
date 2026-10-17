@@ -1,4 +1,4 @@
-"""TPL-30: cleaning a new project of the template's own content leaves it green.
+"""TPL-30, TPL-20: cleaning a new project of the template's own content leaves it green.
 
 Copies the repository to a scratch folder, fills project.toml as setup would, runs
 tools/clean_template.py --yes there, and runs the full sweep on the result. Also checks that
@@ -17,6 +17,12 @@ ROOT = Path(__file__).resolve().parents[2]
 PY = sys.executable
 
 fails = []
+# TPL-20: a copy made from the template has no site until this clean removes pages.yml, so the
+# landing page job must not run there (its first push would fail).
+if "if: github.repository == 'Fadi88/one-man-startup'" not in (
+        ROOT / ".github" / "workflows" / "pages.yml").read_text(encoding="utf-8"):
+    fails.append("TPL-20 .github/workflows/pages.yml would also run, and fail, in a copy made from the template")
+
 with tempfile.TemporaryDirectory() as tmp:
     copy = Path(tmp) / "project"
     shutil.copytree(ROOT, copy, ignore=shutil.ignore_patterns(".git", "__pycache__", "_site"))

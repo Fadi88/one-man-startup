@@ -2,31 +2,30 @@
   <title id="t">How the template is built</title>
   <desc id="d">You give requests, answers and approvals to your AI coding tool. The tool reads the instructions (AGENTS.md, project.toml, the agent briefs in agents/ and the methods in skills/; tools/sync_adapters.py generates each tool's own copies). It writes the paper trail in docs/ (requirements, one folder per feature, architecture decisions, legal checklists) next to your product's code. It runs the guards: one check per rule in tools/checks/, the full sweep run_all.py, a pre-commit hook and GitHub Actions. Reds you accept are registered in known_red.json with a date to look again.</desc>
   <style>
-    .bg1, .bg2 { stop-color: #ffffff; }
-    .ink { fill: #111827; } .soft { fill: #4b5563; }
-    .you1, .you2 { stop-color: #111827; } .youtxt { fill: #ffffff; }
-    .note { fill: #6b7280; }
-    .panel { fill: #ffffff; stroke: #d1d5db; stroke-width: 1; }
-    .item { fill: #f6f7f9; stroke: #e5e7eb; stroke-width: 1; } .rule { stroke: #e5e7eb; stroke-width: 1.5; }
-    .wire { stroke: #9ca3af; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; } .head { fill: #9ca3af; }
-    .verb { fill: #f6f7f9; stroke: #d1d5db; stroke-width: 1; } .verbtxt { fill: #111827; }
-    .tool1, .tool2 { stop-color: #1d4ed8; } .tooltxt { fill: #ffffff; }
-    .p1, .p2, .p3 { fill: #1d4ed8; } .tint { opacity: 0.08; }
+    .bg1 { stop-color: #fcfaf6; } .bg2 { stop-color: #f1ebe0; }
+    .ink { fill: #1d2433; } .soft { fill: #5b6475; } .note { fill: #6b7383; }
+    .panel { fill: #ffffff; stroke: #e7e1d5; stroke-width: 1; }
+    .item { fill: #faf8f4; stroke: #eee8dd; stroke-width: 1; }
+    .rule { stroke: #eee8dd; stroke-width: 1.5; }
+    .wire { stroke: #b9b2a3; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .head { fill: #b9b2a3; }
+    .verb { fill: #fcfaf6; stroke: #ddd6c8; stroke-width: 1; } .verbtxt { fill: #3a4252; }
+    .you1 { stop-color: #2c3a57; } .you2 { stop-color: #141b2a; } .youtxt { fill: #ffffff; }
+    .tool1 { stop-color: #3d5a8f; } .tool2 { stop-color: #2c3a57; } .tooltxt { fill: #ffffff; }
+    .p1 { fill: #4a6cd4; } .p2 { fill: #e8673c; } .p3 { fill: #2f8f83; }
+    .tint { opacity: 0.09; }
     .glyph { stroke: #ffffff; stroke-width: 1.8; fill: none; stroke-linejoin: round; }
     text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
     @media (prefers-color-scheme: dark) {
-      .bg1, .bg2 { stop-color: #0d1117; }
-      .ink { fill: #e6edf3; } .soft { fill: #9da7b3; }
-      .you1, .you2 { stop-color: #e6edf3; } .youtxt { fill: #0d1117; }
-      .note { fill: #7d8590; }
-      .panel { fill: #0d1117; stroke: #30363d; stroke-width: 1; }
-      .item { fill: #161b22; stroke: #21262d; stroke-width: 1; } .rule { stroke: #21262d; stroke-width: 1.5; }
-      .wire { stroke: #484f58; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; } .head { fill: #484f58; }
-      .verb { fill: #161b22; stroke: #30363d; stroke-width: 1; } .verbtxt { fill: #e6edf3; }
-      .tool1, .tool2 { stop-color: #2f6feb; } .tooltxt { fill: #ffffff; }
-      .p1, .p2, .p3 { fill: #2f6feb; } .tint { opacity: 0.08; }
-      .glyph { stroke: #ffffff; stroke-width: 1.8; fill: none; stroke-linejoin: round; }
+      .bg1 { stop-color: #1a2131; } .bg2 { stop-color: #0e121a; }
+      .ink { fill: #eef0f4; } .soft { fill: #a3abba; } .note { fill: #8d96a7; }
+      .panel { fill: #1f2734; stroke: #313a4a; } .item { fill: #252e3d; stroke: #313a4a; } .rule { stroke: #313a4a; }
+      .wire { stroke: #4a5363; } .head { fill: #4a5363; }
+      .verb { fill: #1a2131; stroke: #3a4354; } .verbtxt { fill: #c9cfda; }
+      .you1 { stop-color: #f6f2ea; } .you2 { stop-color: #d9d2c4; } .youtxt { fill: #141922; }
+      .tool1 { stop-color: #4a6aa6; } .tool2 { stop-color: #33466d; }
+      .tint { opacity: 0.18; }
     }
   </style>
   <defs>
@@ -41,10 +40,10 @@
   <text class="ink" x="40" y="58" font-size="26" font-weight="700">How the template is built</text>
   <text class="soft" x="40" y="84" font-size="15">Plain files in your own repository. Your AI tool reads them, and checks keep them honest.</text>
 
-  <g transform="translate(40 108)"><rect width="250" height="64" rx="32" fill="url(#you)"/><text class="youtxt" x="125" y="40" font-size="20" font-weight="700" text-anchor="middle">You, the founder</text></g>
+  <g transform="translate(40 108)" filter="url(#sh)"><rect width="250" height="64" rx="32" fill="url(#you)"/><text class="youtxt" x="125" y="40" font-size="20" font-weight="700" text-anchor="middle">You, the founder</text></g>
   <path class="wire" marker-end="url(#a)" d="M296 140 L414 140"/>
   <g transform="translate(305 112)"><rect class="verb" width="100" height="22" rx="11"/><text class="verbtxt" x="50" y="15" font-size="11.5" font-weight="600" text-anchor="middle">asks, decides</text></g>
-  <g transform="translate(420 100)">
+  <g transform="translate(420 100)" filter="url(#sh)">
     <rect width="740" height="80" rx="16" fill="url(#tool)"/>
     <text class="tooltxt" x="28" y="36" font-size="20" font-weight="700">Your AI coding tool</text>
     <text class="tooltxt" x="28" y="60" font-size="14" opacity="0.85">Claude Code, Codex, Gemini CLI or Cursor. It plays each role from the files below.</text>
@@ -60,7 +59,7 @@
   </g>
 
   <g transform="translate(40 236)">
-    <rect class="panel" width="360" height="474" rx="20"/>
+    <rect class="panel" width="360" height="474" rx="20" filter="url(#sh)"/>
     <g clip-path="url(#pc)"><rect class="p1 tint" width="360" height="78"/><rect class="p1" width="360" height="6"/></g>
     <text class="ink" x="24" y="42" font-size="19" font-weight="700">Instructions</text>
     <text class="soft" x="24" y="64" font-size="13">What every agent reads before it acts</text>
@@ -72,7 +71,7 @@
     <text class="note" font-size="12.5"><tspan x="24" y="442">tools/sync_adapters.py generates each tool's</tspan><tspan x="24" y="459">own copies, such as .claude/ and .cursor/rules/</tspan></text>
   </g>
   <g transform="translate(420 236)">
-    <rect class="panel" width="360" height="474" rx="20"/>
+    <rect class="panel" width="360" height="474" rx="20" filter="url(#sh)"/>
     <g clip-path="url(#pc)"><rect class="p2 tint" width="360" height="78"/><rect class="p2" width="360" height="6"/></g>
     <text class="ink" x="24" y="42" font-size="19" font-weight="700">The paper trail</text>
     <text class="soft" x="24" y="64" font-size="13">Work passes between agents as files in docs/</text>
@@ -84,7 +83,7 @@
     <text class="note" font-size="12.5"><tspan x="24" y="442">Your product's code lives in the same</tspan><tspan x="24" y="459">repository, with every change recorded.</tspan></text>
   </g>
   <g transform="translate(800 236)">
-    <rect class="panel" width="360" height="474" rx="20"/>
+    <rect class="panel" width="360" height="474" rx="20" filter="url(#sh)"/>
     <g clip-path="url(#pc)"><rect class="p3 tint" width="360" height="78"/><rect class="p3" width="360" height="6"/></g>
     <text class="ink" x="24" y="42" font-size="19" font-weight="700">The guards</text>
     <text class="soft" x="24" y="64" font-size="13">Rules turned into checks, not left as wishes</text>

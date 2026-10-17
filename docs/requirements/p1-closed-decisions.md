@@ -37,7 +37,9 @@ they say. Setup removes this section from a new project (`tools/clean_template.p
   glows or shadows. Reason: the survey of 14 similar projects (`docs/growth/readme-survey.md`)
   found restraint, plain language and honest limits are where this template stands apart, and
   the reader is a non-coder who has to trust it. Decided by Fadi. Reopen: if the landing page's
-  numbers show readers leave before the start link.
+  numbers show readers leave before the start link. **Image style reversed by Fadi on
+  2026-10-17**: the six README images are back in the original warm paper style, with the same
+  words and diagrams; the README's order and start link stay.
 
 - **2026-10-16. The reviewer suggests new agents as the project changes** (TPL-37). Setup
   picks the team once; after that, each review checks whether the work needs an agent that is

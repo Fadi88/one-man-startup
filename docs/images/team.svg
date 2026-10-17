@@ -2,25 +2,22 @@
   <title id="t">Your AI team</title>
   <desc id="d">You give requests to the project manager agent, which hands work to five groups: plan (researcher, feasibility check, software architect, product designer, AI workflow designer), build (web, Android, iOS, desktop, backend), check (reviewer, QA, security, legal), grow (growth, social media) and run (devops, rollback, debugger, dashboard, optimizer). A setup agent tailors the team at the start.</desc>
   <style>
-    .bg1, .bg2 { stop-color: #ffffff; }
-    .ink { fill: #111827; } .soft { fill: #4b5563; }
-    .you1, .you2 { stop-color: #111827; } .youtxt { fill: #ffffff; }
-    .card { fill: #ffffff; stroke: #d1d5db; stroke-width: 1; }
-    .wire { stroke: #d1d5db; stroke-width: 2; fill: none; stroke-linecap: round; }
-    .pm1, .pm2 { stop-color: #1d4ed8; } .pmtxt { fill: #ffffff; }
-    .setup { fill: #ffffff; stroke: #9ca3af; stroke-width: 1.5; stroke-dasharray: 6 5; }
-    .g1, .g2, .g3, .g4, .g5 { fill: #1d4ed8; } .tint { opacity: 0.08; }
+    .bg1 { stop-color: #fcfaf6; } .bg2 { stop-color: #f1ebe0; }
+    .card { fill: #ffffff; stroke: #e7e1d5; stroke-width: 1; }
+    .ink { fill: #1d2433; } .soft { fill: #5b6475; } .wire { stroke: #cfc7b8; stroke-width: 2; fill: none; stroke-linecap: round; }
+    .you1 { stop-color: #2c3a57; } .you2 { stop-color: #141b2a; } .youtxt { fill: #ffffff; }
+    .pm1 { stop-color: #3d5a8f; } .pm2 { stop-color: #2c3a57; } .pmtxt { fill: #ffffff; }
+    .setup { fill: #ffffff; fill-opacity: 0.5; stroke: #b9b2a3; stroke-width: 1.5; stroke-dasharray: 6 5; }
+    .g1 { fill: #e8673c; } .g2 { fill: #2f8f83; } .g3 { fill: #4a6cd4; } .g4 { fill: #d04a6b; } .g5 { fill: #c98a1b; }
+    .tint { opacity: 0.09; }
     text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
     @media (prefers-color-scheme: dark) {
-      .bg1, .bg2 { stop-color: #0d1117; }
-      .ink { fill: #e6edf3; } .soft { fill: #9da7b3; }
-      .you1, .you2 { stop-color: #e6edf3; } .youtxt { fill: #0d1117; }
-      .card { fill: #0d1117; stroke: #30363d; stroke-width: 1; }
-      .wire { stroke: #30363d; stroke-width: 2; fill: none; stroke-linecap: round; }
-      .pm1, .pm2 { stop-color: #2f6feb; } .pmtxt { fill: #ffffff; }
-      .setup { fill: #0d1117; stroke: #484f58; stroke-width: 1.5; stroke-dasharray: 6 5; }
-      .g1, .g2, .g3, .g4, .g5 { fill: #2f6feb; } .tint { opacity: 0.08; }
+      .bg1 { stop-color: #1a2131; } .bg2 { stop-color: #0e121a; }
+      .card { fill: #1f2734; stroke: #313a4a; } .ink { fill: #eef0f4; } .soft { fill: #a3abba; }
+      .wire { stroke: #3a4354; }
+      .you1 { stop-color: #f6f2ea; } .you2 { stop-color: #d9d2c4; } .youtxt { fill: #141922; }
+      .pm1 { stop-color: #4a6aa6; } .pm2 { stop-color: #33466d; }
+      .setup { fill: #1f2734; stroke: #4a5363; } .tint { opacity: 0.18; }
     }
   </style>
   <defs>
@@ -38,12 +35,12 @@
   <path class="wire" d="M600 254 L600 282 M132 302 Q132 282 152 282 L1048 282 Q1068 282 1068 302 L1068 322 M132 302 L132 322 M366 282 L366 322 M600 282 L600 322 M834 282 L834 322"/>
   <path class="wire" stroke-dasharray="4 6" d="M750 224 L860 224"/>
 
-  <g transform="translate(600 120)"><rect x="-130" y="-32" width="260" height="64" rx="32" fill="url(#you)"/><text class="youtxt" y="8" font-size="22" font-weight="700" text-anchor="middle">You, the founder</text></g>
-  <g transform="translate(600 224)"><rect x="-150" y="-30" width="300" height="60" rx="14" fill="url(#pm)"/><text class="pmtxt" y="-3" font-size="18" font-weight="700" text-anchor="middle">Project manager</text><text class="pmtxt" y="19" font-size="13" text-anchor="middle" opacity="0.85">picks who does what, holds the gates</text></g>
+  <g transform="translate(600 120)" filter="url(#sh)"><rect x="-130" y="-32" width="260" height="64" rx="32" fill="url(#you)"/><text class="youtxt" y="8" font-size="22" font-weight="700" text-anchor="middle">You, the founder</text></g>
+  <g transform="translate(600 224)" filter="url(#sh)"><rect x="-150" y="-30" width="300" height="60" rx="14" fill="url(#pm)"/><text class="pmtxt" y="-3" font-size="18" font-weight="700" text-anchor="middle">Project manager</text><text class="pmtxt" y="19" font-size="13" text-anchor="middle" opacity="0.85">picks who does what, holds the gates</text></g>
   <g transform="translate(980 224)"><rect class="setup" x="-120" y="-30" width="240" height="60" rx="14"/><text class="ink" y="-3" font-size="16" font-weight="700" text-anchor="middle">Setup</text><text class="soft" y="18" font-size="13" text-anchor="middle">tailors the team to you</text></g>
 
   <g font-size="15">
-    <g transform="translate(32 322)"><rect class="card" width="200" height="344" rx="16"/>
+    <g transform="translate(32 322)"><rect class="card" width="200" height="344" rx="16" filter="url(#sh)"/>
       <g clip-path="url(#c)"><rect class="g1 tint" width="200" height="64"/><rect class="g1" width="200" height="6"/></g>
       <circle class="g1" cx="30" cy="38" r="9"/><text class="ink" x="48" y="45" font-size="19" font-weight="700">Plan</text>
       <text class="ink" x="20" y="96">Researcher</text><text class="soft" x="20" y="116" font-size="13">what similar products do</text>
@@ -51,7 +48,7 @@
       <text class="ink" x="20" y="200">Software architect</text><text class="soft" x="20" y="220" font-size="13">the whole system</text>
       <text class="ink" x="20" y="252">Product designer</text><text class="soft" x="20" y="272" font-size="13">designs every screen</text>
       <text class="ink" x="20" y="304">AI workflows</text><text class="soft" x="20" y="324" font-size="13">how the product's AI works</text></g>
-    <g transform="translate(266 322)"><rect class="card" width="200" height="344" rx="16"/>
+    <g transform="translate(266 322)"><rect class="card" width="200" height="344" rx="16" filter="url(#sh)"/>
       <g clip-path="url(#c)"><rect class="g2 tint" width="200" height="64"/><rect class="g2" width="200" height="6"/></g>
       <circle class="g2" cx="30" cy="38" r="9"/><text class="ink" x="48" y="45" font-size="19" font-weight="700">Build</text>
       <text class="ink" x="20" y="96">Web developer</text><text class="soft" x="20" y="116" font-size="13">the website and web app</text>
@@ -59,19 +56,19 @@
       <text class="ink" x="20" y="200">iOS developer</text><text class="soft" x="20" y="220" font-size="13">the iPhone and iPad app</text>
       <text class="ink" x="20" y="252">Desktop developer</text><text class="soft" x="20" y="272" font-size="13">Windows, Mac, Linux</text>
       <text class="ink" x="20" y="304">Backend developer</text><text class="soft" x="20" y="324" font-size="13">data, accounts, payments</text></g>
-    <g transform="translate(500 322)"><rect class="card" width="200" height="344" rx="16"/>
+    <g transform="translate(500 322)"><rect class="card" width="200" height="344" rx="16" filter="url(#sh)"/>
       <g clip-path="url(#c)"><rect class="g3 tint" width="200" height="64"/><rect class="g3" width="200" height="6"/></g>
       <circle class="g3" cx="30" cy="38" r="9"/><text class="ink" x="48" y="45" font-size="19" font-weight="700">Check</text>
       <text class="ink" x="20" y="96">Reviewer</text><text class="soft" x="20" y="116" font-size="13">reads plans and code</text>
       <text class="ink" x="20" y="148">QA</text><text class="soft" x="20" y="168" font-size="13">tries to break it first</text>
       <text class="ink" x="20" y="200">Security</text><text class="soft" x="20" y="220" font-size="13">keeps data safe</text>
       <text class="ink" x="20" y="252">Legal</text><text class="soft" x="20" y="272" font-size="13">checklists, not advice</text></g>
-    <g transform="translate(734 322)"><rect class="card" width="200" height="344" rx="16"/>
+    <g transform="translate(734 322)"><rect class="card" width="200" height="344" rx="16" filter="url(#sh)"/>
       <g clip-path="url(#c)"><rect class="g4 tint" width="200" height="64"/><rect class="g4" width="200" height="6"/></g>
       <circle class="g4" cx="30" cy="38" r="9"/><text class="ink" x="48" y="45" font-size="19" font-weight="700">Grow</text>
       <text class="ink" x="20" y="96">Growth</text><text class="soft" x="20" y="116" font-size="13">pitch, pricing, launch</text>
       <text class="ink" x="20" y="148">Social media</text><text class="soft" x="20" y="168" font-size="13">posts drafted, you publish</text></g>
-    <g transform="translate(968 322)"><rect class="card" width="200" height="344" rx="16"/>
+    <g transform="translate(968 322)"><rect class="card" width="200" height="344" rx="16" filter="url(#sh)"/>
       <g clip-path="url(#c)"><rect class="g5 tint" width="200" height="64"/><rect class="g5" width="200" height="6"/></g>
       <circle class="g5" cx="30" cy="38" r="9"/><text class="ink" x="48" y="45" font-size="19" font-weight="700">Run</text>
       <text class="ink" x="20" y="96">DevOps</text><text class="soft" x="20" y="116" font-size="13">hosting and releases</text>
