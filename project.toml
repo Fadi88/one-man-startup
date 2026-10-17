@@ -22,8 +22,9 @@ audience = "unset"
 customer_size = "unset"
 # idea | prototype | beta | live
 stage = "idea"
-# new | rebuild. "rebuild" is a generic version of an app that already exists; based_on names it
-# and its public site. A rebuild starts from the original's features and adds a legal check.
+# new | rebuild | own. "rebuild" is a generic version of someone else's app; based_on names it and
+# its public site, and a legal check is added. "own" starts from the founder's own existing app;
+# based_on is its folder or repository, and setup asks whether to copy, rebuild or borrow from it.
 origin = "unset"
 based_on = ""
 # proprietary, or an SPDX id such as "MIT" or "AGPL-3.0-only". Setup explains the options
@@ -59,7 +60,8 @@ enabled = ["orchestrator", "setup", "researcher", "feasibility", "architect", "a
 level = "strict"
 
 [style]
-# Characters refused in docs, code comments and commit messages.
+# Characters refused in docs, code comments and commit messages. Keep them as backslash-u
+# escapes; the style check skips this one line in case a tool writes them out literally.
 banned_chars = ["\u2014", "\u2013"]
 
 [budget]

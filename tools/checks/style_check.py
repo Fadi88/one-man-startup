@@ -34,6 +34,9 @@ for f in files:
     except UnicodeDecodeError:
         continue
     for n, line in enumerate(lines, 1):
+        # TPL-45: the list of banned characters may hold them literally, if an editor unescaped it.
+        if f.name == "project.toml" and f.parent == ROOT and line.startswith("banned_chars"):
+            continue
         for ch in banned:
             if ch in line:
                 print(f"FAIL  {f.relative_to(ROOT)}:{n} has U+{ord(ch):04X}")

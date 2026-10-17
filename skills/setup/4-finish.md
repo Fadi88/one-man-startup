@@ -2,7 +2,8 @@
 
 Part of `skills/setup/SKILL.md`.
 
-1. **Clean out the template** (the first setup only, when `tools/clean_template.py` exists). Run
+1. **Clean out the template** (the first setup only, when `tools/clean_template.py` exists),
+   after step 3 has written `project.toml`: the script refuses while `[product] name` is unset. Run
    it without `--yes` and tell the founder in their words what it removes: the template's own
    decisions, experiments, assumptions, landing page, examples and README, and that publishing
    is switched off (`project.toml [publish] enabled = false`): nothing goes on the internet

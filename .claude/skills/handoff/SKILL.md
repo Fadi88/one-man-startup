@@ -26,3 +26,9 @@ description: "The format for passing work between agents - a brief going out, a 
 - **Needs the founder:** decisions surfaced, each with a recommendation.
 
 Update `docs/work/<id>/status.md` with the step and its state.
+
+## Agents working in parallel
+
+Nobody edits a generated or shared file (the index in `docs/REQUIREMENTS.md`, `docs/TEAM.md`,
+another area's rows) while others are working. Each writes its own files; the orchestrator runs
+`python tools/checks/req_check.py --fix` and settles shared rows once, at the end.

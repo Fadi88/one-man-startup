@@ -7,18 +7,27 @@ legal agent runs it before a launch review, and setup runs it on the packs it
 writes. A cited page that does not exist is a claim with no source (rule 10).
 
 Prints one line per URL: OK, BLOCKED (the site refuses scripts; open it by
-hand) or DEAD (404, 410 or the domain does not resolve). Exits 1 if any URL is
-DEAD.
+hand), BY HAND (a site known to answer scripts with 404 while browsers load the page; open it
+in a browser) or DEAD (404, 410 or the domain does not resolve). Exits 1 if any URL is DEAD.
 """
 from __future__ import annotations
 
 import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
 URL = re.compile(r"https?://[^\s)>`\"'\]]+")
+
+# TPL-44: hosts that answer a script's request with 404 while a browser loads the same page.
+# Each was seen doing it, with the date. A 404 from them, or a subdomain, is reported as BY HAND,
+# not DEAD; the cost is that a page there that is really gone shows only when opened by hand.
+BY_HAND = {
+    # The COPPA rule page answered 404 to Python with browser headers and loaded in a fetch tool.
+    "ftc.gov": "2026-10-17",
+}
 
 
 def status(url: str) -> str:
@@ -27,6 +36,9 @@ def status(url: str) -> str:
         with urllib.request.urlopen(req, timeout=20) as r:
             return "OK" if r.status < 400 else f"DEAD {r.status}"
     except urllib.error.HTTPError as e:
+        host = urllib.parse.urlsplit(url).hostname or ""
+        if e.code == 404 and any(host == h or host.endswith("." + h) for h in BY_HAND):
+            return "BY HAND"
         if e.code in (404, 410):
             return f"DEAD {e.code}"
         return f"BLOCKED {e.code}"
@@ -39,12 +51,13 @@ def main(paths: list[str]) -> int:
     if not urls:
         print("no URLs found")
         return 1
-    dead = 0
+    dead = by_hand = 0
     for u in urls:
         s = status(u)
         dead += s.startswith("DEAD")
+        by_hand += s.startswith("BY HAND")
         print(f"{s:<12} {u}")
-    print(f"\n{len(urls)} URLs, {dead} dead")
+    print(f"\n{len(urls)} URLs, {dead} dead, {by_hand} to open by hand")
     return 1 if dead else 0
 
 

@@ -12,6 +12,12 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-17. The Fuel & Train lessons are taken** (TPL-41, TPL-41a, TPL-44 to TPL-56), from pull
+  request 2, all as proposed except: the per-platform agents are one `platform-architect` and
+  one `platform-designer` for any platform, not one per platform; lesson 4's helper that mines
+  the old app's rows is written as steps (TPL-41a), not built as a tool, since its input depends
+  on how the old app keeps its requirements; and lesson 14 changes nothing, because
+  `.gitattributes` already sets `* text=auto eol=lf`. Decided by Fadi ("fix everything").
 - **2026-10-17. Publishing is off in a new project until the founder asks** (TPL-43). Setup's
   clean-out switches `[publish] enabled` to false and the checks refuse any publishing or
   deploying workflow while it is. Reason: tracker_app's first push ran the template's landing

@@ -35,6 +35,11 @@ Ask the whole frontier in one round, numbered. For each question:
 - a title and the question, with the options when there are options;
 - **your recommended answer and the reason in one line**, worded so that "yes" accepts it.
 
+When a round would hold more than about ten questions (a default; the founder can set another) (a large research brief, decisions carried over
+from an old app), put every question with its recommendation in a choices file,
+`docs/work/<id>/round-<n>-choices.md`, numbered, where the founder marks each one or writes "accept
+all", and ask only the few that change the most in chat.
+
 Then wait. A question whose answer depends on another question in the same round belongs to a
 later round.
 
