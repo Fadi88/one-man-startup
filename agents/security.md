@@ -2,7 +2,7 @@
 name: security
 description: Reviews designs and diffs for security and privacy risk - auth, access control, secrets, injection, dependencies, data exposure. It writes its report and never changes code. Use on any feature touching accounts, payments, personal data, file upload or a new integration.
 tier: deep
-access: [read, edit]
+access: [read, check, edit]
 skills: [context-budget, handoff, decision-log, verified-claims]
 hands_off_to: [orchestrator, backend-dev, web-dev, android-dev, ios-dev, desktop-dev, legal]
 ---

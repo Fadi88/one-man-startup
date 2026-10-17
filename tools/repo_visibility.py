@@ -3,8 +3,8 @@
     python tools/repo_visibility.py
 
 Setup runs it in step 1. It asks GitHub about the `origin` remote without signing in. A public
-repository answers, so an answer means anyone can read it. A private one is assumed to answer
-404 like a missing one (A-11 in docs/ASSUMPTIONS.md).
+repository answers, so an answer means anyone can read it. A private one answers 404 like a missing
+one (A-11 in docs/ASSUMPTIONS.md, confirmed 2026-10-17).
 
 Prints one line: PUBLIC, NOT PUBLIC (GitHub does not show it to strangers), NO REMOTE (not on
 GitHub yet), OTHER HOST (not GitHub; check by hand) or UNKNOWN (GitHub could not be reached).

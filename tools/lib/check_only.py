@@ -1,0 +1,38 @@
+"""TPL-42: the Claude Code hook for agents with `check` access. It lets through only the
+template's read-only checkers and blocks every other command.
+
+Claude Code runs it before each Bash call of such an agent, with the call as JSON on stdin
+(https://code.claude.com/docs/en/hooks-guide.md). Exit 2 blocks the call and shows the
+message to the agent; exit 0 lets it run.
+"""
+from __future__ import annotations
+
+import json
+import re
+import sys
+
+# A checker, then plain arguments only: no ;, &, |, >, <, $, backticks or quotes to chain or redirect.
+ALLOWED = re.compile(
+    r"^(python3?|py)( -I)? tools/(link_check|run_all|repo_visibility|checks/[a-z_]+_check)\.py"
+    r"( [A-Za-z0-9_./*:=-]+)*$"
+)
+
+
+def allowed(command: str) -> bool:
+    return bool(ALLOWED.match(command.strip()))
+
+
+def main() -> int:
+    try:
+        command = json.load(sys.stdin).get("tool_input", {}).get("command", "")
+    except (json.JSONDecodeError, AttributeError):
+        command = ""
+    if allowed(command):
+        return 0
+    print("Blocked: this agent may run only the template's checkers, such as "
+          "`python tools/link_check.py <files>` or `python tools/run_all.py`.", file=sys.stderr)
+    return 2
+
+
+if __name__ == "__main__":
+    sys.exit(main())

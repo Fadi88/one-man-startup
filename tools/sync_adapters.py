@@ -30,9 +30,19 @@ CLAUDE_TOOLS = {
     "read": ["Read", "Grep", "Glob"],
     "web": ["WebFetch", "WebSearch"],
     "run": ["Bash"],
+    "check": ["Bash"],
     "edit": ["Edit", "Write"],
     "delegate": ["Agent"],
 }
+# TPL-42: an agent with check access and no run access may run only the template's checkers.
+CHECK_ONLY_HOOK = [
+    "hooks:",
+    "  PreToolUse:",
+    '    - matcher: "Bash"',
+    "      hooks:",
+    "        - type: command",
+    '          command: "python tools/lib/check_only.py"',
+]
 DEFAULT_MODELS = {"claude": {"deep": "opus", "standard": "sonnet", "fast": "haiku"}}
 
 
@@ -67,7 +77,7 @@ def build(cfg: dict) -> dict[Path, str]:
             f"<!-- {GENERATED.format(src='AGENTS.md')} -->\n{pointer}"
         )
         for path, fm, body in agents():
-            tools = [t for cap in fm["access"] for t in CLAUDE_TOOLS[cap]]
+            tools = list(dict.fromkeys(t for cap in fm["access"] for t in CLAUDE_TOOLS[cap]))
             lines = [
                 "---",
                 f"name: {fm['name']}",
@@ -80,6 +90,8 @@ def build(cfg: dict) -> dict[Path, str]:
             if fm["skills"]:
                 lines.append("skills:")
                 lines += [f"  - {s}" for s in fm["skills"]]
+            if "check" in fm["access"] and "run" not in fm["access"]:
+                lines += CHECK_ONLY_HOOK
             lines += ["---", "", f"<!-- {GENERATED.format(src=rel(path))} -->", "", body.rstrip(), ""]
             out[ROOT / ".claude" / "agents" / f"{fm['name']}.md"] = "\n".join(lines)
         for path, fm, body in skills():
