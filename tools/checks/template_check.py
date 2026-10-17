@@ -1,4 +1,4 @@
-"""TPL-1 to TPL-5: the agents, skills and roster are well formed, wired up and small.
+"""TPL-1 to TPL-5, TPL-41, TPL-42: the agents, skills and roster are well formed, wired up and small.
 
 Agent and skill files with bad frontmatter are skipped silently by some tools,
 so a broken file can vanish without anyone noticing. This check makes it loud.
@@ -71,6 +71,8 @@ for f in agent_files:
         fail(f"TPL-1 agents/{f.name} access {fm['access']!r} must list read plus any of {sorted(ACCESS)}")
     elif "delegate" in fm["access"] and fm["name"] != "orchestrator":
         fail(f"TPL-1 agents/{f.name} has delegate; only the orchestrator delegates")
+    if re.search(r"`python [^`]*tools/", body) and "run" not in fm["access"]:
+        fail(f"TPL-42 agents/{f.name} tells the agent to run a tool but its access has no run")
     if len(f.read_text(encoding="utf-8")) > BUDGET["agent"]:
         fail(f"TPL-5 agents/{f.name} is over {BUDGET['agent']} characters")
     agents[fm["name"]] = fm
@@ -92,15 +94,16 @@ for f in [*(ROOT / "agents").glob("*.md"), *(ROOT / "skills").glob("*/*.md")]:
 agents_md = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
 if len(agents_md) > BUDGET["AGENTS.md"]:
     fail(f"TPL-5 AGENTS.md is {len(agents_md)} characters, over its budget of {BUDGET['AGENTS.md']}")
+team_md = (ROOT / "docs" / "TEAM.md").read_text(encoding="utf-8")
 roster = set()
-for shown, target in re.findall(r"^\| \[`([a-z0-9-]+)`\]\(agents/([a-z0-9-]+)\.md\) \|", agents_md, flags=re.M):
+for shown, target in re.findall(r"^\| \[`([a-z0-9-]+)`\]\(\.\./agents/([a-z0-9-]+)\.md\) \|", team_md, flags=re.M):
     if shown != target:
-        fail(f"TPL-4 AGENTS.md shows {shown!r} but links to agents/{target}.md")
+        fail(f"TPL-4 docs/TEAM.md shows {shown!r} but links to agents/{target}.md")
     roster.add(shown)
 for a in sorted(set(agents) - roster):
-    fail(f"TPL-4 agent {a!r} is missing from the team table in AGENTS.md")
+    fail(f"TPL-4 agent {a!r} is missing from the team table in docs/TEAM.md")
 for a in sorted(roster - set(agents)):
-    fail(f"TPL-4 AGENTS.md lists {a!r}, which has no file in agents/")
+    fail(f"TPL-4 docs/TEAM.md lists {a!r}, which has no file in agents/")
 
 cfg = tomllib.loads((ROOT / "project.toml").read_text(encoding="utf-8"))
 for a in cfg.get("team", {}).get("enabled", []):
@@ -108,6 +111,10 @@ for a in cfg.get("team", {}).get("enabled", []):
         fail(f"TPL-4 project.toml [team] enables {a!r}, which does not exist")
 if cfg.get("owner", {}).get("level") not in {"non-technical", "basics", "technical"}:
     fail("TPL-28 project.toml [owner] level must be non-technical, basics or technical")
+if cfg.get("product", {}).get("origin") not in {"unset", "new", "rebuild"}:
+    fail("TPL-41 project.toml [product] origin must be unset, new or rebuild")
+if cfg.get("product", {}).get("origin") == "rebuild" and not cfg["product"].get("based_on"):
+    fail("TPL-41 project.toml [product] origin is rebuild but based_on does not name the app")
 if cfg.get("gates", {}).get("level") not in {"strict", "standard", "light"}:
     fail("TPL-4 project.toml [gates] level must be strict, standard or light")
 
