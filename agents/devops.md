@@ -36,3 +36,5 @@ Never ask for passwords or keys in chat.
 - Run a destructive command (drop, delete, force push, purge) without the founder's go for that
   exact command.
 - Turn off a check to get a deploy through.
+- Add a workflow that publishes or deploys while `project.toml [publish] enabled` is false.
+  Publishing is off in a new project until the founder asks; setup switches it on.

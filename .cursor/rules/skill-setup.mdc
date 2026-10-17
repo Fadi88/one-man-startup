@@ -23,4 +23,6 @@ Each step is its own file. Open the one you are on, in order:
    licence, run the checks, show the founder, commit on their go.
 
 When setup runs again later (a new region, market, stack or team), skip step 1 and ask only the
-branches that changed.
+branches that changed. When the founder asks to publish (a website, an app, a release), that is
+the publish branch: say what will go public and what it costs, and set `[publish] enabled =
+true` on their go; `devops` then adds the publishing workflow.

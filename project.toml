@@ -69,6 +69,12 @@ banned_chars = ["\u2014", "\u2013"]
 # and capped by the free-tier rows when there is a free tier. 0 = no ceiling set.
 monthly_usd = 0
 
+[publish]
+# Whether any workflow in .github/workflows may publish or deploy (a website, an app, a release).
+# The template's own landing page needs true; setup's clean-out sets a new project to false, and
+# setup sets it back to true only when the founder asks to publish. The checks enforce it.
+enabled = true
+
 [tools]
 # Which AI coding tools get generated adapters (tools/sync_adapters.py).
 targets = ["claude", "codex", "gemini", "cursor"]

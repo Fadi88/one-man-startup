@@ -131,6 +131,11 @@ if cfg.get("product", {}).get("origin") not in {"unset", "new", "rebuild"}:
     fail("TPL-41 project.toml [product] origin must be unset, new or rebuild")
 if cfg.get("product", {}).get("origin") == "rebuild" and not cfg["product"].get("based_on"):
     fail("TPL-41 project.toml [product] origin is rebuild but based_on does not name the app")
+# TPL-43: nothing publishes or deploys until the founder has asked for it.
+if cfg.get("publish", {}).get("enabled") is not True:
+    for wf in sorted((ROOT / ".github" / "workflows").glob("*.y*ml")):
+        if re.search(r"^\s*(pages: write|environment:|- uses: actions/deploy-pages)", wf.read_text(encoding="utf-8"), re.M):
+            fail(f"TPL-43 .github/workflows/{wf.name} publishes or deploys, but project.toml [publish] enabled is not true")
 if cfg.get("gates", {}).get("level") not in {"strict", "standard", "light"}:
     fail("TPL-4 project.toml [gates] level must be strict, standard or light")
 
