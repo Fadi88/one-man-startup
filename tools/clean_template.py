@@ -81,6 +81,11 @@ def drop_worked_example(text: str) -> str:
     return re.sub(r" If you're stuck\nbefore you get that far, the \[worked example\][^.]*\.", "", text)
 
 
+def publish_off(text: str) -> str:
+    """TPL-43: a new project publishes nothing until the founder asks for it."""
+    return re.sub(r"(^\[publish\]\n(?:#.*\n)*enabled = )true$", r"\1false", text, count=1, flags=re.M)
+
+
 EDITS = {
     "docs/requirements/p1-closed-decisions.md": ("remove decisions about the template", drop_section),
     "docs/requirements/p1-rejected.md": ("remove ideas rejected for the template", drop_section),
@@ -89,6 +94,7 @@ EDITS = {
     "docs/requirements/TPL.md": ("remove rows about the template's own pages",
                                  lambda t: drop_rows(t, r"^\| (%s) \|" % "|".join(TPL_ROWS))),
     "docs/START-HERE.md": ("remove the link to the template's example run", drop_worked_example),
+    "project.toml": ("switch publishing off until the founder asks for it", publish_off),
 }
 
 

@@ -12,6 +12,10 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-17. Publishing is off in a new project until the founder asks** (TPL-43). Setup's
+  clean-out switches `[publish] enabled` to false and the checks refuse any publishing or
+  deploying workflow while it is. Reason: tracker_app's first push ran the template's landing
+  page job and failed; nothing should go public by default. Decided by Fadi.
 - **2026-10-17. A narrow "check" access for agents told to run checkers** (TPL-42). Legal,
   the orchestrator, researcher, growth, social-media, architect, product-designer and security
   were told by their own skills to run `python tools/...` checkers but had no way to. They get
