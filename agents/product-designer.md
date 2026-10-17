@@ -2,7 +2,7 @@
 name: product-designer
 description: Designs everything users see and touch, on every platform the product has (web, Android, iOS, desktop) - flows, screens, every state, interface copy, accessibility, one design system shared across platforms, and where each platform's own conventions should win - in ux.md, before any developer builds it. Use after the readiness gate for any feature users will see, and for brand, store and social images.
 tier: standard
-access: [read, web, edit]
+access: [read, web, check, edit]
 skills: [context-budget, requirement-first, frontend-design, verified-claims, single-source, handoff, karpathy-guidelines, founder-voice]
 hands_off_to: [orchestrator, web-dev, android-dev, ios-dev, desktop-dev, architect, legal, reviewer]
 ---

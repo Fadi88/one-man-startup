@@ -6,7 +6,7 @@ template's own pages (`tools/clean_template.py`).
 
 | ID | Requirement | Status |
 |---|---|---|
-| TPL-1 | Every file in `agents/` has frontmatter with `name`, `description`, `tier`, `access`, `skills` and `hands_off_to`, its `name` matches the file name, `tier` is deep, standard or fast, and `access` lists only read, web, run, edit and delegate, with delegate on the orchestrator alone. | T |
+| TPL-1 | Every file in `agents/` has frontmatter with `name`, `description`, `tier`, `access`, `skills` and `hands_off_to`, its `name` matches the file name, `tier` is deep, standard or fast, and `access` lists only read, web, run, check, edit and delegate, with delegate on the orchestrator alone. | T |
 | TPL-2 | Every skill an agent lists exists in `skills/`, and every agent named in `hands_off_to` exists in `agents/`. | T |
 | TPL-3 | Every folder in `skills/` has a `SKILL.md` whose `name` matches the folder and whose `description` says when to use it, and every skill file named by path in an agent or skill exists. | T |
 | TPL-4 | The team table in `docs/TEAM.md` (not `AGENTS.md`, so adding an agent costs `AGENTS.md` nothing) lists every agent in `agents/` and no other, each with a one-line job and a link to its own file, and `project.toml [team] enabled` names only agents that exist. | T |
@@ -47,4 +47,4 @@ template's own pages (`tools/clean_template.py`).
 | TPL-39 | Setup's first step runs `tools/repo_visibility.py`; when the repository is public on GitHub it tells the founder that anyone can read it, recommends private with the steps, and records a public repository the founder keeps in `p1-closed-decisions.md`. | M |
 | TPL-40 | Setup's budget question asks what the founder spends each month on the AI tools that build the product, and says it is not the cost of AI inside the product; `project.toml [budget]` says the same. | M |
 | TPL-41 | Setup asks whether the product is a new idea or a generic version of an existing app; `project.toml [product] origin` is unset, new or rebuild, and a rebuild names the app in `based_on`, has `researcher` map its public features first, adds a `LAUNCH` row that nothing of the original's own is copied, and adds the playbook row to `legal`'s launch review. | M |
-| TPL-42 | An agent whose own file tells it to run a `python tools/` command has run access; `legal` runs the link checker on the region packs itself. | T |
+| TPL-42 | An agent whose own file or one of its skills tells it to run a `python tools/` command has run or check access. Check access runs only the template's read-only checkers (`link_check.py`, `run_all.py`, `repo_visibility.py`, `checks/*_check.py`) with plain arguments; in Claude Code a hook generated into the agent (`tools/lib/check_only.py`) blocks every other command. `legal` runs the link checker on the region packs itself. | T |

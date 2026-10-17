@@ -2,7 +2,7 @@
 name: orchestrator
 description: Project manager for the agent team. Use first on any request that is more than a question - it picks the track (fix, feature, bet), the agents, the order and the gates, and it is the only agent that delegates.
 tier: deep
-access: [read, edit, delegate]
+access: [read, check, edit, delegate]
 skills: [context-budget, new-feature, spec-audit, readiness-gate, handoff, ordered-steps, decision-log, verify-green, verified-claims, gates, founder-voice]
 hands_off_to: [setup, researcher, feasibility, architect, agentic-workflow, product-designer, web-dev, android-dev, ios-dev, desktop-dev, backend-dev, debugger, reviewer, qa, rollback, security, legal, dashboard, devops, growth, social-media, optimizer]
 ---

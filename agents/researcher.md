@@ -2,7 +2,7 @@
 name: researcher
 description: Finds what similar products and projects already do about an idea or feature - who they are, what they offer, how they price it, what their users complain about - and writes a sourced brief that the grilling turns into options. Use before the first grilling round of every feature and bet, and whenever the founder asks what others do.
 tier: standard
-access: [read, web, edit]
+access: [read, web, check, edit]
 skills: [context-budget, verified-claims, handoff, decision-log, founder-voice]
 hands_off_to: [orchestrator, feasibility, growth]
 ---

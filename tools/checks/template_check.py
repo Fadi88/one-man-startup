@@ -16,7 +16,8 @@ import frontmatter  # noqa: E402
 
 BUDGET = {"AGENTS.md": 9000, "agent": 5000, "skill": 5000}
 TIERS = {"deep", "standard", "fast"}
-ACCESS = {"read", "web", "run", "edit", "delegate"}
+ACCESS = {"read", "web", "run", "check", "edit", "delegate"}
+RUNS_TOOL = re.compile(r"`python [^`]*tools/")
 AGENT_KEYS = {"name", "description", "tier", "access", "skills", "hands_off_to"}
 
 fails: list[str] = []
@@ -71,8 +72,6 @@ for f in agent_files:
         fail(f"TPL-1 agents/{f.name} access {fm['access']!r} must list read plus any of {sorted(ACCESS)}")
     elif "delegate" in fm["access"] and fm["name"] != "orchestrator":
         fail(f"TPL-1 agents/{f.name} has delegate; only the orchestrator delegates")
-    if re.search(r"`python [^`]*tools/", body) and "run" not in fm["access"]:
-        fail(f"TPL-42 agents/{f.name} tells the agent to run a tool but its access has no run")
     if len(f.read_text(encoding="utf-8")) > BUDGET["agent"]:
         fail(f"TPL-5 agents/{f.name} is over {BUDGET['agent']} characters")
     agents[fm["name"]] = fm
@@ -81,6 +80,11 @@ for name, fm in agents.items():
     for s in fm["skills"]:
         if s not in skills:
             fail(f"TPL-2 agents/{name}.md lists skill {s!r}, which does not exist")
+    told = [f"agents/{name}.md"] if RUNS_TOOL.search((ROOT / "agents" / f"{name}.md").read_text(encoding="utf-8")) else []
+    told += [f"skills/{s}" for s in fm["skills"] if s in skills
+             and RUNS_TOOL.search((ROOT / "skills" / s / "SKILL.md").read_text(encoding="utf-8"))]
+    if told and not {"run", "check"} & set(fm["access"]):
+        fail(f"TPL-42 agents/{name}.md is told to run a tool by {', '.join(told)} but has neither run nor check access")
     for a in fm["hands_off_to"]:
         if a not in agents:
             fail(f"TPL-2 agents/{name}.md hands off to {a!r}, which does not exist")
@@ -90,6 +94,18 @@ for f in [*(ROOT / "agents").glob("*.md"), *(ROOT / "skills").glob("*/*.md")]:
     for ref in re.findall(r"`(skills/[a-z0-9-]+/[A-Za-z0-9._-]+\.md)`", f.read_text(encoding="utf-8")):
         if not (ROOT / ref).exists():
             fail(f"TPL-3 {f.relative_to(ROOT).as_posix()} names {ref}, which does not exist")
+
+# TPL-42: the check-only hook lets the checkers through and nothing else.
+sys.path.insert(0, str(ROOT / "tools" / "lib"))
+import check_only  # noqa: E402
+
+for cmd, want in [("python tools/link_check.py docs/legal/regions/*.md", True),
+                  ("python tools/run_all.py", True), ("py tools/checks/req_check.py --fix", True),
+                  ("python tools/clean_template.py --yes", False), ("python tools/sync_adapters.py", False),
+                  ("python tools/run_all.py && rm -rf docs", False), ("python tools/run_all.py > x", False),
+                  ("echo $(whoami)", False), ("git push", False), ("", False)]:
+    if check_only.allowed(cmd) != want:
+        fail(f"TPL-42 check_only {'blocks' if want else 'lets through'} {cmd!r}")
 
 agents_md = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
 if len(agents_md) > BUDGET["AGENTS.md"]:

@@ -12,6 +12,12 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-17. A narrow "check" access for agents told to run checkers** (TPL-42). Legal,
+  the orchestrator, researcher, growth, social-media, architect, product-designer and security
+  were told by their own skills to run `python tools/...` checkers but had no way to. They get
+  `check` access, which runs only the read-only checkers; in Claude Code a hook generated into
+  each agent blocks every other command (A-12). Other tools read it as an instruction only.
+  Chosen over full run access, which would let them run anything. Decided by Fadi.
 - **2026-10-17. The team table lives in `docs/TEAM.md`** (TPL-4). `AGENTS.md` was a few characters
   under its budget, so each new agent forced cuts to the rules. The check now reads the
   table from `docs/TEAM.md` and `AGENTS.md` keeps a pointer. Declined: raising the budget (every

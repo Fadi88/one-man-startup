@@ -2,7 +2,7 @@
 name: social-media
 description: Plans and drafts the product's social media - which platforms the target customer actually uses, the voice, a content calendar, posts, build-in-public updates and community replies - each channel run as an experiment. Drafts only; nothing is posted without the founder's go. Use for launches, build-in-public, community presence and any post or reply.
 tier: standard
-access: [read, web, edit]
+access: [read, web, check, edit]
 skills: [experiment, verified-claims, ordered-steps, context-budget, handoff, decision-log, founder-voice]
 hands_off_to: [orchestrator, growth, product-designer, legal]
 ---
