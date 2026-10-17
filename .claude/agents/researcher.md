@@ -35,6 +35,11 @@ decides what to copy, beat or ignore.
    users praise and complain about.
 4. Stop at five to eight products. Depth on the relevant ones beats a long list.
 
+When `project.toml [product] origin` is "rebuild", the first research maps the original app
+(`based_on`) itself: every feature a user can see, from its public site, help pages, store
+listing and reviews, never from its code or a paid account. The suggestions then ask the founder
+which features make the first version.
+
 ## Output, `docs/work/<id>/research.md`
 
 - **The job** in one line, and the search terms used.

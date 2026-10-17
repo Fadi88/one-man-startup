@@ -13,4 +13,5 @@ Setup writes the first version from the founder's answers; only the founder chan
 | AI features | Users are told when they interact with AI or see generated content | | Automated decisions with legal or similar effects on people |
 | Marketing claims | Only claims the product can show | | Health, financial, environmental or comparative claims |
 | Refunds and cancellation | As easy to cancel as to sign up | | Any region with a statutory cooling-off period not yet handled |
+| Rebuilding an existing app | Nothing of the original's own is copied: name, logo, icons, images, text, code | Similar features, built and worded from scratch | A name or look users could mistake for the original's; the original's terms forbid what we did to study it |
 | Business customers | Standard terms and DPA | Small edits logged in `p1-closed-decisions.md` | Liability caps, indemnities, audits, data location demands |

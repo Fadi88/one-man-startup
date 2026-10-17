@@ -13,7 +13,8 @@ up. Write nothing until the founder confirms the summary.
 
 Each step is its own file. Open the one you are on, in order:
 
-1. **Check the computer**: `skills/setup/1-check-tools.md`. Git and Python, before round one.
+1. **Check the computer**: `skills/setup/1-check-tools.md`. Git and Python, and whether the
+   repository is public, before round one.
 2. **The interview**: `skills/setup/2-interview.md`. The tree of questions and what unlocks what.
    Its licence question uses `skills/setup/licences.md`, which explains the options.
 3. **Write it down**: `skills/setup/3-write.md`. Every file the answers settle.

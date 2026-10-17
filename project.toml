@@ -22,6 +22,10 @@ audience = "unset"
 customer_size = "unset"
 # idea | prototype | beta | live
 stage = "idea"
+# new | rebuild. "rebuild" is a generic version of an app that already exists; based_on names it
+# and its public site. A rebuild starts from the original's features and adds a legal check.
+origin = "unset"
+based_on = ""
 # proprietary, or an SPDX id such as "MIT" or "AGPL-3.0-only". Setup explains the options
 # (skills/setup/licences.md); the founder decides.
 licence = "unset"
@@ -59,7 +63,10 @@ level = "strict"
 banned_chars = ["\u2014", "\u2013"]
 
 [budget]
-# Monthly AI spend ceiling in USD the optimizer reports against. 0 = no ceiling set.
+# What the founder spends each month, in USD, on the AI tools that build the product (their
+# Claude, ChatGPT or Cursor plans and any API use by the agents), which the optimizer reports
+# against. Not the cost of AI inside the product: that is measured per feature by feasibility
+# and capped by the free-tier rows when there is a free tier. 0 = no ceiling set.
 monthly_usd = 0
 
 [tools]

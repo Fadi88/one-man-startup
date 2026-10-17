@@ -6,8 +6,9 @@ This page is for the curious and for developers. You don't need it to use the te
 
 ## The files
 
-- **`AGENTS.md`** is the operating manual every AI tool reads first: the rules, the team, the
-  three tracks of work (fix, feature, bet) and where everything lives.
+- **`AGENTS.md`** is the operating manual every AI tool reads first: the rules, a pointer to the
+  team (`docs/TEAM.md`), the three tracks of work (fix, feature, bet) and where everything
+  lives.
 - **`agents/`** holds one brief per agent: what it reads, what it produces, the gates it holds
   and what it must never do.
 - **`skills/`** holds the methods the agents share, such as grilling, the readiness gate, the

@@ -9,7 +9,9 @@ description: The legal agent's method - read the founder's playbook and the regi
 
 ## Read
 
-- `project.toml`: regions, domain, audience, customer size, sensitive.
+- `project.toml`: regions, domain, audience, customer size, sensitive, and `origin`: a
+  rebuild of an existing app adds the playbook's "Rebuilding an existing app" row to every
+  launch review.
 - `docs/legal/playbook.md`: the founder's positions (what we accept, what we escalate).
 - `docs/legal/regions/<CODE>.md` for each region. A region with no pack is itself a RED.
 - The feature's spec, design and UX files.

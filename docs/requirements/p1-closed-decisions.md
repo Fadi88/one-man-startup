@@ -12,6 +12,18 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-17. The team table lives in `docs/TEAM.md`** (TPL-4). `AGENTS.md` was a few characters
+  under its budget, so each new agent forced cuts to the rules. The check now reads the
+  table from `docs/TEAM.md` and `AGENTS.md` keeps a pointer. Declined: raising the budget (every
+  tool loads `AGENTS.md` every session) and tightening the wording (little room, blurrier rules).
+  Decided by Fadi. Reopen: if tools stop finding the team without the table in `AGENTS.md`.
+- **2026-10-17. A rebuild of an existing app is its own setup answer** (TPL-41). Setup asks new
+  idea or rebuild; a rebuild starts from the original's public features and adds a legal check
+  that nothing of the original's own is copied. Declined: only a fifth stage value, which would
+  not make the legal check happen. Decided by Fadi.
+- **2026-10-17. Setup checks the repository is private, and the founder decides** (TPL-39,
+  TPL-40, TPL-42, with the budget wording and legal running the link checker). Lessons from the
+  first runs, all fixed as proposed. Decided by Fadi.
 - **2026-10-16. The README is a calm document in ink and one accent** (TPL-38). The promise, a
   start link and the recorded demo come first, then the journey, team and approval diagrams,
   then getting started; the practice table, limits and glossary follow. Every README image is
