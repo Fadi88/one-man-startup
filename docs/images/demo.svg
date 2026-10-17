@@ -2,27 +2,16 @@
   <title id="t">Setup, replayed from a recorded dry run</title>
   <desc id="d">Excerpts, word for word, from the recorded setup dry run of 14 October 2026 with a fictional founder. The founder asks to go lighter on the gates; the setup agent recommends strict and explains why. Asked whether to keep receipt photos, the founder asks for a recommendation; the agent recommends deleting the photo once the figures are read and checked. Setup ends with nothing committed, published or sent, the project files written and the test sweep green.</desc>
   <style>
-    .bg1, .bg2 { stop-color: #ffffff; }
-    .ink { fill: #111827; } .soft { fill: #4b5563; }
-    .ok { fill: #1d4ed8; }
-    .ba { fill: #f6f7f9; stroke: #e5e7eb; stroke-width: 1; } .ta { fill: #111827; }
-    .bu { fill: #111827; } .tu { fill: #ffffff; }
-    .aa { fill: #1d4ed8; } .au { fill: #111827; } .al { fill: #ffffff; }
-    .chip { fill: #ffffff; stroke: #d1d5db; stroke-width: 1; }
-    .bar { fill: #f6f7f9; } .d1, .d2, .d3 { fill: #d1d5db; }
+    .bg1 { stop-color: #fcfaf6; } .bg2 { stop-color: #f1ebe0; }
+    .ink { fill: #1d2433; } .soft { fill: #5b6475; } .ok { fill: #23766c; }
+    .ba { fill: #ffffff; stroke: #e7e1d5; stroke-width: 1; } .ta { fill: #1d2433; }
+    .bu { fill: #2c3a57; } .tu { fill: #ffffff; }
+    .aa { fill: #2f8f83; } .au { fill: #e8673c; } .al { fill: #ffffff; }
+    .chip { fill: #ffffff; stroke: #ddd6c8; stroke-width: 1; }
+    .bar { fill: #ebe5d9; } .d1 { fill: #e8673c; } .d2 { fill: #c98a1b; } .d3 { fill: #2f8f83; }
+    .s { transform-box: fill-box; }
     text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
-    @media (prefers-color-scheme: dark) {
-      .bg1, .bg2 { stop-color: #0d1117; }
-      .ink { fill: #e6edf3; } .soft { fill: #9da7b3; }
-      .ok { fill: #79b0ff; }
-      .ba { fill: #161b22; stroke: #21262d; stroke-width: 1; } .ta { fill: #e6edf3; }
-      .bu { fill: #30363d; } .tu { fill: #ffffff; }
-      .aa { fill: #2f6feb; } .au { fill: #484f58; } .al { fill: #ffffff; }
-      .chip { fill: #0d1117; stroke: #30363d; stroke-width: 1; }
-      .bar { fill: #161b22; } .d1, .d2, .d3 { fill: #30363d; }
-    }
-    .s { transform-box: fill-box; }
     @keyframes k0 { 0%, 6% { opacity: 1; transform: translateY(0); } 8%, 12% { opacity: 0; transform: translateY(10px); } 15%, 100% { opacity: 1; transform: translateY(0); } }
     .s0 { animation: k0 22s ease-out infinite; }
     @keyframes k1 { 0%, 6% { opacity: 1; transform: translateY(0); } 8%, 23% { opacity: 0; transform: translateY(10px); } 26%, 100% { opacity: 1; transform: translateY(0); } }
@@ -38,6 +27,12 @@
     @keyframes k6 { 0%, 6% { opacity: 1; transform: translateY(0); } 8%, 78% { opacity: 0; transform: translateY(10px); } 81%, 100% { opacity: 1; transform: translateY(0); } }
     .s6 { animation: k6 22s ease-out infinite; }
     @media (prefers-reduced-motion: reduce) { .s { animation: none; } }
+    @media (prefers-color-scheme: dark) {
+      .bg1 { stop-color: #1a2131; } .bg2 { stop-color: #0e121a; }
+      .ink { fill: #eef0f4; } .soft { fill: #a3abba; } .ok { fill: #6cc7bb; }
+      .ba { fill: #1f2734; stroke: #313a4a; } .ta { fill: #eef0f4; }
+      .bu { fill: #3d5a8f; } .chip { fill: #1f2734; stroke: #313a4a; } .bar { fill: #252e3d; }
+    }
   </style>
   <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="bg1"/><stop offset="1" class="bg2"/></linearGradient></defs>
   <rect width="1200" height="620" rx="24" fill="url(#bg)"/>

@@ -2,31 +2,29 @@
   <title id="t">One-man startup</title>
   <desc id="d">Build a software startup without writing code. Not vibe coding: a proven team workflow in which you sit in the middle and decide, and AI agents plan, build, test, check the law, launch and grow your product.</desc>
   <style>
-    .bg1, .bg2 { stop-color: #ffffff; }
-    .ink { fill: #111827; } .soft { fill: #4b5563; }
-    .you1, .you2 { stop-color: #111827; } .youtxt { fill: #ffffff; }
-    .glowA, .glowB { stop-color: #ffffff; stop-opacity: 0; } .dot { fill: #e5e7eb; }
-    .ring { stroke: #d1d5db; stroke-width: 1.5; fill: none; stroke-dasharray: 3 7; }
-    .ring2 { stroke: #e5e7eb; stroke-width: 1.5; fill: none; } .spoke { stroke: #e5e7eb; stroke-width: 1.5; }
-    .halo { fill: #1d4ed8; opacity: 0.08; }
-    .chip { fill: #ffffff; stroke: #d1d5db; stroke-width: 1; }
-    .badge { fill: #eef2ff; stroke: #1d4ed8; stroke-width: 1.5; } .badgetxt { fill: #1d4ed8; }
-    .tag { fill: #ffffff; stroke: #d1d5db; stroke-width: 1; } .tagtxt { fill: #111827; }
-    .c1, .c2, .c3, .c4, .c5, .c6 { fill: #1d4ed8; }
+    .bg1 { stop-color: #fcfaf6; } .bg2 { stop-color: #efe8dc; }
+    .glowA { stop-color: #e8673c; } .glowB { stop-color: #2f8f83; }
+    .ink { fill: #1d2433; } .soft { fill: #5b6475; } .dot { fill: #d8d1c3; }
+    .ring { stroke: #cfc7b8; stroke-width: 1.5; fill: none; stroke-dasharray: 3 7; }
+    .ring2 { stroke: #e2dbcd; stroke-width: 1.5; fill: none; }
+    .spoke { stroke: #d6cfc1; stroke-width: 1.5; }
+    .you1 { stop-color: #2c3a57; } .you2 { stop-color: #141b2a; } .youtxt { fill: #ffffff; }
+    .halo { fill: #e8673c; opacity: 0.14; }
+    .chip { fill: #ffffff; stroke: #e7e1d5; stroke-width: 1; }
+    .badge { fill: #fde9e1; stroke: #e8673c; stroke-width: 1.5; } .badgetxt { fill: #c4481f; }
+    .tag { fill: #ffffff; stroke: #ddd6c8; stroke-width: 1; } .tagtxt { fill: #3a4252; }
+    .c1 { fill: #e8673c; } .c2 { fill: #2f8f83; } .c3 { fill: #4a6cd4; }
+    .c4 { fill: #c98a1b; } .c5 { fill: #8a55c7; } .c6 { fill: #d04a6b; }
     text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
     @media (prefers-color-scheme: dark) {
-      .bg1, .bg2 { stop-color: #0d1117; }
-      .ink { fill: #e6edf3; } .soft { fill: #9da7b3; }
-      .you1, .you2 { stop-color: #e6edf3; } .youtxt { fill: #0d1117; }
-      .glowA, .glowB { stop-opacity: 0; } .dot { fill: #21262d; }
-      .ring { stroke: #30363d; stroke-width: 1.5; fill: none; stroke-dasharray: 3 7; }
-      .ring2 { stroke: #21262d; stroke-width: 1.5; fill: none; } .spoke { stroke: #21262d; stroke-width: 1.5; }
-      .halo { fill: #2f6feb; opacity: 0.08; }
-      .chip { fill: #0d1117; stroke: #30363d; stroke-width: 1; }
-      .badge { fill: #121d33; stroke: #2f6feb; stroke-width: 1.5; } .badgetxt { fill: #79b0ff; }
-      .tag { fill: #0d1117; stroke: #30363d; stroke-width: 1; } .tagtxt { fill: #e6edf3; }
-      .c1, .c2, .c3, .c4, .c5, .c6 { fill: #2f6feb; }
+      .bg1 { stop-color: #1a2131; } .bg2 { stop-color: #0e121a; }
+      .ink { fill: #eef0f4; } .soft { fill: #a3abba; } .dot { fill: #2a3242; }
+      .ring { stroke: #3a4354; } .ring2 { stroke: #262e3c; } .spoke { stroke: #333c4c; }
+      .you1 { stop-color: #f6f2ea; } .you2 { stop-color: #d9d2c4; } .youtxt { fill: #141922; }
+      .halo { opacity: 0.22; }
+      .chip { fill: #1f2734; stroke: #313a4a; }
+      .badge { fill: #3a2219; } .badgetxt { fill: #f39a76; }
+      .tag { fill: #1f2734; stroke: #313a4a; } .tagtxt { fill: #c9cfda; }
     }
   </style>
   <defs>
@@ -68,16 +66,16 @@
     <circle class="ring" r="150"/>
     <path class="spoke" d="M0 -60 L0 -126 M52 -30 L109 -63 M52 30 L109 63 M0 60 L0 126 M-52 30 L-109 63 M-52 -30 L-109 -63"/>
     <circle class="halo" r="78"/>
-    <circle r="58" fill="url(#you)"/>
+    <circle r="58" fill="url(#you)" filter="url(#sh)"/>
     <text class="youtxt" y="9" font-size="26" font-weight="700" text-anchor="middle">You</text>
 
     <g font-size="17" font-weight="600">
-      <g transform="translate(0 -150)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c1" cx="-50" r="10"/><text class="ink" x="-32" y="6">Plan</text></g>
-      <g transform="translate(130 -75)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c2" cx="-50" r="10"/><text class="ink" x="-32" y="6">Build</text></g>
-      <g transform="translate(130 75)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c3" cx="-50" r="10"/><text class="ink" x="-32" y="6">Test</text></g>
-      <g transform="translate(0 150)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c4" cx="-50" r="10"/><text class="ink" x="-32" y="6">Legal check</text></g>
-      <g transform="translate(-130 75)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c5" cx="-50" r="10"/><text class="ink" x="-32" y="6">Launch</text></g>
-      <g transform="translate(-130 -75)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c6" cx="-50" r="10"/><text class="ink" x="-32" y="6">Grow</text></g>
+      <g transform="translate(0 -150)" filter="url(#sh)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c1" cx="-50" r="10"/><text class="ink" x="-32" y="6">Plan</text></g>
+      <g transform="translate(130 -75)" filter="url(#sh)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c2" cx="-50" r="10"/><text class="ink" x="-32" y="6">Build</text></g>
+      <g transform="translate(130 75)" filter="url(#sh)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c3" cx="-50" r="10"/><text class="ink" x="-32" y="6">Test</text></g>
+      <g transform="translate(0 150)" filter="url(#sh)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c4" cx="-50" r="10"/><text class="ink" x="-32" y="6">Legal check</text></g>
+      <g transform="translate(-130 75)" filter="url(#sh)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c5" cx="-50" r="10"/><text class="ink" x="-32" y="6">Launch</text></g>
+      <g transform="translate(-130 -75)" filter="url(#sh)"><rect class="chip" x="-74" y="-24" width="148" height="48" rx="24"/><circle class="c6" cx="-50" r="10"/><text class="ink" x="-32" y="6">Grow</text></g>
     </g>
   </g>
 </svg>

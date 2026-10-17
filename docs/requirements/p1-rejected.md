@@ -22,7 +22,8 @@ Fadi chose the calm document in ink and one accent.
 - **README opening with a terminal recording.** Declined by Fadi, 16 October 2026: a terminal
   tells a non-coder the project is for developers, and a video dates as the tool changes.
 - **Images in the old warm paper style, only flattened.** Declined by Fadi, 16 October 2026, for
-  ink and one accent.
+  ink and one accent. Superseded 17 October 2026: Fadi asked for the original style back, as it
+  was (not flattened).
 - **Hand-drawn, whiteboard-style images.** Declined by Fadi, 16 October 2026, for ink and one
   accent; handwriting is harder to read and can look less serious.
 

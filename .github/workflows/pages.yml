@@ -19,6 +19,9 @@ concurrency:
 
 jobs:
   deploy:
+    # A copy made from the template has no Pages site until setup removes this file, so its
+    # first push would fail here (seen in tracker_app on 2026-10-17).
+    if: github.repository == 'Fadi88/one-man-startup'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
