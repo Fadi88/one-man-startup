@@ -104,7 +104,8 @@ The orchestrator picks one and says which:
 ## Status letters on requirement rows
 
 `T` a named test asserts it. `M` seen working, nothing guards it. `U` built, never run.
-`X` decided and not built. `n/a` a standing decision not to build. `X` and `n/a` read alike and
+`X` decided and not built. `n/a` a standing decision not to build, or a duplicate marked "Covered
+by <ID>.". `X` and `n/a` read alike and
 mean opposite things; a row in `p1-closed-decisions.md` is what tells them apart.
 
 ## Using this from any tool

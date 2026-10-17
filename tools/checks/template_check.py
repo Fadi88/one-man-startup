@@ -103,7 +103,13 @@ for cmd, want in [("python tools/link_check.py docs/legal/regions/*.md", True),
                   ("python tools/run_all.py", True), ("py tools/checks/req_check.py --fix", True),
                   ("python tools/clean_template.py --yes", False), ("python tools/sync_adapters.py", False),
                   ("python tools/run_all.py && rm -rf docs", False), ("python tools/run_all.py > x", False),
-                  ("echo $(whoami)", False), ("git push", False), ("", False)]:
+                  ("echo $(whoami)", False), ("git push", False), ("", False),
+                  ("python tools/render_mockups.py", True),
+                  ("python tools/render_mockups.py docs/design/mockups/a.html", True),
+                  ("python tools/render_mockups.py C:/Users/x/page.html", False),
+                  ("python tools/render_mockups.py docs/design/mockups/../../x.html", False),
+                  ("python tools/render_mockups.py && git push", False),
+                  ("python tools/link_check.py ../outside.md", False)]:
     if check_only.allowed(cmd) != want:
         fail(f"TPL-42 check_only {'blocks' if want else 'lets through'} {cmd!r}")
 
@@ -127,10 +133,10 @@ for a in cfg.get("team", {}).get("enabled", []):
         fail(f"TPL-4 project.toml [team] enables {a!r}, which does not exist")
 if cfg.get("owner", {}).get("level") not in {"non-technical", "basics", "technical"}:
     fail("TPL-28 project.toml [owner] level must be non-technical, basics or technical")
-if cfg.get("product", {}).get("origin") not in {"unset", "new", "rebuild"}:
-    fail("TPL-41 project.toml [product] origin must be unset, new or rebuild")
-if cfg.get("product", {}).get("origin") == "rebuild" and not cfg["product"].get("based_on"):
-    fail("TPL-41 project.toml [product] origin is rebuild but based_on does not name the app")
+if cfg.get("product", {}).get("origin") not in {"unset", "new", "rebuild", "own"}:
+    fail("TPL-41 project.toml [product] origin must be unset, new, rebuild or own")
+if cfg.get("product", {}).get("origin") in {"rebuild", "own"} and not cfg["product"].get("based_on"):
+    fail("TPL-41 project.toml [product] origin is rebuild or own but based_on does not name the app")
 # TPL-43: nothing publishes or deploys until the founder has asked for it.
 if cfg.get("publish", {}).get("enabled") is not True:
     for wf in sorted((ROOT / ".github" / "workflows").glob("*.y*ml")):

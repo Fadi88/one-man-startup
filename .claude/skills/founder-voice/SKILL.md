@@ -26,6 +26,9 @@ My suggestion is 1 unless you're sure; you can change it any time."
 ## Every message, at every level
 
 - One decision per question, with your recommendation, worded so that "yes" accepts it.
+- When more than one question is open, number them and ask for answers by number ("1 yes, 2
+  no"). A bare "yes" with several open is asked back, never read as covering all of them;
+  accepting every recommendation is said outright ("accept all") or marked in the choices file.
 - Facts you can look up, you look up; the founder is asked only for decisions.
 - Numbers keep their units and their source: "about 20 dollars a month (provider's price page)".
 - The founder can change their level any time ("explain less", "I don't follow"). Update

@@ -49,6 +49,11 @@ changes or no-go. Every change it recommends goes back to the founder as one mor
 `reviewer` reads the spec and rows (`docs/work/<id>/review.md`); fix blocking findings first.
 Show the founder the spec and rows; wait for their confirmation.
 
+**Several screens or areas at once.** One writer per area file, in parallel, each given the
+list of which area owns what. A writer that finds a behaviour another area owns writes it under
+"Proposed shared rows" and "Conflicts between sources" in its hand-back instead of editing
+another file; the orchestrator settles them after (`skills/requirement-first/`, "Covered by").
+
 ## 6. Gate and route
 
 Run `skills/readiness-gate/`. When it passes, the orchestrator routes: `agentic-workflow` (if

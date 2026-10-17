@@ -17,6 +17,12 @@ Three files in `docs/requirements/`:
   tier, say) is not a founder's rejection. Reopening one needs a new
   fact, not a fresh opinion.
 
+## When a decision changes
+
+The new decision is a new entry. The old one stays where it is, and its first line gains
+"(Superseded on <date> by <the new entry's title>)", so a reader of either finds the other.
+Never edit an old decision into the new one.
+
 ## What is the founder's
 
 Targets, thresholds, prices, scope, the stack, legal positions, risk acceptance, permissions,

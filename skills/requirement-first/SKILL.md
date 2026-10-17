@@ -25,10 +25,16 @@ design drifted into. So the row comes first, even for a two-line fix.
 | M | Seen working by a person, nothing automatic guards it. |
 | U | Built, never run. |
 | X | Decided, not built yet. |
-| n/a | A standing decision not to build. |
+| n/a | A standing decision not to build, or `Covered by <ID>.`, a duplicate of another row. |
 
 Rows move X, U, M, T. A row only goes backwards by being rewritten, with the reason in
-`docs/HISTORY.md`. `X` and `n/a` look alike; `p1-closed-decisions.md` says which.
+`docs/HISTORY.md`. `X` and `n/a` look alike; `p1-closed-decisions.md` says which, unless the row reads
+"Covered by <ID>."
+
+## Duplicates
+
+When two rows specify the same behaviour, the one in the area that owns it stays. The other is
+rewritten as "Covered by <ID>." with status `n/a`, never deleted, so its id still resolves.
 
 ## Citing
 

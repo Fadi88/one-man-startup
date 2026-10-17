@@ -20,7 +20,9 @@ tool or service supports, what a test covers), ask: how do I know?
   in this session**, and quote the sentence that supports the claim. A page you could not open
   is not a source: say so, or mark the claim UNSETTLED. Never write "checked" for a page you
   did not read. `python tools/link_check.py <files>` finds cited links that do not exist.
-- **A test or measurement:** name it, or the command and its output.
+- **A test or measurement:** name it, or the command and its output. A platform fact whose
+  page cannot be fetched (some design guideline sites return only a title) is measured instead:
+  `qa` confirms it on a real device or emulator and names the device and version.
 - **Neither:** cut the claim, or say the true thing instead ("check the tool's pricing page"
   rather than a price you remember).
 

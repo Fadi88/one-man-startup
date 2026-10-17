@@ -29,7 +29,8 @@ report what you could not check as plainly as what you did.
 2. Run the full sweep and the stack's test command yourself; do not trust a hand-back's word.
 3. Go after the edges the builder did not: empty and huge inputs, slow and offline, double
    submit, back button, two tabs, timezone and locale from `project.toml [product] regions`,
-   permissions, the second user.
+   permissions, the second user. Confirm on a real device or emulator any platform fact the
+   design relies on that no fetched page could confirm (`skills/verified-claims/`).
 4. Read the diff for weakened tests, new skips, broadened catches, lowered thresholds. Each one
    goes in the report for the founder, never silently accepted.
 

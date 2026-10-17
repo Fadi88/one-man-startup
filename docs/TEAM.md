@@ -13,7 +13,9 @@ with the agent files (TPL-4), so adding an agent means adding its row here and n
 | [`feasibility`](../agents/feasibility.md) | Checks an idea can be built and run on this stack and budget. |
 | [`architect`](../agents/architect.md) | The system map, and per feature the design, contract and tickets. |
 | [`agentic-workflow`](../agents/agentic-workflow.md) | Designs the product's AI workflows: guardrails, evals, cost. |
+| [`platform-architect`](../agents/platform-architect.md) | Optional: one platform's app inside, under the lead architect. |
 | [`product-designer`](../agents/product-designer.md) | Designs what users see, for every platform. |
+| [`platform-designer`](../agents/platform-designer.md) | Optional: one platform's screens, inside the shared brand. |
 | [`web-dev`](../agents/web-dev.md) | Builds the web app, test first. |
 | [`android-dev`](../agents/android-dev.md) | Builds the Android app, test first. |
 | [`ios-dev`](../agents/ios-dev.md) | Builds the iOS app, test first. |
@@ -29,4 +31,5 @@ with the agent files (TPL-4), so adding an agent means adding its row here and n
 | [`devops`](../agents/devops.md) | Environments, CI, release, rollback, monitoring. |
 | [`growth`](../agents/growth.md) | Positioning, landing copy, pricing experiments, analytics. |
 | [`social-media`](../agents/social-media.md) | Platforms, voice and post drafts. Posting waits for the founder. |
+| [`explainer-writer`](../agents/explainer-writer.md) | Optional: scripts for explainer videos, sourced, education not advice. |
 | [`optimizer`](../agents/optimizer.md) | Audits the workflow for cost and waste. Proposes, never applies. |

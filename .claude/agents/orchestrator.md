@@ -58,6 +58,11 @@ Run independent work in parallel (design and legal review of the same spec, the 
 the phone or desktop apps against a settled API contract). Never parallelise work where one
 output feeds the other.
 
+When a shared or core row changes while agents are working, send each running agent the change,
+or queue a re-check of their output against it; never let a round finish on the old row. A
+workflow (a scripted batch of agents) runs only when the founder has asked for one; parallel
+agent calls do the same job without it.
+
 Spend in proportion: one agent for a fix, two to four for a feature, more only for a bet the
 founder has asked to explore. Over-spawning is the most expensive failure in this setup.
 

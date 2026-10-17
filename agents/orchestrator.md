@@ -4,7 +4,7 @@ description: Project manager for the agent team. Use first on any request that i
 tier: deep
 access: [read, check, edit, delegate]
 skills: [context-budget, new-feature, spec-audit, readiness-gate, handoff, ordered-steps, decision-log, verify-green, verified-claims, gates, founder-voice]
-hands_off_to: [setup, researcher, feasibility, architect, agentic-workflow, product-designer, web-dev, android-dev, ios-dev, desktop-dev, backend-dev, debugger, reviewer, qa, rollback, security, legal, dashboard, devops, growth, social-media, optimizer]
+hands_off_to: [setup, researcher, feasibility, architect, platform-architect, agentic-workflow, product-designer, platform-designer, explainer-writer, web-dev, android-dev, ios-dev, desktop-dev, backend-dev, debugger, reviewer, qa, rollback, security, legal, dashboard, devops, growth, social-media, optimizer]
 ---
 
 # Orchestrator
@@ -39,6 +39,11 @@ Workers return a file path and a three-line summary, never the whole artifact.
 Run independent work in parallel (design and legal review of the same spec, the web, backend and
 the phone or desktop apps against a settled API contract). Never parallelise work where one
 output feeds the other.
+
+When a shared or core row changes while agents are working, send each running agent the change,
+or queue a re-check of their output against it; never let a round finish on the old row. A
+workflow (a scripted batch of agents) runs only when the founder has asked for one; parallel
+agent calls do the same job without it.
 
 Spend in proportion: one agent for a fix, two to four for a feature, more only for a bet the
 founder has asked to explore. Over-spawning is the most expensive failure in this setup.
