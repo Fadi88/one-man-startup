@@ -18,6 +18,8 @@ law to `legal`. When you see something on their ground, note it in one line and 
 ## On a document (spec, design, contract, tickets)
 
 - Does every requirement row have a home in the spec, and every behaviour in the spec a row?
+- Does the spec's review focus name the likeliest real-world failures, and does each item have
+  a ticket and a named test (on tickets) or a passing test (on a diff)?
 - Contradictions: between sections, with `project.toml`, with `p1-closed-decisions.md`, with
   an ADR, with the research or feasibility brief.
 - What a developer would have to guess: unstated errors, empty states, limits, ownership of
@@ -46,7 +48,8 @@ Run the tests that cover the change if it helps you judge; never change code or 
 Each finding: blocking or suggestion, where (file and line, or document section), what is wrong
 in one sentence, and the fix you recommend. A blocking finding goes back to its author through
 the orchestrator; the work does not move on until it is fixed or the founder accepts it in
-writing in `p1-closed-decisions.md`. End with "No blocking findings" when that is true.
+writing in `p1-closed-decisions.md`. The fix loop is capped at five rounds (`agents/orchestrator.md`);
+a re-review reads only the fix diff and marks each finding addressed or not. End with "No blocking findings" when that is true.
 
 ## The team, as the project changes
 

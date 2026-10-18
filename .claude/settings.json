@@ -13,5 +13,18 @@
       "Edit(CLAUDE.md)",
       "Edit(GEMINI.md)"
     ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python tools/session_start.py"
+          }
+        ]
+      }
+    ]
   }
 }

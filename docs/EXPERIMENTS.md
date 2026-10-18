@@ -10,6 +10,7 @@ Bets, growth ideas and workflow changes, each written before it starts
 |---|---|---|---|---|
 | 1 | 2026-10-14 | Repo page: new description, topics and social preview | running | 2026-10-28 |
 | 2 | 2026-10-20 | Launch week: one post a day, Show HN first | planned | 2026-11-03 |
+| 3 | 2026-10-18 | Trigger-only descriptions on three discipline skills | running | 2026-11-01 |
 
 ## The entries
 
@@ -43,3 +44,23 @@ Bets, growth ideas and workflow changes, each written before it starts
 - **Confounds:** posts on different days meet different news cycles; a repost by someone else.
 - **Read:** 2026-11-03 (Traffic keeps 14 days, so read it before it rolls off).
 
+### 3. Trigger-only descriptions on three discipline skills, from 2026-10-18
+- **Why:** obra/superpowers reports that an agent reading a workflow summary in a skill's
+  description follows the summary and skips the body, and once skipped a review step that way.
+  The template's descriptions summarise the workflow. One project's observation is not a fact
+  about this template, so it is tested before thirty descriptions are rewritten.
+- **Change:** on 2026-10-18 the descriptions of `verify-green`, `requirement-first` and
+  `ordered-steps` were rewritten as "Use when ..." triggers with no workflow summary. The other
+  skills keep their summaries as the control.
+- **Baseline:** no count exists of how often a skill's body was opened before its rule was
+  applied; the hand-back's "Opened" list (`skills/handoff/`) is where it can be read from.
+- **Hypothesis:** an agent whose skill description names only the triggers opens the body more
+  often before acting on the rule.
+- **Prediction:** proposed, for Fadi to confirm: in the dry runs and real sessions recorded
+  under `examples/` before the read date, the three trigger-only skills appear in "Opened" lists
+  at least as often as `bug-fix` and `handoff`, the two summarised skills used most often.
+- **Wrong if:** they appear less often, or the agents cite their rules without having opened
+  them more often than they do for the control skills. Then descriptions go back to summaries.
+- **Confounds:** the three skills also gained excuse tables the same day (TPL-57), which may
+  change how often they are opened for a different reason.
+- **Read:** 2026-11-01.

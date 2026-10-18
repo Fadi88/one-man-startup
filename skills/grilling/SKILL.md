@@ -56,6 +56,24 @@ A grilling that only collects answers is a form. When an answer conflicts with a
 with `project.toml`, with a closed decision or with the evidence, say so in the next round and
 ask which wins.
 
+## Anti-goals and playback
+
+The tree always has a branch for **anti-goals**: the ways the thing could work exactly as
+specified and still fail the founder (the feature ships and nobody finds it; it works and
+doubles the support load; it is legal in one region and not the next). Ask for them as a
+question like any other, with your own candidates as the recommendation.
+
+After each round, before computing the next frontier, **play back** what is now understood in
+a short paragraph at the founder's level, with every guess marked as a guess, and ask what is
+wrong or missing. The playback is where the silent assumptions surface.
+
+## Approval is of the written thing
+
+"Sounds good" or "go ahead" during a round approves nothing but the next round. Only the
+written outcome, shown in full, is confirmed. A spike (a throwaway build to learn something)
+happens when the founder asks for one; keeping any of its code needs a fresh confirmation of
+the spec it now serves.
+
 ## Done
 
 The session ends when the frontier is empty: every branch visited, nothing assumed. Then write

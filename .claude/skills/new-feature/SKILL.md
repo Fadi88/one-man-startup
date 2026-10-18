@@ -42,6 +42,10 @@ changes or no-go. Every change it recommends goes back to the founder as one mor
 ## 5. Write it down
 
 - `docs/work/<id>/spec.md`: the answers at the founder's level, with the success number.
+- **Review focus**, in the spec: the five likeliest real-world inputs or conditions that would
+  break this feature and that no row yet tests (the empty account, the second device, the month
+  end, the retry, the user who leaves halfway). Each gets a row or is folded into one, and later
+  a ticket and a test.
 - Requirement rows, status `X`, in the area file, one per behaviour that can be tested.
 - Decisions taken during grilling into `p1-closed-decisions.md`; questions the founder deferred
   into `p1-open-questions.md` with what each one blocks.

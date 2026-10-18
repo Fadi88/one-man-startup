@@ -63,3 +63,12 @@ template's own pages (`tools/clean_template.py`).
 | TPL-54 | Setup asks a region group (MENA, the EU) as its list of countries, each its own pack and legal check. | U |
 | TPL-55 | Setup runs the clean-out only after `project.toml` is written, since the script refuses while `[product] name` is unset. | U |
 | TPL-56 | A platform fact no fetched page confirms is checked by `qa` on a real device or emulator, naming the device and version. | U |
+| TPL-57 | The discipline skills (`bug-fix`, `verify-green`, `requirement-first`, `ordered-steps`, `safe-data-write`) each end with a table of the excuses for skipping the rule and the answer to each, and the red flags that mean the rule is being skipped. | U |
+| TPL-58 | A claim that tests pass or work is done rests on a run in the same turn, with its output read and exit code checked; another agent's success report is a claim, not evidence; a regression test is proven red with the fix reverted and green with it restored. | U |
+| TPL-59 | An agent that resolves an ambiguity itself records a ruling in `status.md` (what was decided, why, what it costs if wrong); the founder's list is never ruled; the orchestrator puts every ruling to the founder at the next stopping point. | U |
+| TPL-60 | The spec carries a review focus: the five likeliest real-world failures no row yet tests, each with a row, a ticket that owns it and a named test; `reviewer` checks for them on tickets and on diffs. | U |
+| TPL-61 | A blocking review finding loops at most five rounds (three with the same agent, two with a fresh deep-tier one), then the orchestrator adjudicates each in writing; a re-review reads only the fix diff. | U |
+| TPL-62 | Findings from a review or a pasted draft are read in full, verified against the code before being accepted, answered with evidence when wrong, and implemented one at a time with a test each; no performative agreement. | U |
+| TPL-63 | Claude Code prints the session reminder (`tools/session_start.py`) at startup, on resume and after compaction, naming the recent work folders; other tools rely on AGENTS.md. | M |
+| TPL-64 | A discard, hard delete, force-push or removal of anything with uncommitted changes needs the founder to type the word; a folder or worktree holding uncommitted files is never force-removed. | U |
+| TPL-65 | Grilling always asks for anti-goals, plays back the understanding after each round with guesses marked, treats "sounds good" as approval of nothing but the next round, and keeps spike code only on a fresh confirmation of the spec. | U |

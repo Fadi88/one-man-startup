@@ -32,3 +32,14 @@ exact operation, with a tested backup taken in the same session.
 
 Every suite that touches stored data asserts the data it did not mean to change is
 byte-identical before and after.
+
+## When you catch yourself saying
+
+| The excuse | The answer |
+|---|---|
+| "It's one row, I'll just update it." | One wrong row on a customer's invoice is the whole incident. Same protocol. |
+| "The API returned 200." | 200 means the server answered. Read the row back. |
+| "A full read-back is too slow on this table." | Prove the largest set you can, say what was not checked, and never write "verified". |
+| "The backup exists." | A backup never restored is a hope. Restore it once, this session. |
+| "The migration is reversible in principle." | Run the undo on the copy and show the proof. |
+| "This is just a cleanup." | Cleanups delete. A delete is an update to `deleted_at` with the same proof until the founder sets a retention rule. |

@@ -12,6 +12,15 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-18. Nine practices from obra/superpowers are taken** (TPL-57 to TPL-65), from the
+  orchestrator's comparison of its fifteen skills with this template (read 2026-10-18): excuse
+  tables and red flags in the discipline skills, fresh evidence for every green claim, rulings
+  in `status.md`, a review focus in every spec, a capped review fix loop, a method for answering
+  reviews, a session-start and post-compaction hook, typed confirmation for discards, and
+  anti-goals, playback and the spike rule in grilling. One deviation: superpowers asks one
+  question per message, and grilling keeps its numbered rounds, which cost the founder fewer
+  minutes (TPL-51). Its trigger-only skill descriptions run as experiment 3 on three skills
+  before any wider change. Decided by Fadi ("do as recommended").
 - **2026-10-17. The Fuel & Train lessons are taken** (TPL-41, TPL-41a, TPL-44 to TPL-56), from pull
   request 2, all as proposed except: the per-platform agents are one `platform-architect` and
   one `platform-designer` for any platform, not one per platform; lesson 4's helper that mines

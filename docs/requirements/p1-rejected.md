@@ -11,6 +11,25 @@ Newest first. Each entry: date, the proposal, who proposed it, the reason it was
 
 Setup removes this section from a new project (`tools/clean_template.py`).
 
+### From the superpowers comparison, 18 October 2026
+
+Proposed by the orchestrator as the part of obra/superpowers not to take; Fadi agreed ("do as
+recommended"). Each comes back only with a new fact.
+
+- **Delete any code written before its test** (the TDD iron law). Declined: test-first in
+  `bug-fix` and the reviewer's "a test that would fail without the change" cover the same ground
+  without discarding work.
+- **Continuous execution without check-ins between tasks.** Declined: the founder's gates are
+  the design, not an overhead.
+- **A git worktree per task or agent.** Declined until parallel developers collide; the hand-off
+  rule that nobody edits a shared file already prevents it.
+- **A session-diagnosis skill** (why the process failed, with a scrubbed bundle). Declined:
+  `p1-traps.md` and `optimizer` do this job.
+- **The browser visual companion and its telemetry.** Declined: mockups are rendered with
+  `tools/render_mockups.py`, and nothing in the template phones home.
+- **One question per message in grilling.** Declined in favour of numbered rounds (TPL-51),
+  which cost the founder fewer minutes.
+
 ### README style, 16 October 2026
 
 Proposed by the orchestrator from the researcher's survey (`docs/growth/readme-survey.md`);

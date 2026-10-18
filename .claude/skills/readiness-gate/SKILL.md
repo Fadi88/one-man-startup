@@ -13,7 +13,8 @@ that shows it. One "not met" keeps the gate shut.
 1. `docs/work/<id>/spec.md` exists and the founder confirmed it (the date is in `status.md`).
 2. Every behaviour in the spec has a requirement row, and every row cites a testable outcome.
 3. No question in `p1-open-questions.md` blocks this feature.
-4. The success number and its read date are in the spec.
+4. The success number and its read date are in the spec, and so is the review focus: the
+   likeliest real-world failures, each with a row.
 5. If the feature stores data: `design.md` names the source of truth, retention and deletion.
 6. If it has a client and a server: `contract.md` exists and both sides build against it.
 7. `tickets.md` slices the work so each ticket is buildable and testable alone, with blocking

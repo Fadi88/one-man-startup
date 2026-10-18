@@ -1,5 +1,5 @@
 ---
-description: "How requirement rows are written, numbered, statused and cited - the row comes before the code. Use before any change to code, copy or config, and whenever a requirement id is mentioned."
+description: "Use when about to change code, copy, config or a document, when a requirement id is mentioned or missing, when a chat answer looks like a requirement, and when deciding whether work is done."
 alwaysApply: false
 ---
 
@@ -47,3 +47,13 @@ commit subject). The sweep fails on a cited id with no row.
 
 An answer to a question is not a requirement. Do not turn a chat answer into a row unless it
 shows an existing row is wrong; then fix that row in the same change.
+
+## When you catch yourself saying
+
+| The excuse | The answer |
+|---|---|
+| "It's just a typo, no row needed." | A typo fix cites the row it keeps true. If there is none, that is the finding. |
+| "I'll write the row after, once I see how it turns out." | A row written after records the drift, not the intent. Write it first; change it if the work proves it wrong. |
+| "The founder's message is the requirement." | A chat answer is not a row. Turn it into one, or fix the row it contradicts. |
+| "The row would just repeat the code." | Then it is testable, which is the point. A tester reads rows, not code. |
+| "There is a row somewhere that covers it." | Cite it by id. If you cannot find it in a minute, there is not one. |
