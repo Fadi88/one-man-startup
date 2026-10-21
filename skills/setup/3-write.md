@@ -14,6 +14,8 @@ Part of `skills/setup/SKILL.md`. Only after the founder confirms the summary.
 - Requirement rows in `docs/requirements/LAUNCH.md` (prefix `LAUNCH`), marked `X`, for what
   customer size and domain imply (an enterprise customer implies SSO and a DPA; consumers in
   the EU imply cookie consent and data export).
+- A row in `LAUNCH.md`, marked `X`, for the coverage bar on changed lines the founder chose,
+  asserted by the stack's test command in CI once code exists.
 - If `origin` is "rebuild": a row in `LAUNCH.md` marked `X`, "Nothing in the product copies
   the name, logo, icons, images, text or code of <based_on>, and its name cannot be mistaken
   for the original's", for `legal` to grade before launch.

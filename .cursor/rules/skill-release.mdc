@@ -20,6 +20,9 @@ Run in order. Any line not met stops the release.
 6. **Rollback written down:** the exact steps and how long they take. If a migration cannot be
    reversed, say so and get the founder's explicit acceptance.
 7. Backup taken and a restore of it tried, this session.
+8. For a web feature, the performance scorecard is in `qa.md` with a source for every value
+   (`skills/performance/`); for any new production path, a failure forced in staging was found
+   from the telemetry alone and each new alert fired once (`skills/observability/`).
 
 ## Steps, each on its own go (`skills/ordered-steps/`)
 

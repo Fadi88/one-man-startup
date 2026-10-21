@@ -11,6 +11,21 @@ Newest first. Each entry: date, the proposal, who proposed it, the reason it was
 
 Setup removes this section from a new project (`tools/clean_template.py`).
 
+### From the addyosmani/agent-skills comparison, 21 October 2026
+
+Proposed by the orchestrator as the part of addyosmani/agent-skills not to take; Fadi agreed
+("do as recommended"). Each comes back only with a new fact.
+
+- **Slash commands (`/spec`, `/plan`, `/build`, `/ship`) and `/build auto`.** Declined: the
+  founder never names a command here; the orchestrator routes.
+- **A separate `CONSTRAINTS.md`.** Declined: the requirement rows, `skills/gates/` and
+  `tools/known_red.json` are that file, and `floor_check.py` enforces its floor.
+- **A mutation-score bar.** Declined for cost; coverage of changed lines is the bar offered.
+- **The code-simplification skill.** Declined: `karpathy-guidelines` and the reviewer's "Simple"
+  check cover it.
+- **A second model's review through another vendor's CLI.** Declined as a rule; worth an
+  experiment when a review misses something a second model would have caught.
+
 ### From the superpowers comparison, 18 October 2026
 
 Proposed by the orchestrator as the part of obra/superpowers not to take; Fadi agreed ("do as

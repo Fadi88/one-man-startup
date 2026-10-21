@@ -30,6 +30,28 @@ redo.
 Run on a copy first, with the proof. Then on production only with the founder's go for that
 exact operation, with a tested backup taken in the same session.
 
+## Schema changes
+
+Expand, then contract, never in one deploy:
+
+1. Add the new column or table beside the old, nullable, nothing reading it yet.
+2. Write both the old and the new.
+3. Backfill in throttled batches, each with the proof above; build large indexes without
+   blocking writes.
+4. Switch reads to the new shape; keep writing both until it has run a while.
+5. Stop writing the old; drop it in a later deploy of its own.
+
+Old and new code are both valid against the schema at every step. A drop or a rename never
+ships in the same deploy as the code that depends on it, and every step has a down path tried
+on the copy.
+
+## Deprecation and removal
+
+Nothing is deprecated without a replacement that already works in production, and nothing is
+removed until its use measures zero (metrics, logs or a dependency search); then code, tests,
+docs, config and notices go together. Traffic moves in steps (a tenth, half, all) with the old
+path kept until the last step holds.
+
 ## Tests
 
 Every suite that touches stored data asserts the data it did not mean to change is

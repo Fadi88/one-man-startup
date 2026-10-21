@@ -12,6 +12,10 @@ description: "Commit discipline - one change per commit, requirement ids in the 
 - **Subject:** the requirement ids, a colon, what changed: `AUTH-12, AUTH-13: email login with
   a magic link`. One subject, one change. If it needs "and", it may be two commits.
 - **Body:** why, and what a reviewer should know.
+- **Incomplete work** ships off by default behind a flag, so main stays releasable; turning the
+  flag on, and later removing it, are their own commits.
+- **Remove and replace** are two commits, never one.
+- **Size:** about a hundred lines without a test run is a red flag. Stop and run.
 - **Hooks:** `tools/githooks/commit-msg` refuses banned characters; `pre-commit` runs the
   sweep. If a hook refuses, fix the message or the code.
   Never `--no-verify`.

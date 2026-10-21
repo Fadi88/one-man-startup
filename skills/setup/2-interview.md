@@ -36,7 +36,9 @@ before the first feature to `p1-open-questions.md`.
    `skills/spec-audit/` on it, and put its most dangerous silent fills into the next round.
 6. **Gates:** recommend **strict** and say what it buys, using the table in `skills/gates/`,
    never your own description of a level. If the founder picks lighter, ask for the reason and
-   record it.
+   record it. In the same round, the coverage bar for changed lines: offer 80 percent as the
+   default (a common bar; addyosmani/agent-skills, read 2026-10-21). The number is the founder's
+   and becomes a row in `LAUNCH.md` that CI's test run asserts once code exists.
 7. **Team** (unlocked by 2, 4 and 6): the smallest set of agents the stage needs. Recommend, say
    what each one does and when it is first needed, let the founder trim. Time per feature is not
    measured yet, so do not quote one. If the product calls AI or another paid service per

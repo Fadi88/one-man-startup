@@ -12,6 +12,16 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-21. Eight practices from addyosmani/agent-skills are taken** (TPL-66 to TPL-73), from
+  the orchestrator's comparison of its 25 skills, 4 reviewer personas and 7 checklists with this
+  template (read 2026-10-21): a performance skill (targets as the founder's rows, measure before
+  and after, keep or revert, a sourced scorecard), an observability skill (questions first,
+  structured logs with a request id, RED metrics as percentiles, symptom alerts with runbooks,
+  the staging proof), schema expand-then-contract and deprecation rules, the floor as a check
+  (`tools/checks/floor_check.py`), reviews briefed without the author's reasoning, contract
+  rules with idempotency keys, test shape, and flags for incomplete work. No new agent: their
+  web-performance-auditor is `qa`'s pre-release scorecard, their code-reviewer, test-engineer and
+  security-auditor are `reviewer`, `qa` and `security`. Decided by Fadi ("do as recommended").
 - **2026-10-18. Nine practices from obra/superpowers are taken** (TPL-57 to TPL-65), from the
   orchestrator's comparison of its fifteen skills with this template (read 2026-10-18): excuse
   tables and red flags in the discipline skills, fresh evidence for every green claim, rulings

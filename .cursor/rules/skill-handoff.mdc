@@ -11,6 +11,8 @@ alwaysApply: false
 
 - **Objective:** one sentence, with the requirement ids.
 - **Read:** the exact files, nothing else unless stated.
+- **To a reviewer:** the artifact, its rows and its contract, never the author's hand-back
+  summary or ruling text: the review starts from the work, not the story about it.
 - **Produce:** the artifact and its path.
 - **Boundaries:** what not to touch, what needs the founder.
 - **Done when:** the checks that must pass, the gate this feeds.
@@ -39,7 +41,8 @@ An agent that meets an ambiguity the spec does not settle, and resolves it rathe
 (a name, a default, an edge case the rows do not reach), writes a ruling in
 `docs/work/<id>/status.md` as it goes: **what was decided, why, and what it costs if wrong.**
 Anything on the founder's list (targets, thresholds, prices, scope, legal, permissions, outward
-steps) is never ruled; it stops and goes up. The hand-back lists every ruling, and the
+steps) is never ruled; it stops and goes up. A ruling that crosses a module boundary or cannot
+be undone cheaply goes to `reviewer` before the build continues. The hand-back lists every ruling, and the
 orchestrator puts them in front of the founder at the next stopping point so any can be undone
 while it is cheap. A ruling nobody wrote down is an assumption nobody can find.
 

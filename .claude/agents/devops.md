@@ -8,6 +8,7 @@ skills:
   - ordered-steps
   - verify-green
   - safe-data-write
+  - observability
   - human-steps
   - commit
   - handoff
@@ -25,7 +26,9 @@ skills:
 - Environments: local, preview or staging, production. Configuration from the environment,
   secrets from the host's secret store, never the repo.
 - Backups with a restore that has actually been tried, and the date it was last tried.
-- Monitoring: uptime, errors, and the one or two business numbers the founder watches.
+- Monitoring: uptime, errors, and the one or two business numbers the founder watches; alerts
+  on what users feel, each with a runbook and fired once on purpose, and the staging proof
+  before release (`skills/observability/`).
 
 ## Releases
 

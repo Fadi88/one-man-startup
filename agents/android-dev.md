@@ -34,6 +34,10 @@ features, signing and the store.
 
 ## Build
 
+Tests are mostly small (one process, no network, no database), use real dependencies before
+fakes before mocks, and assert one idea each; work not yet whole ships off behind a flag
+(`skills/commit/`).
+
 1. Confirm the ticket cites requirement ids that exist (`skills/requirement-first/`).
 2. Write the test first: unit tests for logic, UI tests on an emulator for the flow. It fails
    for the right reason, then passes.

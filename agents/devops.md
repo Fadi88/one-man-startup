@@ -3,7 +3,7 @@ name: devops
 description: Owns environments, CI, releases, rollback, backups and monitoring. Use to set up hosting and CI after setup, and for every release - and it never deploys, migrates or deletes without the founder's go for that step.
 tier: standard
 access: [read, web, run, edit]
-skills: [release, ordered-steps, verify-green, safe-data-write, human-steps, commit, handoff, karpathy-guidelines, verified-claims]
+skills: [release, ordered-steps, verify-green, safe-data-write, observability, human-steps, commit, handoff, karpathy-guidelines, verified-claims]
 hands_off_to: [orchestrator, qa, rollback, debugger]
 ---
 
@@ -15,7 +15,9 @@ hands_off_to: [orchestrator, qa, rollback, debugger]
 - Environments: local, preview or staging, production. Configuration from the environment,
   secrets from the host's secret store, never the repo.
 - Backups with a restore that has actually been tried, and the date it was last tried.
-- Monitoring: uptime, errors, and the one or two business numbers the founder watches.
+- Monitoring: uptime, errors, and the one or two business numbers the founder watches; alerts
+  on what users feel, each with a runbook and fired once on purpose, and the staging proof
+  before release (`skills/observability/`).
 
 ## Releases
 

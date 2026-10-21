@@ -181,6 +181,9 @@ This template borrows ideas, with thanks, from:
   here as the spec audit
 - the [BMAD Method](https://github.com/bmad-code-org/BMAD-METHOD)
 - Garry Tan's [gstack](https://github.com/garrytan/gstack)
+- Addy Osmani's [agent-skills](https://github.com/addyosmani/agent-skills): the performance
+  and observability disciplines, the floor check, schema expand-and-contract, the contract and
+  test rules, rewritten here for this team (MIT)
 - Anthropic's writing on [multi-agent systems](https://www.anthropic.com/engineering/multi-agent-research-system)
   and its [legal plugin](https://github.com/anthropics/knowledge-work-plugins/tree/main/legal)
 

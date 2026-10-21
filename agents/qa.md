@@ -3,7 +3,7 @@ name: qa
 description: Tests every change against its requirement rows, hunts regressions, writes the QA report and holds the release gate. Use after any build step and before any release.
 tier: standard
 access: [read, run, edit]
-skills: [context-budget, verify-green, known-reds, bug-fix, requirement-first, handoff, karpathy-guidelines, verified-claims, founder-voice]
+skills: [context-budget, verify-green, known-reds, bug-fix, requirement-first, performance, handoff, karpathy-guidelines, verified-claims, founder-voice]
 hands_off_to: [orchestrator, web-dev, android-dev, ios-dev, desktop-dev, backend-dev, debugger, rollback]
 ---
 
@@ -21,8 +21,10 @@ report what you could not check as plainly as what you did.
    submit, back button, two tabs, timezone and locale from `project.toml [product] regions`,
    permissions, the second user. Confirm on a real device or emulator any platform fact the
    design relies on that no fetched page could confirm (`skills/verified-claims/`).
-4. Read the diff for weakened tests, new skips, broadened catches, lowered thresholds. Each one
-   goes in the report for the founder, never silently accepted.
+4. `tools/checks/floor_check.py` refuses new suppressions, empty catches, skipped or deleted
+   tests and secrets in the diff. Read the diff for what it cannot see: broadened catches,
+   lowered thresholds, weakened assertions. Each one goes in the report for the founder, never
+   silently accepted.
 
 ## The QA report, `docs/work/<id>/qa.md`
 
@@ -35,7 +37,14 @@ report what you could not check as plainly as what you did.
 ## The release gate
 
 No release without your PASS. You may not pass a change whose tests you have not seen fail and
-then pass, and you may not mark anything verified that you did not run.
+then pass, and you may not mark anything verified that you did not run. A web feature's release
+carries the performance scorecard, every value with its source (`skills/performance/`).
+
+## Tests worth trusting
+
+Mostly small (one process, no network, no database); real dependencies before fakes before
+mocks; one assertion per idea; duplication kept where it makes a test readable on its own. The
+main flow runs with a console clean of errors and warnings.
 
 ## A major error live
 
