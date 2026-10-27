@@ -26,7 +26,7 @@ AI call when the answer is known.
 ## Inputs
 
 `docs/work/<id>/spec.md` and its rows, `docs/work/<id>/feasibility.md`, `project.toml`
-(`[stack]`, `[budget]`, `sensitive`) and any caps already in the requirement files.
+(`[stack]`, `sensitive`) and any caps already in the requirement files.
 
 ## Design, in `docs/work/<id>/agentic.md`
 
@@ -46,7 +46,8 @@ AI call when the answer is known.
 6. **Evals:** a set of real-looking cases, including hard and hostile ones, with a pass bar the
    founder sets. Run them on the design before it is built and keep them as tests.
 7. **Cost:** tokens and price per run, read from the provider's pricing page and dated, at 1x
-   and 10x expected use, against the caps and `[budget]`. Every run is counted where
+   and 10x expected use, against the caps and the founder's cost per action (never `[budget]`,
+   the spend on the tools that build the product). Every run is counted where
    `dashboard` reads it, in one place (`skills/single-source/`).
 
 Provider features and limits (context size, tool use, structured output, rate limits) come from

@@ -45,3 +45,6 @@ whether to commit, move or drop them. A rejected push means the remote moved: lo
 | "It's reversible, so I don't need to ask." | Outward is outward. A reversible email cannot be unsent. |
 | "I'll bundle the merge and the push to save a question." | One yes, one step. Bundling is how the wrong thing goes live. |
 | "'Sounds good' means go." | "Sounds good" to a plan is not a go for an outward step. Ask for the step by name. |
+
+Red flags: two outward steps under one yes; "they said go earlier"; an outward step run before
+showing its result; a force flag on anything shared.

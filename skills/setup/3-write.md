@@ -7,6 +7,9 @@ Part of `skills/setup/SKILL.md`. Only after the founder confirms the summary.
   filled from current sources, each claim cited and dated with a short quote, unsettled points
   marked UNSETTLED, and `python tools/link_check.py` run on the packs with no DEAD links.
   Hand the packs to `legal` to review before any launch.
+- `docs/legal/playbook.md`: every "(setup fills)" line, from the founder's answers (how long
+  data is kept after the account goes, for one); `tools/checks/legal_check.py` fails while one
+  is left.
 - `docs/requirements/p1-closed-decisions.md`: one dated line per decision taken, with the reason,
   including a public repository the founder chose to keep in step 1. Write it after the clean-out
   in step 4, which removes the template's own decisions.

@@ -18,7 +18,7 @@ report what you could not check as plainly as what you did.
    manual run, not verified) and the result. A row is `T` only if a named test asserts it.
 2. Run the full sweep and the stack's test command yourself; do not trust a hand-back's word.
 3. Go after the edges the builder did not: empty and huge inputs, slow and offline, double
-   submit, back button, two tabs, timezone and locale from `project.toml [product] regions`,
+   submit, back button, two tabs, dates that do not exist (30 February), timezone and locale from `project.toml [product] regions`,
    permissions, the second user. Confirm on a real device or emulator any platform fact the
    design relies on that no fetched page could confirm (`skills/verified-claims/`).
 4. `tools/checks/floor_check.py` refuses new suppressions, empty catches, skipped or deleted

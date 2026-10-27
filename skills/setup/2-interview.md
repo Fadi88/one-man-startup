@@ -41,7 +41,8 @@ before the first feature to `p1-open-questions.md`.
    and becomes a row in `LAUNCH.md` that CI's test run asserts once code exists.
 7. **Team** (unlocked by 2, 4 and 6): the smallest set of agents the stage needs. Recommend, say
    what each one does and when it is first needed, let the founder trim. Time per feature is not
-   measured yet, so do not quote one. If the product calls AI or another paid service per
+   measured yet, so do not quote one. Always recommend `researcher`, `feasibility` and
+   `reviewer`: every feature uses them (`skills/new-feature/`). If the product calls AI or another paid service per
    action, recommend `dashboard` from the start: usage, spend and caps need a place to be seen
    and controlled before the first user arrives. Recommend `android-dev`, `ios-dev` and
    `desktop-dev` only for the apps the stack's platform includes, `agentic-workflow` if the

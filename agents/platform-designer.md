@@ -1,6 +1,6 @@
 ---
 name: platform-designer
-description: Designs everything users see and touch in one platform's app (Android, iOS, desktop or web, named in the brief) - flows, screens, every state, interface copy, accessibility - following that platform's own conventions inside the one brand product-designer keeps, in ux-<platform>.md before its developer builds it. Optional; use when one platform's app is big enough to need its own designer, after the readiness gate for any feature users will see on it.
+description: Designs everything users see and touch in one platform's app (Android, iOS, desktop or web, named in the brief) - flows, screens, every state, interface copy, accessibility - following that platform's own conventions inside the one brand product-designer keeps, in ux-<platform>.md before its developer builds it. Optional; use when one platform's app is big enough to need its own designer, after the readiness gate's design pass for any feature users will see on it.
 tier: standard
 access: [read, web, check, edit]
 skills: [context-budget, requirement-first, frontend-design, human-design, verified-claims, single-source, handoff, karpathy-guidelines, founder-voice]

@@ -12,6 +12,15 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-28. The feature dry run's findings are fixed as it proposed** (TPL-82 to TPL-96,
+  TPL-57), from `examples/feature-dry-run/results/2026-10-28-claude-code.md`. Where the run
+  offered a choice, the orchestrator took: two passes of the readiness gate with a check on
+  product code (not a reordered gate); copies set aside for re-reviews of uncommitted documents
+  (not commits of documents on a work branch); the spend rule counted as agents running at once,
+  at most four for a feature. Finding 16 changes no status letter, only states when a row may
+  move. The stale team in the setup dry run's `project.toml` is left to the repeated setup dry
+  run already kept for later. Decided by Fadi ("start fixing"); the choices above are the
+  orchestrator's and can be reversed.
 - **2026-10-28. Seven improvements taken, and a new visual style** (TPL-74 to TPL-81), from the
   orchestrator's list of ten: a feature-track dry run, requirement ids enforced by the commit
   hook, `grill-me` folded into `grilling`, template updates for existing projects, a status page,

@@ -18,8 +18,9 @@ ALLOWED = re.compile(
     r"( [A-Za-z0-9_./*:=-]+)*$"
 )
 # The mockup renderer writes screenshots and opens pages in a browser, so it may open only the
-# project's own mockups.
-RENDER = re.compile(r"^(python3?|py)( -I)? tools/render_mockups\.py( docs/design/mockups/[A-Za-z0-9_-]+\.html)*$")
+# project's own mockups, with only its TPL-92 flags (--dark, --rtl, --text-scale N).
+RENDER = re.compile(r"^(python3?|py)( -I)? tools/render_mockups\.py"
+                    r"( docs/design/mockups/[A-Za-z0-9_-]+\.html| --dark| --rtl| --text-scale [0-9]+(\.[0-9]+)?)*$")
 
 
 def allowed(command: str) -> bool:

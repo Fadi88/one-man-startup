@@ -5,6 +5,14 @@ whole: grep for an id or a date.
 
 ## Changes
 
+- **2026-10-28.** TPL-82 to TPL-96, TPL-57: fixes from the feature dry run. The readiness gate
+  has a design pass and a build pass, with `tools/checks/gate_check.py` guarding product code;
+  setup always recommends researcher, feasibility and reviewer; the grilling asks the AI quality
+  bar, speed and interface languages; legal answers a blocking question before the spec; the
+  product's AI cost is never compared with `[budget]`; re-reviews of documents use copies; the
+  spend rule counts agents at once; screens are shown to the founder, never pointed at; the
+  architect, backend and qa checklists gain what the reviewers caught; red flags in three
+  discipline skills; render, link check and playbook fixes.
 - **2026-10-28.** TPL-74 to TPL-81: a feature-track dry run (`examples/feature-dry-run/`), the
   commit hook refuses a subject without requirement ids, `grill-me` folded into `grilling`,
   `tools/template_update.py`, `tools/status_report.py`, `tools/run_evals.py` with nine routing

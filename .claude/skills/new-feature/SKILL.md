@@ -32,7 +32,16 @@ by saying why it does not apply:
   payments, children, health or AI output each pull in `legal` and `security`.
 - **Regions:** does it change anything under the packs in `docs/legal/regions/`?
 - **Cost:** new services, their price at 10 times today's usage.
+- **Quality bar:** where the product's AI acts or decides, the eval pass bar, per language or
+  group of users where they differ (`agents/agentic-workflow.md` designs the evals against it).
+- **Speed:** targets for the screens and calls this feature adds, offering the defaults in
+  `skills/performance/`.
+- **Languages:** which languages the interface shows, apart from the languages of the content.
 - **Done:** what `qa` will check, row by row.
+
+An open question in `p1-open-questions.md` that names this feature goes to `legal` (if it is a
+legal point) and then to the founder before the spec is confirmed. Never mark a legal position
+answered yourself.
 
 ## 4. Feasibility
 
@@ -60,7 +69,9 @@ another file; the orchestrator settles them after (`skills/requirement-first/`, 
 
 ## 6. Gate and route
 
-Run `skills/readiness-gate/`. When it passes, the orchestrator routes: `agentic-workflow` (if
-the product's AI acts or decides), `architect` (if data, integration or a new surface), then
-`product-designer` (the design for every platform), then `web-dev`, `android-dev`, `ios-dev`, `desktop-dev` (each app the product
-has) and `backend-dev` against the contract, `reviewer` on the design and on each diff, `qa`, and `legal` or `security` where step 2 pulled them in.
+Run the design pass of `skills/readiness-gate/`. When it opens, the orchestrator routes
+`agentic-workflow` (if the product's AI acts or decides), `architect` (if data, integration or
+a new surface), `product-designer` (the design for every platform), and `legal` or `security`
+where step 3 pulled them in, with `reviewer` on each design. Then run the build pass. When it
+opens, route `web-dev`, `android-dev`, `ios-dev`, `desktop-dev` (each app the product has) and
+`backend-dev` against the contract, `reviewer` on each diff, then `qa`.

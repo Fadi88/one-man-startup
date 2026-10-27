@@ -12,7 +12,8 @@ description: "The format for passing work between agents - a brief going out, a 
 - **Objective:** one sentence, with the requirement ids.
 - **Read:** the exact files, nothing else unless stated.
 - **To a reviewer:** the artifact, its rows and its contract, never the author's hand-back
-  summary or ruling text: the review starts from the work, not the story about it.
+  summary: the review starts from the work, not the story about it. A ruling to review is
+  named by its number in `status.md`, never quoted, and the reviewer reads it there.
 - **Produce:** the artifact and its path.
 - **Boundaries:** what not to touch, what needs the founder.
 - **Done when:** the checks that must pass, the gate this feeds.
@@ -64,5 +65,8 @@ When `reviewer`, `security`, `legal` or a draft the founder pasted in comes back
   the founder through the orchestrator.
 - Implement one finding at a time, each with its test: blocking ones first, then simple, then
   complex. Re-run the sweep after each.
+- A re-review reads only what changed. For documents not yet committed, copy the reviewed
+  files aside before fixing and give the reviewer `diff -u` of the copy against the fix. Never
+  commit with the hooks off to make a diff.
 - Reply to each finding where it was made (`review.md`, or the pull request thread) with what
   changed, or why not.

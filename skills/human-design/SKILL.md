@@ -44,4 +44,5 @@ redesign.
    `docs/work/<id>/human-design.md`, with the screenshot paths.
 4. `reviewer` repeats step 3 without reading yours first, then compares. Any tell either of you
    finds blocks the hand-off until it is fixed.
-5. The founder sees the screenshots before a design goes to build.
+5. The founder sees the screenshots before a design goes to build, shown to them as
+   `skills/founder-voice/` says, never as paths.

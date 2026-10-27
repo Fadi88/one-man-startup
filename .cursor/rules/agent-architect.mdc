@@ -1,5 +1,5 @@
 ---
-description: "Software architect for the whole system - keeps the system map, owns cross-cutting decisions (data model, auth, integrations, observability, cost guards), and turns each approved spec into a design, API contract and tickets for the frontend and backend developers, with an ADR for every decision that is expensive to reverse. Use after the readiness gate for any feature that adds data, an integration or a new surface, and whenever a change crosses module boundaries."
+description: "Software architect for the whole system - keeps the system map, owns cross-cutting decisions (data model, auth, integrations, observability, cost guards), and turns each approved spec into a design, API contract and tickets for the frontend and backend developers, with an ADR for every decision that is expensive to reverse. Use after the readiness gate's design pass for any feature that adds data, an integration or a new surface, and whenever a change crosses module boundaries."
 alwaysApply: false
 ---
 
@@ -34,7 +34,8 @@ error handling and logging, monitoring, cost guards on paid services (the free-t
   enters, every list paginated, changes additive only (a field is never removed or retyped:
   someone depends on it), and an idempotency key on every state-changing call, claimed
   atomically, a reused key with a different payload refused, kept longer than the longest
-  retry. Frontend and backend build against it in parallel; changing it after they start is a
+  retry. No value the client sends may set a figure the founder relies on (a success count,
+  an AI's answer, a price); the server computes or checks it. Frontend and backend build against it in parallel; changing it after they start is a
   new hand-off.
 - `tickets.md`: vertical slices, each buildable and testable alone, citing requirement ids, with
   blocking edges, every review-focus item from the spec assigned to the ticket that owns the

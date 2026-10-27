@@ -65,3 +65,6 @@ byte-identical before and after.
 | "The backup exists." | A backup never restored is a hope. Restore it once, this session. |
 | "The migration is reversible in principle." | Run the undo on the copy and show the proof. |
 | "This is just a cleanup." | Cleanups delete. A delete is an update to `deleted_at` with the same proof until the founder sets a retention rule. |
+
+Red flags: a write with no before-image; "it returned 200" as proof; an undo nobody ran; a
+bulk change run straight on real data without a copy first.

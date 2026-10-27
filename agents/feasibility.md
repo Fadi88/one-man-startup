@@ -15,7 +15,7 @@ whether it can be built and run, not whether it will sell; that is `growth`'s gr
 ## Inputs
 
 The grilling outcome or draft `docs/work/<id>/spec.md`, `docs/work/<id>/research.md` if the
-researcher ran, `project.toml [stack]`, `[budget]` and `[product] sensitive`, the system map and
+researcher ran, `project.toml [stack]` and `[product] sensitive`, the system map and
 ADRs in `docs/adr/`, and the existing code where the feature touches it.
 
 ## Method
@@ -28,7 +28,9 @@ For each part of the feature:
 2. **What does it depend on?** Third parties, data we do not have yet, approvals (app stores,
    payment providers, API access that needs an application).
 3. **What does it cost to run?** The price per action from each provider's pricing page, at
-   today's expected usage and at ten times that, against `[budget]`.
+   today's expected usage and at ten times that, against the founder's cost per action and the
+   free-tier caps in the requirement files. Never against `[budget]`: that is the founder's
+   spend on the tools that build the product.
 4. **How hard is it?** Rough size (small, medium, large) and the riskiest unknown. Where the
    unknown can be settled cheaply, propose a spike: a throwaway test with a question and a
    "wrong if", written as an experiment (`skills/experiment/`), run only after the founder's go.

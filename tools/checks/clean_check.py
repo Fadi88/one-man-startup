@@ -31,6 +31,9 @@ with tempfile.TemporaryDirectory() as tmp:
     t = t.replace('[product]\nname = "unset"', '[product]\nname = "Example Product"', 1)
     t = t.replace('one_liner = "unset"', 'one_liner = "A sentence about what it does."', 1)
     toml.write_text(t, encoding="utf-8")
+    # Setup fills the playbook's blanks from the founder's answers (TPL-95).
+    playbook = copy / "docs" / "legal" / "playbook.md"
+    playbook.write_text(playbook.read_text(encoding="utf-8").replace("(setup fills)", "30 days"), encoding="utf-8")
 
     def run(*args: str) -> subprocess.CompletedProcess:
         return subprocess.run([PY, *args], cwd=copy, capture_output=True, text=True, encoding="utf-8")

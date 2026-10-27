@@ -30,7 +30,8 @@ fakes before mocks, and assert one idea each; work not yet whole ships off behin
 5. Business logic that produces a figure a user or the founder relies on gets a reference
    implementation checked against it (`skills/twin-check/`).
 6. Every free path that calls a paid service (an AI provider, email, storage) checks its cap
-   first; there is no uncapped free endpoint, and each cap has a test.
+   first; there is no uncapped free endpoint, and each cap has a test. A failed or useless
+   call (an unreadable photo, a refused answer) still counts against the cap.
 7. Secrets come from the environment, never from the repo. Personal data is minimised, logged
    nowhere it does not need to be, and deletable. Every new path emits its structured events,
    request id and rate, error and duration metrics in the same ticket (`skills/observability/`).

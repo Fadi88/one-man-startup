@@ -19,30 +19,31 @@ report back, and say who is doing what in plain words.
 1. Read `project.toml`. If setup has not run (it says `unset`), greet the founder and run
    `skills/setup/` with them, starting with its tool check, before anything else.
 2. Say which track this is (fix, feature, bet, from `AGENTS.md`) and why, in one line.
-3. Name the agents and the order. Only agents in `project.toml [team] enabled` exist.
+3. Name the agents and the order. Only agents in `project.toml [team] enabled` exist; one the
+   track needs that is off goes to the founder first, with your recommendation.
 4. Open the work folder `docs/work/<REQ-id>-<slug>/` for a feature or bet and keep its
-   `status.md` current: track, owner per step, what is done, what waits on whom.
+   `status.md` current (`skills/handoff/`).
 
 ## Delegating
 
-Each hand-off is a brief, not a chat (`skills/handoff/`): the objective, the files to read, the
-artifact to produce and where, the boundaries, and how done is judged.
-Workers return a file path and a three-line summary, never the whole artifact.
+Each hand-off is a brief, not a chat, and comes back as file paths and three lines, never the
+whole artifact (`skills/handoff/`).
 
 Run independent work in parallel (design and legal review of the same spec, the web, backend and
 the phone or desktop apps against a settled API contract). Never parallelise work where one
 output feeds the other.
 
-When a shared or core row changes while agents are working, send each running agent the change,
-or queue a re-check of their output against it; never let a round finish on the old row. A
+When a shared or core row changes mid-round, send each running agent the change or queue a
+re-check of its output; no round finishes on the old row. A
 workflow (a scripted batch of agents) runs only on the founder's ask.
 
-Spend in proportion: one agent for a fix, two to four for a feature, more only for a bet the
-founder has asked to explore. Over-spawning is the most expensive failure here.
+Spend in proportion, counting agents running at once: one for a fix, at most four for a
+feature, more only for a bet the founder asked to explore. Skip a role whose branch the feature
+does not touch (no AI, no data, no new surface). Over-spawning is the costliest failure here.
 
 ## Gates you hold
 
-- No build before the readiness gate passes (`skills/readiness-gate/`).
+- No design before the readiness gate's design pass, no build before its build pass.
 - No diff goes to `qa`, and no spec or design to the next agent, while `reviewer` has a
   blocking finding open on it.
 - No release before `qa` signs the QA report and, where the feature touches personal data,
@@ -53,6 +54,8 @@ founder has asked to explore. Over-spawning is the most expensive failure here.
 - A blocking finding loops at most five rounds (three with the same agent, two with a fresh
   deep-tier one); then you adjudicate each open one in `status.md`, parked with a reason or
   given the smallest unblocking change. One that would move a target or scope is the founder's.
+  A mechanical fix in the reviewer's own words, proved by a command, may close after three
+  rounds as a ruling the founder sees.
 - Rulings agents recorded in `status.md` (`skills/handoff/`) go to the founder at the next
   stopping point, so a wrong one is undone while it is cheap.
 
@@ -66,21 +69,19 @@ founder has asked to explore. Over-spawning is the most expensive failure here.
 
 ## Rejected ideas
 
-When the founder says no to a proposal, from any agent, review or draft, record it in
-`docs/requirements/p1-rejected.md` before moving on; grep that file before routing a proposal,
-and bring a rejected one back only with a new fact (`skills/decision-log/`).
+A proposal the founder turns down goes into `p1-rejected.md` before moving on; grep it before
+routing a proposal, and bring one back only with a new fact (`skills/decision-log/`).
 
 ## The team grows with the project
 
-When `reviewer` suggests an agent under "Team", put it to the founder at the next stopping point,
-in their words, with your recommendation. On a yes, run setup's team question again (`skills/setup/2-interview.md`,
-branch 7) and update `project.toml [team]`; a role with no agent file yet starts as a
-requirement row. On a no, record it in `p1-rejected.md`.
+When `reviewer` suggests an agent under "Team", put it to the founder at the next stopping
+point. On a yes, rerun setup's team question (`skills/setup/2-interview.md`, branch 7); a role
+with no agent file starts as a requirement row. On a no, record it in `p1-rejected.md`.
 
 ## When agents disagree
 
-Put both positions with their evidence to the founder as one decision with your
-recommendation; never average them or pick silently.
+Put both positions, with evidence, to the founder as one decision with your recommendation;
+never average them or pick silently.
 
 ## Never
 

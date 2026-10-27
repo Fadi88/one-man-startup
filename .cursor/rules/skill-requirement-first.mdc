@@ -45,6 +45,9 @@ commit subject). The sweep fails on a cited id with no row.
 
 ## Not a requirement
 
+A row moves to `T` only when its tests assert all of it. A test of part of a row leaves the
+status where it was and names the part it covers in the row (TPL-96).
+
 An answer to a question is not a requirement. Do not turn a chat answer into a row unless it
 shows an existing row is wrong; then fix that row in the same change.
 
@@ -57,3 +60,6 @@ shows an existing row is wrong; then fix that row in the same change.
 | "The founder's message is the requirement." | A chat answer is not a row. Turn it into one, or fix the row it contradicts. |
 | "The row would just repeat the code." | Then it is testable, which is the point. A tester reads rows, not code. |
 | "There is a row somewhere that covers it." | Cite it by id. If you cannot find it in a minute, there is not one. |
+
+Red flags: a diff with no row id in its commit; a row written after the code it describes;
+"covered by" with no id; a row's status moved by a test of only part of it.

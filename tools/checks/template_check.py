@@ -1,4 +1,4 @@
-"""TPL-1 to TPL-5, TPL-41, TPL-42, TPL-76: the agents, skills and roster are well formed, wired up and small.
+"""TPL-1 to TPL-5, TPL-41, TPL-42, TPL-57, TPL-76: the agents, skills and roster are well formed, wired up and small.
 
 Agent and skill files with bad frontmatter are skipped silently by some tools,
 so a broken file can vanish without anyone noticing. This check makes it loud.
@@ -54,6 +54,10 @@ for d in skill_dirs:
     # TPL-76: a skill that only says "run that other skill" is a second name for one method.
     if len(body.strip()) < 400 and re.search(r"`skills/[a-z0-9-]+/`", body):
         fail(f"TPL-76 skills/{d.name}/SKILL.md only points at another skill; fold it into that skill")
+    # TPL-57: each discipline skill ends with its excuses table and its red flags.
+    if d.name in {"bug-fix", "verify-green", "requirement-first", "ordered-steps", "safe-data-write"}:
+        if "| The excuse | The answer |" not in body or "Red flags:" not in body:
+            fail(f"TPL-57 skills/{d.name}/SKILL.md lacks its excuses table or its 'Red flags:' line")
     skills[d.name] = fm
 
 agents: dict[str, dict] = {}
@@ -112,6 +116,11 @@ for cmd, want in [("python tools/link_check.py docs/legal/regions/*.md", True),
                   ("python tools/render_mockups.py C:/Users/x/page.html", False),
                   ("python tools/render_mockups.py docs/design/mockups/../../x.html", False),
                   ("python tools/render_mockups.py && git push", False),
+                  ("python tools/render_mockups.py --dark --rtl --text-scale 1.5", True),
+                  ("python tools/render_mockups.py docs/design/mockups/a.html --text-scale 2", True),
+                  ("python tools/render_mockups.py --text-scale 1.5; git push", False),
+                  ("python tools/render_mockups.py --out C:/x", False),
+                  ("python tools/render_mockups.py --text-scale", False),
                   ("python tools/link_check.py ../outside.md", False)]:
     if check_only.allowed(cmd) != want:
         fail(f"TPL-42 check_only {'blocks' if want else 'lets through'} {cmd!r}")
