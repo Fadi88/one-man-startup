@@ -5,7 +5,7 @@ This folder is the social-media agent's launch plan for this template itself (`F
 | File | What it is |
 |---|---|
 | `where-to-post.md` | Venues ranked best first, each with its rules page, the date checked, the rule that matters and when to post. Includes the launch-week order and the experiment for the channels. |
-| `drafts/` | One ready-to-copy post per recommended venue. |
+| `drafts/` | One ready-to-copy post per recommended venue, kept on the founder's computer only: ignored by git and never committed (TPL-97). |
 | `awesome-lists.md` | GitHub awesome lists that exist and accept submissions, with the exact line or form text for each. |
 | `credit-notes.md` | A short, polite note to each project the README credits, and the public channel to send it. |
 | `replies.md` | Draft answers to the likely questions, using only facts from this repository. |

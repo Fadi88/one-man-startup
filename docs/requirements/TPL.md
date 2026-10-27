@@ -102,4 +102,5 @@ template's own pages (`tools/clean_template.py`).
 | TPL-93 | A reviewer is pointed at the rulings in `status.md` by number and reads them there; the brief never quotes them. | U |
 | TPL-94 | `tools/link_check.py` lets through a link its line marks as "(returned 404 on YYYY-MM-DD)", so a brief can cite a page that is gone. | T |
 | TPL-95 | Setup fills every "(setup fills)" line of `docs/legal/playbook.md`, and `tools/checks/legal_check.py` fails a set-up project that still has one. | T |
+| TPL-97 | The template's launch post drafts (`examples/template-launch/drafts/`) stay on the founder's computer: git ignores them, no commit in the history holds them, and the sweep fails if one is tracked. | T |
 | TPL-96 | A requirement row moves to `T` only when its tests assert all of it; a test of part of a row leaves the status where it was and names the part in the row's test list. | U |

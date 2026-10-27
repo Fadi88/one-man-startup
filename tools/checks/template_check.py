@@ -1,4 +1,4 @@
-"""TPL-1 to TPL-5, TPL-41, TPL-42, TPL-57, TPL-76: the agents, skills and roster are well formed, wired up and small.
+"""TPL-1 to TPL-5, TPL-41, TPL-42, TPL-57, TPL-76, TPL-97: the agents, skills and roster are well formed, wired up and small.
 
 Agent and skill files with bad frontmatter are skipped silently by some tools,
 so a broken file can vanish without anyone noticing. This check makes it loud.
@@ -124,6 +124,13 @@ for cmd, want in [("python tools/link_check.py docs/legal/regions/*.md", True),
                   ("python tools/link_check.py ../outside.md", False)]:
     if check_only.allowed(cmd) != want:
         fail(f"TPL-42 check_only {'blocks' if want else 'lets through'} {cmd!r}")
+
+# TPL-97: the launch post drafts are never tracked.
+import subprocess
+tracked = subprocess.run(["git", "ls-files", "examples/template-launch/drafts"], cwd=ROOT,
+                         capture_output=True, text=True).stdout.split()
+if tracked:
+    fail(f"TPL-97 launch drafts are tracked by git: {', '.join(tracked)}; git rm --cached them")
 
 agents_md = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
 if len(agents_md) > BUDGET["AGENTS.md"]:

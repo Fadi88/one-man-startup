@@ -12,6 +12,11 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-28. Launch post drafts leave the repository and its history** (TPL-97). The seven
+  files in `examples/template-launch/drafts/`, committed on 2026-10-14 in the launch plan, are
+  untracked, ignored, and removed from every commit with `git filter-repo`; `replies.md` and
+  `credit-notes.md` stay. Copies made before the rewrite (forks, clones, closed pull request 2)
+  may still hold them. Decided by Fadi.
 - **2026-10-28. The feature dry run's findings are fixed as it proposed** (TPL-82 to TPL-96,
   TPL-57), from `examples/feature-dry-run/results/2026-10-28-claude-code.md`. Where the run
   offered a choice, the orchestrator took: two passes of the readiness gate with a check on

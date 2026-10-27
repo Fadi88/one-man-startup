@@ -32,7 +32,7 @@ Bets, growth ideas and workflow changes, each written before it starts
 
 ### 2. Launch week, one post a day, from 2026-10-20
 - **Why:** to learn which venue reaches people who use the template, not only people who look.
-- **Change:** the posts in `examples/template-launch/drafts/`, one venue a day in the order of
+- **Change:** the posts in `examples/template-launch/drafts/` (kept locally, not in the repository), one venue a day in the order of
   `examples/template-launch/where-to-post.md`, each rewritten and sent by Fadi.
 - **Hypothesis:** one venue brings most of the visitors, and it is not the same venue that
   brings the people who press "Use this template".
