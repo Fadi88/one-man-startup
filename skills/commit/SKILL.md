@@ -14,7 +14,8 @@ description: Commit discipline - one change per commit, requirement ids in the s
   flag on, and later removing it, are their own commits.
 - **Remove and replace** are two commits, never one.
 - **Size:** about a hundred lines without a test run is a red flag. Stop and run.
-- **Hooks:** `tools/githooks/commit-msg` refuses banned characters; `pre-commit` runs the
+- **Hooks:** `tools/githooks/commit-msg` refuses banned characters and a subject whose ids are
+  missing or not rows (merge, revert and fixup subjects pass); `pre-commit` runs the
   sweep. If a hook refuses, fix the message or the code.
   Never `--no-verify`.
 - **Push and merge** are outward steps: the founder's go each time.

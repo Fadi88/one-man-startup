@@ -5,6 +5,12 @@ whole: grep for an id or a date.
 
 ## Changes
 
+- **2026-10-28.** TPL-74 to TPL-81: a feature-track dry run (`examples/feature-dry-run/`), the
+  commit hook refuses a subject without requirement ids, `grill-me` folded into `grilling`,
+  `tools/template_update.py`, `tools/status_report.py`, `tools/run_evals.py` with nine routing
+  cases, due dates at session start (`tools/lib/overdue.py`), and the modern product style for
+  the README images, landing page and status page (`docs/images/STYLE.md`); TPL-38 now points at
+  that style.
 - **2026-10-21.** TPL-66 to TPL-73: eight practices taken from addyosmani/agent-skills (the
   performance and observability skills, schema expand-then-contract, the floor check, reviews
   briefed without the author's reasoning, contract rules with idempotency keys, test shape,

@@ -10,87 +10,95 @@
 <meta property="og:image" content="https://fadi88.github.io/one-man-startup/images/social-preview.png">
 <meta property="og:url" content="https://fadi88.github.io/one-man-startup/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232c3a57'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23e8673c'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23d6246e'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%23ffffff'/%3E%3C/svg%3E">
 <style>
+  /* Tokens: docs/images/STYLE.md */
   :root {
-    --bg: #faf7f1; --bg2: #f1ebe0; --card: #ffffff; --line: #e7e1d5;
-    --ink: #1d2433; --soft: #5b6475; --accent: #e8673c; --accent-ink: #c4481f;
-    --teal: #2f8f83; --navy: #2c3a57; --badge: #fde9e1;
+    --page: #ffffff; --surface: #f7f5fa; --line: #e4e0eb;
+    --ink: #14121f; --soft: #55505f;
+    --brand: #d6246e; --brand-ink: #b0124f; --brand-hover: #b0124f; --tint: #fdebf3; --on-brand: #ffffff;
+    --font: -apple-system, "Segoe UI Variable", "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    --r-s: 10px; --r-m: 20px; --r-l: 28px; --r-pill: 999px;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #121722; --bg2: #0e121a; --card: #1f2734; --line: #313a4a;
-      --ink: #eef0f4; --soft: #a3abba; --accent: #e8673c; --accent-ink: #f39a76;
-      --teal: #6cc7bb; --navy: #3d5a8f; --badge: #3a2219;
+      --page: #0f0d14; --surface: #1a1722; --line: #2c2837;
+      --ink: #f4f2f8; --soft: #b5afc2;
+      --brand: #d6246e; --brand-ink: #ff6fa6; --brand-hover: #b0124f;--tint: #2a1420; --on-brand: #ffffff;
     }
   }
   * { box-sizing: border-box; }
-  body {
-    margin: 0; background: linear-gradient(160deg, var(--bg), var(--bg2)) fixed; color: var(--ink);
-    font: 17px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
-  a { color: inherit; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
-  header.top { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
-  .logo { font-weight: 800; letter-spacing: -0.3px; text-decoration: none; }
-  .logo span { color: var(--accent); }
-  nav a { color: var(--soft); text-decoration: none; margin-left: 20px; font-size: 15px; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 17px/1.65 var(--font); }
+  a { color: var(--brand-ink); text-underline-offset: 3px; }
+  a:focus-visible, .btn:focus-visible { outline: 3px solid var(--brand-ink); outline-offset: 3px; border-radius: var(--r-s); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  header.top { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+  .logo { font-weight: 800; letter-spacing: -0.4px; text-decoration: none; color: var(--ink); display: inline-flex; align-items: center; gap: 10px; }
+  .logo::before { content: ""; width: 22px; height: 22px; border-radius: 7px; background: var(--brand); }
+  nav a { color: var(--soft); text-decoration: none; margin-left: 24px; font-size: 15px; font-weight: 600; }
   nav a:hover { color: var(--ink); }
-  .hero { padding: 48px 0 24px; }
-  .badge {
-    display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px;
-    background: var(--badge); border: 1.5px solid var(--accent); color: var(--accent-ink);
-    font-size: 13px; font-weight: 700; letter-spacing: 1.4px;
-  }
-  .badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-  h1 { font-size: clamp(40px, 7vw, 72px); line-height: 1.05; letter-spacing: -1.5px; margin: 20px 0 16px; font-weight: 800; }
-  .lede { font-size: clamp(19px, 2.4vw, 24px); font-weight: 600; margin: 0 0 8px; }
-  .sub { color: var(--soft); font-size: 18px; max-width: 640px; margin: 0 0 28px; }
+  .hero { padding: 72px 0 40px; }
+  .eyebrow { display: block; color: var(--brand-ink); font-size: 14px; font-weight: 800; letter-spacing: 2.4px; }
+  h1 { font-size: clamp(42px, 8vw, 84px); line-height: 1.02; letter-spacing: -2.5px; margin: 20px 0 24px; font-weight: 800; max-width: 900px; }
+  .lede { font-size: clamp(20px, 2.6vw, 26px); font-weight: 700; margin: 0 0 12px; letter-spacing: -0.3px; }
+  .sub { color: var(--soft); font-size: 18px; max-width: 680px; margin: 0 0 36px; }
   .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
   .btn {
-    display: inline-block; padding: 13px 22px; border-radius: 12px; font-weight: 700; text-decoration: none;
-    font-size: 16px; border: 1.5px solid var(--line); background: var(--card);
+    display: inline-block; padding: 14px 26px; border-radius: var(--r-pill); font-weight: 700; text-decoration: none;
+    font-size: 16px; border: 2px solid var(--line); background: var(--page); color: var(--ink); transition: background .15s, border-color .15s;
   }
-  .btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
-  .btn:hover { transform: translateY(-1px); }
-  .tools { color: var(--soft); font-size: 14px; margin-top: 10px; }
-  .repo { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; font-weight: 600; font-size: 16px; color: var(--ink); text-underline-offset: 3px; }
+  .btn:hover { border-color: var(--ink); }
+  .btn.primary { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
+  .btn.primary:hover { background: var(--brand-hover); border-color: var(--brand-hover); }
+  .tools { color: var(--soft); font-size: 14px; margin-top: 14px; }
+  .repo { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; font-weight: 600; font-size: 16px; color: var(--ink); text-underline-offset: 3px; }
   .repo svg { flex: none; }
-  section { padding: 56px 0 8px; }
-  h2 { font-size: clamp(26px, 3.6vw, 36px); letter-spacing: -0.5px; margin: 0 0 12px; }
-  .intro { color: var(--soft); max-width: 720px; margin: 0 0 28px; }
+  section { padding: 80px 0 8px; }
+  h2 { font-size: clamp(28px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -1px; margin: 0 0 14px; font-weight: 800; }
+  .intro { color: var(--soft); max-width: 720px; margin: 0 0 32px; }
   figure { margin: 0; }
-  figure img { width: 100%; height: auto; display: block; border-radius: 20px; box-shadow: 0 10px 30px rgba(29, 36, 51, 0.08); }
-  .versus { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
-  .col { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px; }
-  .col h3 { margin: 0 0 8px; font-size: 18px; }
+  figure img { width: 100%; height: auto; display: block; border-radius: var(--r-l); }
+  .versus { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+  .col { background: var(--surface); border-radius: var(--r-m); padding: 28px; }
+  .col h3 { margin: 0 0 10px; font-size: 20px; letter-spacing: -0.3px; }
   .col p { margin: 0; color: var(--soft); }
   .col.them h3 { color: var(--soft); }
-  .col.us { border-color: var(--teal); }
-  .col.us h3 { color: var(--teal); }
-  table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
-  th, td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .col.us { background: var(--tint); }
+  .col.us h3 { color: var(--brand-ink); }
+  .col.us p { color: var(--ink); }
+  table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: var(--r-m); overflow: hidden; }
+  th, td { text-align: left; padding: 15px 22px; border-bottom: 1px solid var(--line); vertical-align: top; }
   tr:last-child td { border-bottom: 0; }
-  th { font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--soft); }
-  td:last-child { font-weight: 700; color: var(--accent-ink); white-space: nowrap; }
-  .punch { font-size: 20px; font-weight: 700; margin: 28px 0 0; }
-  ol.steps { padding-left: 22px; }
-  ol.steps li { margin-bottom: 10px; }
-  code { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; font-size: 15px; }
+  th { font-size: 13px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--soft); }
+  td:last-child { font-weight: 700; color: var(--brand-ink); white-space: nowrap; }
+  .punch { font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: -0.5px; margin: 36px 0 0; }
+  ol.steps { padding-left: 0; list-style: none; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding-left: 52px; margin-bottom: 16px; }
+  ol.steps li::before {
+    content: counter(s); position: absolute; left: 0; top: 1px; width: 34px; height: 34px; border-radius: 50%;
+    background: var(--brand); color: var(--on-brand); font-weight: 800; font-size: 16px; line-height: 34px; text-align: center;
+  }
+  code { background: var(--surface); border-radius: 6px; padding: 1px 6px; font-size: 15px; }
   .note { color: var(--soft); font-size: 15px; }
-  footer { padding: 56px 0 40px; color: var(--soft); font-size: 14px; }
+  footer { padding: 72px 0 48px; color: var(--soft); font-size: 14px; }
   @media (max-width: 720px) {
     nav a:not(.gh) { display: none; }
+    .hero { padding: 40px 0 24px; }
+    section { padding-top: 56px; }
     .versus { grid-template-columns: 1fr; }
     td:last-child { white-space: normal; }
     th, td { padding: 12px 14px; }
+    .btn { width: 100%; text-align: center; }
+    .col { padding: 22px; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <a class="logo" href="#">One-man <span>startup</span></a>
+    <a class="logo" href="#">One-man startup</a>
     <nav>
       <a href="#not-vibe-coding">Not vibe coding</a>
       <a href="#how-it-goes">How it goes</a>
@@ -100,7 +108,7 @@
   </header>
 
   <div class="hero">
-    <span class="badge">NOT VIBE CODING</span>
+    <span class="eyebrow">NOT VIBE CODING</span>
     <h1>Build a software startup without writing code.</h1>
     <p class="lede">A proven team workflow, run by AI agents. You make the decisions.</p>
     <p class="sub">A free template that gives you the first hires of a startup as AI agents: a project

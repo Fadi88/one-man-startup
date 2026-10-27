@@ -12,6 +12,16 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-28. Seven improvements taken, and a new visual style** (TPL-74 to TPL-81), from the
+  orchestrator's list of ten: a feature-track dry run, requirement ids enforced by the commit
+  hook, `grill-me` folded into `grilling`, template updates for existing projects, a status page,
+  orchestrator routing evals (paid, run only on request) and due dates named at session start.
+  Template updates use a per-file fingerprint written at setup, because a project made with
+  "Use this template" has none of the template's history. The README images, landing page and
+  status page move to the modern product style (white, one raspberry colour, rounded shapes, a
+  system sans-serif), replacing the warm paper style of 17 October. Items 3 to 5 of the list were
+  kept for later, not rejected (`p1-open-questions.md`). Decided by Fadi.
+
 - **2026-10-21. Eight practices from addyosmani/agent-skills are taken** (TPL-66 to TPL-73), from
   the orchestrator's comparison of its 25 skills, 4 reviewer personas and 7 checklists with this
   template (read 2026-10-21): a performance skill (targets as the founder's rows, measure before
@@ -68,7 +78,8 @@ they say. Setup removes this section from a new project (`tools/clean_template.p
   the reader is a non-coder who has to trust it. Decided by Fadi. Reopen: if the landing page's
   numbers show readers leave before the start link. **Image style reversed by Fadi on
   2026-10-17**: the six README images are back in the original warm paper style, with the same
-  words and diagrams; the README's order and start link stay.
+  words and diagrams; the README's order and start link stay. (Image style superseded on
+  2026-10-28 by the modern product style, TPL-81.)
 
 - **2026-10-16. The reviewer suggests new agents as the project changes** (TPL-37). Setup
   picks the team once; after that, each review checks whether the work needs an agent that is

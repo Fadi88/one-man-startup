@@ -1,0 +1,73 @@
+# TPL-79: fixed founder requests and what the orchestrator must pick for each, from the tracks in
+# AGENTS.md and the routing in agents/orchestrator.md. Scored by tools/run_evals.py, which runs
+# only when the founder asks (each case is one paid call to the AI tool).
+#
+# track      fix, feature or bet
+# must       agents the plan must name
+# one_of     lists where the plan must name at least one agent of each
+# must_not   agents the plan must not name
+
+assume = """Assume setup is done: a web app with a backend, sold to consumers in the EU, taking \
+payments, with every agent in agents/ switched on and the gates at strict."""
+
+[[case]]
+id = "typo"
+request = "There's a typo on the sign-up page, it says 'recieve'."
+track = "fix"
+must = ["reviewer", "qa"]
+one_of = [["web-dev", "backend-dev"]]
+must_not = ["researcher", "feasibility", "legal"]
+
+[[case]]
+id = "button-colour"
+request = "Make the button on the home page green instead of blue."
+track = "fix"
+must = ["reviewer", "qa"]
+one_of = [["web-dev", "product-designer"]]
+must_not = ["researcher", "feasibility", "growth"]
+
+[[case]]
+id = "double-charge"
+request = "Some users get charged twice when they double-click the pay button."
+track = "fix"
+must = ["backend-dev", "reviewer", "qa"]
+must_not = ["researcher", "growth"]
+
+[[case]]
+id = "release-broke"
+request = "Since this morning's release nobody can log in."
+track = "fix"
+must = ["rollback"]
+must_not = ["researcher", "growth"]
+
+[[case]]
+id = "csv-export"
+request = "Let users download all their data as a spreadsheet."
+track = "feature"
+must = ["researcher", "feasibility", "product-designer", "reviewer", "qa", "legal"]
+
+[[case]]
+id = "apple-pay"
+request = "I want people to be able to pay with Apple Pay."
+track = "feature"
+must = ["researcher", "feasibility", "legal", "security", "reviewer", "qa"]
+
+[[case]]
+id = "ai-replies"
+request = "Add an AI that writes replies to customer reviews for our users."
+track = "feature"
+must = ["researcher", "feasibility", "agentic-workflow", "legal"]
+
+[[case]]
+id = "clinics"
+request = "Should we make a version of the product for dental clinics?"
+track = "bet"
+must = ["researcher", "growth", "legal", "feasibility"]
+must_not = ["web-dev", "backend-dev", "android-dev", "ios-dev", "desktop-dev"]
+
+[[case]]
+id = "price"
+request = "Let's try charging 9 a month instead of 5."
+track = "bet"
+must = ["growth"]
+must_not = ["web-dev", "backend-dev", "android-dev", "ios-dev", "desktop-dev"]

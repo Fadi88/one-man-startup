@@ -138,6 +138,12 @@ def apply() -> None:
                          encoding="utf-8")
         else:
             f.write_text(EDITS[rel][1](f.read_text(encoding="utf-8")), encoding="utf-8")
+    # TPL-77: the starting point for later template updates, written last so it fingerprints the
+    # files as the project starts with them (tools/template_update.py).
+    sys.path.insert(0, str(ROOT / "tools"))
+    import template_update
+    if not (ROOT / template_update.BASE).exists():
+        template_update.run(["--init"], ROOT)
 
 
 def main(argv: list[str]) -> int:

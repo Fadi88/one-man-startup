@@ -1,4 +1,4 @@
-"""TPL-1 to TPL-5, TPL-41, TPL-42: the agents, skills and roster are well formed, wired up and small.
+"""TPL-1 to TPL-5, TPL-41, TPL-42, TPL-76: the agents, skills and roster are well formed, wired up and small.
 
 Agent and skill files with bad frontmatter are skipped silently by some tools,
 so a broken file can vanish without anyone noticing. This check makes it loud.
@@ -51,6 +51,9 @@ for d in skill_dirs:
         fail(f"TPL-3 skills/{d.name} description is missing or too short to say when to use it")
     if len(f.read_text(encoding="utf-8")) > BUDGET["skill"]:
         fail(f"TPL-5 skills/{d.name}/SKILL.md is over {BUDGET['skill']} characters, move detail to a sibling file")
+    # TPL-76: a skill that only says "run that other skill" is a second name for one method.
+    if len(body.strip()) < 400 and re.search(r"`skills/[a-z0-9-]+/`", body):
+        fail(f"TPL-76 skills/{d.name}/SKILL.md only points at another skill; fold it into that skill")
     skills[d.name] = fm
 
 agents: dict[str, dict] = {}

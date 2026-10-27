@@ -2,96 +2,85 @@
   <title id="t">How the template is built</title>
   <desc id="d">You give requests, answers and approvals to your AI coding tool. The tool reads the instructions (AGENTS.md, project.toml, the agent briefs in agents/ and the methods in skills/; tools/sync_adapters.py generates each tool's own copies). It writes the paper trail in docs/ (requirements, one folder per feature, architecture decisions, legal checklists) next to your product's code. It runs the guards: one check per rule in tools/checks/, the full sweep run_all.py, a pre-commit hook and GitHub Actions. Reds you accept are registered in known_red.json with a date to look again.</desc>
   <style>
-    .bg1 { stop-color: #fcfaf6; } .bg2 { stop-color: #f1ebe0; }
-    .ink { fill: #1d2433; } .soft { fill: #5b6475; } .note { fill: #6b7383; }
-    .panel { fill: #ffffff; stroke: #e7e1d5; stroke-width: 1; }
-    .item { fill: #faf8f4; stroke: #eee8dd; stroke-width: 1; }
-    .rule { stroke: #eee8dd; stroke-width: 1.5; }
-    .wire { stroke: #b9b2a3; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    .head { fill: #b9b2a3; }
-    .verb { fill: #fcfaf6; stroke: #ddd6c8; stroke-width: 1; } .verbtxt { fill: #3a4252; }
-    .you1 { stop-color: #2c3a57; } .you2 { stop-color: #141b2a; } .youtxt { fill: #ffffff; }
-    .tool1 { stop-color: #3d5a8f; } .tool2 { stop-color: #2c3a57; } .tooltxt { fill: #ffffff; }
-    .p1 { fill: #4a6cd4; } .p2 { fill: #e8673c; } .p3 { fill: #2f8f83; }
-    .tint { opacity: 0.09; }
+    .bg { fill: #ffffff; stroke: #e4e0eb; stroke-width: 1.5; }
+    .ink { fill: #14121f; } .soft { fill: #55505f; }
+    .panel { fill: #f7f5fa; }
+    .item { fill: #ffffff; stroke: #e4e0eb; stroke-width: 1.5; }
+    .rule { stroke: #e4e0eb; stroke-width: 1.5; }
+    .wire { stroke: #d6246e; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .head { fill: #d6246e; }
+    .verb { fill: #fdebf3; } .verbtxt { fill: #b0124f; }
+    .you { fill: #14121f; } .youtxt { fill: #ffffff; }
+    .tool { fill: #d6246e; } .tooltxt { fill: #ffffff; }
+    .p { fill: #d6246e; }
     .glyph { stroke: #ffffff; stroke-width: 1.8; fill: none; stroke-linejoin: round; }
-    text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    text { font-family: -apple-system, "Segoe UI Variable", "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif; }
     .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
     @media (prefers-color-scheme: dark) {
-      .bg1 { stop-color: #1a2131; } .bg2 { stop-color: #0e121a; }
-      .ink { fill: #eef0f4; } .soft { fill: #a3abba; } .note { fill: #8d96a7; }
-      .panel { fill: #1f2734; stroke: #313a4a; } .item { fill: #252e3d; stroke: #313a4a; } .rule { stroke: #313a4a; }
-      .wire { stroke: #4a5363; } .head { fill: #4a5363; }
-      .verb { fill: #1a2131; stroke: #3a4354; } .verbtxt { fill: #c9cfda; }
-      .you1 { stop-color: #f6f2ea; } .you2 { stop-color: #d9d2c4; } .youtxt { fill: #141922; }
-      .tool1 { stop-color: #4a6aa6; } .tool2 { stop-color: #33466d; }
-      .tint { opacity: 0.18; }
+      .bg { fill: #0f0d14; stroke: #2c2837; }
+      .ink { fill: #f4f2f8; } .soft { fill: #b5afc2; }
+      .panel { fill: #1a1722; } .item { fill: #0f0d14; stroke: #2c2837; } .rule { stroke: #2c2837; }
+      .wire { stroke: #ff6fa6; } .head { fill: #ff6fa6; }
+      .verb { fill: #2a1420; } .verbtxt { fill: #ff6fa6; }
+      .you { fill: #f4f2f8; } .youtxt { fill: #14121f; }
     }
   </style>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="bg1"/><stop offset="1" class="bg2"/></linearGradient>
-    <linearGradient id="you" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="you1"/><stop offset="1" class="you2"/></linearGradient>
-    <linearGradient id="tool" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="tool1"/><stop offset="1" class="tool2"/></linearGradient>
-    <filter id="sh" x="-10%" y="-10%" width="120%" height="125%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#1d2433" flood-opacity="0.10"/></filter>
-    <clipPath id="pc"><rect width="360" height="474" rx="20"/></clipPath>
     <marker id="a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path class="head" d="M0 0 L10 5 L0 10 z"/></marker>
   </defs>
-  <rect width="1200" height="742" rx="24" fill="url(#bg)"/>
-  <text class="ink" x="40" y="58" font-size="26" font-weight="700">How the template is built</text>
-  <text class="soft" x="40" y="84" font-size="15">Plain files in your own repository. Your AI tool reads them, and checks keep them honest.</text>
+  <rect class="bg" x="1" y="1" width="1198" height="740" rx="28"/>
+  <text class="ink" x="40" y="62" font-size="28" font-weight="800" letter-spacing="-0.5">How the template is built</text>
+  <text class="soft" x="40" y="90" font-size="15">Plain files in your own repository. Your AI tool reads them, and checks keep them honest.</text>
 
-  <g transform="translate(40 108)" filter="url(#sh)"><rect width="250" height="64" rx="32" fill="url(#you)"/><text class="youtxt" x="125" y="40" font-size="20" font-weight="700" text-anchor="middle">You, the founder</text></g>
+  <g transform="translate(40 108)"><rect class="you" width="250" height="64" rx="32"/><text class="youtxt" x="125" y="40" font-size="20" font-weight="800" text-anchor="middle">You, the founder</text></g>
   <path class="wire" marker-end="url(#a)" d="M296 140 L414 140"/>
-  <g transform="translate(305 112)"><rect class="verb" width="100" height="22" rx="11"/><text class="verbtxt" x="50" y="15" font-size="11.5" font-weight="600" text-anchor="middle">asks, decides</text></g>
-  <g transform="translate(420 100)" filter="url(#sh)">
-    <rect width="740" height="80" rx="16" fill="url(#tool)"/>
-    <text class="tooltxt" x="28" y="36" font-size="20" font-weight="700">Your AI coding tool</text>
-    <text class="tooltxt" x="28" y="60" font-size="14" opacity="0.85">Claude Code, Codex, Gemini CLI or Cursor. It plays each role from the files below.</text>
+  <g transform="translate(305 112)"><rect class="verb" width="100" height="22" rx="11"/><text class="verbtxt" x="50" y="15" font-size="11.5" font-weight="700" text-anchor="middle">asks, decides</text></g>
+  <g transform="translate(420 100)">
+    <rect class="tool" width="740" height="80" rx="24"/>
+    <text class="tooltxt" x="28" y="36" font-size="20" font-weight="800">Your AI coding tool</text>
+    <text class="tooltxt" x="28" y="60" font-size="14">Claude Code, Codex, Gemini CLI or Cursor. It plays each role from the files below.</text>
   </g>
 
   <path class="wire" marker-end="url(#a)" d="M480 180 L480 204 Q480 212 472 212 L228 212 Q220 212 220 220 L220 230"/>
   <path class="wire" marker-end="url(#a)" d="M600 180 L600 230"/>
   <path class="wire" marker-end="url(#a)" d="M980 180 L980 230"/>
-  <g font-size="11.5" font-weight="600">
+  <g font-size="11.5" font-weight="700">
     <g transform="translate(300 201)"><rect class="verb" width="64" height="22" rx="11"/><text class="verbtxt" x="32" y="15" text-anchor="middle">reads</text></g>
     <g transform="translate(568 195)"><rect class="verb" width="64" height="22" rx="11"/><text class="verbtxt" x="32" y="15" text-anchor="middle">writes</text></g>
     <g transform="translate(948 195)"><rect class="verb" width="64" height="22" rx="11"/><text class="verbtxt" x="32" y="15" text-anchor="middle">runs</text></g>
   </g>
 
   <g transform="translate(40 236)">
-    <rect class="panel" width="360" height="474" rx="20" filter="url(#sh)"/>
-    <g clip-path="url(#pc)"><rect class="p1 tint" width="360" height="78"/><rect class="p1" width="360" height="6"/></g>
-    <text class="ink" x="24" y="42" font-size="19" font-weight="700">Instructions</text>
+    <rect class="panel" width="360" height="474" rx="24"/>
+    <text class="ink" x="24" y="42" font-size="20" font-weight="800">Instructions</text>
     <text class="soft" x="24" y="64" font-size="13">What every agent reads before it acts</text>
-    <g transform="translate(20 94)"><rect class="item" width="320" height="68" rx="12"/><g transform="translate(34 34)"><circle class="p1" r="17"/><path class="glyph" d="M-6 -8 h7 l5 5 v11 h-12 z M1 -8 v5 h5"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">AGENTS.md</text><text class="soft" x="64" y="50" font-size="13">Rules, team and tracks, for every tool</text></g>
-    <g transform="translate(20 174)"><rect class="item" width="320" height="68" rx="12"/><g transform="translate(34 34)"><circle class="p1" r="17"/><path class="glyph" d="M-6 -8 h7 l5 5 v11 h-12 z M1 -8 v5 h5"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">project.toml</text><text class="soft" x="64" y="50" font-size="13">Your answers from setup</text></g>
-    <g transform="translate(20 254)"><rect class="item" width="320" height="68" rx="12"/><g transform="translate(34 34)"><circle class="p1" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">agents/</text><text class="soft" x="64" y="50" font-size="13">One brief per role on the team</text></g>
-    <g transform="translate(20 334)"><rect class="item" width="320" height="68" rx="12"/><g transform="translate(34 34)"><circle class="p1" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">skills/</text><text class="soft" x="64" y="50" font-size="13">Methods: grilling, gates, reviews</text></g>
+    <g transform="translate(20 94)"><rect class="item" width="320" height="68" rx="16"/><g transform="translate(34 34)"><circle class="p" r="17"/><path class="glyph" d="M-6 -8 h7 l5 5 v11 h-12 z M1 -8 v5 h5"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">AGENTS.md</text><text class="soft" x="64" y="50" font-size="13">Rules, team and tracks, for every tool</text></g>
+    <g transform="translate(20 174)"><rect class="item" width="320" height="68" rx="16"/><g transform="translate(34 34)"><circle class="p" r="17"/><path class="glyph" d="M-6 -8 h7 l5 5 v11 h-12 z M1 -8 v5 h5"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">project.toml</text><text class="soft" x="64" y="50" font-size="13">Your answers from setup</text></g>
+    <g transform="translate(20 254)"><rect class="item" width="320" height="68" rx="16"/><g transform="translate(34 34)"><circle class="p" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">agents/</text><text class="soft" x="64" y="50" font-size="13">One brief per role on the team</text></g>
+    <g transform="translate(20 334)"><rect class="item" width="320" height="68" rx="16"/><g transform="translate(34 34)"><circle class="p" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">skills/</text><text class="soft" x="64" y="50" font-size="13">Methods: grilling, gates, reviews</text></g>
     <path class="rule" d="M24 420 H336"/>
-    <text class="note" font-size="12.5"><tspan x="24" y="442">tools/sync_adapters.py generates each tool's</tspan><tspan x="24" y="459">own copies, such as .claude/ and .cursor/rules/</tspan></text>
+    <text class="soft" font-size="12.5"><tspan x="24" y="442">tools/sync_adapters.py generates each tool's</tspan><tspan x="24" y="459">own copies, such as .claude/ and .cursor/rules/</tspan></text>
   </g>
   <g transform="translate(420 236)">
-    <rect class="panel" width="360" height="474" rx="20" filter="url(#sh)"/>
-    <g clip-path="url(#pc)"><rect class="p2 tint" width="360" height="78"/><rect class="p2" width="360" height="6"/></g>
-    <text class="ink" x="24" y="42" font-size="19" font-weight="700">The paper trail</text>
+    <rect class="panel" width="360" height="474" rx="24"/>
+    <text class="ink" x="24" y="42" font-size="20" font-weight="800">The paper trail</text>
     <text class="soft" x="24" y="64" font-size="13">Work passes between agents as files in docs/</text>
-    <g transform="translate(20 94)"><rect class="item" width="320" height="68" rx="12"/><g transform="translate(34 34)"><circle class="p2" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">requirements/</text><text class="soft" x="64" y="50" font-size="13">Numbered rows, written before code</text></g>
-    <g transform="translate(20 174)"><rect class="item" width="320" height="68" rx="12"/><g transform="translate(34 34)"><circle class="p2" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">work/&lt;id&gt;/</text><text class="soft" x="64" y="50" font-size="13">Brief, spec, design, tickets, QA report</text></g>
-    <g transform="translate(20 254)"><rect class="item" width="320" height="68" rx="12"/><g transform="translate(34 34)"><circle class="p2" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">adr/</text><text class="soft" x="64" y="50" font-size="13">Hard-to-reverse choices, and why</text></g>
-    <g transform="translate(20 334)"><rect class="item" width="320" height="68" rx="12"/><g transform="translate(34 34)"><circle class="p2" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">legal/</text><text class="soft" x="64" y="50" font-size="13">Region checklists, drafts for a lawyer</text></g>
+    <g transform="translate(20 94)"><rect class="item" width="320" height="68" rx="16"/><g transform="translate(34 34)"><circle class="p" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">requirements/</text><text class="soft" x="64" y="50" font-size="13">Numbered rows, written before code</text></g>
+    <g transform="translate(20 174)"><rect class="item" width="320" height="68" rx="16"/><g transform="translate(34 34)"><circle class="p" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">work/&lt;id&gt;/</text><text class="soft" x="64" y="50" font-size="13">Brief, spec, design, tickets, QA report</text></g>
+    <g transform="translate(20 254)"><rect class="item" width="320" height="68" rx="16"/><g transform="translate(34 34)"><circle class="p" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">adr/</text><text class="soft" x="64" y="50" font-size="13">Hard-to-reverse choices, and why</text></g>
+    <g transform="translate(20 334)"><rect class="item" width="320" height="68" rx="16"/><g transform="translate(34 34)"><circle class="p" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">legal/</text><text class="soft" x="64" y="50" font-size="13">Region checklists, drafts for a lawyer</text></g>
     <path class="rule" d="M24 420 H336"/>
-    <text class="note" font-size="12.5"><tspan x="24" y="442">Your product's code lives in the same</tspan><tspan x="24" y="459">repository, with every change recorded.</tspan></text>
+    <text class="soft" font-size="12.5"><tspan x="24" y="442">Your product's code lives in the same</tspan><tspan x="24" y="459">repository, with every change recorded.</tspan></text>
   </g>
   <g transform="translate(800 236)">
-    <rect class="panel" width="360" height="474" rx="20" filter="url(#sh)"/>
-    <g clip-path="url(#pc)"><rect class="p3 tint" width="360" height="78"/><rect class="p3" width="360" height="6"/></g>
-    <text class="ink" x="24" y="42" font-size="19" font-weight="700">The guards</text>
+    <rect class="panel" width="360" height="474" rx="24"/>
+    <text class="ink" x="24" y="42" font-size="20" font-weight="800">The guards</text>
     <text class="soft" x="24" y="64" font-size="13">Rules turned into checks, not left as wishes</text>
-    <g transform="translate(20 94)"><rect class="item" width="320" height="68" rx="12"/><g transform="translate(34 34)"><circle class="p3" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">tools/checks/</text><text class="soft" x="64" y="50" font-size="13">One check per rule that must hold</text></g>
-    <g transform="translate(20 174)"><rect class="item" width="320" height="68" rx="12"/><g transform="translate(34 34)"><circle class="p3" r="17"/><path class="glyph" d="M-6 -8 h7 l5 5 v11 h-12 z M1 -8 v5 h5"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">run_all.py</text><text class="soft" x="64" y="50" font-size="13">The full sweep: ends GREEN or RED</text></g>
-    <g transform="translate(20 254)"><rect class="item" width="320" height="68" rx="12"/><g transform="translate(34 34)"><circle class="p3" r="17"/><path class="glyph" d="M-4 -6 L6 0 L-4 6 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">pre-commit hook</text><text class="soft" x="64" y="50" font-size="13">Runs the sweep before every commit</text></g>
-    <g transform="translate(20 334)"><rect class="item" width="320" height="68" rx="12"/><g transform="translate(34 34)"><circle class="p3" r="17"/><path class="glyph" d="M-4 -6 L6 0 L-4 6 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">GitHub Actions</text><text class="soft" x="64" y="50" font-size="13">Runs it on main and on pull requests</text></g>
+    <g transform="translate(20 94)"><rect class="item" width="320" height="68" rx="16"/><g transform="translate(34 34)"><circle class="p" r="17"/><path class="glyph" d="M-9 -6 h6 l2 2.5 h10 v10.5 h-18 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">tools/checks/</text><text class="soft" x="64" y="50" font-size="13">One check per rule that must hold</text></g>
+    <g transform="translate(20 174)"><rect class="item" width="320" height="68" rx="16"/><g transform="translate(34 34)"><circle class="p" r="17"/><path class="glyph" d="M-6 -8 h7 l5 5 v11 h-12 z M1 -8 v5 h5"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">run_all.py</text><text class="soft" x="64" y="50" font-size="13">The full sweep: ends GREEN or RED</text></g>
+    <g transform="translate(20 254)"><rect class="item" width="320" height="68" rx="16"/><g transform="translate(34 34)"><circle class="p" r="17"/><path class="glyph" d="M-4 -6 L6 0 L-4 6 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">pre-commit hook</text><text class="soft" x="64" y="50" font-size="13">Runs the sweep before every commit</text></g>
+    <g transform="translate(20 334)"><rect class="item" width="320" height="68" rx="16"/><g transform="translate(34 34)"><circle class="p" r="17"/><path class="glyph" d="M-4 -6 L6 0 L-4 6 z"/></g><text class="ink mono" x="64" y="29" font-size="15" font-weight="700">GitHub Actions</text><text class="soft" x="64" y="50" font-size="13">Runs it on main and on pull requests</text></g>
     <path class="rule" d="M24 420 H336"/>
-    <text class="note" font-size="12.5"><tspan x="24" y="442">known_red.json: reds you chose to live with</tspan><tspan x="24" y="459">for now, each with a date to look again.</tspan></text>
+    <text class="soft" font-size="12.5"><tspan x="24" y="442">known_red.json: reds you chose to live with</tspan><tspan x="24" y="459">for now, each with a date to look again.</tspan></text>
   </g>
 </svg>

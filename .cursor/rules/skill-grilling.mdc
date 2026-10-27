@@ -10,6 +10,9 @@ alwaysApply: false
 The goal is a plan with no hidden assumptions, reached with as few of the founder's minutes as
 possible.
 
+The founder can ask for it on anything ("grill me on this idea", or `/grilling` in Claude Code);
+run it on what they named, or on the plan under discussion if they named none.
+
 ## The design tree
 
 Every decision has decisions that hang off it. Map them as a tree before asking anything. The

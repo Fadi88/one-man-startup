@@ -98,6 +98,10 @@ The orchestrator picks one and says which:
 - `docs/playbooks/`: methods for a kind of business, such as B2C organic growth.
 - `docs/EXPERIMENTS.md`: bets with a hypothesis, a prediction and a "wrong if".
 - `docs/HISTORY.md`: what changed and why, newest first. Never read whole.
+- `tools/status_report.py`: the founder's status page (what waits on them, dates due, work in
+  progress), run when they ask where things stand. `tools/template_update.py`: later template
+  fixes, taken file by file on the founder's yes. `tools/run_evals.py`: tests of the
+  orchestrator's routing, paid, run only when the founder asks.
 - `tools/run_all.py`: the full sweep. `tools/known_red.json`: reds the founder accepted, each
   with a date to recheck.
 

@@ -1,4 +1,4 @@
-"""TPL-63: the Claude Code SessionStart hook. Prints the standing reminder at the start of a
+"""TPL-63, TPL-80: the Claude Code SessionStart hook. Prints the standing reminder at the start of a
 session and again after compaction, when a long session has lost its first instructions.
 
 Claude Code runs it with JSON on stdin whose `source` is startup, resume, clear or compact
@@ -12,9 +12,11 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "tools" / "lib"))
+import overdue
 
 
-def message(source: str) -> str:
+def message(source: str, today=None) -> str:
     lines = [
         "Session reminder (tools/session_start.py):",
         "- Read project.toml first. If [owner] or [product] is unset, run skills/setup/ before anything else.",
@@ -31,6 +33,10 @@ def message(source: str) -> str:
         recent = sorted((p for p in work.iterdir() if p.is_dir()), key=lambda p: p.stat().st_mtime, reverse=True)[:3]
         if recent:
             lines.append("- Recent work folders: " + ", ".join(p.name for p in recent))
+    due = overdue.due(ROOT, today)
+    if due:
+        lines.append("- Dates that have come due; tell the founder before other work:")
+        lines += [f"  - {overdue.line(d)}" for d in due]
     return "\n".join(lines)
 
 

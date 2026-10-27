@@ -1,4 +1,4 @@
-"""TPL-46: every text and background pair in the brand passes its contrast minimum.
+"""TPL-46, TPL-81: every text and background pair in the brand passes its contrast minimum.
 
 Reads the "Contrast pairs" table in docs/design/brand.md, which product-designer keeps:
 
@@ -79,6 +79,27 @@ else:
     fails += found
     if not found:
         print(f"PASS  {n} colour pairs meet their contrast minimum")
+
+# TPL-81: the template's own visual style. Its pairs pass, the status page carries its CSS block
+# unchanged, and every README image and the landing page use its brand colour.
+STYLE = ROOT / "docs" / "images" / "STYLE.md"
+if STYLE.exists():
+    text = STYLE.read_text(encoding="utf-8")
+    found, n = check(text)
+    fails += [f.replace("TPL-46", "TPL-81").replace("docs/design/brand.md", "docs/images/STYLE.md") for f in found]
+    css = re.search(r"```css\n(.*?)```", text, flags=re.S)
+    brand = re.search(r"^\| brand \| (#[0-9A-Fa-f]{6}) \|", text, flags=re.M)
+    report = (ROOT / "tools" / "status_report.py").read_text(encoding="utf-8")
+    if not css or " ".join(css.group(1).split()) not in " ".join(report.split()):
+        fails.append("TPL-81 tools/status_report.py CSS differs from the block in docs/images/STYLE.md, copy it over")
+    if not brand:
+        fails.append("TPL-81 docs/images/STYLE.md has no 'brand' row in its colour tokens")
+    else:
+        for page in [*sorted((ROOT / "docs" / "images").glob("*.svg")), ROOT / "site" / "index.html"]:
+            if page.exists() and brand.group(1).lower() not in page.read_text(encoding="utf-8").lower():
+                fails.append(f"TPL-81 {page.relative_to(ROOT).as_posix()} does not use the brand colour {brand.group(1)}")
+    if not found:
+        print(f"PASS  TPL-81 {n} style pairs meet their minimum; the status page, images and site share the style")
 
 for f in fails:
     print(f"FAIL  {f}")

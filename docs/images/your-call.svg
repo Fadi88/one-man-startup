@@ -2,46 +2,48 @@
   <title id="t">What the agents do alone and what waits for you</title>
   <desc id="d">Agents can read, research, draft, write code and run tests on their own. Going live, spending money, deleting anything, sending messages, changing prices or accepting a legal risk always waits for your approval.</desc>
   <style>
-    .bg1 { stop-color: #fcfaf6; } .bg2 { stop-color: #f1ebe0; }
-    .ink { fill: #1d2433; } .soft { fill: #4b5466; }
-    .ok { fill: #eef7f4; stroke: #bfe0d9; stroke-width: 1; } .wait { fill: #fdf0ea; stroke: #f3cbb9; stroke-width: 1; }
-    .okc { fill: #2f8f83; } .waitc { fill: #e8673c; } .glyph { stroke: #ffffff; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    .okbar { fill: #2f8f83; } .waitbar { fill: #e8673c; }
-    text { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .bg { fill: #ffffff; stroke: #e4e0eb; stroke-width: 1.5; }
+    .ink { fill: #14121f; } .soft { fill: #14121f; }
+    .ok { fill: #f7f5fa; } .wait { fill: #fdebf3; }
+    .okc { fill: #14121f; } .waitc { fill: #d6246e; }
+    .glyph { stroke: #ffffff; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .okglyph { stroke: #ffffff; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .lock { fill: #ffffff; }
+    .rule { stroke: #e4e0eb; stroke-width: 1.5; } .rulew { stroke: #f3b5d0; stroke-width: 1.5; }
+    text { font-family: -apple-system, "Segoe UI Variable", "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif; }
     @media (prefers-color-scheme: dark) {
-      .bg1 { stop-color: #1a2131; } .bg2 { stop-color: #0e121a; }
-      .ink { fill: #eef0f4; } .soft { fill: #b3bac7; }
-      .ok { fill: #172b2a; stroke: #24504a; } .wait { fill: #33211b; stroke: #5c3626; }
+      .bg { fill: #0f0d14; stroke: #2c2837; }
+      .ink { fill: #f4f2f8; } .soft { fill: #d9d4e3; }
+      .ok { fill: #1a1722; } .wait { fill: #2a1420; }
+      .okc { fill: #f4f2f8; } .okglyph { stroke: #14121f; }
+      .rule { stroke: #2c2837; } .rulew { stroke: #5a2a42; }
     }
   </style>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="bg1"/><stop offset="1" class="bg2"/></linearGradient>
-    <filter id="sh" x="-10%" y="-20%" width="120%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#1d2433" flood-opacity="0.08"/></filter>
-    <clipPath id="c"><rect width="532" height="240" rx="18"/></clipPath>
-    <g id="tick"><circle class="okc" r="12"/><path class="glyph" d="M-5 0 L-1.5 3.5 L5.5 -4"/></g>
-    <g id="hold"><circle class="waitc" r="12"/><rect x="-5" y="-1" width="10" height="7" rx="1.5" fill="#ffffff"/><path class="glyph" d="M-3 -1 V-3.5 a3 3 0 0 1 6 0 V-1"/></g>
+    <g id="tick"><circle class="okc" r="12"/><path class="okglyph" d="M-5 0 L-1.5 3.5 L5.5 -4"/></g>
+    <g id="hold"><circle class="waitc" r="12"/><rect class="lock" x="-5" y="-1" width="10" height="7" rx="1.5"/><path class="glyph" d="M-3 -1 V-3.5 a3 3 0 0 1 6 0 V-1"/></g>
   </defs>
-  <rect width="1200" height="320" rx="24" fill="url(#bg)"/>
+  <rect class="bg" x="1" y="1" width="1198" height="318" rx="28"/>
 
-  <g transform="translate(48 40)" filter="url(#sh)">
-    <rect class="ok" width="532" height="240" rx="18"/>
-    <g clip-path="url(#c)"><rect class="okbar" width="6" height="240"/></g>
-    <text class="ink" x="32" y="50" font-size="21" font-weight="700">Agents do this on their own</text>
+  <g transform="translate(48 40)">
+    <rect class="ok" width="532" height="240" rx="24"/>
+    <text class="ink" x="32" y="52" font-size="22" font-weight="800" letter-spacing="-0.3">Agents do this on their own</text>
+    <path class="rule" d="M32 70 H500"/>
     <g font-size="17">
-      <use href="#tick" x="44" y="94"/><text class="soft" x="68" y="100">Read, research and ask you questions</text>
-      <use href="#tick" x="44" y="134"/><text class="soft" x="68" y="140">Write plans, designs and drafts</text>
-      <use href="#tick" x="44" y="174"/><text class="soft" x="68" y="180">Write code and test it</text>
+      <use href="#tick" x="44" y="100"/><text class="soft" x="68" y="106">Read, research and ask you questions</text>
+      <use href="#tick" x="44" y="138"/><text class="soft" x="68" y="144">Write plans, designs and drafts</text>
+      <use href="#tick" x="44" y="176"/><text class="soft" x="68" y="182">Write code and test it</text>
       <use href="#tick" x="44" y="214"/><text class="soft" x="68" y="220">Suggest how to save money</text>
     </g>
   </g>
-  <g transform="translate(620 40)" filter="url(#sh)">
-    <rect class="wait" width="532" height="240" rx="18"/>
-    <g clip-path="url(#c)"><rect class="waitbar" width="6" height="240"/></g>
-    <text class="ink" x="32" y="50" font-size="21" font-weight="700">Always waits for your yes</text>
+  <g transform="translate(620 40)">
+    <rect class="wait" width="532" height="240" rx="24"/>
+    <text class="ink" x="32" y="52" font-size="22" font-weight="800" letter-spacing="-0.3">Always waits for your yes</text>
+    <path class="rulew" d="M32 70 H500"/>
     <g font-size="17">
-      <use href="#hold" x="44" y="94"/><text class="soft" x="68" y="100">Going live, or changing anything that is live</text>
-      <use href="#hold" x="44" y="134"/><text class="soft" x="68" y="140">Spending money, sending messages</text>
-      <use href="#hold" x="44" y="174"/><text class="soft" x="68" y="180">Deleting anything, touching real customer data</text>
+      <use href="#hold" x="44" y="100"/><text class="soft" x="68" y="106">Going live, or changing anything that is live</text>
+      <use href="#hold" x="44" y="138"/><text class="soft" x="68" y="144">Spending money, sending messages</text>
+      <use href="#hold" x="44" y="176"/><text class="soft" x="68" y="182">Deleting anything, touching real customer data</text>
       <use href="#hold" x="44" y="214"/><text class="soft" x="68" y="220">Prices, targets and accepting a legal risk</text>
     </g>
   </g>

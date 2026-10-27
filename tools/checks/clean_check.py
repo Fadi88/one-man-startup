@@ -1,4 +1,4 @@
-"""TPL-30, TPL-20, TPL-43: cleaning a new project of the template's own content leaves it green.
+"""TPL-30, TPL-20, TPL-43, TPL-77: cleaning a new project of the template's own content leaves it green.
 
 Copies the repository to a scratch folder, fills project.toml as setup would, runs
 tools/clean_template.py --yes there, and runs the full sweep on the result. Also checks that
@@ -44,6 +44,9 @@ with tempfile.TemporaryDirectory() as tmp:
                  "tools/checks/clean_check.py"]:
         if (copy / gone).exists():
             fails.append(f"{gone} is still there after cleaning")
+    base = copy / "tools" / "template_base.json"
+    if not base.exists() or '"agents/orchestrator.md"' not in base.read_text(encoding="utf-8"):
+        fails.append("TPL-77 tools/template_base.json is missing or lacks the agents after cleaning")
     if 'enabled = false' not in (copy / "project.toml").read_text(encoding="utf-8").split("[publish]", 1)[-1].split("[", 1)[0]:
         fails.append("TPL-43 project.toml [publish] enabled is not false after cleaning")
     for rel, pattern in [

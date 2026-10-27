@@ -25,7 +25,10 @@ description: The format for passing work between agents - a brief going out, a s
 - **Opened:** the files read, so nobody reads them again.
 - **Needs the founder:** decisions surfaced, each with a recommendation.
 
-Update `docs/work/<id>/status.md` with the step and its state.
+Update `docs/work/<id>/status.md` with the step and its state. It opens with three lines,
+`Track:`, `Now:` and `Waiting on:` (the founder, an agent's name, or nothing), and keeps its
+rulings under `## Rulings`, one `- ` line each; the founder's status page reads them
+(`python tools/status_report.py`).
 
 ## Agents working in parallel
 
