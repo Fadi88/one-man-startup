@@ -44,6 +44,10 @@ hosting = "unset"
 # "none yet" until code exists; setup or the first developer agent fills them in.
 test_command = "unset"
 build_command = "unset"
+# Folders holding the product's tests, e.g. ["tests", "src/__tests__"]. A test names the row it
+# asserts (AUTH-12 in its name or a comment); tools/checks/req_check.py reads these folders to
+# find the test behind every T row. Setup fills it once code exists.
+test_paths = []
 
 [team]
 # Agents switched on for this project. Setup trims the list to the size of the

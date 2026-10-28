@@ -71,3 +71,26 @@ request = "Let's try charging 9 a month instead of 5."
 track = "bet"
 must = ["growth"]
 must_not = ["web-dev", "backend-dev", "android-dev", "ios-dev", "desktop-dev"]
+
+# TPL-100: small-sounding requests that touch payments, personal data, the database's shape or
+# a new dependency take the feature track. Triggers proposed in the repository review Fadi pasted
+# on 2026-10-28 (its Proposal 4); "just add a Stripe webhook" is its example.
+
+[[case]]
+id = "stripe-webhook"
+request = "Just add a Stripe webhook so we know when a payment fails."
+track = "feature"
+must = ["security", "reviewer", "qa"]
+
+[[case]]
+id = "birthday-field"
+request = "Add a birthday field to the profile, it's only one field."
+track = "feature"
+must = ["legal", "security", "reviewer", "qa"]
+
+[[case]]
+id = "new-library"
+request = "Swap our image resizing for that popular open-source library, quick change."
+track = "feature"
+must = ["feasibility", "reviewer", "qa"]
+must_not = ["growth"]

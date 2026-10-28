@@ -1,4 +1,4 @@
-"""TPL-79: the orchestrator's eval cases are well formed and the scorer scores them right.
+"""TPL-79, TPL-100: the orchestrator's eval cases are well formed and the scorer scores them right.
 
 Runs no AI call. Each case needs an id, a request, a track of fix, feature or bet, and agent
 names that exist in agents/, with no agent both required and forbidden. The scorer is checked
@@ -50,6 +50,10 @@ for answer, want in [({"track": "fix", "agents": ["qa", "web-dev"]}, 0),
                      ({}, 3)]:
     if len(run_evals.score(case, answer)) != want:
         fail(f"TPL-79 the scorer gives {run_evals.score(case, answer)} for {answer}, wanted {want} problem(s)")
+
+for cid in ("stripe-webhook", "birthday-field", "new-library"):
+    if not any(c.get("id") == cid and c.get("track") == "feature" for c in cases):
+        fail(f"TPL-100 no feature-track case {cid!r} for a small request that touches a trigger")
 
 if not fails:
     print(f"PASS  TPL-79 {len(cases)} eval cases well formed, the scorer catches each kind of wrong answer")

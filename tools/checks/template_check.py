@@ -127,10 +127,10 @@ for cmd, want in [("python tools/link_check.py docs/legal/regions/*.md", True),
 
 # TPL-97: the launch post drafts are never tracked.
 import subprocess
-tracked = subprocess.run(["git", "ls-files", "examples/template-launch/drafts"], cwd=ROOT,
+tracked = subprocess.run(["git", "ls-files", "examples/template-launch/drafts", "examples/template-launch/replies.md"], cwd=ROOT,
                          capture_output=True, text=True).stdout.split()
 if tracked:
-    fail(f"TPL-97 launch drafts are tracked by git: {', '.join(tracked)}; git rm --cached them")
+    fail(f"TPL-97 launch drafts or replies are tracked by git: {', '.join(tracked)}; git rm --cached them")
 
 agents_md = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
 if len(agents_md) > BUDGET["AGENTS.md"]:

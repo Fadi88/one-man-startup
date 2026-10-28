@@ -75,7 +75,8 @@ The orchestrator picks one and says which:
 - **Fix** (a bug, a typo, a one-file change): requirement row amended or cited, then dev, then
   reviewer, then qa. A bug fix starts with a test that fails (`skills/bug-fix/`); after three
   failed fixes, `debugger` finds the cause.
-- **Feature** (anything a user would notice): `skills/new-feature/`. `researcher` maps what
+- **Feature** (anything a user would notice, and anything that touches sign-in, payments,
+  personal data, a new dependency or the database's shape, however small it sounds): `skills/new-feature/`. `researcher` maps what
   similar products do, the founder is grilled (`skills/grilling/`) with those findings as
   options, `feasibility` checks it can be built and run, the spec and rows are written and
   reviewed, the readiness gate passes (`skills/readiness-gate/`), then design, build, review,

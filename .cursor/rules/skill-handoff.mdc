@@ -10,6 +10,8 @@ alwaysApply: false
 ## The brief (orchestrator to agent)
 
 - **Objective:** one sentence, with the requirement ids.
+- **Scope:** the requirement areas the change touches, set by the orchestrator; `qa`'s regression
+  run covers every row in them (TPL-103).
 - **Read:** the exact files, nothing else unless stated.
 - **To a reviewer:** the artifact, its rows and its contract, never the author's hand-back
   summary: the review starts from the work, not the story about it. A ruling to review is

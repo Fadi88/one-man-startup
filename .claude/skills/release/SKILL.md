@@ -35,6 +35,10 @@ Run in order. Any line not met stops the release.
 
 ## After
 
-Watch errors and the feature's success number for the window set in the spec. On a major
+Fold the feature's `contract.md` and `ux.md` into `docs/contract.md` and `docs/ux.md`: apply
+what each adds, changes and removes, so the current files describe what is live (TPL-98). The
+idea is OpenSpec's archive step, which merges a change's delta specs into the living specs
+(https://github.com/Fission-AI/OpenSpec, read 2026-10-28); here it is a written step, not a
+script. Watch errors and the feature's success number for the window set in the spec. On a major
 error, `qa` writes ROLLBACK and the orchestrator starts `rollback`: roll back first (on the
 founder's go) and investigate second, with `debugger`. Write a short entry in `docs/HISTORY.md`.

@@ -1,4 +1,4 @@
-"""TPL-78, TPL-80: the status page and the session reminder report what the files say.
+"""TPL-78, TPL-80, TPL-101, TPL-104: the status page and the session reminder report what the files say.
 
 Builds a small project in a temporary folder (an overdue assumption, a known red past its
 recheck, an experiment due today, one settled assumption and one future date that must not
@@ -64,12 +64,16 @@ with tempfile.TemporaryDirectory() as tmp:
           "TPL-80 overdue.due finds the overdue assumption and known red and today's read, and nothing settled, closed or future")
 
     status_report.ROOT = t
-    s = status_report.gather()
+    s = status_report.gather(lambda: {"verdict": "RED", "reds": ["x_check.py   NEW RED  FAIL  thing"]})
     text = status_report.as_text(s)
     check(s["questions"] == ["Pick a price"], "TPL-78 the page lists the open question")
     check(len(s["waiting"]) == 1 and s["rulings"][0]["rulings"] == 2,
           "TPL-78 the page shows the work waiting on the founder and its two rulings")
     check("## Waiting on you (4)" in text, "TPL-78 'waiting on you' counts the question, the work and the two rulings")
+    check("## Checks: RED" in text and "NEW RED  FAIL  thing" in text,
+          "TPL-101 the page shows the sweep verdict and each red line")
+    check(s["coverage"] == [("AR", 3, 1)] and "- AR: 1 of 3 built rows guarded by a test, 2 not" in text,
+          "TPL-104 the page counts, per area, the built rows a test guards and those nothing guards")
     check("- empty: no status.md yet" in text, "TPL-78 a work folder without status.md says so")
     check(s["rows"]["T"] == 1 and s["rows"]["U"] == 2, "TPL-78 rows are counted by status from the area files")
     page = status_report.as_html(s)
@@ -83,7 +87,7 @@ with tempfile.TemporaryDirectory() as tmp:
 
 status_report.ROOT = ROOT
 try:
-    status_report.as_html(status_report.gather())
+    status_report.as_html(status_report.gather(lambda: {"verdict": "GREEN", "reds": []}))
     check(True, "TPL-78 the report builds from this repository's own files")
 except Exception as e:  # a parse error anywhere in the real files must show here
     check(False, f"TPL-78 the report fails on this repository's files: {e!r}")

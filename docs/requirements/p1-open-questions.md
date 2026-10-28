@@ -10,3 +10,7 @@ blocks, and the date it was raised. Remove an entry when it is answered and move
   after TPL-39 to TPL-55 changed setup; (5) a check that a turned-down idea is recorded in
   `p1-rejected.md` the same day (rule 12). Recommendation: 4 first, it is cheapest. Blocks
   nothing.
+- **A check that flags a stale ticket** (raised 2026-10-28). From the repository review Fadi
+  pasted (its Proposal 2): a ticket records which rows and contract sections it was written
+  from, and a check flags it when one changes later. Kept for later by Fadi. Recommendation:
+  build it once a project has run two features in parallel. Blocks nothing.

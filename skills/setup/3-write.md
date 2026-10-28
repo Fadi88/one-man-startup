@@ -2,7 +2,8 @@
 
 Part of `skills/setup/SKILL.md`. Only after the founder confirms the summary.
 
-- `project.toml`, every field the answers settled, including `[product] licence`.
+- `project.toml`, every field the answers settled, including `[product] licence`, and
+  `[stack] test_paths` once the product has test folders (TPL-102).
 - `docs/legal/regions/<CODE>.md` for each region, copied from `docs/legal/regions/_TEMPLATE.md`,
   filled from current sources, each claim cited and dated with a short quote, unsettled points
   marked UNSETTLED, and `python tools/link_check.py` run on the packs with no DEAD links.

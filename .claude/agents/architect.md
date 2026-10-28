@@ -44,6 +44,9 @@ error handling and logging, monitoring, cost guards on paid services (the free-t
 
 ## Per feature, in `docs/work/<id>/`
 
+`docs/contract.md` is the contract as it is live; a feature's `contract.md` starts from it and
+says what it adds, changes and removes (TPL-98, after OpenSpec's delta specs, https://github.com/Fission-AI/OpenSpec).
+
 - `design.md`: the components touched and their single responsibility, data with every field's
   owner and source of truth, the main flow, failure modes and what the user sees, and the two
   to four questions asked when it breaks with the signals that answer them

@@ -11,6 +11,33 @@ Newest first. Each entry: date, the proposal, who proposed it, the reason it was
 
 Setup removes this section from a new project (`tools/clean_template.py`).
 
+### From the repository review Fadi pasted, 28 October 2026
+
+Proposals in `repository_review_improvement_proposals.md` (author not named in the file) that the
+orchestrator recommended against; Fadi agreed ("do everything as recommended"). Each comes back
+only with a new fact.
+
+- **A script that merges ADDED, MODIFIED and REMOVED blocks into the living contract and screens**
+  (its Proposal 1, after OpenSpec, https://github.com/Fission-AI/OpenSpec). Declined: parsing
+  free-written documents is fragile; the release folds them by hand as a written step (TPL-98).
+- **Tickets that copy in the rows, the contract slice and the screen states** (its Proposal 2,
+  after BMAD-METHOD's story files). Declined: copies break rule 6 (one source of truth). The
+  check that flags a stale ticket is kept for later (`p1-open-questions.md`).
+- **Specifying a whole existing app before the first feature** (its Proposal 3). Declined: Spec
+  Kit's own guide says "You do not need to recreate an existing system from specifications"
+  (https://github.github.com/spec-kit/guides/existing-projects.html, read 2026-10-28); rows are
+  written area by area instead (TPL-99). The review's claim that `/speckit.converge` ingests
+  existing code is not supported by Spec Kit's README or that guide.
+- **A script that picks the track** (its Proposal 4). Declined: what a request touches is often
+  known only once the work starts; the triggers are rules and routing tests instead (TPL-100).
+- **A local web dashboard with approve and reject forms that write the decision files** (its
+  Proposal 5). Declined: decisions would bypass the orchestrator and the reason each one needs,
+  and a local server adds terminal work for a non-technical founder. The status page gained the
+  sweep result instead (TPL-101).
+- **Excuse tables in `verify-green` and `safe-data-write`, and failing on skipped or deleted
+  tests** (its Proposal 6). Declined as already built: TPL-57 (from obra/superpowers, not
+  addyosmani as the review says) and `tools/checks/floor_check.py` (TPL-69).
+
 ### From the addyosmani/agent-skills comparison, 21 October 2026
 
 Proposed by the orchestrator as the part of addyosmani/agent-skills not to take; Fadi agreed

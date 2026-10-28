@@ -8,6 +8,6 @@ This folder is the social-media agent's launch plan for this template itself (`F
 | `drafts/` | One ready-to-copy post per recommended venue, kept on the founder's computer only: ignored by git and never committed (TPL-97). |
 | `awesome-lists.md` | GitHub awesome lists that exist and accept submissions, with the exact line or form text for each. |
 | `credit-notes.md` | A short, polite note to each project the README credits, and the public channel to send it. |
-| `replies.md` | Draft answers to the likely questions, using only facts from this repository. |
+| `replies.md` | Draft answers to the likely questions, kept on the founder's computer only: ignored by git (TPL-97). |
 
 Two things to know before using any of it. The drafts were written by an AI agent, and both Hacker News and DEV have rules about generated text, so rewrite each one in your own words before it goes out (details in `where-to-post.md`). And several venues' rules pages could not be opened from here; those are marked "not opened", and their rules must be read by Fadi before posting.

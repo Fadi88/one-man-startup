@@ -8,13 +8,15 @@ What it reads, and nothing else: the open questions (docs/requirements/p1-open-q
 each docs/work/<id>/status.md (its Track:, Now: and Waiting on: lines and its rulings,
 skills/handoff/), the dates that have come due (tools/lib/overdue.py), the known reds
 (tools/known_red.json), the requirement rows by status and the newest entries of
-docs/HISTORY.md. Every figure is counted here when it runs; nothing on the page is typed.
+docs/HISTORY.md, the tests per area (TPL-104), and the verdict of the full sweep (TPL-101, proposed by the repository review
+pasted on 2026-10-28). Every figure is counted here when it runs; nothing on the page is typed.
 """
 from __future__ import annotations
 
 import html
 import json
 import re
+import subprocess
 import sys
 import tempfile
 from pathlib import Path
@@ -105,6 +107,23 @@ def rows_by_status() -> dict[str, int]:
     return counts
 
 
+def coverage() -> list[tuple[str, int, int]]:
+    """TPL-104: per area, the built rows (T, M, U) and how many of them a test guards (T)."""
+    areas: dict[str, list[int]] = {}
+    for f in sorted((ROOT / "docs" / "requirements").glob("*.md")):
+        for line in f.read_text(encoding="utf-8").splitlines():
+            m = ROW.match(line)
+            if m and m[3] in ("T", "M", "U"):
+                a = areas.setdefault(m[1].split("-")[0], [0, 0])
+                a[0] += 1
+                a[1] += m[3] == "T"
+    return [(area, built, guarded) for area, (built, guarded) in sorted(areas.items())]
+
+
+def guard_line(area: str, built: int, guarded: int) -> str:
+    return f"{area}: {guarded} of {built} built rows guarded by a test, {built - guarded} not"
+
+
 def history(n: int = 5) -> list[tuple[str, str]]:
     out = []
     for date, text in re.findall(r"^- \*\*(\d{4}-\d{2}-\d{2})\.\*\* (.+?)(?=^- |^#|\Z)", read("docs/HISTORY.md"),
@@ -114,7 +133,16 @@ def history(n: int = 5) -> list[tuple[str, str]]:
     return out
 
 
-def gather() -> dict:
+def sweep() -> dict:
+    """TPL-101: run the full sweep and keep its verdict and every red line."""
+    r = subprocess.run([sys.executable, str(ROOT / "tools" / "run_all.py")], cwd=ROOT,
+                       capture_output=True, text=True, encoding="utf-8")
+    lines = [l.strip() for l in r.stdout.splitlines() if l.strip()]
+    reds = [l for l in lines if any(k in l for k in ("NEW RED", "KNOWN RED", "RECHECK OVERDUE", "BROKEN"))]
+    return {"verdict": lines[-1] if lines else "no output", "reds": reds}
+
+
+def gather(run_sweep=sweep) -> dict:
     known = json.loads(read("tools/known_red.json") or "[]")
     w = work()
     return {
@@ -125,12 +153,15 @@ def gather() -> dict:
         "work": w,
         "known": known,
         "rows": rows_by_status(),
+        "coverage": coverage(),
         "history": history(),
+        "sweep": run_sweep(),
     }
 
 
 def as_text(s: dict) -> str:
-    out = ["# Status", ""]
+    out = ["# Status", "", f"## Checks: {s['sweep']['verdict']}"]
+    out += [f"- {r}" for r in s["sweep"]["reds"]] + [""]
     waiting = len(s["questions"]) + len(s["waiting"]) + sum(x["rulings"] for x in s["rulings"])
     out.append(f"## Waiting on you ({waiting})")
     out += [f"- Question: {q}" for q in s["questions"]]
@@ -153,6 +184,8 @@ def as_text(s: dict) -> str:
     out += [f"- {k['check']}: {k['fails']} (recheck {k.get('recheck', 'not set')})" for k in s["known"]] or ["- None."]
     out += ["", f"## Requirement rows ({sum(s['rows'].values())})"]
     out += [f"- {s['rows'][k]} {k}: {v}" for k, v in STATUSES.items()]
+    out += ["", "## Tests per area"]
+    out += [f"- {guard_line(*c)}" for c in s["coverage"]] or ["- No built rows yet."]
     out += ["", "## Recently changed"]
     out += [f"- {d}: {t}" for d, t in s["history"]] or ["- Nothing recorded."]
     return "\n".join(out) + "\n"
@@ -175,11 +208,14 @@ def as_html(s: dict) -> str:
     rows = "".join(f'<tr><td>{e(v)} <code>{e(k)}</code></td><td class="n">{s["rows"][k]}</td></tr>'
                    for k, v in STATUSES.items())
     parts = [
+        block(f"Checks: {s['sweep']['verdict']}", [e(r) for r in s["sweep"]["reds"]],
+              len(s["sweep"]["reds"]), warn=True),
         block("Waiting on you", wait, len(wait), warn=True),
         block("Dates that have come due", [e(overdue.line(d)) for d in s["due"]], len(s["due"]), warn=True),
         block("Work in progress", work_items, len(s["work"])),
         block("Failing checks you accepted", [e(f"{k['check']}: {k['fails']}") for k in s["known"]], len(s["known"])),
         f"<section><h2>Requirement rows <span class=\"count\">{sum(s['rows'].values())}</span></h2><table>{rows}</table></section>",
+        block("Tests per area", [e(guard_line(*c)) for c in s["coverage"]]),
         block("Recently changed", [f"<strong>{e(d)}</strong> {e(t)}" for d, t in s["history"]]),
     ]
     return ("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"

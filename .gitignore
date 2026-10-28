@@ -5,5 +5,6 @@ __pycache__/
 .claude/settings.local.json
 .DS_Store
 node_modules/
-# TPL-97: launch post drafts stay on the founder's computer, never in the repository.
+# TPL-97: launch post drafts and replies stay on the founder's computer, never in the repository.
 examples/template-launch/drafts/
+examples/template-launch/replies.md

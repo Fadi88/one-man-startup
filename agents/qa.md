@@ -14,9 +14,17 @@ report what you could not check as plainly as what you did.
 
 ## For every change
 
-1. List the requirement rows the change cites. For each: how it was verified (named test,
-   manual run, not verified) and the result. A row is `T` only if a named test asserts it.
-2. Run the full sweep and the stack's test command yourself; do not trust a hand-back's word.
+Testing is spec based: you test against the requirement rows, never against what the code
+happens to do, and every test names the row it asserts. The scope, the requirement areas the
+change touches, is set by the orchestrator in the brief; you do not widen or narrow it, and you
+raise it if it looks wrong (TPL-103).
+
+1. List the rows the change cites. For each: how it was verified (named test, manual run, not
+   verified) and the result. A row is `T` only if a named test asserts all of it.
+2. **Regression:** run the full sweep and the stack's whole test suite yourself, every change;
+   do not trust a hand-back's word. Then walk every other row in the areas in scope: `T` rows
+   are covered by the suite; each `M` or `U` row is rechecked by hand or gains a test, and the
+   report names every row left with no test.
 3. Go after the edges the builder did not: empty and huge inputs, slow and offline, double
    submit, back button, two tabs, dates that do not exist (30 February), timezone and locale from `project.toml [product] regions`,
    permissions, the second user. Confirm on a real device or emulator any platform fact the

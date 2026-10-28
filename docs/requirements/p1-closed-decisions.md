@@ -12,10 +12,27 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-28. Testing is spec based, with a stated regression run, and the orchestrator sets
+  the scope** (TPL-102 to TPL-104). Tests name the rows they assert and QA works from the rows;
+  `req_check.py` finds those tests in `[stack] test_paths` (before this, a product's own tests
+  were invisible to it and every product `T` row would have failed); each change's scope is the
+  requirement areas it touches, set by the orchestrator in the brief; QA's regression run is the
+  whole suite plus every row in scope, naming the rows nothing guards; the status page shows
+  guarded and unguarded rows per area. Decided by Fadi ("do all three as recommended").
+- **2026-10-28. Four ideas from a pasted repository review are taken, each cited** (TPL-98 to
+  TPL-101): a living `docs/contract.md` and `docs/ux.md` folded in at release, after OpenSpec's
+  delta specs and archive step (https://github.com/Fission-AI/OpenSpec, read 2026-10-28); rows
+  for an existing app written area by area, as Spec Kit's guide for existing projects advises
+  (https://github.github.com/spec-kit/guides/existing-projects.html, read 2026-10-28); sign-in,
+  payments, personal data, a new dependency or the database's shape always take the feature
+  track, with routing tests (the review's Proposal 4); and the sweep result on the status page
+  (its Proposal 5). The rest is in `p1-rejected.md`. Decided by Fadi ("do everything as
+  recommended").
 - **2026-10-28. Launch post drafts leave the repository and its history** (TPL-97). The seven
   files in `examples/template-launch/drafts/`, committed on 2026-10-14 in the launch plan, are
-  untracked, ignored, and removed from every commit with `git filter-repo`; `replies.md` and
-  `credit-notes.md` stay. Copies made before the rewrite (forks, clones, closed pull request 2)
+  untracked, ignored, and removed from every commit with `git filter-repo`; `credit-notes.md`
+  stays. Later the same day `replies.md` was untracked and ignored too, at Fadi's word; its
+  history was not rewritten. Copies made before the rewrite (forks, clones, closed pull request 2)
   may still hold them. Decided by Fadi.
 - **2026-10-28. The feature dry run's findings are fixed as it proposed** (TPL-82 to TPL-96,
   TPL-57), from `examples/feature-dry-run/results/2026-10-28-claude-code.md`. Where the run

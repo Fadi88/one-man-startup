@@ -15,7 +15,10 @@ before the first feature to `p1-open-questions.md`.
    original's own is copied (name, logo, images, text, code).
    If it is the founder's own existing app ("own"; `based_on` is its folder or repository),
    ask which way, with a recommendation:
-   - **copy:** keep its code and carry on here; run `skills/spec-audit/` on it (step 5);
+   - **copy:** keep its code and carry on here; run `skills/spec-audit/` on it (step 5). The
+     app is not specified up front: the first feature to touch an area writes that area's
+     rows from its code and tests, `M` where a test or run shows it, `U` otherwise (TPL-99;
+     Spec Kit's guide for existing projects says the same, https://github.github.com/spec-kit/guides/existing-projects.html);
    - **rebuild:** start the code fresh and use the old app only as a reference;
    - **borrow:** start fresh, but mine the old app's requirements: one
      `docs/work/<id>/candidates-<screen>.md` per screen, each candidate quoting where in the old

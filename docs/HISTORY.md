@@ -5,6 +5,14 @@ whole: grep for an id or a date.
 
 ## Changes
 
+- **2026-10-28.** TPL-102 to TPL-104: `req_check.py` reads the product's test folders
+  (`[stack] test_paths`), QA's spec-based regression run over the scope the orchestrator sets,
+  and tests per area on the status page.
+- **2026-10-28.** TPL-98 to TPL-101, from a pasted repository review: a living contract and
+  screen description folded in at release (after OpenSpec), rows for an existing app written
+  area by area (after Spec Kit's guide), the feature track for sign-in, payments, personal data,
+  new dependencies and schema changes with three routing tests, and the sweep result on the
+  status page; TPL-97: launch drafts removed from the repository and its history.
 - **2026-10-28.** TPL-82 to TPL-96, TPL-57: fixes from the feature dry run. The readiness gate
   has a design pass and a build pass, with `tools/checks/gate_check.py` guarding product code;
   setup always recommends researcher, feasibility and reviewer; the grilling asks the AI quality

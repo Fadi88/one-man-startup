@@ -21,7 +21,9 @@ reading direction, number and date formats) and `[stack] platform` (which platfo
 
 ## Design, in `docs/work/<id>/ux.md`
 
-Following `skills/frontend-design/`, and passing the gate in `skills/human-design/`:
+Following `skills/frontend-design/`, and passing the gate in `skills/human-design/`. Start
+from `docs/ux.md`, the screens as they are live, and say what this feature adds, changes and
+removes (TPL-98):
 
 - **The design system:** palette, type, spacing, components and the principles that make it fit
   this audience. One system across platforms, kept in `docs/design/brand.md` and referenced,
