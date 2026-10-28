@@ -39,6 +39,24 @@ whether they work when followed, so an honest FAIL is worth more than a forced P
 5. When the run finishes, score it against `rubric.md`, save the result under `results/`, and
    copy `docs/work/<id>/` and `dry-run/transcript.md` into `results/<date>-<tool>/`.
 
+## The regression re-run (TPL-108)
+
+A review that only reads the code just written lets a project drift as it grows. A week after a
+run, run the feature again in the same copy, so the receipt feature is the older feature:
+
+1. Bring the copy up to the template as it is now (`python tools/template_update.py`, every
+   file) and commit.
+2. Plant one regression in the receipt feature's code, in a change the second feature could
+   plausibly make: amounts parsed as fractional numbers instead of whole minor units, which
+   breaks RCPT-6. Commit it as part of the baseline and write it down only in the result file.
+3. Paste `prompt.md` again with the second request from `founder.md` ("let me add a note to a
+   receipt"), which touches the same code.
+4. Run it as an A/B test: do steps 1 to 3 in a second copy left on the template from before
+   TPL-105 (commit `669bb64`), with the same planted regression and request. Score both copies
+   against `rubric.md` as before, plus M21 and M22; the difference between A and B is what the
+   change bought. Compare the count of blocking
+   findings with the first run's, counted from both `review.md` files, and say what moved.
+
 ## Limits
 
 - One agent playing the project manager, every role and the founder cannot be independent of

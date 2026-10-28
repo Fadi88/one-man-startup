@@ -5,6 +5,12 @@ whole: grep for an id or a date.
 
 ## Changes
 
+- **2026-10-28.** TPL-105 to TPL-110, from a Reddit comment on the launch post: every review
+  round opens with a founder list (what a user would see, blocks launch or can wait), checked by
+  `tools/checks/review_check.py`; the orchestrator passes it on word for word; diff reviews check
+  the rows of earlier features; the feature dry run gains a regression re-run (experiment 4).
+  TPL-109, TPL-110: the sweep runs the product's whole test suite every round, and a row a
+  release shipped must stay `T` (`tools/checks/regression_check.py`).
 - **2026-10-28.** TPL-102 to TPL-104: `req_check.py` reads the product's test folders
   (`[stack] test_paths`), QA's spec-based regression run over the scope the orchestrator sets,
   and tests per area on the status page.

@@ -95,3 +95,10 @@ using after a week. And if it gets the category wrong all the time, I'll give up
   think it's right, keep it."
 - When asked to switch on more helpers for the team: "I don't know, what do you recommend?"
   (accept).
+
+## The second request, for the regression re-run only (TPL-108)
+
+- The request: "Can I add a short note to a receipt, like who I was with?"
+- Notes: up to 200 characters, plain text, shown under the category, editable and deletable
+  with the receipt. Not searched, not sent to the AI.
+- When asked anything about amounts, currencies or categories: "Keep those exactly as they are."

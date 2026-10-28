@@ -12,6 +12,17 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-28. Reviews end in a plain list for the founder, and every diff review checks older
+  features** (TPL-105 to TPL-110). From a Reddit comment on the launch post: the blocking
+  findings show where the real work sits, so a non-technical founder should get one line per
+  issue, what a user would see go wrong and whether it blocks launch or can wait; and a reviewer
+  that only checks what was just written lets the project drift. Each review round now opens
+  with that list, checked by `tools/checks/review_check.py`; the reviewer runs the tests of the
+  earlier rows a diff touches; the feature dry run gains a re-run with a planted regression,
+  registered as experiment 4. Decided by Fadi ("try to bake it in the pipeline and workflow").
+  Fadi added that older features must be guarded mainly by spec-based tests, not by review
+  (TPL-109, TPL-110): the sweep runs the product's whole suite every round, and a row a release
+  shipped must stay `T`.
 - **2026-10-28. Testing is spec based, with a stated regression run, and the orchestrator sets
   the scope** (TPL-102 to TPL-104). Tests name the rows they assert and QA works from the rows;
   `req_check.py` finds those tests in `[stack] test_paths` (before this, a product's own tests

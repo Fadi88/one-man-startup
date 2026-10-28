@@ -71,3 +71,7 @@ long that takes, then ask.
 Specs, summaries, QA and legal reports, the dashboard, release notes: write the parts the
 founder must read or decide on at their level, and put the technical detail other agents need
 in a separate section headed for them.
+
+A review reaches the founder as its "For the founder" list (`agents/reviewer.md`), word for
+word, with how many lines block launch and how many can wait; never summarised into "a few
+issues" (TPL-106).
