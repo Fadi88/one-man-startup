@@ -2,6 +2,9 @@
 
 Each `### N. title` entry in docs/EXPERIMENTS.md must carry a Hypothesis, a
 Prediction, a "Wrong if" and a Read date. An empty file passes and says so.
+
+TPL-111: an A/B entry (one with **Arms:**) also carries its **Assignment:**, its
+**Sample:** from tools/ab_size.py and its **Guardrails:**.
 """
 from __future__ import annotations
 
@@ -17,12 +20,21 @@ if not f.exists():
 text = f.read_text(encoding="utf-8")
 entries = re.split(r"^### ", text, flags=re.M)[1:]
 NEEDED = ["**Hypothesis:**", "**Prediction:**", "**Wrong if:**", "**Read:**"]
+AB = ["**Assignment:**", "**Sample:**", "**Guardrails:**"]
 fails = 0
 for e in entries:
     title = e.splitlines()[0].strip()
     for field in NEEDED:
         if field not in e:
             print(f"FAIL  TPL-11 experiment {title!r} has no {field}")
+            fails += 1
+    if "**Arms:**" in e:
+        for field in AB:
+            if field not in e:
+                print(f"FAIL  TPL-111 A/B experiment {title!r} has no {field}")
+                fails += 1
+        if "ab_size.py" not in e:
+            print(f"FAIL  TPL-111 A/B experiment {title!r} does not say its sample came from tools/ab_size.py")
             fails += 1
 print(f"PASS  read {len(entries)} experiment entries, each fully registered" if not fails else "")
 sys.exit(1 if fails else 0)

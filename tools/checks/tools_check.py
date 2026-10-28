@@ -6,6 +6,8 @@ here, so the sweep needs no browser.
 
 TPL-94: tools/link_check.py lets through a URL whose line notes "(returned 404 on YYYY-MM-DD)",
 and still checks a URL that is cited elsewhere without the note. No network is used.
+
+TPL-112: tools/ab_size.py gives the hand-worked sample size, ratio-mismatch and read values.
 """
 from __future__ import annotations
 
@@ -76,9 +78,13 @@ if noted != ["https://gone.example.org/rule"]:
 if to_check != ["https://bad.example.org/x", "https://live.example.org/page", "https://twice.example.org/a"]:
     fails.append(f"FAIL  TPL-94 link_check would check {to_check!r}")
 
+# TPL-112
+fails += load("ab_size").selftest()
+
 for f in fails:
     print(f)
 if not fails:
     print(f"PASS  TPL-92 render flags parse ({len(cases)} cases, 4 refused), "
-          "TPL-94 a noted 404 is let through and an un-noted one is still checked")
+          "TPL-94 a noted 404 is let through and an un-noted one is still checked, "
+          "TPL-112 the A/B numbers match their worked samples")
 sys.exit(1 if fails else 0)

@@ -83,8 +83,9 @@ Bets, growth ideas and workflow changes, each written before it starts
 - **Wrong if:** the sweep stays green with the regression in place (the suite did not run, or
   RCPT-6's test does not assert what the row says), or the regression reaches `qa` unflagged.
   Then the spec tests are not the guard the rows claim, and that is fixed before anything else.
-- **Design:** A/B. Copy A stays on the template from before TPL-105 (commit `669bb64`), copy B
-  takes the current one; both get the same planted regression and the same second request.
+- **Design:** old against new. One copy stays on the template from before TPL-105 (commit
+  `669bb64`), the other takes the current one; both get the same planted regression and the
+  same second request.
 - **Confounds:** whoever plants the regression knows where it is; one agent playing every role
   may carry that knowledge into the review (the README's first limit). The template changes made
   in the week also change the first feature's track.

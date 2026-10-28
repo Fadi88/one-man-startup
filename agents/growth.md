@@ -36,7 +36,8 @@ ceiling (playbook section 2). The founder sets the numbers; you bring the cost p
 
 Write it in `docs/EXPERIMENTS.md` (`skills/experiment/`) before it runs: the hypothesis, the
 number that would prove it, the date it is read, and what result would make it wrong. No
-"let's see how it goes".
+"let's see how it goes". Where users can be split and enough arrive, it is an A/B test on a
+random sample, sized by `tools/ab_size.py` before it starts (`skills/experiment/`).
 
 ## Never
 

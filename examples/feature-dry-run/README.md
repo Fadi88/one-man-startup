@@ -51,10 +51,10 @@ run, run the feature again in the same copy, so the receipt feature is the older
    breaks RCPT-6. Commit it as part of the baseline and write it down only in the result file.
 3. Paste `prompt.md` again with the second request from `founder.md` ("let me add a note to a
    receipt"), which touches the same code.
-4. Run it as an A/B test: do steps 1 to 3 in a second copy left on the template from before
-   TPL-105 (commit `669bb64`), with the same planted regression and request. Score both copies
-   against `rubric.md` as before, plus M21 and M22; the difference between A and B is what the
-   change bought. Compare the count of blocking
+4. Do steps 1 to 3 in a second copy left on the template from before TPL-105 (commit
+   `669bb64`), with the same planted regression and request. Score both copies against
+   `rubric.md` as before, plus M21 and M22; the difference between the old and new template is
+   what the change bought. Compare the count of blocking
    findings with the first run's, counted from both `review.md` files, and say what moved.
 
 ## Limits

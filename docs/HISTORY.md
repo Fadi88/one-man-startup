@@ -5,6 +5,9 @@ whole: grep for an id or a date.
 
 ## Changes
 
+- **2026-10-28.** TPL-111, TPL-112: A/B testing on a random sample in `skills/experiment/` and
+  `growth`, sized and read with `tools/ab_size.py`; A/B entries checked for their design. The
+  dry run's old-against-new template comparison (TPL-108) is no longer called A/B.
 - **2026-10-28.** TPL-105 to TPL-110, from a Reddit comment on the launch post: every review
   round opens with a founder list (what a user would see, blocks launch or can wait), checked by
   `tools/checks/review_check.py`; the orchestrator passes it on word for word; diff reviews check

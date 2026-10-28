@@ -12,6 +12,10 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-28. A/B testing on a random sample is the template's method for changes users see**
+  (TPL-111, TPL-112), when enough users arrive to reach the size `tools/ab_size.py` computes;
+  otherwise before and after, said to be weaker. Decided by Fadi ("add A/B testing as suggested
+  strategy ... in the workflow in the template itself").
 - **2026-10-28. Reviews end in a plain list for the founder, and every diff review checks older
   features** (TPL-105 to TPL-110). From a Reddit comment on the launch post: the blocking
   findings show where the real work sits, so a non-technical founder should get one line per
