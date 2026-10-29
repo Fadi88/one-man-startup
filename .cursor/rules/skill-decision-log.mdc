@@ -9,8 +9,10 @@ alwaysApply: false
 
 Three files in `docs/requirements/`:
 
-- **`p1-open-questions.md`:** what is waiting on the founder. Each entry: the question, the
-  options, your recommendation, what it blocks, the date raised.
+- **`p1-open-questions.md`:** what is waiting on the founder. Each entry: the question and the
+  date raised, then the decision card (`skills/founder-voice/`) as indented lines: Recommendation,
+  Could go wrong, Undo, Blocks, and two `Reply:` lines; `tools/checks/card_check.py` refuses an
+  entry without them (TPL-114).
 - **`p1-closed-decisions.md`:** what was decided. Each entry: date, decision, reason, who
   decided, what would make it worth reopening.
 - **`p1-rejected.md`:** proposals the founder turned down, with why, recorded the day they are

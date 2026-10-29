@@ -23,6 +23,10 @@ alwaysApply: false
 ## The hand-back (agent to orchestrator)
 
 - **Status:** done, blocked, or done with gaps.
+- **Where:** the folder, branch and commit the work is in, from `git rev-parse --show-toplevel`,
+  `git branch --show-current` and `git rev-parse --short HEAD` run at hand-back, and for anything
+  running (a preview, the live site) which version it is serving. The orchestrator compares them
+  with its own; a hand-back whose folder, branch or running version differs is not done (TPL-115).
 - **Artifacts:** paths only.
 - **Summary:** three lines at most.
 - **Verified:** what was run and what it said.

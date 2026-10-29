@@ -5,6 +5,11 @@ whole: grep for an id or a date.
 
 ## Changes
 
+- **2026-10-29.** TPL-113 to TPL-116, from a Reddit comment on the launch post: every decision
+  put to the founder is a card with a recommendation, what could go wrong, how to undo it and two
+  replies to copy (`skills/founder-voice/`), and open questions are checked for it by
+  `tools/checks/card_check.py`; a hand-back names its folder, branch, commit and running version
+  (`skills/handoff/`); a "done" report ends with one thing the founder can check themselves.
 - **2026-10-28.** TPL-111, TPL-112: A/B testing on a random sample in `skills/experiment/` and
   `growth`, sized and read with `tools/ab_size.py`; A/B entries checked for their design. The
   dry run's old-against-new template comparison (TPL-108) is no longer called A/B.

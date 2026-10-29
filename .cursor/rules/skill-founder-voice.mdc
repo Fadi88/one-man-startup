@@ -61,10 +61,17 @@ When there is no plain word, explain the idea in one sentence and drop the term.
 Say what will happen, what it changes for users or money, whether it can be undone and how
 long that takes, then ask.
 
-- `non-technical`: "Ready to put the new sign-up page live. If anything looks wrong, I can put
-  the old one back in about two minutes. Go ahead?"
-- `basics`: "Ready to deploy the new sign-up page. Rollback is about two minutes. Go?"
-- `technical`: "Deploy v1.4 to production? Rollback is redeploying v1.3, about two minutes."
+Every decision the founder is asked for, in chat or in `p1-open-questions.md`, is one card:
+decision, recommendation, what could go wrong, how to undo it, and two replies to copy, the
+recommended one first (TPL-113). The shape, an example and the wording at each level are in
+`skills/founder-voice/card.md`.
+
+## Saying something is done
+
+A report that something is done, fixed or live ends with one thing the founder can check
+themselves in under a minute, without reading code (TPL-116): "Open yourapp.com/signup on your
+phone: the new page has the green button." Or: "Open the sheet: row 14 has today's orders." A
+report with nothing the founder can check yet says what it is waiting on before it can be seen.
 
 ## Documents the founder reads
 

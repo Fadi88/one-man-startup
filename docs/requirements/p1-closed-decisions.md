@@ -12,6 +12,15 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-29. Decisions reach the founder as a card with two replies to copy; "done" names
+  where and gives the founder one thing to check** (TPL-113 to TPL-116). From a Reddit comment on
+  the launch post by a non-technical founder: agents said "done" while their notes pointed at a
+  different folder and branch than the one running, and a confident summary is the most dangerous
+  thing for someone who cannot read code. Every question is a card (decision, recommendation,
+  what could go wrong, how to undo it, two replies), checked in `p1-open-questions.md` by
+  `tools/checks/card_check.py`; every hand-back names folder, branch, commit and running version;
+  every "done" ends with one thing the founder can check. Decided by Fadi ("about giving options
+  in this format, add this part").
 - **2026-10-28. A/B testing on a random sample is the template's method for changes users see**
   (TPL-111, TPL-112), when enough users arrive to reach the size `tools/ab_size.py` computes;
   otherwise before and after, said to be weaker. Decided by Fadi ("add A/B testing as suggested
