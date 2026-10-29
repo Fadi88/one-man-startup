@@ -5,6 +5,8 @@ whole: grep for an id or a date.
 
 ## Changes
 
+- **2026-10-29.** Experiment 1 (repo page) closed as mixed: 77 visitors in 14 days, 2 from
+  github.com, the launch post inside the window; moved to `docs/EXPERIMENTS_CLOSED.md`.
 - **2026-10-29.** TPL-113 to TPL-116, from a Reddit comment on the launch post: every decision
   put to the founder is a card with a recommendation, what could go wrong, how to undo it and two
   replies to copy (`skills/founder-voice/`), and open questions are checked for it by
