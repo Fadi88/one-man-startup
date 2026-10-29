@@ -5,6 +5,9 @@ whole: grep for an id or a date.
 
 ## Changes
 
+- **2026-10-29.** TPL-117, TPL-118: tailoring. The orchestrator logs signs of the founder's
+  taste in `docs/requirements/p1-tailoring.md` and, seen twice, offers one as a standing rule on
+  a decision card (`skills/tailoring/`); the README says so.
 - **2026-10-29.** Experiment 1 (repo page) closed as mixed: 77 visitors in 14 days, 2 from
   github.com, the launch post inside the window; moved to `docs/EXPERIMENTS_CLOSED.md`.
 - **2026-10-29.** TPL-113 to TPL-116, from a Reddit comment on the launch post: every decision

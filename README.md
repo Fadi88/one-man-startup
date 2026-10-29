@@ -142,6 +142,11 @@ model without a new release. Every change asks you to confirm, is logged, and ca
 waste, such as an agent using a stronger model than its job needs, and suggests savings. You
 approve each one.
 
+**It learns your taste.** When you correct something the same way twice, or say "always" or
+"never", the project manager offers to make it a standing rule, with what it would change and
+how to undo it. Say yes and every agent follows it from then on; say no and it is recorded,
+and only asked again if you show the same preference again.
+
 **You can stop any time.** Everything the agents make is ordinary code and documents in your own
 GitHub repository. Nothing is locked into this template or any one AI tool.
 

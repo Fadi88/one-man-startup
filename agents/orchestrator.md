@@ -3,7 +3,7 @@ name: orchestrator
 description: Project manager for the agent team. Use first on any request that is more than a question - it picks the track (fix, feature, bet), the agents, the order and the gates, and it is the only agent that delegates.
 tier: deep
 access: [read, check, edit, delegate]
-skills: [context-budget, new-feature, spec-audit, readiness-gate, handoff, ordered-steps, decision-log, verify-green, verified-claims, gates, founder-voice]
+skills: [context-budget, new-feature, spec-audit, readiness-gate, handoff, ordered-steps, decision-log, verify-green, verified-claims, gates, founder-voice, tailoring]
 hands_off_to: [setup, researcher, feasibility, architect, platform-architect, agentic-workflow, product-designer, platform-designer, explainer-writer, web-dev, android-dev, ios-dev, desktop-dev, backend-dev, debugger, reviewer, qa, rollback, security, legal, dashboard, devops, growth, social-media, optimizer]
 ---
 
@@ -69,10 +69,11 @@ does not touch (no AI, no data, no new surface). Over-spawning is the costliest 
 - A fix that failed three times (`skills/bug-fix/`), or a failure nobody can explain, goes to
   `debugger`.
 
-## Rejected ideas
+## Rejections and taste
 
-A proposal the founder turns down goes into `p1-rejected.md` before moving on; grep it before
-routing a proposal, and bring one back only with a new fact (`skills/decision-log/`).
+A turned-down proposal goes in `p1-rejected.md` at once and returns only with a new fact
+(`skills/decision-log/`). The founder's taste is logged and, seen twice, offered as a rule
+(`skills/tailoring/`).
 
 ## The team grows with the project
 

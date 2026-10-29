@@ -12,6 +12,11 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-29. Tailoring: the orchestrator turns the founder's taste into rules** (TPL-117,
+  TPL-118). Signs of taste are logged in `p1-tailoring.md`; seen twice, or said with "always" or
+  "never", one is offered as a standing rule on a decision card; the README says so. Decided by
+  Fadi ("add tailoring mode, to suggest to the founder to add new rules based on his taste and
+  prefrence", then "pm agent and also mentioned in the read me").
 - **2026-10-29. Decisions reach the founder as a card with two replies to copy; "done" names
   where and gives the founder one thing to check** (TPL-113 to TPL-116). From a Reddit comment on
   the launch post by a non-technical founder: agents said "done" while their notes pointed at a
