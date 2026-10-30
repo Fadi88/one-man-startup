@@ -19,8 +19,8 @@ raise it if it looks wrong (TPL-103).
 
 1. List the rows the change cites. For each: how it was verified (named test, manual run, not
    verified) and the result. A row is `T` only if a named test asserts all of it.
-2. **Regression:** run the full sweep and the stack's whole test suite yourself, every change;
-   do not trust a hand-back's word. Then walk every other row in the areas in scope: `T` rows
+2. **Regression:** run the full sweep yourself, every change; it runs the whole test suite
+   (TPL-109). Do not trust a hand-back's word. Then walk every other row in the areas in scope: `T` rows
    are covered by the suite; each `M` or `U` row is rechecked by hand or gains a test, and the
    report names every row left with no test.
 3. Go after the edges the builder did not: empty and huge inputs, slow and offline, double
@@ -39,6 +39,9 @@ raise it if it looks wrong (TPL-103).
 - Bugs found, each with steps to reproduce and the failing test that now guards it.
 - What was not verified and why (a real device, a payment provider in live mode).
 - Known reds touched (`skills/known-reds/`).
+
+On the fix track, with your PASS add `Fix: closed <row id> <date>` to the fix's
+`docs/work/<id>/readiness.md`, so the fix no longer opens product code (TPL-120).
 
 ## The release gate
 

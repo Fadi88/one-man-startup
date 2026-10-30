@@ -1,10 +1,11 @@
-"""TPL-1 to TPL-5, TPL-41, TPL-42, TPL-57, TPL-76, TPL-97: the agents, skills and roster are well formed, wired up and small.
+"""TPL-1 to TPL-5, TPL-41, TPL-42, TPL-122, TPL-123, TPL-57, TPL-76, TPL-97: the agents, skills and roster are well formed, wired up and small.
 
 Agent and skill files with bad frontmatter are skipped silently by some tools,
 so a broken file can vanish without anyone noticing. This check makes it loud.
 """
 from __future__ import annotations
 
+import json
 import re
 import sys
 import tomllib
@@ -121,9 +122,28 @@ for cmd, want in [("python tools/link_check.py docs/legal/regions/*.md", True),
                   ("python tools/render_mockups.py --text-scale 1.5; git push", False),
                   ("python tools/render_mockups.py --out C:/x", False),
                   ("python tools/render_mockups.py --text-scale", False),
-                  ("python tools/link_check.py ../outside.md", False)]:
+                  ("python tools/link_check.py ../outside.md", False),
+                  ("python tools/ab_size.py size --base 0.10 --target 0.12", True),
+                  ("python tools/status_report.py", True), ("python tools/status_report.py --html", True),
+                  ("python tools/status_report.py --html C:/Windows/x.html", False),
+                  ("python tools/template_update.py", True),
+                  ("python tools/template_update.py --apply AGENTS.md", False),
+                  ("python tools/run_evals.py", False)]:
     if check_only.allowed(cmd) != want:
         fail(f"TPL-42 check_only {'blocks' if want else 'lets through'} {cmd!r}")
+
+# TPL-122: every tool command a check-only agent's own file or skills tell it to run gets through
+# the hook, so an instruction and the hook never contradict each other. Placeholders such as
+# <files> stand for a plain argument.
+for name, fm in agents.items():
+    if "check" not in fm["access"] or "run" in fm["access"]:
+        continue
+    sources = [f"agents/{name}.md"] + [f"skills/{s}/SKILL.md" for s in fm["skills"] if s in skills]
+    for src in sources:
+        for cmd in re.findall(r"`((?:python3?|py) tools/[^`]+)`", (ROOT / src).read_text(encoding="utf-8")):
+            plain = re.sub(r"<[^>]+>", "x", " ".join(cmd.split()))
+            if not check_only.allowed(plain):
+                fail(f"TPL-122 {src} tells {name} (check access) to run `{plain}`, which the hook blocks")
 
 # TPL-97: the launch post drafts are never tracked.
 import subprocess
@@ -163,6 +183,19 @@ if cfg.get("publish", {}).get("enabled") is not True:
             fail(f"TPL-43 .github/workflows/{wf.name} publishes or deploys, but project.toml [publish] enabled is not true")
 if cfg.get("gates", {}).get("level") not in {"strict", "standard", "light"}:
     fail("TPL-4 project.toml [gates] level must be strict, standard or light")
+
+# TPL-123: Claude Code asks the founder before the commands that delete, merge, publish or deploy
+# (constitution rule 2). The project may add to the list, never drop one of these.
+ASK = ["Bash(git push", "Bash(git merge", "Bash(git reset --hard", "Bash(rm -rf", "Bash(rm -fr", "Bash(rm -r",
+       "Bash(git clean", "Bash(git branch -D", "Bash(gh pr merge", "Bash(gh release", "Bash(gh repo delete",
+       "Bash(npm publish", "Bash(docker push", "Bash(vercel", "Bash(netlify deploy", "Bash(fly deploy",
+       "Bash(firebase deploy", "Bash(supabase db push", "PowerShell(Remove-Item", "PowerShell(git push",
+       "PowerShell(git merge", "PowerShell(git reset --hard", "PowerShell(git clean", "PowerShell(gh pr merge"]
+settings = ROOT / ".claude" / "settings.json"
+ask = json.loads(settings.read_text(encoding="utf-8")).get("permissions", {}).get("ask", []) if settings.exists() else []
+for rule in ASK:
+    if not any(a.startswith(rule + " ") or a.startswith(rule + ":") for a in ask):
+        fail(f"TPL-123 .claude/settings.json does not ask before {rule[rule.index('(') + 1:]} commands")
 
 if not fails:
     print(f"PASS  {len(agents)} agents and {len(skills)} skills are well formed, wired up and within budget")

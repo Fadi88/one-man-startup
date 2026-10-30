@@ -24,6 +24,8 @@ def size(base: float, target: float, alpha: float = 0.05, power: float = 0.8) ->
     """Users needed in each arm to tell `base` from `target`."""
     if not (0 < base < 1 and 0 < target < 1) or base == target:
         raise ValueError("base and target must differ and lie between 0 and 1")
+    if not (0 < alpha < 1 and 0 < power < 1):
+        raise ValueError("alpha and power must lie between 0 and 1")
     z = Z.inv_cdf(1 - alpha / 2) + Z.inv_cdf(power)
     var = base * (1 - base) + target * (1 - target)
     return math.ceil(z * z * var / (base - target) ** 2)
@@ -31,6 +33,8 @@ def size(base: float, target: float, alpha: float = 0.05, power: float = 0.8) ->
 
 def srm(a: int, b: int, share_a: float = 0.5) -> float:
     """p-value that counts a and b came from the planned split (chi-square, one degree of freedom)."""
+    if a < 0 or b < 0 or a + b == 0 or not 0 < share_a < 1:
+        raise ValueError("counts must be zero or more, not both zero, and share-a between 0 and 1")
     n = a + b
     ea, eb = n * share_a, n * (1 - share_a)
     chi2 = (a - ea) ** 2 / ea + (b - eb) ** 2 / eb
@@ -39,6 +43,8 @@ def srm(a: int, b: int, share_a: float = 0.5) -> float:
 
 def read(a_users: int, a_hits: int, b_users: int, b_hits: int) -> tuple[float, float, float]:
     """Rates of A and B, and the two-sided p-value of the difference (pooled z-test)."""
+    if a_users <= 0 or b_users <= 0 or not (0 <= a_hits <= a_users and 0 <= b_hits <= b_users):
+        raise ValueError("each arm needs users, and its hits must lie between 0 and its users")
     pa, pb = a_hits / a_users, b_hits / b_users
     pool = (a_hits + b_hits) / (a_users + b_users)
     se = math.sqrt(pool * (1 - pool) * (1 / a_users + 1 / b_users))
@@ -57,6 +63,9 @@ SAMPLES = [
     (lambda: srm(5050, 4950) > 0.001, True),
     (lambda: read(1000, 100, 1000, 100)[2], 1.0),
 ]
+# Inputs that have no answer are refused with a sentence, not a traceback.
+REFUSED = [lambda: size(0.1, 0.12, power=1), lambda: srm(0, 0), lambda: read(0, 0, 10, 1),
+           lambda: read(10, 11, 10, 1)]
 
 
 def selftest() -> list[str]:
@@ -65,7 +74,19 @@ def selftest() -> list[str]:
         got = f()
         if got != want:
             fails.append(f"FAIL  TPL-112 self-test sample {i}: got {got}, wanted {want}")
+    for i, f in enumerate(REFUSED):
+        if not refuses(f):
+            fails.append(f"FAIL  TPL-112 self-test: impossible input {i} was not refused")
     return fails
+
+
+def refuses(f) -> bool:
+    """True when f raises the ValueError that names an impossible input."""
+    try:
+        f()
+    except ValueError as e:
+        return bool(str(e))
+    return False
 
 
 def main() -> int:
@@ -85,6 +106,14 @@ def main() -> int:
         r.add_argument(f"--{k}", type=int, required=True)
     sub.add_parser("selftest")
     a = ap.parse_args()
+    try:
+        return command(a)
+    except ValueError as e:
+        print(f"Cannot compute: {e}.", file=sys.stderr)
+        return 2
+
+
+def command(a: argparse.Namespace) -> int:
     if a.cmd == "size":
         n = size(a.base, a.target, a.alpha, a.power)
         print(f"{n} users per arm, {2 * n} in all (base {a.base}, target {a.target}, "

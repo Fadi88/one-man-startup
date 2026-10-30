@@ -1,4 +1,4 @@
-"""TPL-69: the floor. The diff against HEAD adds no suppression, no empty catch, no skipped or
+"""TPL-69: the floor. The diff against HEAD (in CI, against the base commit, TPL-121) adds no suppression, no empty catch, no skipped or
 deleted test, and no secret.
 
 A rule that "the reviewer watches for" is a wish; this makes the four floor rules a check. It
@@ -14,6 +14,9 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools" / "lib"))
+from diff_base import base
 
 ROOT = Path(__file__).resolve().parents[2]
 SELF = Path(__file__).resolve()
@@ -116,10 +119,10 @@ def git(*args: str) -> str:
 
 
 def changed() -> dict[str, tuple[list[str], list[str]]]:
-    """Added and removed lines per file: the diff against HEAD plus every untracked file."""
+    """Added and removed lines per file: the diff against the base plus every untracked file."""
     files: dict[str, tuple[list[str], list[str]]] = {}
     cur = None
-    for line in git("diff", "HEAD", "-U0", "--no-color", "--").splitlines():
+    for line in git("diff", base(), "-U0", "--no-color", "--").splitlines():
         if line.startswith("+++ b/"):
             cur = line[6:]
             files.setdefault(cur, ([], []))

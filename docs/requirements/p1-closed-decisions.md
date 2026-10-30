@@ -12,6 +12,25 @@ decision, reason, who decided, what would make it worth reopening.
 Decisions taken while building the template. They explain why the template's files say what
 they say. Setup removes this section from a new project (`tools/clean_template.py`).
 
+- **2026-10-30. Fixes from two independent deep reviews (Opus and Fable), every proposal taken
+  as recommended** (TPL-11, TPL-13, TPL-100, TPL-105, TPL-107, TPL-109, TPL-110, TPL-119 to
+  TPL-123). Bugs: a new project's "none yet" test command ran as a command and blocked its first
+  commit; the sweep crashed on a non-English failing line on Windows; malformed known reds could
+  silence every red; one accepted failing test hid later ones; shipped-row ranges and the review
+  format were read too narrowly; experiment read dates and A/B sample sizes were typed and never
+  checked. Decisions: the build pass closes at release and the fix track opens with a
+  `Fix: open` line; CI compares with the base commit; the check-only hook lets through the
+  report tools agents are told to run; the founder never edits the known-red file; light-level
+  projects cite one row per prototype area; only setup, the first developer and the template
+  update write `project.toml`; Claude Code asks before more delete, merge, publish and deploy
+  commands; jargon in a founder list is refused for a non-technical founder. Decided by Fadi
+  (batches 1 and 2, "decisions as recommended").
+- **2026-10-30. Four practices from similar projects** (TPL-124 to TPL-127): a retrospective with
+  a verdict after each release (BMAD-METHOD), new rows as "When ..., the product ..." (Kiro's
+  EARS), bug fixes that write current, expected and unchanged behaviour (Kiro's bugfix specs),
+  and a `Next:` line with a prose "where we left off" in each status.md (Cline's memory bank).
+  Each source read 2026-10-30 and cited where it is used. Decided by Fadi (batch 3).
+
 - **2026-10-29. Tailoring: the orchestrator turns the founder's taste into rules** (TPL-117,
   TPL-118). Signs of taste are logged in `p1-tailoring.md`; seen twice, or said with "always" or
   "never", one is offered as a standing rule on a decision card; the README says so. Decided by

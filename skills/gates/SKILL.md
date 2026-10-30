@@ -21,7 +21,7 @@ words, not in your own; a level is what this file says it is.
 
 | | strict | standard | light |
 |---|---|---|---|
-| Requirement row before a change | always, new or cited | always for features; a copy or style fix may skip it, noted in `docs/HISTORY.md` | optional |
+| Requirement row before a change | always, new or cited | always for features; a copy or style fix cites the row of the screen it touches | one row per prototype area, cited in every commit; detail optional |
 | Grilling and readiness gate | every feature | every feature | none |
 | Spec audit (`skills/spec-audit/`) | every feature | features touching existing code | none |
 | Security and legal review | every feature touching data, money, AI output or claims | only where the feature's spec flags them | before any real user or real data |

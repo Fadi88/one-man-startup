@@ -72,9 +72,9 @@ are switched on is `project.toml [team] enabled`, decided at setup.
 
 The orchestrator picks one and says which:
 
-- **Fix** (a bug, a typo, a one-file change): requirement row amended or cited, then dev, then
-  reviewer, then qa. A bug fix starts with a test that fails (`skills/bug-fix/`); after three
-  failed fixes, `debugger` finds the cause.
+- **Fix** (a bug, a typo, a one-file change): requirement row amended or cited, a `Fix: open`
+  line (`skills/readiness-gate/`), then dev, then reviewer, then qa. A bug fix starts with a
+  test that fails (`skills/bug-fix/`); after three failed fixes, `debugger` finds the cause.
 - **Feature** (anything a user would notice, and anything that touches sign-in, payments,
   personal data, a new dependency or the database's shape, however small it sounds): `skills/new-feature/`. `researcher` maps what
   similar products do, the founder is grilled (`skills/grilling/`) with those findings as
@@ -88,8 +88,9 @@ The orchestrator picks one and says which:
 ## Where things are
 
 - `docs/TEAM.md`: every agent and its job.
-- `project.toml`: the founder's answers. Written by setup only. `[gates] level` means what
-  `skills/gates/SKILL.md` says.
+- `project.toml`: the founder's answers. Written by setup; besides it, only the first developer
+  fills the `[stack]` test and build commands, and `tools/template_update.py` its `[template]`
+  commit. `[gates] level` means what `skills/gates/SKILL.md` says.
 - `docs/REQUIREMENTS.md`: the index of the requirement files, not the spec itself.
 - `docs/requirements/p1-*.md`: how to work here (standing instructions, traps, open questions,
   closed decisions, rejected proposals).

@@ -72,4 +72,5 @@ Run the design pass of `skills/readiness-gate/`. When it opens, the orchestrator
 a new surface), `product-designer` (the design for every platform), and `legal` or `security`
 where step 3 pulled them in, with `reviewer` on each design. Then run the build pass. When it
 opens, route `web-dev`, `android-dev`, `ios-dev`, `desktop-dev` (each app the product has) and
-`backend-dev` against the contract, `reviewer` on each diff, then `qa`.
+`backend-dev` against the contract, `reviewer` on each diff, then `qa`. The feature closes with
+the release and its retrospective (`skills/release/`).

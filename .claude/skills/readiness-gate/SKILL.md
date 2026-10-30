@@ -16,7 +16,12 @@ The gate has two passes, because lines 5 to 7 are the architect's own output (TP
 Report each line as met or not met, with the file that shows it, in
 `docs/work/<id>/readiness.md`. One "not met" keeps that pass shut. When the build pass opens,
 the file gets the line `Build pass: open` with the date; until then
-`tools/checks/gate_check.py` fails any change to product code.
+`tools/checks/gate_check.py` fails any change to product code. The release adds
+`Build pass: closed <date>`, so a shipped feature does not open the gate for later work.
+
+The fix track has no readiness gate. The orchestrator writes `Fix: open <row id> <date>` in
+the fix's `docs/work/<id>/readiness.md` when it routes the fix, and `qa` adds
+`Fix: closed <row id> <date>` with its PASS (TPL-120). At `[gates] level` light the check skips.
 
 1. `docs/work/<id>/spec.md` exists and the founder confirmed it (the date is in `status.md`).
 2. Every behaviour in the spec has a requirement row, and every row cites a testable outcome.

@@ -9,12 +9,18 @@ Exit codes:
   1  anything else: a new red, an overdue recheck, or a broken check
 
 Known reds are matched by the failing line, not the file, so a second,
-different failure in the same check still shows up as NEW RED.
+different failure in the same check still shows up as NEW RED. A register entry that is
+malformed (a missing key, a `fails` that is not a whole FAIL line, a date that is not a date)
+makes the sweep BROKEN, since an empty `fails` would silence every red in its check (TPL-13).
+
+Checks run with UTF-8 output whatever the system code page, so a FAIL line in Arabic or with an
+accent cannot crash the sweep, and each check has a time limit, so a hung one cannot hang it.
 """
 from __future__ import annotations
 
 import datetime as dt
 import json
+import os
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor
@@ -23,6 +29,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CHECKS = ROOT / "tools" / "checks"
 KNOWN = ROOT / "tools" / "known_red.json"
+# Longer than the product suite's own limit in regression_check.py.
+TIMEOUT = 2400
+KEYS = ("check", "fails", "reason", "decided_by", "decided_on", "recheck")
 
 
 def discover() -> list[Path]:
@@ -39,17 +48,53 @@ def discover() -> list[Path]:
     return found
 
 
+def register_problems(known: object) -> list[str]:
+    """Every way the known-red register is malformed. Pure, so runall_check can sample it."""
+    if not isinstance(known, list):
+        return ["tools/known_red.json is not a list"]
+    out = []
+    for i, k in enumerate(known):
+        if not isinstance(k, dict):
+            out.append(f"entry {i} is not an object")
+            continue
+        missing = [key for key in KEYS if key not in k]
+        if missing:
+            out.append(f"entry {i} has no {', '.join(missing)}")
+            continue
+        if not isinstance(k["fails"], str) or not k["fails"].startswith("FAIL") or len(k["fails"].strip()) < 10:
+            out.append(f"entry {i}: fails must be a whole FAIL line, not {k['fails']!r}")
+        for key in ("decided_on", "recheck"):
+            if key == "recheck" and k[key] is None:
+                continue
+            try:
+                dt.date.fromisoformat(str(k[key]))
+            except ValueError:
+                out.append(f"entry {i}: {key} {k[key]!r} is not a date like 2026-04-01")
+    return out
+
+
 def run(check: Path) -> tuple[Path, int, str, float]:
     start = dt.datetime.now()
-    proc = subprocess.run(
-        [sys.executable, str(check)], cwd=ROOT, capture_output=True, text=True, encoding="utf-8"
-    )
+    env = {**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"}
+    try:
+        proc = subprocess.run([sys.executable, str(check)], cwd=ROOT, capture_output=True, text=True,
+                              encoding="utf-8", errors="replace", env=env, timeout=TIMEOUT)
+        code, out = proc.returncode, proc.stdout + proc.stderr
+    except subprocess.TimeoutExpired:
+        code, out = 1, f"FAIL  {check.name} ran past {TIMEOUT} seconds and was stopped"
     secs = (dt.datetime.now() - start).total_seconds()
-    return check, proc.returncode, proc.stdout + proc.stderr, secs
+    return check, code, out, secs
 
 
 def main() -> int:
+    # A terminal on a narrow code page shows '?' for what it cannot draw rather than crashing.
+    sys.stdout.reconfigure(errors="replace")
     known = json.loads(KNOWN.read_text(encoding="utf-8")) if KNOWN.exists() else []
+    bad = register_problems(known)
+    if bad:
+        for b in bad:
+            print(f"BROKEN  TPL-13 tools/known_red.json {b}")
+        return 1
     checks = discover()
     if not checks:
         print("BROKEN  no checks found under tools/checks/, a sweep that runs nothing is not green")

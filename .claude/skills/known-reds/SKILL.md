@@ -27,4 +27,7 @@ description: "The register of failing checks the founder has decided to live wit
   change.
 - Keep `reason` to one or two sentences. The register is a list, not a diary.
 
-Only the founder adds an entry. An agent proposes the exact entry and waits.
+Only the founder decides an entry. An agent puts the exact entry to them as a decision card
+(`skills/founder-voice/`) and, on their yes, the orchestrator writes it and records the yes in
+`p1-closed-decisions.md`; the founder never edits the file. The sweep refuses a malformed
+entry, such as an empty `fails`, which would silence every red in its check (TPL-13).

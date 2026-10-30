@@ -18,7 +18,7 @@ Run in order. Any line not met stops the release.
    per-device and global limit holds.
 4. `python tools/run_all.py` green on the release commit; CI green on the same commit.
 5. Release notes written in `docs/work/<id>/release.md`: what users will notice, in their words,
-   and every row the release ships by id. Each must be `T`: from now on its test runs in every
+   and one line `Rows shipped: <ids>` naming every row the release ships. Each must be `T`: from now on its test runs in every
    sweep, so a later change that breaks it goes red (TPL-109, TPL-110).
 6. **Rollback written down:** the exact steps and how long they take. If a migration cannot be
    reversed, say so and get the founder's explicit acceptance.
@@ -44,3 +44,18 @@ idea is OpenSpec's archive step, which merges a change's delta specs into the li
 script. Watch errors and the feature's success number for the window set in the spec. On a major
 error, `qa` writes ROLLBACK and the orchestrator starts `rollback`: roll back first (on the
 founder's go) and investigate second, with `debugger`. Write a short entry in `docs/HISTORY.md`.
+
+Close the gate: add `Build pass: closed <date> (released)` to `docs/work/<id>/readiness.md`, so
+the next change to product code needs its own pass (TPL-120). Then the retrospective, below.
+
+## Retrospective (TPL-124)
+
+After the watch window, the orchestrator writes `docs/work/<id>/retro.md`: what the founder
+asked for, what shipped, what `reviewer` and `qa` caught, the rows left open, and one lesson for
+`docs/requirements/p1-traps.md` if there is one. It ends with a verdict: `accepted`,
+`accepted-with-open-items` (each item a row or an open question) or `rejected`. A row in
+`Rows shipped:` that is not `T`, or a blocking finding still open, makes it `rejected` unless
+the founder accepts otherwise. The founder gets the verdict as a decision card and has the last
+word. Action items are written, not done: each goes back through a track. Adapted from
+BMAD-METHOD's epic retrospective (https://docs.bmad-method.org/build/finish-an-epic/, read
+2026-10-30). The next retrospective starts by checking the last one's items were done.

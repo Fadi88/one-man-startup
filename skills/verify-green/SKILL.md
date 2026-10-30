@@ -8,9 +8,12 @@ description: Use when about to say that tests pass, that a fix works or that wor
 ## Run
 
 1. The narrow check for what you touched: the stack's test command (`project.toml [stack]
-   test_command`) on the files you changed.
-2. Before handing anything back: `python tools/run_all.py` and the full test command. Every time,
-   whatever moved. A sweep is cheap next to a broken hand-off.
+   test_command`) on the files you changed. The developer who writes the product's first test
+   fills `test_command` (and `test_paths`) in `project.toml`, replacing "none yet"; until then
+   the sweep cannot run the suite, and once tests exist it goes red (TPL-109).
+2. Before handing anything back: `python tools/run_all.py`, which also runs the whole test suite
+   (TPL-109), so the suite is not run a second time. Every time, whatever moved. A sweep is cheap
+   next to a broken hand-off.
 
 Exit codes of the sweep: `0` green, `2` red but every red is registered as known, `1` red.
 
@@ -48,7 +51,7 @@ fix reverted, and passes again with it restored (`git stash` makes this a minute
 | "The linter passed." | A linter runs no tests and builds nothing. Run the thing the claim is about. |
 | "The agent said it succeeded." | An agent's report is a claim. Its diff and your run are evidence. |
 | "A partial run is enough for this change." | The full sweep is cheap. The check you skipped is the one that catches it. |
-| "I'll register it as a known red for now." | Only the founder adds a known red. Propose the entry and wait. |
+| "I'll register it as a known red for now." | Only the founder decides a known red. Put the entry to them as a decision card and wait (`skills/known-reds/`). |
 
 Red flags: "should", "probably", "seems to"; committing or handing back before the run;
 satisfaction before the output is read.

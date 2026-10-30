@@ -6,7 +6,11 @@ description: Fix a bug test first - reproduce it in a failing test, fix, watch t
 # Bug fix
 
 1. **Find the row.** Which requirement does the bug break? If none, the bug is a missing
-   requirement: write the row first.
+   requirement: write the row first. Then write three lines in the fix's `status.md`: what
+   happens now, what should happen, and what must not change. The third names the rows next to
+   the bug, and their tests run before and after the fix (TPL-126). From Kiro's bugfix specs,
+   which record current, expected and unchanged behaviour (https://kiro.dev/docs/specs/, read
+   2026-10-30).
 2. **Reproduce in a test** that fails for the reason the user saw. Watch it fail. A fix without a
    failing test first is a guess.
 3. **Measure before theorising.** Read the actual values, logs and inputs. The plausible cause

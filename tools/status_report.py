@@ -5,7 +5,7 @@
                                                   in the system temp folder) and print the path
 
 What it reads, and nothing else: the open questions (docs/requirements/p1-open-questions.md),
-each docs/work/<id>/status.md (its Track:, Now: and Waiting on: lines and its rulings,
+each docs/work/<id>/status.md (its Track:, Now:, Next: and Waiting on: lines and its rulings,
 skills/handoff/), the dates that have come due (tools/lib/overdue.py), the known reds
 (tools/known_red.json), the requirement rows by status and the newest entries of
 docs/HISTORY.md, the tests per area (TPL-104), and the verdict of the full sweep (TPL-101, proposed by the repository review
@@ -88,7 +88,7 @@ def work() -> list[dict]:
     for d in sorted(p for p in base.iterdir() if p.is_dir()) if base.is_dir() else []:
         text = (d / "status.md").read_text(encoding="utf-8") if (d / "status.md").exists() else ""
         field = {k: (m[1].strip() if (m := re.search(rf"^{k}:\s*(.*)$", text, flags=re.M)) else "")
-                 for k in ("Track", "Now", "Waiting on")}
+                 for k in ("Track", "Now", "Next", "Waiting on")}
         rulings = re.search(r"^## Rulings\s*\n(.*?)(?=^## |\Z)", text, flags=re.M | re.S)
         field["rulings"] = len(re.findall(r"^- ", rulings[1], flags=re.M)) if rulings else 0
         field["id"] = d.name
@@ -177,7 +177,7 @@ def as_text(s: dict) -> str:
             out.append(f"- {x['id']}: no status.md yet")
         else:
             out.append(f"- {x['id']}: {x['Track'] or 'track not set'}; now: {x['Now'] or 'not set'}; "
-                       f"waiting on: {x['Waiting on'] or 'nothing'}")
+                       f"next: {x['Next'] or 'not set'}; waiting on: {x['Waiting on'] or 'nothing'}")
     if not s["work"]:
         out.append("- None.")
     out += ["", f"## Failing checks you accepted ({len(s['known'])})"]
@@ -203,7 +203,7 @@ def as_html(s: dict) -> str:
             + [f"<code>{e(x['id'])}</code>: {e(x['Now'] or 'waiting on you')}" for x in s["waiting"]]
             + [f"<code>{e(x['id'])}</code>: {x['rulings']} ruling(s) to look over" for x in s["rulings"]])
     work_items = [f"<code>{e(x['id'])}</code>: " + (e(f"{x['Track'] or 'track not set'}; now: {x['Now'] or 'not set'}; "
-                  f"waiting on: {x['Waiting on'] or 'nothing'}") if x["has_status"] else "no status.md yet")
+                  f"next: {x['Next'] or 'not set'}; waiting on: {x['Waiting on'] or 'nothing'}") if x["has_status"] else "no status.md yet")
                   for x in s["work"]]
     rows = "".join(f'<tr><td>{e(v)} <code>{e(k)}</code></td><td class="n">{s["rows"][k]}</td></tr>'
                    for k, v in STATUSES.items())

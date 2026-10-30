@@ -1,4 +1,4 @@
-"""TPL-78, TPL-80, TPL-101, TPL-104: the status page and the session reminder report what the files say.
+"""TPL-127, TPL-78, TPL-80, TPL-101, TPL-104: the status page and the session reminder report what the files say.
 
 Builds a small project in a temporary folder (an overdue assumption, a known red past its
 recheck, an experiment due today, one settled assumption and one future date that must not
@@ -51,7 +51,7 @@ with tempfile.TemporaryDirectory() as tmp:
           "| 1 | 2026-06-01 | Today's read | running | 2026-06-15 |\n"
           "| 2 | 2026-05-01 | Closed one | closed | 2026-06-01 |\n")
     write(t, "docs/work/receipts/status.md",
-          "Track: feature\nNow: spec waits for approval\nWaiting on: the founder\n\n"
+          "Track: feature\nNow: spec waits for approval\nNext: architect designs the data\nWaiting on: the founder\n\n"
           "## Rulings\n\n- named the field amount_minor\n- rounded half up\n")
     write(t, "docs/work/empty/notes.md", "nothing\n")
     write(t, "docs/requirements/p1-open-questions.md", "# Open questions\n\n- **Pick a price** (raised 2026-06-01).\n")
@@ -69,6 +69,7 @@ with tempfile.TemporaryDirectory() as tmp:
     check(s["questions"] == ["Pick a price"], "TPL-78 the page lists the open question")
     check(len(s["waiting"]) == 1 and s["rulings"][0]["rulings"] == 2,
           "TPL-78 the page shows the work waiting on the founder and its two rulings")
+    check("next: architect designs the data" in text, "TPL-127 the page shows where each work item goes next")
     check("## Waiting on you (4)" in text, "TPL-78 'waiting on you' counts the question, the work and the two rulings")
     check("## Checks: RED" in text and "NEW RED  FAIL  thing" in text,
           "TPL-101 the page shows the sweep verdict and each red line")

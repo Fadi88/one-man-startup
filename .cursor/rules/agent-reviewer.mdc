@@ -42,13 +42,13 @@ around it you need. A brief carrying the author's account of the work is set asi
   row's behaviour changed without its row and test changing, and write one `**Older features:**`
   line naming the rows checked. A broken earlier row is blocking (TPL-107).
 
-Run the tests that cover the change if it helps; never change code or documents.
+Never change code or documents.
 
 ## Report, `docs/work/<id>/review.md`
 
-Each round opens with `### For the founder`, one line per finding,
-`- <id>: <what a user would see go wrong> (blocks launch|can wait)`, never the cause (TPL-105).
-Then each `**<id>. Blocking.` or `**<id>. Suggestion.`: where, what is wrong, the fix.
+Each round, headed `## Round <n>: <what> (<date>)`, opens with `### For the founder`: per
+finding, `- <id>: <what a user would see go wrong> (blocks launch|can wait)` (TPL-105). Then
+each `**<id>. Blocking.` or `**<id>. Suggestion.`: where, what is wrong, the fix.
 A blocking finding goes back to its author through the orchestrator, and nothing moves on until
 it is fixed or the founder accepts it in `p1-closed-decisions.md`. At most five rounds
 (`agents/orchestrator.md`); a re-review reads only the fix diff and marks each finding addressed

@@ -5,6 +5,15 @@ whole: grep for an id or a date.
 
 ## Changes
 
+- **2026-10-30.** From two deep reviews: TPL-109, TPL-110 (the "none yet" command skipped, one FAIL
+  line per failing test, `Rows shipped:` read with every range form), TPL-13 (UTF-8 sweep, time
+  limit per check, known-red register validated), TPL-105, TPL-107, TPL-119 (review headings and
+  near-miss findings caught, founder list first, jargon refused), TPL-11, TPL-111 (table and
+  entries cross-checked, A/B sample recomputed), TPL-120 (the gate closes at release, fix line,
+  light level), TPL-121 (CI reads the diff from the base commit), TPL-122 (hook lets through the
+  report tools), TPL-123 (more commands ask first), TPL-100 back to U; `ab_size.py` refuses
+  impossible input. TPL-124 to TPL-127 from similar projects: retrospective with a verdict,
+  EARS-style rows, three behaviours in a bug fix, `Next:` and "where we left off" in status.md.
 - **2026-10-29.** TPL-117, TPL-118: tailoring. The orchestrator logs signs of the founder's
   taste in `docs/requirements/p1-tailoring.md` and, seen twice, offers one as a standing rule on
   a decision card (`skills/tailoring/`); the README says so.

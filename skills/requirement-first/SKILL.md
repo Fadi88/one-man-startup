@@ -12,6 +12,12 @@ design drifted into. So the row comes first, even for a two-line fix.
 
 `| ID | What must be true, in one or two sentences a tester can check | STATUS |`
 
+Write a new row as "When <something happens>, the product <does this>" (or "While <state>" or
+"If <unwanted event>, then"), so the founder can confirm it and a test follows from it. This is
+EARS, the form Kiro uses for requirements ("WHEN [condition/event] THE SYSTEM SHALL [expected
+behavior]", https://kiro.dev/docs/specs/feature-specs/, read 2026-10-30). Older rows stay as
+they are (TPL-125).
+
 - **ID** is `AREA-N`: a short area prefix and a number. Ids are never reused or renumbered. To
   slot a row between two others, add a letter: `AUTH-12a`.
 - One file per area under `docs/requirements/`, listed in `docs/REQUIREMENTS.md` with its prefix.

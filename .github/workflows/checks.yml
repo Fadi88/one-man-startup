@@ -13,10 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The whole history, so the diff-reading checks can compare with the base (TPL-121).
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Full sweep
+        env:
+          # A clean checkout has no diff against HEAD, so the floor and gate checks read the
+          # change against the pull request's base branch, or the commit before the push.
+          CHECK_BASE: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event.before }}
         run: |
           python tools/run_all.py
           code=$?

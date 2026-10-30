@@ -1,5 +1,7 @@
 # The one file that makes this template yours. The setup agent fills it in
-# during its interview; every other agent reads it and never edits it.
+# during its interview; every other agent reads it and never edits it, except that the first
+# developer fills [stack] test_command and build_command, and tools/template_update.py records
+# [template] commit.
 # "unset" means setup has not asked yet. Agents stop and ask rather than guess.
 
 [owner]
